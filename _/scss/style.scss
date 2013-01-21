@@ -1,0 +1,155 @@
+@import "_mixins.scss";
+@import "susy";
+
+/* ========================================BASE */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {display: block; }
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: sans-serif; /* 1 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+    -ms-text-size-adjust: 100%; /* 2 */
+}
+
+body {
+    margin: 0;
+}
+
+a {
+  text-decoration:none;
+}
+
+    a:focus {
+        outline: thin dotted;
+    }
+
+    a:active,
+    a:hover {
+        outline: 0;
+    }
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+
+b,
+strong {
+    font-weight: bold;
+}
+
+img {
+    border: 0;
+}
+
+ul {
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+
+
+/* ========================================LAYOUT */
+/* ====================NAV */
+nav {
+    outline:1px solid black;
+    text-align:center;
+}
+
+/* ====================CONTAINER */
+.main-content {
+    @include container;
+    @include susy-grid-background;
+
+    @include at-breakpoint($medium) {
+        @include container;
+    }
+
+    @include at-breakpoint($large) {
+        @include container;
+    }
+}
+
+
+
+
+/* ========================================MODULES */
+/* ====================PAGE NAV */
+    .page-nav {
+        text-align:center;
+    }
+
+
+/* ====================TOUR PAGE */
+.tour-date, .tour-city, .tour-venue {
+    outline:1px solid black;
+    h1 {
+        display:none;
+        text-align:center;
+        @include at-breakpoint($medium) {
+            display:block;
+        }
+    }
+    @include at-breakpoint($medium) {
+        @include span-columns(4,12);
+    }
+}
+
+.tour-venue {
+    @include at-breakpoint($medium) {
+        @include span-columns(4 omega, 12);
+    }
+}
+
+.tour-date li {
+    &:before {
+        content: "DATE";
+    }
+}
+
+.tour-city li {
+    &:before {
+        content: "CITY";
+    }
+}
+
+.tour-venue li {
+    &:before {
+        content: "VENUE";
+    }
+}
+
+.tour-date li, .tour-city li, .tour-venue li {
+    &:before {
+        float:left;
+        @include at-breakpoint($medium) {
+            display:none;
+        }
+    }
+    text-align:right;
+    @include at-breakpoint($medium) {
+        text-align:center;
+    }
+}
+
+/* ========================================STATES */
+
+
+/* ========================================THEMES */
+.main-content h1 {
+    text-transform: uppercase;
+}
+
+
+
+/* ========================================NAV */
+
+
+
+
+
+
