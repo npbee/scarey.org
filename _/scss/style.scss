@@ -16,6 +16,8 @@ html {
 
 body {
     margin: 0;
+    height:100%;
+    padding-bottom:60px;
 }
 
 a {
@@ -65,6 +67,11 @@ nav {
     @include container;
     @include susy-grid-background;
 
+    min-height:100%;
+    position:relative;
+    width:100%;
+    overflow-x: hidden;
+
     @include at-breakpoint($medium) {
         @include container;
     }
@@ -74,7 +81,15 @@ nav {
     }
 }
 
-
+/* ====================FOOTER */
+footer {
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:60px;   /* Height of the footer */
+    background:#111;
+    text-align:center;
+}
 
 
 /* ========================================MODULES */
@@ -83,8 +98,22 @@ nav {
         text-align:center;
     }
 
+/* ====================SLIDER */
+.slider {
+    width:400%;
+    &:after {
+        content:"";
+        display:table;
+    }
+}
 
 /* ====================TOUR PAGE */
+.tour-year-block {
+    width: 25%;
+    float:left;
+}
+
+
 .tour-date, .tour-city, .tour-venue {
     outline:1px solid black;
     h1 {

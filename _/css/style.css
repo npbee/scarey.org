@@ -19,36 +19,38 @@ html {
 
 /* line 17, ../scss/style.scss */
 body {
-  margin: 0; }
+  margin: 0;
+  height: 100%;
+  padding-bottom: 60px; }
 
-/* line 21, ../scss/style.scss */
+/* line 23, ../scss/style.scss */
 a {
   text-decoration: none; }
 
-/* line 25, ../scss/style.scss */
+/* line 27, ../scss/style.scss */
 a:focus {
   outline: thin dotted; }
 
-/* line 30, ../scss/style.scss */
+/* line 32, ../scss/style.scss */
 a:active,
 a:hover {
   outline: 0; }
 
-/* line 34, ../scss/style.scss */
+/* line 36, ../scss/style.scss */
 h1 {
   font-size: 2em;
   margin: 0.67em 0; }
 
-/* line 41, ../scss/style.scss */
+/* line 43, ../scss/style.scss */
 b,
 strong {
   font-weight: bold; }
 
-/* line 45, ../scss/style.scss */
+/* line 47, ../scss/style.scss */
 img {
   border: 0; }
 
-/* line 49, ../scss/style.scss */
+/* line 51, ../scss/style.scss */
 ul {
   list-style: none;
   margin: 0;
@@ -56,13 +58,13 @@ ul {
 
 /* ========================================LAYOUT */
 /* ====================NAV */
-/* line 58, ../scss/style.scss */
+/* line 60, ../scss/style.scss */
 nav {
   outline: 1px solid black;
   text-align: center; }
 
 /* ====================CONTAINER */
-/* line 64, ../scss/style.scss */
+/* line 66, ../scss/style.scss */
 .main-content {
   *zoom: 1;
   max-width: 29em;
@@ -84,14 +86,18 @@ nav {
   background-origin: content-box;
   -webkit-background-clip: content-box;
   -moz-background-clip: content-box;
-  background-clip: content-box; }
+  background-clip: content-box;
+  min-height: 100%;
+  position: relative;
+  width: 100%;
+  overflow-x: hidden; }
   /* line 38, ../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
   .main-content:after {
     content: "";
     display: table;
     clear: both; }
   @media (min-width: 30em) {
-    /* line 64, ../scss/style.scss */
+    /* line 66, ../scss/style.scss */
     .main-content {
       max-width: 57em;
       padding-left: 1em;
@@ -104,7 +110,7 @@ nav {
         display: table;
         clear: both; } }
   @media (min-width: 50em) {
-    /* line 64, ../scss/style.scss */
+    /* line 66, ../scss/style.scss */
     .main-content {
       max-width: 85em;
       padding-left: 1em;
@@ -117,68 +123,93 @@ nav {
         display: table;
         clear: both; } }
 
+/* ====================FOOTER */
+/* line 85, ../scss/style.scss */
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  /* Height of the footer */
+  background: #111;
+  text-align: center; }
+
 /* ========================================MODULES */
 /* ====================PAGE NAV */
-/* line 82, ../scss/style.scss */
+/* line 97, ../scss/style.scss */
 .page-nav {
   text-align: center; }
 
+/* ====================SLIDER */
+/* line 102, ../scss/style.scss */
+.slider {
+  width: 400%; }
+  /* line 104, ../scss/style.scss */
+  .slider:after {
+    content: "";
+    display: table; }
+
 /* ====================TOUR PAGE */
-/* line 88, ../scss/style.scss */
+/* line 111, ../scss/style.scss */
+.tour-year-block {
+  width: 25%;
+  float: left; }
+
+/* line 117, ../scss/style.scss */
 .tour-date, .tour-city, .tour-venue {
   outline: 1px solid black; }
-  /* line 90, ../scss/style.scss */
+  /* line 119, ../scss/style.scss */
   .tour-date h1, .tour-city h1, .tour-venue h1 {
     display: none;
     text-align: center; }
     @media (min-width: 30em) {
-      /* line 90, ../scss/style.scss */
+      /* line 119, ../scss/style.scss */
       .tour-date h1, .tour-city h1, .tour-venue h1 {
         display: block; } }
   @media (min-width: 30em) {
-    /* line 88, ../scss/style.scss */
+    /* line 117, ../scss/style.scss */
     .tour-date, .tour-city, .tour-venue {
       width: 32.53012%;
       float: left;
       margin-right: 1.20482%; } }
 
 @media (min-width: 30em) {
-  /* line 102, ../scss/style.scss */
+  /* line 131, ../scss/style.scss */
   .tour-venue {
     width: 32.53012%;
     float: right;
     margin-right: 0; } }
 
-/* line 109, ../scss/style.scss */
+/* line 138, ../scss/style.scss */
 .tour-date li:before {
   content: "DATE"; }
 
-/* line 115, ../scss/style.scss */
+/* line 144, ../scss/style.scss */
 .tour-city li:before {
   content: "CITY"; }
 
-/* line 121, ../scss/style.scss */
+/* line 150, ../scss/style.scss */
 .tour-venue li:before {
   content: "VENUE"; }
 
-/* line 126, ../scss/style.scss */
+/* line 155, ../scss/style.scss */
 .tour-date li, .tour-city li, .tour-venue li {
   text-align: right; }
-  /* line 127, ../scss/style.scss */
+  /* line 156, ../scss/style.scss */
   .tour-date li:before, .tour-city li:before, .tour-venue li:before {
     float: left; }
     @media (min-width: 30em) {
-      /* line 127, ../scss/style.scss */
+      /* line 156, ../scss/style.scss */
       .tour-date li:before, .tour-city li:before, .tour-venue li:before {
         display: none; } }
   @media (min-width: 30em) {
-    /* line 126, ../scss/style.scss */
+    /* line 155, ../scss/style.scss */
     .tour-date li, .tour-city li, .tour-venue li {
       text-align: center; } }
 
 /* ========================================STATES */
 /* ========================================THEMES */
-/* line 143, ../scss/style.scss */
+/* line 172, ../scss/style.scss */
 .main-content h1 {
   text-transform: uppercase; }
 
