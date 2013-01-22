@@ -15,42 +15,51 @@ html {
   -webkit-text-size-adjust: 100%;
   /* 2 */
   -ms-text-size-adjust: 100%;
-  /* 2 */ }
+  /* 2 */
+  height: 100%; }
 
-/* line 17, ../scss/style.scss */
+/* line 18, ../scss/style.scss */
 body {
   margin: 0;
   height: 100%;
-  padding-bottom: 60px; }
+  position: relative; }
 
-/* line 23, ../scss/style.scss */
+/* line 24, ../scss/style.scss */
 a {
   text-decoration: none; }
 
-/* line 27, ../scss/style.scss */
+/* line 28, ../scss/style.scss */
 a:focus {
   outline: thin dotted; }
 
-/* line 32, ../scss/style.scss */
+/* line 33, ../scss/style.scss */
 a:active,
 a:hover {
   outline: 0; }
 
-/* line 36, ../scss/style.scss */
+/* line 37, ../scss/style.scss */
 h1 {
   font-size: 2em;
-  margin: 0.67em 0; }
+  margin: 0; }
 
-/* line 43, ../scss/style.scss */
+/* line 42, ../scss/style.scss */
+h2 {
+  margin: 0; }
+
+/* line 46, ../scss/style.scss */
+p {
+  margin: 0; }
+
+/* line 52, ../scss/style.scss */
 b,
 strong {
   font-weight: bold; }
 
-/* line 47, ../scss/style.scss */
+/* line 56, ../scss/style.scss */
 img {
   border: 0; }
 
-/* line 51, ../scss/style.scss */
+/* line 60, ../scss/style.scss */
 ul {
   list-style: none;
   margin: 0;
@@ -58,13 +67,13 @@ ul {
 
 /* ========================================LAYOUT */
 /* ====================NAV */
-/* line 60, ../scss/style.scss */
+/* line 69, ../scss/style.scss */
 nav {
   outline: 1px solid black;
   text-align: center; }
 
 /* ====================CONTAINER */
-/* line 66, ../scss/style.scss */
+/* line 75, ../scss/style.scss */
 .main-content {
   *zoom: 1;
   max-width: 29em;
@@ -89,15 +98,17 @@ nav {
   background-clip: content-box;
   min-height: 100%;
   position: relative;
-  width: 100%;
-  overflow-x: hidden; }
+  padding-bottom: 3em; }
   /* line 38, ../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
   .main-content:after {
     content: "";
     display: table;
     clear: both; }
+  /* line 83, ../scss/style.scss */
+  .main-content h1 {
+    text-align: center; }
   @media (min-width: 30em) {
-    /* line 66, ../scss/style.scss */
+    /* line 75, ../scss/style.scss */
     .main-content {
       max-width: 57em;
       padding-left: 1em;
@@ -110,7 +121,7 @@ nav {
         display: table;
         clear: both; } }
   @media (min-width: 50em) {
-    /* line 66, ../scss/style.scss */
+    /* line 75, ../scss/style.scss */
     .main-content {
       max-width: 85em;
       padding-left: 1em;
@@ -124,92 +135,155 @@ nav {
         clear: both; } }
 
 /* ====================FOOTER */
-/* line 85, ../scss/style.scss */
+/* line 97, ../scss/style.scss */
 footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 60px;
-  /* Height of the footer */
-  background: #111;
-  text-align: center; }
+  clear: both;
+  position: relative;
+  z-index: 10;
+  height: 3em;
+  margin-top: -3em;
+  background: #111; }
 
 /* ========================================MODULES */
 /* ====================PAGE NAV */
-/* line 97, ../scss/style.scss */
+/* line 109, ../scss/style.scss */
 .page-nav {
   text-align: center; }
 
-/* ====================SLIDER */
-/* line 102, ../scss/style.scss */
-.slider {
-  width: 400%; }
-  /* line 104, ../scss/style.scss */
-  .slider:after {
-    content: "";
-    display: table; }
-
 /* ====================TOUR PAGE */
-/* line 111, ../scss/style.scss */
-.tour-year-block {
-  width: 25%;
-  float: left; }
-
-/* line 117, ../scss/style.scss */
+/* line 114, ../scss/style.scss */
 .tour-date, .tour-city, .tour-venue {
   outline: 1px solid black; }
-  /* line 119, ../scss/style.scss */
+  /* line 116, ../scss/style.scss */
   .tour-date h1, .tour-city h1, .tour-venue h1 {
-    display: none;
-    text-align: center; }
+    display: none; }
     @media (min-width: 30em) {
-      /* line 119, ../scss/style.scss */
+      /* line 116, ../scss/style.scss */
       .tour-date h1, .tour-city h1, .tour-venue h1 {
         display: block; } }
   @media (min-width: 30em) {
-    /* line 117, ../scss/style.scss */
+    /* line 114, ../scss/style.scss */
     .tour-date, .tour-city, .tour-venue {
       width: 32.53012%;
       float: left;
       margin-right: 1.20482%; } }
 
 @media (min-width: 30em) {
-  /* line 131, ../scss/style.scss */
+  /* line 127, ../scss/style.scss */
   .tour-venue {
     width: 32.53012%;
     float: right;
     margin-right: 0; } }
 
-/* line 138, ../scss/style.scss */
+/* line 134, ../scss/style.scss */
 .tour-date li:before {
   content: "DATE"; }
 
-/* line 144, ../scss/style.scss */
+/* line 140, ../scss/style.scss */
 .tour-city li:before {
   content: "CITY"; }
 
-/* line 150, ../scss/style.scss */
+/* line 146, ../scss/style.scss */
 .tour-venue li:before {
   content: "VENUE"; }
 
-/* line 155, ../scss/style.scss */
+/* line 151, ../scss/style.scss */
 .tour-date li, .tour-city li, .tour-venue li {
   text-align: right; }
-  /* line 156, ../scss/style.scss */
+  /* line 152, ../scss/style.scss */
   .tour-date li:before, .tour-city li:before, .tour-venue li:before {
     float: left; }
     @media (min-width: 30em) {
-      /* line 156, ../scss/style.scss */
+      /* line 152, ../scss/style.scss */
       .tour-date li:before, .tour-city li:before, .tour-venue li:before {
         display: none; } }
   @media (min-width: 30em) {
-    /* line 155, ../scss/style.scss */
+    /* line 151, ../scss/style.scss */
     .tour-date li, .tour-city li, .tour-venue li {
       text-align: center; } }
 
+/* ====================ALBUMS PAGE */
+/* line 165, ../scss/style.scss */
+.album-release {
+  text-align: center; }
+
+/* line 170, ../scss/style.scss */
+.album-cover img {
+  max-width: 100%;
+  height: auto; }
+  @media (min-width: 30em) {
+    /* line 170, ../scss/style.scss */
+    .album-cover img {
+      max-width: 50%;
+      width: 49.09091%;
+      float: left;
+      margin-right: 1.81818%; } }
+
+@media (min-width: 30em) {
+  /* line 180, ../scss/style.scss */
+  .album-blurb {
+    width: 49.09091%;
+    float: right;
+    margin-right: 0; } }
+
+/* line 189, ../scss/style.scss */
+.album-tracklist .album-track {
+  clear: both; }
+/* line 192, ../scss/style.scss */
+.album-tracklist .album-track-name {
+  float: left; }
+/* line 195, ../scss/style.scss */
+.album-tracklist .album-track-duration {
+  float: right; }
+@media (min-width: 30em) {
+  /* line 188, ../scss/style.scss */
+  .album-tracklist {
+    clear: both;
+    width: 49.09091%;
+    float: left;
+    margin-right: 1.81818%; } }
+
+/* line 205, ../scss/style.scss */
+.album-purchase a {
+  outline: 1px solid black;
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+  clear: both; }
+@media (min-width: 30em) {
+  /* line 204, ../scss/style.scss */
+  .album-purchase {
+    width: 49.09091%;
+    float: right;
+    margin-right: 0;
+    text-align: center; } }
+
+/* ====================CONTACT PAGE */
+/* line 220, ../scss/style.scss */
+.contact-block {
+  text-align: center; }
+  @media (min-width: 30em) {
+    /* line 222, ../scss/style.scss */
+    .contact-block .booking-us-can {
+      width: 49.09091%;
+      float: left;
+      margin-right: 1.81818%; } }
+  @media (min-width: 30em) {
+    /* line 227, ../scss/style.scss */
+    .contact-block .publicity-us, .contact-block .tour-press {
+      width: 32%;
+      float: left;
+      margin-right: 1.81818%; } }
+  @media (min-width: 30em) {
+    /* line 232, ../scss/style.scss */
+    .contact-block .publicity-uk-eu {
+      width: 32%;
+      float: right;
+      margin-right: 0; } }
+
 /* ========================================STATES */
 /* ========================================THEMES */
-/* line 172, ../scss/style.scss */
+/* line 244, ../scss/style.scss */
 .main-content h1 {
   text-transform: uppercase; }
 

@@ -12,12 +12,13 @@ html {
     font-family: sans-serif; /* 1 */
     -webkit-text-size-adjust: 100%; /* 2 */
     -ms-text-size-adjust: 100%; /* 2 */
+    height:100%;
 }
 
 body {
     margin: 0;
     height:100%;
-    padding-bottom:60px;
+    position:relative;
 }
 
 a {
@@ -35,7 +36,15 @@ a {
 
 h1 {
     font-size: 2em;
-    margin: 0.67em 0;
+    margin: 0;
+}
+
+h2 {
+    margin: 0;
+}
+
+p {
+    margin:0;
 }
 
 
@@ -69,8 +78,11 @@ nav {
 
     min-height:100%;
     position:relative;
-    width:100%;
-    overflow-x: hidden;
+    padding-bottom: 3em;
+
+    h1 {
+        text-align:center;
+    }
 
     @include at-breakpoint($medium) {
         @include container;
@@ -83,12 +95,12 @@ nav {
 
 /* ====================FOOTER */
 footer {
-    position:absolute;
-    bottom:0;
-    width:100%;
-    height:60px;   /* Height of the footer */
-    background:#111;
-    text-align:center;
+    clear: both;
+    position: relative;
+    z-index: 10;
+    height: 3em;
+    margin-top: -3em;
+    background: #111;
 }
 
 
@@ -98,27 +110,11 @@ footer {
         text-align:center;
     }
 
-/* ====================SLIDER */
-.slider {
-    width:400%;
-    &:after {
-        content:"";
-        display:table;
-    }
-}
-
 /* ====================TOUR PAGE */
-.tour-year-block {
-    width: 25%;
-    float:left;
-}
-
-
 .tour-date, .tour-city, .tour-venue {
     outline:1px solid black;
     h1 {
         display:none;
-        text-align:center;
         @include at-breakpoint($medium) {
             display:block;
         }
@@ -164,6 +160,82 @@ footer {
         text-align:center;
     }
 }
+
+/* ====================ALBUMS PAGE */
+.album-release {
+    text-align:center;
+}
+
+.album-cover {
+    img {
+        max-width:100%;
+        height:auto;
+        @include at-breakpoint($medium) {
+            max-width:50%;
+            @include span-columns(4, 8);
+        }
+    }
+}
+
+.album-blurb {
+    @include at-breakpoint($medium) {
+        @include span-columns(4 omega, 8);
+    }
+    @include at-breakpoint($large) {
+    }
+}
+
+.album-tracklist {
+    .album-track {
+        clear:both;
+    }
+    .album-track-name {
+        float:left;
+    }
+    .album-track-duration {
+        float:right;
+    }
+    @include at-breakpoint($medium) {
+        clear:both;
+        @include span-columns(4, 8);
+    }
+}
+
+.album-purchase {
+    a {
+        outline:1px solid black;
+        display:block;
+        width:90%;
+        margin:0 auto;
+        clear:both;
+    }
+    @include at-breakpoint($medium) {
+        @include span-columns(4 omega, 8);
+        text-align:center;
+    }
+}
+
+
+/* ====================CONTACT PAGE */
+.contact-block {
+    text-align:center;
+    .booking-us-can {
+        @include at-breakpoint($medium) {
+            @include span-columns(4, 8);
+        }
+    }
+    .publicity-us, .tour-press {
+        @include at-breakpoint($medium) {
+            @include span-columns(2.6, 8);
+        }
+    }
+    .publicity-uk-eu {
+        @include at-breakpoint($medium) {
+            @include span-columns(2.6 omega, 8);
+        }
+    }
+}
+
 
 /* ========================================STATES */
 
