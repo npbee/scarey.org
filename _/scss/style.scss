@@ -1,6 +1,17 @@
 @import "_mixins.scss";
 @import "susy";
 
+@font-face {
+    font-family: 'entypo';
+    src:url('../fonts/entypo/entypo.eot');
+    src:url('../fonts/entypo/entypo.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/entypo/entypo.svg#entypo') format('svg'),
+        url('../fonts/entypo/entypo.woff') format('woff'),
+        url('../fonts/entypo/entypo.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* ========================================BASE */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {display: block; }
 
@@ -19,10 +30,15 @@ body {
     margin: 0;
     height:100%;
     position:relative;
+    font-family: 'Open Sans', sans-serif;
+    font-weight:300;
+    background: url("../img/background.png");
+    color:#e6e6e6;
 }
 
 a {
   text-decoration:none;
+  color:#e6e6e6;
 }
 
     a:focus {
@@ -69,6 +85,7 @@ ul {
 nav {
     outline:1px solid black;
     text-align:center;
+    overflow:auto;
 }
 
 /* ====================CONTAINER */
@@ -105,10 +122,84 @@ footer {
 
 
 /* ========================================MODULES */
+/* ====================FONT ICON */
+[data-icon]:before {
+    font-family: 'entypo';
+    content: attr(data-icon);
+    speak: none;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    @include at-breakpoint($medium) {
+        content:"";
+    }
+}
+/* ====================HEADER */
+nav {
+    text-transform: uppercase;
+    background:#111;
+    .logo-nav {
+        float:left;
+        font-size:3em;
+        display:block;
+        @include at-breakpoint($medium) {
+            float:none;
+            display:inline;
+        }
+    }
+    .more-nav {
+        @include at-breakpoint($medium) {
+            display:none;
+        }
+    }
+}
+
+/* Hide irrelevant icons on small view */
+.tour .blog-nav, .tour .albums-nav, .tour .media-nav, .tour .store-nav, .tour .contact-nav {
+    display:none;
+    @include at-breakpoint($medium) {
+        display:inline;
+    }
+}
+
+// .inactive {
+//     display:none;
+//     @include at-breakpoint($medium) {
+//         display:inline;
+//     }
+// }
+
+.more-nav {
+    float:right;
+}
+
+
 /* ====================PAGE NAV */
     .page-nav {
         text-align:center;
+        padding:1em 0;
+        a {
+
+        }
     }
+
+/* ====================BLOG */
+.post-date {
+    float:left;
+}
+
+.post-time {
+    float:right;
+}
+
+.postText {
+    clear:both;
+    img {
+        max-width:100%;
+        height:auto;
+    }
+}
+
 
 /* ====================TOUR PAGE */
 .tour-date, .tour-city, .tour-venue {
@@ -246,8 +337,14 @@ footer {
 }
 
 
+/* ====================HOME PAGE */
+.home {
+    .main-content {
+        background: url("../img/home_art.png") no-repeat bottom right;
+    }
+}
 
-/* ========================================NAV */
+
 
 
 
