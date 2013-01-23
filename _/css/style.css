@@ -1,4 +1,5 @@
 /* ========================================BREAKPOINTS */
+/* ========================================MIXINS */
 @font-face {
   font-family: 'entypo';
   src: url("../fonts/entypo/entypo.eot");
@@ -78,21 +79,14 @@ ul {
   padding: 0; }
 
 /* ========================================LAYOUT */
-/* ====================NAV */
-/* line 85, ../scss/style.scss */
-nav {
-  outline: 1px solid black;
-  text-align: center;
-  overflow: auto; }
-
 /* ====================CONTAINER */
-/* line 92, ../scss/style.scss */
+/* line 86, ../scss/style.scss */
 .main-content {
   *zoom: 1;
-  max-width: 29em;
-  _width: 29em;
-  padding-left: 1em;
-  padding-right: 1em;
+  max-width: 28em;
+  _width: 28em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
   margin-left: auto;
   margin-right: auto;
   background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(0%, rgba(100, 100, 225, 0.25)), color-stop(22.22222%, rgba(100, 100, 225, 0.25)), color-stop(22.22222%, rgba(0, 0, 0, 0)), color-stop(25.92593%, rgba(0, 0, 0, 0)), color-stop(25.92593%, rgba(100, 100, 225, 0.25)), color-stop(48.14815%, rgba(100, 100, 225, 0.25)), color-stop(48.14815%, rgba(0, 0, 0, 0)), color-stop(51.85185%, rgba(0, 0, 0, 0)), color-stop(51.85185%, rgba(100, 100, 225, 0.25)), color-stop(74.07407%, rgba(100, 100, 225, 0.25)), color-stop(74.07407%, rgba(0, 0, 0, 0)), color-stop(77.77778%, rgba(0, 0, 0, 0)), color-stop(77.77778%, rgba(100, 100, 225, 0.25)), color-stop(100%, rgba(100, 100, 225, 0.25)), color-stop(100%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0)));
@@ -117,15 +111,15 @@ nav {
     content: "";
     display: table;
     clear: both; }
-  /* line 100, ../scss/style.scss */
+  /* line 93, ../scss/style.scss */
   .main-content h1 {
     text-align: center; }
   @media (min-width: 30em) {
-    /* line 92, ../scss/style.scss */
+    /* line 86, ../scss/style.scss */
     .main-content {
-      max-width: 57em;
-      padding-left: 1em;
-      padding-right: 1em;
+      max-width: 56em;
+      padding-left: 0.5em;
+      padding-right: 0.5em;
       margin-left: auto;
       margin-right: auto; }
       /* line 38, ../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
@@ -134,11 +128,11 @@ nav {
         display: table;
         clear: both; } }
   @media (min-width: 50em) {
-    /* line 92, ../scss/style.scss */
+    /* line 86, ../scss/style.scss */
     .main-content {
-      max-width: 85em;
-      padding-left: 1em;
-      padding-right: 1em;
+      max-width: 84em;
+      padding-left: 0.5em;
+      padding-right: 0.5em;
       margin-left: auto;
       margin-right: auto; }
       /* line 38, ../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
@@ -148,7 +142,7 @@ nav {
         clear: both; } }
 
 /* ====================FOOTER */
-/* line 114, ../scss/style.scss */
+/* line 107, ../scss/style.scss */
 footer {
   clear: both;
   position: relative;
@@ -159,7 +153,7 @@ footer {
 
 /* ========================================MODULES */
 /* ====================FONT ICON */
-/* line 126, ../scss/style.scss */
+/* line 119, ../scss/style.scss */
 [data-icon]:before {
   font-family: 'entypo';
   content: attr(data-icon);
@@ -168,129 +162,247 @@ footer {
   line-height: 1;
   -webkit-font-smoothing: antialiased; }
   @media (min-width: 30em) {
-    /* line 126, ../scss/style.scss */
+    /* line 119, ../scss/style.scss */
     [data-icon]:before {
       content: ""; } }
 
 /* ====================HEADER */
-/* line 138, ../scss/style.scss */
+/* line 131, ../scss/style.scss */
 nav {
   text-transform: uppercase;
-  background: #111; }
-  /* line 141, ../scss/style.scss */
+  background: #111;
+  overflow: auto; }
+  @media (min-width: 30em) {
+    /* line 131, ../scss/style.scss */
+    nav {
+      text-align: center; } }
+  /* line 138, ../scss/style.scss */
+  nav a {
+    font-size: 3em; }
+    @media (min-width: 30em) {
+      /* line 138, ../scss/style.scss */
+      nav a {
+        font-size: 1em; } }
+  /* line 144, ../scss/style.scss */
   nav .logo-nav {
     float: left;
     font-size: 3em;
-    display: block; }
+    margin-right: 5px;
+    padding-top: 0;
+    color: #c08a59; }
     @media (min-width: 30em) {
-      /* line 141, ../scss/style.scss */
+      /* line 144, ../scss/style.scss */
       nav .logo-nav {
         float: none;
         display: inline; } }
-  @media (min-width: 30em) {
-    /* line 150, ../scss/style.scss */
-    nav .more-nav {
-      display: none; } }
+  /* line 155, ../scss/style.scss */
+  nav .more-nav {
+    padding-right: 0.5em; }
+    @media (min-width: 30em) {
+      /* line 155, ../scss/style.scss */
+      nav .more-nav {
+        display: none; } }
 
 /* Hide irrelevant icons on small view */
-/* line 158, ../scss/style.scss */
-.tour .blog-nav, .tour .albums-nav, .tour .media-nav, .tour .store-nav, .tour .contact-nav {
+/* line 170, ../scss/style.scss */
+.blog .tour-nav, .blog .albums-nav, .blog .media-nav, .blog .store-nav, .blog .contact-nav,
+.tour .blog-nav, .tour .albums-nav, .tour .media-nav, .tour .store-nav, .tour .contact-nav,
+.albums .blog-nav, .albums .tour-nav, .albums .media-nav, .albums .store-nav, .albums .contact-nav,
+.media .blog-nav, .media .tour-nav, .media .albums-nav, .media .store-nav, .media .contact-nav,
+.store .blog-nav, .store .tour-nav, .store .albums-nav, .store .media-nav, .store .contact-nav,
+.contact .blog-nav, .contact .tour-nav, .contact .albums-nav, .contact .media-nav, .contact .store-nav {
   display: none; }
   @media (min-width: 30em) {
-    /* line 158, ../scss/style.scss */
-    .tour .blog-nav, .tour .albums-nav, .tour .media-nav, .tour .store-nav, .tour .contact-nav {
+    /* line 170, ../scss/style.scss */
+    .blog .tour-nav, .blog .albums-nav, .blog .media-nav, .blog .store-nav, .blog .contact-nav,
+    .tour .blog-nav, .tour .albums-nav, .tour .media-nav, .tour .store-nav, .tour .contact-nav,
+    .albums .blog-nav, .albums .tour-nav, .albums .media-nav, .albums .store-nav, .albums .contact-nav,
+    .media .blog-nav, .media .tour-nav, .media .albums-nav, .media .store-nav, .media .contact-nav,
+    .store .blog-nav, .store .tour-nav, .store .albums-nav, .store .media-nav, .store .contact-nav,
+    .contact .blog-nav, .contact .tour-nav, .contact .albums-nav, .contact .media-nav, .contact .store-nav {
       display: inline; } }
 
-/* line 172, ../scss/style.scss */
+/* Only show icons on small view */
+/* line 178, ../scss/style.scss */
+.hide {
+  position: absolute;
+  top: -99999px; }
+  @media (min-width: 30em) {
+    /* line 178, ../scss/style.scss */
+    .hide {
+      position: static; } }
+
+/* line 186, ../scss/style.scss */
 .more-nav {
   float: right; }
 
 /* ====================PAGE NAV */
-/* line 178, ../scss/style.scss */
+/* line 192, ../scss/style.scss */
 .page-nav {
   text-align: center;
-  padding: 1em 0; }
+  padding: 0 0 2em 0; }
+  /* line 195, ../scss/style.scss */
+  .page-nav a {
+    background: #999;
+    display: block;
+    color: #111;
+    border-right: 1px solid #111111; }
+    /* line 200, ../scss/style.scss */
+    .page-nav a:last-child {
+      border-right: none; }
+    @media (min-width: 30em) {
+      /* line 195, ../scss/style.scss */
+      .page-nav a {
+        background: none;
+        color: #e6e6e6; } }
+  @media (min-width: 30em) {
+    /* line 192, ../scss/style.scss */
+    .page-nav {
+      padding: 1.5em 0; } }
+
+/* line 214, ../scss/style.scss */
+.tour .page-nav a {
+  width: 25%;
+  float: left; }
+  @media (min-width: 30em) {
+    /* line 214, ../scss/style.scss */
+    .tour .page-nav a {
+      max-width: 56em;
+      padding-left: 0.5em;
+      padding-right: 0.5em;
+      margin-left: auto;
+      margin-right: auto;
+      float: none;
+      width: auto;
+      display: inline-block; }
+      /* line 38, ../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+      .tour .page-nav a:after {
+        content: "";
+        display: table;
+        clear: both; } }
+
+/* line 227, ../scss/style.scss */
+.albums .page-nav a {
+  width: 33.33%;
+  float: left; }
+  @media (min-width: 30em) {
+    /* line 227, ../scss/style.scss */
+    .albums .page-nav a {
+      max-width: 56em;
+      padding-left: 0.5em;
+      padding-right: 0.5em;
+      margin-left: auto;
+      margin-right: auto;
+      float: none;
+      width: auto;
+      display: inline-block; }
+      /* line 38, ../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+      .albums .page-nav a:after {
+        content: "";
+        display: table;
+        clear: both; } }
+
+/* line 240, ../scss/style.scss */
+.media .page-nav a {
+  width: 50%;
+  float: left; }
+  @media (min-width: 30em) {
+    /* line 240, ../scss/style.scss */
+    .media .page-nav a {
+      max-width: 56em;
+      padding-left: 0.5em;
+      padding-right: 0.5em;
+      margin-left: auto;
+      margin-right: auto;
+      float: none;
+      width: auto;
+      display: inline-block; }
+      /* line 38, ../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+      .media .page-nav a:after {
+        content: "";
+        display: table;
+        clear: both; } }
 
 /* ====================BLOG */
-/* line 187, ../scss/style.scss */
+/* line 253, ../scss/style.scss */
 .post-date {
   float: left; }
 
-/* line 191, ../scss/style.scss */
+/* line 257, ../scss/style.scss */
 .post-time {
   float: right; }
 
-/* line 195, ../scss/style.scss */
+/* line 261, ../scss/style.scss */
 .postText {
   clear: both; }
-  /* line 197, ../scss/style.scss */
+  /* line 263, ../scss/style.scss */
   .postText img {
     max-width: 100%;
     height: auto; }
 
 /* ====================TOUR PAGE */
-/* line 205, ../scss/style.scss */
+/* line 271, ../scss/style.scss */
 .tour-date, .tour-city, .tour-venue {
   outline: 1px solid black; }
-  /* line 207, ../scss/style.scss */
+  /* line 273, ../scss/style.scss */
   .tour-date h1, .tour-city h1, .tour-venue h1 {
     display: none; }
     @media (min-width: 30em) {
-      /* line 207, ../scss/style.scss */
+      /* line 273, ../scss/style.scss */
       .tour-date h1, .tour-city h1, .tour-venue h1 {
         display: block; } }
   @media (min-width: 30em) {
-    /* line 205, ../scss/style.scss */
+    /* line 271, ../scss/style.scss */
     .tour-date, .tour-city, .tour-venue {
       width: 32.53012%;
       float: left;
       margin-right: 1.20482%; } }
 
 @media (min-width: 30em) {
-  /* line 218, ../scss/style.scss */
+  /* line 284, ../scss/style.scss */
   .tour-venue {
     width: 32.53012%;
     float: right;
     margin-right: 0; } }
 
-/* line 225, ../scss/style.scss */
+/* line 291, ../scss/style.scss */
 .tour-date li:before {
   content: "DATE"; }
 
-/* line 231, ../scss/style.scss */
+/* line 297, ../scss/style.scss */
 .tour-city li:before {
   content: "CITY"; }
 
-/* line 237, ../scss/style.scss */
+/* line 303, ../scss/style.scss */
 .tour-venue li:before {
   content: "VENUE"; }
 
-/* line 242, ../scss/style.scss */
+/* line 308, ../scss/style.scss */
 .tour-date li, .tour-city li, .tour-venue li {
   text-align: right; }
-  /* line 243, ../scss/style.scss */
+  /* line 309, ../scss/style.scss */
   .tour-date li:before, .tour-city li:before, .tour-venue li:before {
     float: left; }
     @media (min-width: 30em) {
-      /* line 243, ../scss/style.scss */
+      /* line 309, ../scss/style.scss */
       .tour-date li:before, .tour-city li:before, .tour-venue li:before {
         display: none; } }
   @media (min-width: 30em) {
-    /* line 242, ../scss/style.scss */
+    /* line 308, ../scss/style.scss */
     .tour-date li, .tour-city li, .tour-venue li {
       text-align: center; } }
 
 /* ====================ALBUMS PAGE */
-/* line 256, ../scss/style.scss */
+/* line 322, ../scss/style.scss */
 .album-release {
   text-align: center; }
 
-/* line 261, ../scss/style.scss */
+/* line 327, ../scss/style.scss */
 .album-cover img {
   max-width: 100%;
   height: auto; }
   @media (min-width: 30em) {
-    /* line 261, ../scss/style.scss */
+    /* line 327, ../scss/style.scss */
     .album-cover img {
       max-width: 50%;
       width: 49.09091%;
@@ -298,30 +410,30 @@ nav {
       margin-right: 1.81818%; } }
 
 @media (min-width: 30em) {
-  /* line 271, ../scss/style.scss */
+  /* line 337, ../scss/style.scss */
   .album-blurb {
     width: 49.09091%;
     float: right;
     margin-right: 0; } }
 
-/* line 280, ../scss/style.scss */
+/* line 346, ../scss/style.scss */
 .album-tracklist .album-track {
   clear: both; }
-/* line 283, ../scss/style.scss */
+/* line 349, ../scss/style.scss */
 .album-tracklist .album-track-name {
   float: left; }
-/* line 286, ../scss/style.scss */
+/* line 352, ../scss/style.scss */
 .album-tracklist .album-track-duration {
   float: right; }
 @media (min-width: 30em) {
-  /* line 279, ../scss/style.scss */
+  /* line 345, ../scss/style.scss */
   .album-tracklist {
     clear: both;
     width: 49.09091%;
     float: left;
     margin-right: 1.81818%; } }
 
-/* line 296, ../scss/style.scss */
+/* line 362, ../scss/style.scss */
 .album-purchase a {
   outline: 1px solid black;
   display: block;
@@ -329,7 +441,7 @@ nav {
   margin: 0 auto;
   clear: both; }
 @media (min-width: 30em) {
-  /* line 295, ../scss/style.scss */
+  /* line 361, ../scss/style.scss */
   .album-purchase {
     width: 49.09091%;
     float: right;
@@ -337,23 +449,23 @@ nav {
     text-align: center; } }
 
 /* ====================CONTACT PAGE */
-/* line 311, ../scss/style.scss */
+/* line 377, ../scss/style.scss */
 .contact-block {
   text-align: center; }
   @media (min-width: 30em) {
-    /* line 313, ../scss/style.scss */
+    /* line 379, ../scss/style.scss */
     .contact-block .booking-us-can {
       width: 49.09091%;
       float: left;
       margin-right: 1.81818%; } }
   @media (min-width: 30em) {
-    /* line 318, ../scss/style.scss */
+    /* line 384, ../scss/style.scss */
     .contact-block .publicity-us, .contact-block .tour-press {
       width: 32%;
       float: left;
       margin-right: 1.81818%; } }
   @media (min-width: 30em) {
-    /* line 323, ../scss/style.scss */
+    /* line 389, ../scss/style.scss */
     .contact-block .publicity-uk-eu {
       width: 32%;
       float: right;
@@ -361,11 +473,25 @@ nav {
 
 /* ========================================STATES */
 /* ========================================THEMES */
-/* line 335, ../scss/style.scss */
+/* line 401, ../scss/style.scss */
 .main-content h1 {
   text-transform: uppercase; }
 
+/* ====================ACTIVE MENUS */
+/* line 411, ../scss/style.scss */
+.blog a.blog-nav,
+.tour a.tour-nav,
+.albums a.albums-nav,
+.media a.media-nav,
+.store a.store-nav,
+.contact a.contact-nav {
+  color: #6599b0; }
+
+/* line 415, ../scss/style.scss */
+.active {
+  border-bottom: 1px solid #c08a59; }
+
 /* ====================HOME PAGE */
-/* line 342, ../scss/style.scss */
+/* line 421, ../scss/style.scss */
 .home .main-content {
   background: url("../img/home_art.png") no-repeat bottom right; }

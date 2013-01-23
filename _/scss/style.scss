@@ -81,12 +81,6 @@ ul {
 
 
 /* ========================================LAYOUT */
-/* ====================NAV */
-nav {
-    outline:1px solid black;
-    text-align:center;
-    overflow:auto;
-}
 
 /* ====================CONTAINER */
 .main-content {
@@ -96,7 +90,6 @@ nav {
     min-height:100%;
     position:relative;
     padding-bottom: 3em;
-
     h1 {
         text-align:center;
     }
@@ -138,36 +131,57 @@ footer {
 nav {
     text-transform: uppercase;
     background:#111;
+    overflow:auto;
+    @include at-breakpoint($medium) {
+        text-align:center;
+    }
+    a {
+        font-size:3em;
+        @include at-breakpoint($medium) {
+            font-size:1em;
+        }
+    }
     .logo-nav {
         float:left;
         font-size:3em;
-        display:block;
+        margin-right:5px;
+        padding-top:0;
+        color: $orange;
         @include at-breakpoint($medium) {
             float:none;
             display:inline;
         }
     }
     .more-nav {
+        padding-right:$padding/2;
         @include at-breakpoint($medium) {
             display:none;
         }
     }
+
 }
 
 /* Hide irrelevant icons on small view */
-.tour .blog-nav, .tour .albums-nav, .tour .media-nav, .tour .store-nav, .tour .contact-nav {
+.blog .tour-nav, .blog .albums-nav, .blog .media-nav, .blog .store-nav, .blog .contact-nav,
+.tour .blog-nav, .tour .albums-nav, .tour .media-nav, .tour .store-nav, .tour .contact-nav,
+.albums .blog-nav, .albums .tour-nav, .albums .media-nav, .albums .store-nav, .albums .contact-nav,
+.media .blog-nav, .media .tour-nav, .media .albums-nav, .media .store-nav, .media .contact-nav,
+.store .blog-nav, .store .tour-nav, .store .albums-nav, .store .media-nav, .store .contact-nav,
+.contact .blog-nav, .contact .tour-nav, .contact .albums-nav, .contact .media-nav, .contact .store-nav {
     display:none;
     @include at-breakpoint($medium) {
         display:inline;
     }
 }
 
-// .inactive {
-//     display:none;
-//     @include at-breakpoint($medium) {
-//         display:inline;
-//     }
-// }
+/* Only show icons on small view */
+.hide {
+    position:absolute;
+    top:-99999px;
+    @include at-breakpoint($medium) {
+        position:static;
+    }
+}
 
 .more-nav {
     float:right;
@@ -175,13 +189,65 @@ nav {
 
 
 /* ====================PAGE NAV */
-    .page-nav {
-        text-align:center;
-        padding:1em 0;
-        a {
-
+.page-nav {
+    text-align:center;
+    padding:0 0 2em 0;
+    a {
+        background:#999;
+        display:block;
+        color:#111;
+        border-right:1px solid #111;
+        &:last-child {
+            border-right:none;
+        }
+        @include at-breakpoint($medium) {
+            background:none;
+            color:$white;
         }
     }
+    @include at-breakpoint($medium) {
+        padding:1.5em 0;
+    }
+}
+
+.tour .page-nav {
+    a {
+        width:25%;
+        float:left;
+        @include at-breakpoint($medium) {
+            @include container;
+                float:none;
+                width:auto;
+                display:inline-block;
+            }
+        }
+}
+
+.albums .page-nav {
+    a {
+        width:33.33%;
+        float:left;
+        @include at-breakpoint($medium) {
+            @include container;
+                float:none;
+                width:auto;
+                display:inline-block;
+            }
+    }
+}
+
+.media .page-nav {
+    a {
+        width:50%;
+        float:left;
+        @include at-breakpoint($medium) {
+            @include container;
+                float:none;
+                width:auto;
+                display:inline-block;
+            }
+    }
+}
 
 /* ====================BLOG */
 .post-date {
@@ -336,6 +402,19 @@ nav {
     text-transform: uppercase;
 }
 
+/* ====================ACTIVE MENUS */
+.blog a.blog-nav, 
+.tour a.tour-nav, 
+.albums a.albums-nav, 
+.media a.media-nav, 
+.store a.store-nav, 
+.contact a.contact-nav {
+        color: $blue;
+}
+
+.active {
+    border-bottom: 1px solid $orange;
+}
 
 /* ====================HOME PAGE */
 .home {
