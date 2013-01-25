@@ -39,6 +39,7 @@ body {
 a {
   text-decoration:none;
   color:#e6e6e6;
+  @include transition(color .2s);
 }
 
     a:focus {
@@ -110,8 +111,35 @@ footer {
     clear: both;
     position: relative;
     z-index: 10;
-    height: 3em;
+    height: 4em;
     margin-top: -3em;
+    a {
+        position: relative;
+        top:$smallpadding*2;
+        color:$lightblack;
+        font-size:2em;
+        @include span-columns(2, 12);
+        &:last-child {
+            @include span-columns(2 omega, 12);
+            @include at-breakpoint($medium) {
+                @include reset-columns;
+            }
+        }
+        &:hover {
+            color: lighten($lightblack, 20%);
+        }
+        @include at-breakpoint($medium) {
+            padding:0 $padding*2;
+           @include reset-columns;
+        }
+    }
+    .logo-footer {
+        font-size:1em;
+        @include span-columns(4, 12);
+        @include at-breakpoint($medium) {
+            @include reset-columns;
+        }
+    }
 }
 
 
