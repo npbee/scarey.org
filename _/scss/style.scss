@@ -131,9 +131,13 @@ footer {
     font-weight: normal;
     line-height: 1;
     -webkit-font-smoothing: antialiased;
-    @include at-breakpoint($medium) {
-        content:"";
-    }
+}
+
+/* Only show icons on small view */
+.hide {
+    position:absolute;
+    top:-99999px;
+    left:-99999px;
 }
 
 /* ====================BUTTONS */
@@ -156,6 +160,11 @@ nav {
     text-transform: uppercase;
     background:#111;
     overflow:auto;
+    [data-icon]:before {
+        @include at-breakpoint($medium) {
+            content:"";
+        }
+    }
     @include at-breakpoint($medium) {
         text-align:center;
     }
@@ -180,7 +189,11 @@ nav {
             display:none;
         }
     }
-
+    .hide {
+        @include at-breakpoint($medium) {
+            position:static;
+        }
+    }
 }
 
 /* Hide irrelevant icons on small view */
@@ -193,16 +206,6 @@ nav {
     display:none;
     @include at-breakpoint($medium) {
         display:inline;
-    }
-}
-
-/* Only show icons on small view */
-.hide {
-    position:absolute;
-    top:-99999px;
-    left:-99999px;
-    @include at-breakpoint($medium) {
-        position:static;
     }
 }
 
@@ -272,6 +275,12 @@ nav {
                 display:inline-block;
             }
     }
+}
+
+
+/* ====================FOOTER */
+footer {
+    text-align:center;
 }
 
 /* ====================BLOG */
