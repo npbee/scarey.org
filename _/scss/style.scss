@@ -1,3 +1,4 @@
+@import "compass/css3";
 @import "_mixins.scss";
 @import "susy";
 
@@ -20,7 +21,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 }
 
 html {
-    font-family: sans-serif; /* 1 */
     -webkit-text-size-adjust: 100%; /* 2 */
     -ms-text-size-adjust: 100%; /* 2 */
     height:100%;
@@ -30,10 +30,10 @@ body {
     margin: 0;
     height:100%;
     position:relative;
-    font-family: 'Open Sans', sans-serif;
-    font-weight:300;
+    font-family: "Raleway", sans-serif;
+    font-weight:100;
     background: url("../img/background.png");
-    color:#e6e6e6;
+    color:#cdcdcd;
 }
 
 a {
@@ -51,11 +51,15 @@ a {
     }
 
 h1 {
-    font-size: 2em;
+    font-size: 2.5em;
+    font-weight:300;
     margin: 0;
+    padding:0;
 }
 
 h2 {
+    font-size:1.8em;
+    font-weight:300;
     margin: 0;
 }
 
@@ -93,6 +97,11 @@ ul {
     h1 {
         text-align:center;
     }
+    p {
+        font-size:1.5em;
+        line-height:1.5em;
+        text-indent: 1.5em;
+    }
 
     @include at-breakpoint($medium) {
         @include container;
@@ -127,6 +136,23 @@ footer {
         content:"";
     }
 }
+
+/* ====================BUTTONS */
+.button {
+    font-size:2.5em;
+    background: $orange;
+    border-radius:3px;
+    color: $offblack;
+    padding:$padding/2;
+    text-align:center;
+    @include transition(background .2s);
+    &:hover {
+        background: darken($orange, 10%);
+    }
+}
+
+
+
 /* ====================HEADER */
 nav {
     text-transform: uppercase;
@@ -153,7 +179,7 @@ nav {
         }
     }
     .more-nav {
-        padding-right:$padding/2;
+        padding-right:$padding/4;
         @include at-breakpoint($medium) {
             display:none;
         }
@@ -178,6 +204,7 @@ nav {
 .hide {
     position:absolute;
     top:-99999px;
+    left:-99999px;
     @include at-breakpoint($medium) {
         position:static;
     }
@@ -191,10 +218,11 @@ nav {
 /* ====================PAGE NAV */
 .page-nav {
     text-align:center;
-    padding:0 0 2em 0;
+    margin-bottom:1em;
     a {
         background:#999;
         display:block;
+        padding:$padding;
         color:#111;
         border-right:1px solid #111;
         &:last-child {
@@ -203,6 +231,7 @@ nav {
         @include at-breakpoint($medium) {
             background:none;
             color:$white;
+            border-right:none;
         }
     }
     @include at-breakpoint($medium) {
@@ -225,7 +254,7 @@ nav {
 
 .albums .page-nav {
     a {
-        width:33.33%;
+        width:33%;
         float:left;
         @include at-breakpoint($medium) {
             @include container;
@@ -268,63 +297,79 @@ nav {
 
 
 /* ====================TOUR PAGE */
-.tour-date, .tour-city, .tour-venue {
-    outline:1px solid black;
+.tour-header {
+    clear:both;
     h1 {
         display:none;
         @include at-breakpoint($medium) {
-            display:block;
+            display:inline-block;
+            @include span-columns(4, 12);
+            &:last-child {
+                @include span-columns(4 omega, 12);
+            }
         }
     }
-    @include at-breakpoint($medium) {
-        @include span-columns(4,12);
-    }
 }
 
-.tour-venue {
-    @include at-breakpoint($medium) {
-        @include span-columns(4 omega, 12);
-    }
-}
-
-.tour-date li {
-    &:before {
-        content: "DATE";
-    }
-}
-
-.tour-city li {
-    &:before {
-        content: "CITY";
-    }
-}
-
-.tour-venue li {
-    &:before {
-        content: "VENUE";
-    }
-}
-
-.tour-date li, .tour-city li, .tour-venue li {
-    &:before {
-        float:left;
-        @include at-breakpoint($medium) {
-            display:none;
-        }
-    }
+.tour-entry {
+    clear:both;
+    width:100%;
+    padding:$padding 0;
     text-align:right;
     @include at-breakpoint($medium) {
         text-align:center;
     }
+    div {
+        margin:$padding 0;
+        @include at-breakpoint($medium) {
+            display:inline-block;
+            @include span-columns(4, 12);
+            &:last-child {
+                @include span-columns(4 omega, 12);
+            }
+        }
+    }
+    .tour-date, .tour-city, .tour-venue {
+        &:before {
+            float:left;
+            color:$blue;
+            @include at-breakpoint($medium) {
+                display:none;
+            }
+        }
+    }
+    .tour-date {
+        &:before {
+            content: "DATE";
+        }
+    }
+    .tour-city {
+        &:before {
+            content:"CITY";
+        }
+    }
+    .tour-venue {
+        &:before {
+            content:"VENUE";
+        }
+    }
 }
 
+
 /* ====================ALBUMS PAGE */
+.album-block {
+    h1 {
+        clear:both;
+    }
+}
 .album-release {
     text-align:center;
+    margin-bottom:2em;
 }
 
 .album-cover {
     img {
+        margin-bottom:2em;
         max-width:100%;
         height:auto;
         @include at-breakpoint($medium) {
@@ -335,6 +380,7 @@ nav {
 }
 
 .album-blurb {
+    padding-bottom:$padding*2;
     @include at-breakpoint($medium) {
         @include span-columns(4 omega, 8);
     }
@@ -343,8 +389,18 @@ nav {
 }
 
 .album-tracklist {
+    h2 {
+        background:#333333;
+        border-radius:3px 3px 0 0;
+        padding:$smallpadding;
+        border-bottom:1px solid $orange;
+        margin-bottom:$smallpadding;
+    }
     .album-track {
         clear:both;
+        font-size:1.3em;
+        overflow:auto;
+        margin:$smallpadding*2 0;
     }
     .album-track-name {
         float:left;
@@ -362,9 +418,13 @@ nav {
     a {
         outline:1px solid black;
         display:block;
-        width:90%;
-        margin:0 auto;
+        width:100%;
         clear:both;
+        margin:$padding 0;
+        @include at-breakpoint($medium) {
+            width:90%;
+            margin:0 auto $padding;
+        }
     }
     @include at-breakpoint($medium) {
         @include span-columns(4 omega, 8);
@@ -418,6 +478,11 @@ nav {
 
 /* ====================HOME PAGE */
 .home {
+    .logo-home {
+        float:left;
+        padding-top:10%;
+        font-size:10em;
+    }
     .main-content {
         background: url("../img/home_art.png") no-repeat bottom right;
     }
