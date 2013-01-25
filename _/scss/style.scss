@@ -51,14 +51,12 @@ a {
     }
 
 h1 {
-    font-size: 2.5em;
     font-weight:300;
     margin: 0;
     padding:0;
 }
 
 h2 {
-    font-size:1.8em;
     font-weight:300;
     margin: 0;
 }
@@ -89,16 +87,16 @@ ul {
 /* ====================CONTAINER */
 .main-content {
     @include container;
-    @include susy-grid-background;
+    //@include susy-grid-background;
 
     min-height:100%;
     position:relative;
     padding-bottom: 3em;
+    clear:both;
     h1 {
         text-align:center;
     }
     p {
-        font-size:1.5em;
         line-height:1.5em;
         text-indent: 1.5em;
     }
@@ -139,7 +137,6 @@ footer {
 
 /* ====================BUTTONS */
 .button {
-    font-size:2.5em;
     background: $orange;
     border-radius:3px;
     color: $offblack;
@@ -162,14 +159,12 @@ nav {
         text-align:center;
     }
     a {
-        font-size:3em;
         @include at-breakpoint($medium) {
-            font-size:1em;
+            padding:0 $padding/2;
         }
     }
     .logo-nav {
         float:left;
-        font-size:3em;
         margin-right:5px;
         padding-top:0;
         color: $orange;
@@ -220,11 +215,11 @@ nav {
     text-align:center;
     margin-bottom:1em;
     a {
-        background:#999;
+        background:#333;
         display:block;
         padding:$padding;
-        color:#111;
         border-right:1px solid #111;
+        line-height:.1em;
         &:last-child {
             border-right:none;
         }
@@ -398,7 +393,6 @@ nav {
     }
     .album-track {
         clear:both;
-        font-size:1.3em;
         overflow:auto;
         margin:$smallpadding*2 0;
     }
@@ -481,7 +475,6 @@ nav {
     .logo-home {
         float:left;
         padding-top:10%;
-        font-size:10em;
     }
     .main-content {
         background: url("../img/home_art.png") no-repeat bottom right;
