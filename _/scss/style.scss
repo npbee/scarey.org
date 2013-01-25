@@ -30,9 +30,8 @@ body {
     margin: 0;
     height:100%;
     position:relative;
-    font-family: "Raleway", sans-serif;
-    font-size:2em;
-    font-weight:100;
+    font-family: "Open Sans", sans-serif;
+    font-weight:300;
     background: url("../img/background.png");
     color:#cdcdcd;
 }
@@ -99,7 +98,9 @@ ul {
     }
     p {
         line-height:1.5em;
-        text-indent: 1.5em;
+        text-align: justify;
+        margin-bottom:1.5em;
+        font-size:1.3em;
     }
 
     @include at-breakpoint($medium) {
@@ -234,7 +235,6 @@ nav {
         }
     }
     @include at-breakpoint($medium) {
-        padding:1.5em 0;
     }
 }
 
@@ -306,6 +306,7 @@ footer {
     clear:both;
     h1 {
         display:none;
+        color: $blue;
         @include at-breakpoint($medium) {
             display:inline-block;
             @include span-columns(4, 12);
@@ -464,7 +465,6 @@ footer {
 
 /* ========================================THEMES */
 .main-content h1 {
-    text-transform: uppercase;
 }
 
 /* ====================ACTIVE MENUS */
