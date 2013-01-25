@@ -31,6 +31,7 @@ body {
     height:100%;
     position:relative;
     font-family: "Raleway", sans-serif;
+    font-size:2em;
     font-weight:100;
     background: url("../img/background.png");
     color:#cdcdcd;
@@ -91,7 +92,7 @@ ul {
 
     min-height:100%;
     position:relative;
-    padding-bottom: 3em;
+    padding-bottom: 6em;
     clear:both;
     h1 {
         text-align:center;
@@ -317,6 +318,7 @@ nav {
     div {
         margin:$padding 0;
         @include at-breakpoint($medium) {
+            margin:0;
             display:inline-block;
             @include span-columns(4, 12);
             &:last-child {

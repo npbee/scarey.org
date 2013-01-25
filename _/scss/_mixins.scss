@@ -2,6 +2,22 @@
 $medium : 40em 12;
 $large: 80em 12;
 
+@mixin breakpoint($point) {
+  @if $point == medium{
+    @media only screen and (max-width: 1260px){ @content; }
+  }
+  @if $point == small{
+    @media only screen and (max-width: 700px), 
+                    only screen and (max-device-width: 480px),
+                    only screen and (-webkit-min-device-pixel-ratio: 1.5),
+                    only screen and (-o-min-device-pixel-ratio: 3/2),
+                    only screen and (min--moz-device-pixel-ratio: 1.5),
+                    only screen and (min-device-pixel-ratio: 1.5)
+    {@content}
+  }
+}
+
+/* ========================================PADDINGS */
 $smallpadding: 5px;
 $padding: 1em;
 

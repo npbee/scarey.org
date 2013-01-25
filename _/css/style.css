@@ -1,4 +1,5 @@
 /* ========================================BREAKPOINTS */
+/* ========================================PADDINGS */
 /* ========================================MIXINS */
 @font-face {
   font-family: 'entypo';
@@ -30,49 +31,50 @@ body {
   height: 100%;
   position: relative;
   font-family: "Raleway", sans-serif;
+  font-size: 2em;
   font-weight: 100;
   background: url("../img/background.png");
   color: #cdcdcd; }
 
-/* line 39, ../scss/style.scss */
+/* line 40, ../scss/style.scss */
 a {
   text-decoration: none;
   color: #e6e6e6; }
 
-/* line 44, ../scss/style.scss */
+/* line 45, ../scss/style.scss */
 a:focus {
   outline: thin dotted; }
 
-/* line 49, ../scss/style.scss */
+/* line 50, ../scss/style.scss */
 a:active,
 a:hover {
   outline: 0; }
 
-/* line 53, ../scss/style.scss */
+/* line 54, ../scss/style.scss */
 h1 {
   font-weight: 300;
   margin: 0;
   padding: 0; }
 
-/* line 59, ../scss/style.scss */
+/* line 60, ../scss/style.scss */
 h2 {
   font-weight: 300;
   margin: 0; }
 
-/* line 64, ../scss/style.scss */
+/* line 65, ../scss/style.scss */
 p {
   margin: 0; }
 
-/* line 70, ../scss/style.scss */
+/* line 71, ../scss/style.scss */
 b,
 strong {
   font-weight: bold; }
 
-/* line 74, ../scss/style.scss */
+/* line 75, ../scss/style.scss */
 img {
   border: 0; }
 
-/* line 78, ../scss/style.scss */
+/* line 79, ../scss/style.scss */
 ul {
   list-style: none;
   margin: 0;
@@ -80,7 +82,7 @@ ul {
 
 /* ========================================LAYOUT */
 /* ====================CONTAINER */
-/* line 88, ../scss/style.scss */
+/* line 89, ../scss/style.scss */
 .main-content {
   *zoom: 1;
   max-width: 84em;
@@ -91,22 +93,22 @@ ul {
   margin-right: auto;
   min-height: 100%;
   position: relative;
-  padding-bottom: 3em;
+  padding-bottom: 6em;
   clear: both; }
   /* line 38, ../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
   .main-content:after {
     content: "";
     display: table;
     clear: both; }
-  /* line 96, ../scss/style.scss */
+  /* line 97, ../scss/style.scss */
   .main-content h1 {
     text-align: center; }
-  /* line 99, ../scss/style.scss */
+  /* line 100, ../scss/style.scss */
   .main-content p {
     line-height: 1.5em;
     text-indent: 1.5em; }
   @media (min-width: 40em) {
-    /* line 88, ../scss/style.scss */
+    /* line 89, ../scss/style.scss */
     .main-content {
       max-width: 84em;
       padding-left: 0.5em;
@@ -119,7 +121,7 @@ ul {
         display: table;
         clear: both; } }
   @media (min-width: 80em) {
-    /* line 88, ../scss/style.scss */
+    /* line 89, ../scss/style.scss */
     .main-content {
       max-width: 84em;
       padding-left: 0.5em;
@@ -133,7 +135,7 @@ ul {
         clear: both; } }
 
 /* ====================FOOTER */
-/* line 114, ../scss/style.scss */
+/* line 115, ../scss/style.scss */
 footer {
   clear: both;
   position: relative;
@@ -144,7 +146,7 @@ footer {
 
 /* ========================================MODULES */
 /* ====================FONT ICON */
-/* line 126, ../scss/style.scss */
+/* line 127, ../scss/style.scss */
 [data-icon]:before {
   font-family: 'entypo';
   content: attr(data-icon);
@@ -153,12 +155,12 @@ footer {
   line-height: 1;
   -webkit-font-smoothing: antialiased; }
   @media (min-width: 40em) {
-    /* line 126, ../scss/style.scss */
+    /* line 127, ../scss/style.scss */
     [data-icon]:before {
       content: ""; } }
 
 /* ====================BUTTONS */
-/* line 139, ../scss/style.scss */
+/* line 140, ../scss/style.scss */
 .button {
   background: #c08a59;
   border-radius: 3px;
@@ -169,45 +171,45 @@ footer {
   -moz-transition: background 0.2s;
   -o-transition: background 0.2s;
   transition: background 0.2s; }
-  /* line 146, ../scss/style.scss */
+  /* line 147, ../scss/style.scss */
   .button:hover {
     background: #a7703f; }
 
 /* ====================HEADER */
-/* line 154, ../scss/style.scss */
+/* line 155, ../scss/style.scss */
 nav {
   text-transform: uppercase;
   background: #111;
   overflow: auto; }
   @media (min-width: 40em) {
-    /* line 154, ../scss/style.scss */
+    /* line 155, ../scss/style.scss */
     nav {
       text-align: center; } }
   @media (min-width: 40em) {
-    /* line 161, ../scss/style.scss */
+    /* line 162, ../scss/style.scss */
     nav a {
       padding: 0 0.5em; } }
-  /* line 166, ../scss/style.scss */
+  /* line 167, ../scss/style.scss */
   nav .logo-nav {
     float: left;
     margin-right: 5px;
     padding-top: 0;
     color: #c08a59; }
     @media (min-width: 40em) {
-      /* line 166, ../scss/style.scss */
+      /* line 167, ../scss/style.scss */
       nav .logo-nav {
         float: none;
         display: inline; } }
-  /* line 176, ../scss/style.scss */
+  /* line 177, ../scss/style.scss */
   nav .more-nav {
     padding-right: 0.25em; }
     @media (min-width: 40em) {
-      /* line 176, ../scss/style.scss */
+      /* line 177, ../scss/style.scss */
       nav .more-nav {
         display: none; } }
 
 /* Hide irrelevant icons on small view */
-/* line 191, ../scss/style.scss */
+/* line 192, ../scss/style.scss */
 .blog .tour-nav, .blog .albums-nav, .blog .media-nav, .blog .store-nav, .blog .contact-nav,
 .tour .blog-nav, .tour .albums-nav, .tour .media-nav, .tour .store-nav, .tour .contact-nav,
 .albums .blog-nav, .albums .tour-nav, .albums .media-nav, .albums .store-nav, .albums .contact-nav,
@@ -216,7 +218,7 @@ nav {
 .contact .blog-nav, .contact .tour-nav, .contact .albums-nav, .contact .media-nav, .contact .store-nav {
   display: none; }
   @media (min-width: 40em) {
-    /* line 191, ../scss/style.scss */
+    /* line 192, ../scss/style.scss */
     .blog .tour-nav, .blog .albums-nav, .blog .media-nav, .blog .store-nav, .blog .contact-nav,
     .tour .blog-nav, .tour .albums-nav, .tour .media-nav, .tour .store-nav, .tour .contact-nav,
     .albums .blog-nav, .albums .tour-nav, .albums .media-nav, .albums .store-nav, .albums .contact-nav,
@@ -226,52 +228,52 @@ nav {
       display: inline; } }
 
 /* Only show icons on small view */
-/* line 199, ../scss/style.scss */
+/* line 200, ../scss/style.scss */
 .hide {
   position: absolute;
   top: -99999px;
   left: -99999px; }
   @media (min-width: 40em) {
-    /* line 199, ../scss/style.scss */
+    /* line 200, ../scss/style.scss */
     .hide {
       position: static; } }
 
-/* line 208, ../scss/style.scss */
+/* line 209, ../scss/style.scss */
 .more-nav {
   float: right; }
 
 /* ====================PAGE NAV */
-/* line 214, ../scss/style.scss */
+/* line 215, ../scss/style.scss */
 .page-nav {
   text-align: center;
   margin-bottom: 1em; }
-  /* line 217, ../scss/style.scss */
+  /* line 218, ../scss/style.scss */
   .page-nav a {
     background: #333;
     display: block;
     padding: 1em;
     border-right: 1px solid #111111;
     line-height: .1em; }
-    /* line 223, ../scss/style.scss */
+    /* line 224, ../scss/style.scss */
     .page-nav a:last-child {
       border-right: none; }
     @media (min-width: 40em) {
-      /* line 217, ../scss/style.scss */
+      /* line 218, ../scss/style.scss */
       .page-nav a {
         background: none;
         color: #e6e6e6;
         border-right: none; } }
   @media (min-width: 40em) {
-    /* line 214, ../scss/style.scss */
+    /* line 215, ../scss/style.scss */
     .page-nav {
       padding: 1.5em 0; } }
 
-/* line 238, ../scss/style.scss */
+/* line 239, ../scss/style.scss */
 .tour .page-nav a {
   width: 25%;
   float: left; }
   @media (min-width: 40em) {
-    /* line 238, ../scss/style.scss */
+    /* line 239, ../scss/style.scss */
     .tour .page-nav a {
       max-width: 84em;
       padding-left: 0.5em;
@@ -287,12 +289,12 @@ nav {
         display: table;
         clear: both; } }
 
-/* line 251, ../scss/style.scss */
+/* line 252, ../scss/style.scss */
 .albums .page-nav a {
   width: 33%;
   float: left; }
   @media (min-width: 40em) {
-    /* line 251, ../scss/style.scss */
+    /* line 252, ../scss/style.scss */
     .albums .page-nav a {
       max-width: 84em;
       padding-left: 0.5em;
@@ -308,12 +310,12 @@ nav {
         display: table;
         clear: both; } }
 
-/* line 264, ../scss/style.scss */
+/* line 265, ../scss/style.scss */
 .media .page-nav a {
   width: 50%;
   float: left; }
   @media (min-width: 40em) {
-    /* line 264, ../scss/style.scss */
+    /* line 265, ../scss/style.scss */
     .media .page-nav a {
       max-width: 84em;
       padding-left: 0.5em;
@@ -330,145 +332,146 @@ nav {
         clear: both; } }
 
 /* ====================BLOG */
-/* line 277, ../scss/style.scss */
+/* line 278, ../scss/style.scss */
 .post-date {
   float: left; }
 
-/* line 281, ../scss/style.scss */
+/* line 282, ../scss/style.scss */
 .post-time {
   float: right; }
 
-/* line 285, ../scss/style.scss */
+/* line 286, ../scss/style.scss */
 .postText {
   clear: both; }
-  /* line 287, ../scss/style.scss */
+  /* line 288, ../scss/style.scss */
   .postText img {
     max-width: 100%;
     height: auto; }
 
 /* ====================TOUR PAGE */
-/* line 295, ../scss/style.scss */
+/* line 296, ../scss/style.scss */
 .tour-header {
   clear: both; }
-  /* line 297, ../scss/style.scss */
+  /* line 298, ../scss/style.scss */
   .tour-header h1 {
     display: none; }
     @media (min-width: 40em) {
-      /* line 297, ../scss/style.scss */
+      /* line 298, ../scss/style.scss */
       .tour-header h1 {
         display: inline-block;
         width: 32.53012%;
         float: left;
         margin-right: 1.20482%; }
-        /* line 302, ../scss/style.scss */
+        /* line 303, ../scss/style.scss */
         .tour-header h1:last-child {
           width: 32.53012%;
           float: right;
           margin-right: 0; } }
 
-/* line 309, ../scss/style.scss */
+/* line 310, ../scss/style.scss */
 .tour-entry {
   clear: both;
   width: 100%;
   padding: 1em 0;
   text-align: right; }
   @media (min-width: 40em) {
-    /* line 309, ../scss/style.scss */
+    /* line 310, ../scss/style.scss */
     .tour-entry {
       text-align: center; } }
-  /* line 317, ../scss/style.scss */
+  /* line 318, ../scss/style.scss */
   .tour-entry div {
     margin: 1em 0; }
     @media (min-width: 40em) {
-      /* line 317, ../scss/style.scss */
+      /* line 318, ../scss/style.scss */
       .tour-entry div {
+        margin: 0;
         display: inline-block;
         width: 32.53012%;
         float: left;
         margin-right: 1.20482%; }
-        /* line 322, ../scss/style.scss */
+        /* line 324, ../scss/style.scss */
         .tour-entry div:last-child {
           width: 32.53012%;
           float: right;
           margin-right: 0; } }
-  /* line 328, ../scss/style.scss */
+  /* line 330, ../scss/style.scss */
   .tour-entry .tour-date:before, .tour-entry .tour-city:before, .tour-entry .tour-venue:before {
     float: left;
     color: #6599b0; }
     @media (min-width: 40em) {
-      /* line 328, ../scss/style.scss */
+      /* line 330, ../scss/style.scss */
       .tour-entry .tour-date:before, .tour-entry .tour-city:before, .tour-entry .tour-venue:before {
         display: none; } }
-  /* line 337, ../scss/style.scss */
+  /* line 339, ../scss/style.scss */
   .tour-entry .tour-date:before {
     content: "DATE"; }
-  /* line 342, ../scss/style.scss */
+  /* line 344, ../scss/style.scss */
   .tour-entry .tour-city:before {
     content: "CITY"; }
-  /* line 347, ../scss/style.scss */
+  /* line 349, ../scss/style.scss */
   .tour-entry .tour-venue:before {
     content: "VENUE"; }
 
 /* ====================ALBUMS PAGE */
-/* line 356, ../scss/style.scss */
+/* line 358, ../scss/style.scss */
 .album-block h1 {
   clear: both; }
 
-/* line 360, ../scss/style.scss */
+/* line 362, ../scss/style.scss */
 .album-release {
   text-align: center;
   margin-bottom: 2em; }
 
-/* line 366, ../scss/style.scss */
+/* line 368, ../scss/style.scss */
 .album-cover img {
   margin-bottom: 2em;
   max-width: 100%;
   height: auto; }
   @media (min-width: 40em) {
-    /* line 366, ../scss/style.scss */
+    /* line 368, ../scss/style.scss */
     .album-cover img {
       max-width: 50%;
       width: 49.09091%;
       float: left;
       margin-right: 1.81818%; } }
 
-/* line 377, ../scss/style.scss */
+/* line 379, ../scss/style.scss */
 .album-blurb {
   padding-bottom: 2em; }
   @media (min-width: 40em) {
-    /* line 377, ../scss/style.scss */
+    /* line 379, ../scss/style.scss */
     .album-blurb {
       width: 49.09091%;
       float: right;
       margin-right: 0; } }
 
-/* line 387, ../scss/style.scss */
+/* line 389, ../scss/style.scss */
 .album-tracklist h2 {
   background: #333333;
   border-radius: 3px 3px 0 0;
   padding: 5px;
   border-bottom: 1px solid #c08a59;
   margin-bottom: 5px; }
-/* line 394, ../scss/style.scss */
+/* line 396, ../scss/style.scss */
 .album-tracklist .album-track {
   clear: both;
   overflow: auto;
   margin: 10px 0; }
-/* line 399, ../scss/style.scss */
+/* line 401, ../scss/style.scss */
 .album-tracklist .album-track-name {
   float: left; }
-/* line 402, ../scss/style.scss */
+/* line 404, ../scss/style.scss */
 .album-tracklist .album-track-duration {
   float: right; }
 @media (min-width: 40em) {
-  /* line 386, ../scss/style.scss */
+  /* line 388, ../scss/style.scss */
   .album-tracklist {
     clear: both;
     width: 49.09091%;
     float: left;
     margin-right: 1.81818%; } }
 
-/* line 412, ../scss/style.scss */
+/* line 414, ../scss/style.scss */
 .album-purchase a {
   outline: 1px solid black;
   display: block;
@@ -476,12 +479,12 @@ nav {
   clear: both;
   margin: 1em 0; }
   @media (min-width: 40em) {
-    /* line 412, ../scss/style.scss */
+    /* line 414, ../scss/style.scss */
     .album-purchase a {
       width: 90%;
       margin: 0 auto 1em; } }
 @media (min-width: 40em) {
-  /* line 411, ../scss/style.scss */
+  /* line 413, ../scss/style.scss */
   .album-purchase {
     width: 49.09091%;
     float: right;
@@ -489,23 +492,23 @@ nav {
     text-align: center; } }
 
 /* ====================CONTACT PAGE */
-/* line 431, ../scss/style.scss */
+/* line 433, ../scss/style.scss */
 .contact-block {
   text-align: center; }
   @media (min-width: 40em) {
-    /* line 433, ../scss/style.scss */
+    /* line 435, ../scss/style.scss */
     .contact-block .booking-us-can {
       width: 49.09091%;
       float: left;
       margin-right: 1.81818%; } }
   @media (min-width: 40em) {
-    /* line 438, ../scss/style.scss */
+    /* line 440, ../scss/style.scss */
     .contact-block .publicity-us, .contact-block .tour-press {
       width: 32%;
       float: left;
       margin-right: 1.81818%; } }
   @media (min-width: 40em) {
-    /* line 443, ../scss/style.scss */
+    /* line 445, ../scss/style.scss */
     .contact-block .publicity-uk-eu {
       width: 32%;
       float: right;
@@ -513,12 +516,12 @@ nav {
 
 /* ========================================STATES */
 /* ========================================THEMES */
-/* line 455, ../scss/style.scss */
+/* line 457, ../scss/style.scss */
 .main-content h1 {
   text-transform: uppercase; }
 
 /* ====================ACTIVE MENUS */
-/* line 465, ../scss/style.scss */
+/* line 467, ../scss/style.scss */
 .blog a.blog-nav,
 .tour a.tour-nav,
 .albums a.albums-nav,
@@ -527,15 +530,15 @@ nav {
 .contact a.contact-nav {
   color: #6599b0; }
 
-/* line 469, ../scss/style.scss */
+/* line 471, ../scss/style.scss */
 .active {
   border-bottom: 1px solid #c08a59; }
 
 /* ====================HOME PAGE */
-/* line 475, ../scss/style.scss */
+/* line 477, ../scss/style.scss */
 .home .logo-home {
   float: left;
   padding-top: 10%; }
-/* line 479, ../scss/style.scss */
+/* line 481, ../scss/style.scss */
 .home .main-content {
   background: url("../img/home_art.png") no-repeat bottom right; }
