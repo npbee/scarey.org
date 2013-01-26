@@ -195,6 +195,7 @@ footer {
         font-size:2.5em;
         @include at-breakpoint($medium) {
             content:"";
+            font-size:1em;
         }
     }
     @include at-breakpoint($medium) {
@@ -310,6 +311,7 @@ footer {
         }
     }
     #main-nav-check:checked + #mobile-flyout {
+
             left:0;
             z-index:1;
     }
@@ -410,6 +412,7 @@ footer {
 
 
 /* ====================TOUR PAGE */
+
 .tour-header {
     clear:both;
     h1 {
