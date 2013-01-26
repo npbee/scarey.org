@@ -1,1 +1,1 @@
-$(function(){var e,t,n,r=$("#page-nav");r.append("<span id='magic-line'></span>");var i=$("#magic-line");i.width($(".active").width()).css("left",$(".active").position().left).data("origLeft",i.position().left).data("origWidth",i.width());$("#page-nav a").hover(function(){e=$(this);t=e.position().left;n=e.parent().width();i.stop().animate({left:t,width:n})},function(){i.stop().animate({left:i.data("origLeft"),width:i.data("origWidth")})})});
+$(function(){$(".more-nav").click(function(){$("#mobile-nav").toggleClass("open")})});

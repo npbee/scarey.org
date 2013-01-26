@@ -92,7 +92,7 @@ iframe {
 .main-content {
     @include container;
     //@include susy-grid-background;
-    
+
     min-height:100%;
     position:relative;
     padding-bottom: 6em;
@@ -184,7 +184,7 @@ footer {
 
 
 /* ====================HEADER */
-nav {
+.desktop-nav {
     text-transform: uppercase;
     background:#111;
     @include background-image(linear-gradient(#222, #222 30%, #111 70%, #111));
@@ -243,6 +243,38 @@ nav {
     float:right;
 }
 
+/* ====================MOBILE-NAV */
+.mobile-nav {
+    width:100%;
+    position:absolute;
+    left:-99999px;
+    @include transition(all .2s);
+    a {
+        display:block;
+        float:left;
+        width:50%;
+        padding:2em;
+        text-align:center;
+        background:#111;
+        border-right:1px solid #333;
+        &:nth-child(even) {
+            border-right:none;
+        }
+        border-top:1px solid #333;
+        &:nth-child(5), &:nth-child(6) {
+            border-bottom:1px solid #333;
+        }
+    }
+    [data-icon]:before {
+        font-size:4em;
+        display:block;
+    }
+}
+
+.open {
+    left:0;
+    z-index:1;
+}
 
 /* ====================PAGE NAV */
 .page-nav {
