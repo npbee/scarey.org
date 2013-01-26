@@ -306,6 +306,8 @@ footer {
             background:none;
             color:$white;
             border-right:none;
+            padding:$padding*2 0 $padding;
+            margin-bottom:$padding;
         }
     }
     @include at-breakpoint($medium) {
