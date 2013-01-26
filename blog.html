@@ -4,6 +4,7 @@
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# blog: http://ogp.me/ns/blog#">
     <meta charset="utf-8" />
     <title>S. Carey</title>
+    <meta name="viewport" content="width=device-width">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="_/css/style.css" />
   
@@ -23,12 +24,15 @@
             <h1 class="tumblr-postDate"><span class="post-date">January 14, 2013</span><span class="post-time">12:07 pm</span></h1>
 
             <div class="postText">
-                <div id="slider">
+                <div id="slider" class="slider">
                     <ul class="slides">
-                        <li style="display:block"><img src="_/img/blog-placeholder-image-1.jpg" /></li>
-                        <li style="display:none"><img src="_/img/blog-placeholder-image-2.jpg" /></li>
+                        <li><img src="_/img/blog-placeholder-image-1.jpg" /></li>
+                        <li><img src="_/img/blog-placeholder-image-2.jpg" /></li>
                     </ul>
                 </div>
+                <a href='' onclick='slider.prev();return false;'>prev</a> 
+                <a href='' onclick='slider.next();return false;'>next</a>
+                <span id="position"><em class="on">•</em><em class=" ">•</em><em class=" ">•</em></span>
             </div>
 
             <div class="caption">
@@ -43,12 +47,12 @@
             <div class="tumblr-postDate">1.07.2013 @ 10:00 am</div>
 
             <div class="postText">
-                <div class="flexslider">
+                <div class="slider">
                     <ul class="slides">
-                        <li style="display:block"><img src="_/img/blog-placeholder-image-3.jpg" /></li>
-                        <li style="display:none"><img src="_/img/blog-placeholder-image-4.jpg" /></li>
-                        <li style="display:none"><img src="_/img/blog-placeholder-image-5.jpg" /></li>
-                        <li style="display:none"><img src="_/img/blog-placeholder-image-6.jpg" /></li>
+                        <li><img src="_/img/blog-placeholder-image-3.jpg" /></li>
+                        <li><img src="_/img/blog-placeholder-image-4.jpg" /></li>
+                        <li><img src="_/img/blog-placeholder-image-5.jpg" /></li>
+                        <li><img src="_/img/blog-placeholder-image-6.jpg" /></li>
                     </ul>
                 </div>
             </div>
@@ -79,12 +83,4 @@
         style="display:none; border-width:0px; height:1px; width:1px;"/>
     </noscript>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-<script src="_/js/swipe.min.js"></script>
-<script>
-new Swipe(document.getElementById('slider'));
-new Swipe(document.getElementById('slider2'));
-var slider3 = new Swipe(document.getElementById('slider3'));
-var slider4 = new Swipe(document.getElementById('slider4'));
-</script>
 <?php include "_/php/footer.php" ?>

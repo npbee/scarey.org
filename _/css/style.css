@@ -226,8 +226,9 @@ footer {
   .button:hover {
     background: #a7703f; }
 
+/* ====================SLIDER */
 /* ====================HEADER */
-/* line 183, ../scss/style.scss */
+/* line 187, ../scss/style.scss */
 nav {
   text-transform: uppercase;
   background: #111;
@@ -239,42 +240,42 @@ nav {
   padding: 1em 0;
   overflow: auto; }
   @media (min-width: 40em) {
-    /* line 189, ../scss/style.scss */
+    /* line 193, ../scss/style.scss */
     nav [data-icon]:before {
       content: ""; } }
   @media (min-width: 40em) {
-    /* line 183, ../scss/style.scss */
+    /* line 187, ../scss/style.scss */
     nav {
       text-align: center; } }
   @media (min-width: 40em) {
-    /* line 197, ../scss/style.scss */
+    /* line 201, ../scss/style.scss */
     nav a {
       padding: 0 0.5em; } }
-  /* line 202, ../scss/style.scss */
+  /* line 206, ../scss/style.scss */
   nav .logo-nav {
     float: left;
     margin-right: 5px;
     padding-top: 0;
     color: #c08a59; }
     @media (min-width: 40em) {
-      /* line 202, ../scss/style.scss */
+      /* line 206, ../scss/style.scss */
       nav .logo-nav {
         float: none;
         display: inline; } }
-  /* line 212, ../scss/style.scss */
+  /* line 216, ../scss/style.scss */
   nav .more-nav {
     padding-right: 0.25em; }
     @media (min-width: 40em) {
-      /* line 212, ../scss/style.scss */
+      /* line 216, ../scss/style.scss */
       nav .more-nav {
         display: none; } }
   @media (min-width: 40em) {
-    /* line 218, ../scss/style.scss */
+    /* line 222, ../scss/style.scss */
     nav .hide {
       position: static; } }
 
 /* Hide irrelevant icons on small view */
-/* line 231, ../scss/style.scss */
+/* line 235, ../scss/style.scss */
 .blog .tour-nav, .blog .albums-nav, .blog .media-nav, .blog .store-nav, .blog .contact-nav,
 .tour .blog-nav, .tour .albums-nav, .tour .media-nav, .tour .store-nav, .tour .contact-nav,
 .albums .blog-nav, .albums .tour-nav, .albums .media-nav, .albums .store-nav, .albums .contact-nav,
@@ -283,7 +284,7 @@ nav {
 .contact .blog-nav, .contact .tour-nav, .contact .albums-nav, .contact .media-nav, .contact .store-nav {
   display: none; }
   @media (min-width: 40em) {
-    /* line 231, ../scss/style.scss */
+    /* line 235, ../scss/style.scss */
     .blog .tour-nav, .blog .albums-nav, .blog .media-nav, .blog .store-nav, .blog .contact-nav,
     .tour .blog-nav, .tour .albums-nav, .tour .media-nav, .tour .store-nav, .tour .contact-nav,
     .albums .blog-nav, .albums .tour-nav, .albums .media-nav, .albums .store-nav, .albums .contact-nav,
@@ -292,39 +293,39 @@ nav {
     .contact .blog-nav, .contact .tour-nav, .contact .albums-nav, .contact .media-nav, .contact .store-nav {
       display: inline; } }
 
-/* line 238, ../scss/style.scss */
+/* line 242, ../scss/style.scss */
 .more-nav {
   float: right; }
 
 /* ====================PAGE NAV */
-/* line 244, ../scss/style.scss */
+/* line 248, ../scss/style.scss */
 .page-nav {
   text-align: center;
   margin-bottom: 1em;
   overflow: auto; }
-  /* line 248, ../scss/style.scss */
+  /* line 252, ../scss/style.scss */
   .page-nav a {
     background: #333;
     display: block;
     padding: 1em;
     border-right: 1px solid #111111;
     line-height: .1em; }
-    /* line 254, ../scss/style.scss */
+    /* line 258, ../scss/style.scss */
     .page-nav a:last-child {
       border-right: none; }
     @media (min-width: 40em) {
-      /* line 248, ../scss/style.scss */
+      /* line 252, ../scss/style.scss */
       .page-nav a {
         background: none;
         color: #e6e6e6;
         border-right: none; } }
 
-/* line 268, ../scss/style.scss */
+/* line 272, ../scss/style.scss */
 .tour .page-nav a {
   width: 25%;
   float: left; }
   @media (min-width: 40em) {
-    /* line 268, ../scss/style.scss */
+    /* line 272, ../scss/style.scss */
     .tour .page-nav a {
       max-width: 84em;
       padding-left: 0.5em;
@@ -340,12 +341,12 @@ nav {
         display: table;
         clear: both; } }
 
-/* line 281, ../scss/style.scss */
+/* line 285, ../scss/style.scss */
 .albums .page-nav a {
   width: 33%;
   float: left; }
   @media (min-width: 40em) {
-    /* line 281, ../scss/style.scss */
+    /* line 285, ../scss/style.scss */
     .albums .page-nav a {
       max-width: 84em;
       padding-left: 0.5em;
@@ -361,12 +362,12 @@ nav {
         display: table;
         clear: both; } }
 
-/* line 294, ../scss/style.scss */
+/* line 298, ../scss/style.scss */
 .media .page-nav a {
   width: 50%;
   float: left; }
   @media (min-width: 40em) {
-    /* line 294, ../scss/style.scss */
+    /* line 298, ../scss/style.scss */
     .media .page-nav a {
       max-width: 84em;
       padding-left: 0.5em;
@@ -383,158 +384,157 @@ nav {
         clear: both; } }
 
 /* ====================FOOTER */
-/* line 308, ../scss/style.scss */
+/* line 312, ../scss/style.scss */
 footer {
   text-align: center;
   background: #111; }
 
 /* ====================BLOG */
-/* line 314, ../scss/style.scss */
+/* line 318, ../scss/style.scss */
 .post-date {
   float: left; }
 
-/* line 318, ../scss/style.scss */
+/* line 322, ../scss/style.scss */
 .post-time {
   float: right; }
 
-/* line 322, ../scss/style.scss */
+/* line 326, ../scss/style.scss */
 .postText {
   clear: both; }
-  /* line 324, ../scss/style.scss */
+  /* line 328, ../scss/style.scss */
   .postText img {
-    max-width: 100%;
-    height: auto; }
+    max-width: 100%; }
 
 /* ====================TOUR PAGE */
-/* line 332, ../scss/style.scss */
+/* line 335, ../scss/style.scss */
 .tour-header {
   clear: both; }
-  /* line 334, ../scss/style.scss */
+  /* line 337, ../scss/style.scss */
   .tour-header h1 {
     display: none;
     color: #6599b0; }
     @media (min-width: 40em) {
-      /* line 334, ../scss/style.scss */
+      /* line 337, ../scss/style.scss */
       .tour-header h1 {
         display: inline-block;
         width: 32.53012%;
         float: left;
         margin-right: 1.20482%; }
-        /* line 340, ../scss/style.scss */
+        /* line 343, ../scss/style.scss */
         .tour-header h1:last-child {
           width: 32.53012%;
           float: right;
           margin-right: 0; } }
 
-/* line 347, ../scss/style.scss */
+/* line 350, ../scss/style.scss */
 .tour-entry {
   clear: both;
   width: 100%;
   padding: 1em 0;
   text-align: right; }
   @media (min-width: 40em) {
-    /* line 347, ../scss/style.scss */
+    /* line 350, ../scss/style.scss */
     .tour-entry {
       text-align: center; } }
-  /* line 355, ../scss/style.scss */
+  /* line 358, ../scss/style.scss */
   .tour-entry div {
     margin: 1em 0; }
     @media (min-width: 40em) {
-      /* line 355, ../scss/style.scss */
+      /* line 358, ../scss/style.scss */
       .tour-entry div {
         margin: 0;
         display: inline-block;
         width: 32.53012%;
         float: left;
         margin-right: 1.20482%; }
-        /* line 361, ../scss/style.scss */
+        /* line 364, ../scss/style.scss */
         .tour-entry div:last-child {
           width: 32.53012%;
           float: right;
           margin-right: 0; } }
-  /* line 367, ../scss/style.scss */
+  /* line 370, ../scss/style.scss */
   .tour-entry .tour-date:before, .tour-entry .tour-city:before, .tour-entry .tour-venue:before {
     float: left;
     color: #6599b0; }
     @media (min-width: 40em) {
-      /* line 367, ../scss/style.scss */
+      /* line 370, ../scss/style.scss */
       .tour-entry .tour-date:before, .tour-entry .tour-city:before, .tour-entry .tour-venue:before {
         display: none; } }
-  /* line 376, ../scss/style.scss */
+  /* line 379, ../scss/style.scss */
   .tour-entry .tour-date:before {
     content: "DATE"; }
-  /* line 381, ../scss/style.scss */
+  /* line 384, ../scss/style.scss */
   .tour-entry .tour-city:before {
     content: "CITY"; }
-  /* line 386, ../scss/style.scss */
+  /* line 389, ../scss/style.scss */
   .tour-entry .tour-venue:before {
     content: "VENUE"; }
 
 /* ====================ALBUMS PAGE */
-/* line 395, ../scss/style.scss */
+/* line 398, ../scss/style.scss */
 .album-block h1 {
   clear: both; }
 
-/* line 399, ../scss/style.scss */
+/* line 402, ../scss/style.scss */
 .album-release {
   text-align: center;
   margin-bottom: 2em; }
 
-/* line 405, ../scss/style.scss */
+/* line 408, ../scss/style.scss */
 .album-cover img {
   margin-bottom: 2em;
   max-width: 100%;
   height: auto; }
   @media (min-width: 40em) {
-    /* line 405, ../scss/style.scss */
+    /* line 408, ../scss/style.scss */
     .album-cover img {
       max-width: 50%;
       width: 49.09091%;
       float: left;
       margin-right: 1.81818%; } }
 
-/* line 416, ../scss/style.scss */
+/* line 419, ../scss/style.scss */
 .album-blurb {
   padding-bottom: 2em; }
-  /* line 418, ../scss/style.scss */
+  /* line 421, ../scss/style.scss */
   .album-blurb p {
     line-height: 1.5em;
     text-align: justify;
     margin-bottom: 1.5em; }
   @media (min-width: 40em) {
-    /* line 416, ../scss/style.scss */
+    /* line 419, ../scss/style.scss */
     .album-blurb {
       width: 49.09091%;
       float: right;
       margin-right: 0; } }
 
-/* line 431, ../scss/style.scss */
+/* line 434, ../scss/style.scss */
 .album-tracklist h2 {
   background: #333333;
   border-radius: 3px 3px 0 0;
   padding: 5px;
   border-bottom: 1px solid #c08a59;
   margin-bottom: 5px; }
-/* line 438, ../scss/style.scss */
+/* line 441, ../scss/style.scss */
 .album-tracklist .album-track {
   clear: both;
   overflow: auto;
   margin: 10px 0; }
-/* line 443, ../scss/style.scss */
+/* line 446, ../scss/style.scss */
 .album-tracklist .album-track-name {
   float: left; }
-/* line 446, ../scss/style.scss */
+/* line 449, ../scss/style.scss */
 .album-tracklist .album-track-duration {
   float: right; }
 @media (min-width: 40em) {
-  /* line 430, ../scss/style.scss */
+  /* line 433, ../scss/style.scss */
   .album-tracklist {
     clear: both;
     width: 49.09091%;
     float: left;
     margin-right: 1.81818%; } }
 
-/* line 456, ../scss/style.scss */
+/* line 459, ../scss/style.scss */
 .album-purchase a {
   outline: 1px solid black;
   display: block;
@@ -542,12 +542,12 @@ footer {
   clear: both;
   margin: 1em 0; }
   @media (min-width: 40em) {
-    /* line 456, ../scss/style.scss */
+    /* line 459, ../scss/style.scss */
     .album-purchase a {
       width: 90%;
       margin: 0 auto 1em; } }
 @media (min-width: 40em) {
-  /* line 455, ../scss/style.scss */
+  /* line 458, ../scss/style.scss */
   .album-purchase {
     width: 49.09091%;
     float: right;
@@ -555,11 +555,11 @@ footer {
     text-align: center; } }
 
 /* ====================MEDIA PAGE */
-/* line 475, ../scss/style.scss */
+/* line 478, ../scss/style.scss */
 .audio-main iframe {
   width: 100%; }
 
-/* line 481, ../scss/style.scss */
+/* line 484, ../scss/style.scss */
 .video-main .video-wrapper {
   position: relative;
   padding-bottom: 56.25%;
@@ -567,7 +567,7 @@ footer {
   padding-top: 25px;
   height: 0;
   margin-bottom: 5em; }
-/* line 488, ../scss/style.scss */
+/* line 491, ../scss/style.scss */
 .video-main .video-wrapper iframe {
   position: absolute;
   top: 0;
@@ -576,31 +576,31 @@ footer {
   height: 100%; }
 
 /* ====================CONTACT PAGE */
-/* line 500, ../scss/style.scss */
+/* line 503, ../scss/style.scss */
 .contact-block {
   text-align: center;
   margin-bottom: 4em; }
-  /* line 503, ../scss/style.scss */
+  /* line 506, ../scss/style.scss */
   .contact-block div {
     margin-bottom: 1em; }
-  /* line 506, ../scss/style.scss */
+  /* line 509, ../scss/style.scss */
   .contact-block h1 {
     color: #6599b0;
     text-transform: uppercase; }
   @media (min-width: 40em) {
-    /* line 510, ../scss/style.scss */
+    /* line 513, ../scss/style.scss */
     .contact-block .booking-us-can {
       width: 49.09091%;
       float: left;
       margin-right: 1.81818%; } }
   @media (min-width: 40em) {
-    /* line 515, ../scss/style.scss */
+    /* line 518, ../scss/style.scss */
     .contact-block .publicity-us, .contact-block .tour-press {
       width: 32%;
       float: left;
       margin-right: 1.81818%; } }
   @media (min-width: 40em) {
-    /* line 520, ../scss/style.scss */
+    /* line 523, ../scss/style.scss */
     .contact-block .publicity-uk-eu {
       width: 32%;
       float: right;
@@ -609,7 +609,7 @@ footer {
 /* ========================================STATES */
 /* ========================================THEMES */
 /* ====================ACTIVE MENUS */
-/* line 541, ../scss/style.scss */
+/* line 544, ../scss/style.scss */
 .blog a.blog-nav,
 .tour a.tour-nav,
 .albums a.albums-nav,
@@ -618,18 +618,18 @@ footer {
 .contact a.contact-nav {
   color: #6599b0; }
 
-/* line 545, ../scss/style.scss */
+/* line 548, ../scss/style.scss */
 .active {
   border-bottom: 1px solid #c08a59; }
 
 /* ====================HOME PAGE */
-/* line 550, ../scss/style.scss */
+/* line 553, ../scss/style.scss */
 .home {
   overflow: hidden; }
-  /* line 552, ../scss/style.scss */
+  /* line 555, ../scss/style.scss */
   .home .logo-home {
     float: left;
     padding-top: 10%; }
-  /* line 556, ../scss/style.scss */
+  /* line 559, ../scss/style.scss */
   .home .main-content {
     background: url("../img/home_art.png") no-repeat right bottom; }
