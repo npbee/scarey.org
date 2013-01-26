@@ -298,8 +298,12 @@ footer {
     .contact .blog-nav, .contact .tour-nav, .contact .albums-nav, .contact .media-nav, .contact .store-nav {
       display: inline; } }
 
-/* ==========MOBILE-FLYOUT */
 /* line 246, ../scss/style.scss */
+.close-nav {
+  display: none; }
+
+/* ==========MOBILE-FLYOUT */
+/* line 251, ../scss/style.scss */
 .mobile-flyout {
   width: 100%;
   position: absolute;
@@ -308,7 +312,7 @@ footer {
   -moz-transition: all 0.2s;
   -o-transition: all 0.2s;
   transition: all 0.2s; }
-  /* line 251, ../scss/style.scss */
+  /* line 256, ../scss/style.scss */
   .mobile-flyout a {
     display: block;
     float: left;
@@ -318,37 +322,63 @@ footer {
     background: #111;
     border-right: 1px solid #333333;
     border-top: 1px solid #333333; }
-    /* line 259, ../scss/style.scss */
+    /* line 264, ../scss/style.scss */
     .mobile-flyout a:nth-child(even) {
       border-right: none; }
-    /* line 263, ../scss/style.scss */
+    /* line 268, ../scss/style.scss */
     .mobile-flyout a:nth-child(5), .mobile-flyout a:nth-child(6) {
       border-bottom: 1px solid #333333; }
-  /* line 267, ../scss/style.scss */
+  /* line 272, ../scss/style.scss */
   .mobile-flyout span {
     text-transform: uppercase; }
-  /* line 270, ../scss/style.scss */
+  /* line 275, ../scss/style.scss */
   .mobile-flyout [data-icon]:before {
     font-size: 4em;
     display: block;
     color: #333333; }
 
-/* line 277, ../scss/style.scss */
+/* line 282, ../scss/style.scss */
 .open {
   left: 0;
   z-index: 1; }
 
-/* line 282, ../scss/style.scss */
+/* line 287, ../scss/style.scss */
 .dark {
   opacity: .2; }
 
+/* line 291, ../scss/style.scss */
+.main-nav-check {
+  display: none; }
+
+/* line 295, ../scss/style.scss */
+.nojs-mobile-nav {
+  display: none; }
+
+/* line 300, ../scss/style.scss */
+.no-js .more-nav {
+  display: none; }
+/* line 303, ../scss/style.scss */
+.no-js .nojs-mobile-nav {
+  display: block;
+  float: right;
+  padding-right: 1em;
+  cursor: pointer; }
+  @media (min-width: 40em) {
+    /* line 303, ../scss/style.scss */
+    .no-js .nojs-mobile-nav {
+      display: none; } }
+/* line 312, ../scss/style.scss */
+.no-js #main-nav-check:checked + #mobile-flyout {
+  left: 0;
+  z-index: 1; }
+
 /* ====================PAGE NAV */
-/* line 287, ../scss/style.scss */
+/* line 319, ../scss/style.scss */
 .page-nav {
   text-align: center;
   margin-bottom: 1em;
   overflow: auto; }
-  /* line 291, ../scss/style.scss */
+  /* line 323, ../scss/style.scss */
   .page-nav a {
     background: #333;
     display: block;
@@ -356,10 +386,10 @@ footer {
     border-right: 1px solid #111111;
     border-bottom: 1px solid transparent;
     line-height: .1em; }
-    /* line 298, ../scss/style.scss */
+    /* line 330, ../scss/style.scss */
     .page-nav a:last-child {
       border-right: none; }
-    /* line 301, ../scss/style.scss */
+    /* line 333, ../scss/style.scss */
     .page-nav a:hover {
       border-bottom: 1px solid #c08a59;
       -webkit-transition: border 0.1s;
@@ -367,7 +397,7 @@ footer {
       -o-transition: border 0.1s;
       transition: border 0.1s; }
     @media (min-width: 40em) {
-      /* line 291, ../scss/style.scss */
+      /* line 323, ../scss/style.scss */
       .page-nav a {
         background: none;
         color: #e6e6e6;
@@ -375,12 +405,12 @@ footer {
         padding: 2em 0 1em;
         margin-bottom: 1em; } }
 
-/* line 318, ../scss/style.scss */
+/* line 350, ../scss/style.scss */
 .tour .page-nav a {
   width: 25%;
   float: left; }
   @media (min-width: 40em) {
-    /* line 318, ../scss/style.scss */
+    /* line 350, ../scss/style.scss */
     .tour .page-nav a {
       max-width: 84em;
       padding-left: 0.5em;
@@ -396,12 +426,12 @@ footer {
         display: table;
         clear: both; } }
 
-/* line 331, ../scss/style.scss */
+/* line 363, ../scss/style.scss */
 .albums .page-nav a {
   width: 33%;
   float: left; }
   @media (min-width: 40em) {
-    /* line 331, ../scss/style.scss */
+    /* line 363, ../scss/style.scss */
     .albums .page-nav a {
       max-width: 84em;
       padding-left: 0.5em;
@@ -417,12 +447,12 @@ footer {
         display: table;
         clear: both; } }
 
-/* line 344, ../scss/style.scss */
+/* line 376, ../scss/style.scss */
 .media .page-nav a {
   width: 50%;
   float: left; }
   @media (min-width: 40em) {
-    /* line 344, ../scss/style.scss */
+    /* line 376, ../scss/style.scss */
     .media .page-nav a {
       max-width: 84em;
       padding-left: 0.5em;
@@ -439,157 +469,157 @@ footer {
         clear: both; } }
 
 /* ====================FOOTER */
-/* line 358, ../scss/style.scss */
+/* line 390, ../scss/style.scss */
 footer {
   text-align: center;
   background: #111; }
 
 /* ====================BLOG */
-/* line 364, ../scss/style.scss */
+/* line 396, ../scss/style.scss */
 .post-date {
   float: left; }
 
-/* line 368, ../scss/style.scss */
+/* line 400, ../scss/style.scss */
 .post-time {
   float: right; }
 
-/* line 372, ../scss/style.scss */
+/* line 404, ../scss/style.scss */
 .postText {
   clear: both; }
-  /* line 374, ../scss/style.scss */
+  /* line 406, ../scss/style.scss */
   .postText img {
     max-width: 100%; }
 
 /* ====================TOUR PAGE */
-/* line 381, ../scss/style.scss */
+/* line 413, ../scss/style.scss */
 .tour-header {
   clear: both; }
-  /* line 383, ../scss/style.scss */
+  /* line 415, ../scss/style.scss */
   .tour-header h1 {
     display: none;
     color: #6599b0; }
     @media (min-width: 40em) {
-      /* line 383, ../scss/style.scss */
+      /* line 415, ../scss/style.scss */
       .tour-header h1 {
         display: inline-block;
         width: 32.53012%;
         float: left;
         margin-right: 1.20482%; }
-        /* line 389, ../scss/style.scss */
+        /* line 421, ../scss/style.scss */
         .tour-header h1:last-child {
           width: 32.53012%;
           float: right;
           margin-right: 0; } }
 
-/* line 396, ../scss/style.scss */
+/* line 428, ../scss/style.scss */
 .tour-entry {
   clear: both;
   width: 100%;
   padding: 1em 0;
   text-align: right; }
   @media (min-width: 40em) {
-    /* line 396, ../scss/style.scss */
+    /* line 428, ../scss/style.scss */
     .tour-entry {
       text-align: center; } }
-  /* line 404, ../scss/style.scss */
+  /* line 436, ../scss/style.scss */
   .tour-entry div {
     margin: 1em 0; }
     @media (min-width: 40em) {
-      /* line 404, ../scss/style.scss */
+      /* line 436, ../scss/style.scss */
       .tour-entry div {
         margin: 0;
         display: inline-block;
         width: 32.53012%;
         float: left;
         margin-right: 1.20482%; }
-        /* line 410, ../scss/style.scss */
+        /* line 442, ../scss/style.scss */
         .tour-entry div:last-child {
           width: 32.53012%;
           float: right;
           margin-right: 0; } }
-  /* line 416, ../scss/style.scss */
+  /* line 448, ../scss/style.scss */
   .tour-entry .tour-date:before, .tour-entry .tour-city:before, .tour-entry .tour-venue:before {
     float: left;
     color: #6599b0; }
     @media (min-width: 40em) {
-      /* line 416, ../scss/style.scss */
+      /* line 448, ../scss/style.scss */
       .tour-entry .tour-date:before, .tour-entry .tour-city:before, .tour-entry .tour-venue:before {
         display: none; } }
-  /* line 425, ../scss/style.scss */
+  /* line 457, ../scss/style.scss */
   .tour-entry .tour-date:before {
     content: "DATE"; }
-  /* line 430, ../scss/style.scss */
+  /* line 462, ../scss/style.scss */
   .tour-entry .tour-city:before {
     content: "CITY"; }
-  /* line 435, ../scss/style.scss */
+  /* line 467, ../scss/style.scss */
   .tour-entry .tour-venue:before {
     content: "VENUE"; }
 
 /* ====================ALBUMS PAGE */
-/* line 444, ../scss/style.scss */
+/* line 476, ../scss/style.scss */
 .album-block h1 {
   clear: both; }
 
-/* line 448, ../scss/style.scss */
+/* line 480, ../scss/style.scss */
 .album-release {
   text-align: center;
   margin-bottom: 2em; }
 
-/* line 454, ../scss/style.scss */
+/* line 486, ../scss/style.scss */
 .album-cover img {
   margin-bottom: 2em;
   max-width: 100%;
   height: auto; }
   @media (min-width: 40em) {
-    /* line 454, ../scss/style.scss */
+    /* line 486, ../scss/style.scss */
     .album-cover img {
       max-width: 50%;
       width: 49.09091%;
       float: left;
       margin-right: 1.81818%; } }
 
-/* line 465, ../scss/style.scss */
+/* line 497, ../scss/style.scss */
 .album-blurb {
   padding-bottom: 2em; }
-  /* line 467, ../scss/style.scss */
+  /* line 499, ../scss/style.scss */
   .album-blurb p {
     line-height: 1.5em;
     text-align: justify;
     margin-bottom: 1.5em; }
   @media (min-width: 40em) {
-    /* line 465, ../scss/style.scss */
+    /* line 497, ../scss/style.scss */
     .album-blurb {
       width: 49.09091%;
       float: right;
       margin-right: 0; } }
 
-/* line 480, ../scss/style.scss */
+/* line 512, ../scss/style.scss */
 .album-tracklist h2 {
   background: #333333;
   border-radius: 3px 3px 0 0;
   padding: 5px;
   border-bottom: 1px solid #c08a59;
   margin-bottom: 5px; }
-/* line 487, ../scss/style.scss */
+/* line 519, ../scss/style.scss */
 .album-tracklist .album-track {
   clear: both;
   overflow: auto;
   margin: 10px 0; }
-/* line 492, ../scss/style.scss */
+/* line 524, ../scss/style.scss */
 .album-tracklist .album-track-name {
   float: left; }
-/* line 495, ../scss/style.scss */
+/* line 527, ../scss/style.scss */
 .album-tracklist .album-track-duration {
   float: right; }
 @media (min-width: 40em) {
-  /* line 479, ../scss/style.scss */
+  /* line 511, ../scss/style.scss */
   .album-tracklist {
     clear: both;
     width: 49.09091%;
     float: left;
     margin-right: 1.81818%; } }
 
-/* line 505, ../scss/style.scss */
+/* line 537, ../scss/style.scss */
 .album-purchase a {
   outline: 1px solid black;
   display: block;
@@ -597,12 +627,12 @@ footer {
   clear: both;
   margin: 1em 0; }
   @media (min-width: 40em) {
-    /* line 505, ../scss/style.scss */
+    /* line 537, ../scss/style.scss */
     .album-purchase a {
       width: 90%;
       margin: 0 auto 1em; } }
 @media (min-width: 40em) {
-  /* line 504, ../scss/style.scss */
+  /* line 536, ../scss/style.scss */
   .album-purchase {
     width: 49.09091%;
     float: right;
@@ -610,11 +640,11 @@ footer {
     text-align: center; } }
 
 /* ====================MEDIA PAGE */
-/* line 524, ../scss/style.scss */
+/* line 556, ../scss/style.scss */
 .audio-main iframe {
   width: 100%; }
 
-/* line 530, ../scss/style.scss */
+/* line 562, ../scss/style.scss */
 .video-main .video-wrapper {
   position: relative;
   padding-bottom: 56.25%;
@@ -622,7 +652,7 @@ footer {
   padding-top: 25px;
   height: 0;
   margin-bottom: 5em; }
-/* line 537, ../scss/style.scss */
+/* line 569, ../scss/style.scss */
 .video-main .video-wrapper iframe {
   position: absolute;
   top: 0;
@@ -631,31 +661,31 @@ footer {
   height: 100%; }
 
 /* ====================CONTACT PAGE */
-/* line 549, ../scss/style.scss */
+/* line 581, ../scss/style.scss */
 .contact-block {
   text-align: center;
   margin-bottom: 4em; }
-  /* line 552, ../scss/style.scss */
+  /* line 584, ../scss/style.scss */
   .contact-block div {
     margin-bottom: 1em; }
-  /* line 555, ../scss/style.scss */
+  /* line 587, ../scss/style.scss */
   .contact-block h1 {
     color: #6599b0;
     text-transform: uppercase; }
   @media (min-width: 40em) {
-    /* line 559, ../scss/style.scss */
+    /* line 591, ../scss/style.scss */
     .contact-block .booking-us-can {
       width: 49.39759%;
       float: left;
       margin-right: 1.20482%; } }
   @media (min-width: 40em) {
-    /* line 564, ../scss/style.scss */
+    /* line 596, ../scss/style.scss */
     .contact-block .publicity-us, .contact-block .tour-press {
       width: 32.53012%;
       float: left;
       margin-right: 1.20482%; } }
   @media (min-width: 40em) {
-    /* line 569, ../scss/style.scss */
+    /* line 601, ../scss/style.scss */
     .contact-block .publicity-uk-eu {
       width: 32.53012%;
       float: right;
@@ -663,7 +693,7 @@ footer {
 
 /* ========================================STATES */
 /* ========================================THEMES */
-/* line 582, ../scss/style.scss */
+/* line 614, ../scss/style.scss */
 .main-content {
   -webkit-transition: opacity 0.2s;
   -moz-transition: opacity 0.2s;
@@ -671,7 +701,7 @@ footer {
   transition: opacity 0.2s; }
 
 /* ====================ACTIVE MENUS */
-/* line 592, ../scss/style.scss */
+/* line 624, ../scss/style.scss */
 .blog a.blog-nav,
 .tour a.tour-nav,
 .albums a.albums-nav,
@@ -680,18 +710,18 @@ footer {
 .contact a.contact-nav {
   color: #6599b0; }
 
-/* line 596, ../scss/style.scss */
+/* line 628, ../scss/style.scss */
 a.active {
   border-bottom: 1px solid #c08a59; }
 
 /* ====================HOME PAGE */
-/* line 601, ../scss/style.scss */
+/* line 633, ../scss/style.scss */
 .home {
   overflow: hidden; }
-  /* line 603, ../scss/style.scss */
+  /* line 635, ../scss/style.scss */
   .home .logo-home {
     float: left;
     padding-top: 10%; }
-  /* line 607, ../scss/style.scss */
+  /* line 639, ../scss/style.scss */
   .home .main-content {
     background: url("../img/home_art.png") no-repeat right bottom; }

@@ -242,6 +242,11 @@ footer {
     }
 }
 
+//Only for no-js
+.close-nav {
+    display:none;
+}
+
 /* ==========MOBILE-FLYOUT */
 .mobile-flyout {
     width:100%;
@@ -281,6 +286,33 @@ footer {
 
 .dark {
     opacity:.2;
+}
+
+.main-nav-check {
+    display:none;
+}
+
+.nojs-mobile-nav {
+    display:none;
+}
+
+.no-js {
+    .more-nav {
+        display:none;
+    }
+    .nojs-mobile-nav {
+        display:block;
+        float:right;
+        padding-right:$padding;
+        cursor: pointer;
+        @include at-breakpoint($medium) {
+            display:none;
+        }
+    }
+    #main-nav-check:checked + #mobile-flyout {
+            left:0;
+            z-index:1;
+    }
 }
 
 /* ====================PAGE NAV */
