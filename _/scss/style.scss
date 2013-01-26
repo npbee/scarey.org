@@ -92,7 +92,7 @@ iframe {
 .main-content {
     @include container;
     //@include susy-grid-background;
-
+    
     min-height:100%;
     position:relative;
     padding-bottom: 6em;
@@ -517,17 +517,17 @@ footer {
     }
     .booking-us-can {
         @include at-breakpoint($medium) {
-            @include span-columns(4, 8);
+            @include span-columns(6, 12);
         }
     }
     .publicity-us, .tour-press {
         @include at-breakpoint($medium) {
-            @include span-columns(2.6, 8);
+            @include span-columns(4, 12);
         }
     }
     .publicity-uk-eu {
         @include at-breakpoint($medium) {
-            @include span-columns(2.6 omega, 8);
+            @include span-columns(4 omega, 12);
         }
     }
 }

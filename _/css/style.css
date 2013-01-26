@@ -598,19 +598,19 @@ footer {
   @media (min-width: 40em) {
     /* line 518, ../scss/style.scss */
     .contact-block .booking-us-can {
-      width: 49.09091%;
+      width: 49.39759%;
       float: left;
-      margin-right: 1.81818%; } }
+      margin-right: 1.20482%; } }
   @media (min-width: 40em) {
     /* line 523, ../scss/style.scss */
     .contact-block .publicity-us, .contact-block .tour-press {
-      width: 32%;
+      width: 32.53012%;
       float: left;
-      margin-right: 1.81818%; } }
+      margin-right: 1.20482%; } }
   @media (min-width: 40em) {
     /* line 528, ../scss/style.scss */
     .contact-block .publicity-uk-eu {
-      width: 32%;
+      width: 32.53012%;
       float: right;
       margin-right: 0; } }
 
