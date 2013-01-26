@@ -254,9 +254,14 @@ nav {
         display:block;
         padding:$padding;
         border-right:1px solid #111;
+        border-bottom:1px solid transparent;
         line-height:.1em;
         &:last-child {
             border-right:none;
+        }
+        &:hover {
+            border-bottom:1px solid $orange;
+            @include transition(border .1s);
         }
         @include at-breakpoint($medium) {
             background:none;
@@ -545,7 +550,7 @@ footer {
         color: $blue;
 }
 
-.active {
+a.active {
     border-bottom: 1px solid $orange;
 }
 
