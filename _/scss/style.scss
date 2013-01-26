@@ -184,13 +184,15 @@ footer {
 
 
 /* ====================HEADER */
-.desktop-nav {
+/* ==========MAIN-NAV */
+.main-nav {
     text-transform: uppercase;
     background:#111;
     @include background-image(linear-gradient(#222, #222 30%, #111 70%, #111));
     padding:$padding 0;
     overflow:auto;
     [data-icon]:before {
+        font-size:2.5em;
         @include at-breakpoint($medium) {
             content:"";
         }
@@ -214,7 +216,8 @@ footer {
         }
     }
     .more-nav {
-        padding-right:$padding/4;
+        padding-right:$padding;
+        float:right;
         @include at-breakpoint($medium) {
             display:none;
         }
@@ -239,12 +242,8 @@ footer {
     }
 }
 
-.more-nav {
-    float:right;
-}
-
-/* ====================MOBILE-NAV */
-.mobile-nav {
+/* ==========MOBILE-FLYOUT */
+.mobile-flyout {
     width:100%;
     position:absolute;
     left:-99999px;
@@ -265,15 +264,23 @@ footer {
             border-bottom:1px solid #333;
         }
     }
+    span {
+        text-transform:uppercase;
+    }
     [data-icon]:before {
         font-size:4em;
         display:block;
+        color: $lightblack;
     }
 }
 
 .open {
     left:0;
     z-index:1;
+}
+
+.dark {
+    opacity:.2;
 }
 
 /* ====================PAGE NAV */
@@ -284,7 +291,7 @@ footer {
     a {
         background:#333;
         display:block;
-        padding:$padding;
+        padding:$padding*2;
         border-right:1px solid #111;
         border-bottom:1px solid transparent;
         line-height:.1em;
@@ -569,7 +576,9 @@ footer {
 
 
 /* ========================================THEMES */
-.main-content h1 {
+//Opacity transition for mobile menu
+.main-content  {
+    @include transition(opacity .2s);
 }
 
 /* ====================ACTIVE MENUS */

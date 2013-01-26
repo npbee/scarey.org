@@ -1,5 +1,7 @@
 $(function() {
     $(".more-nav").click(function() {
-        $("#mobile-nav").toggleClass("open");
+        $("#mobile-flyout").toggleClass("open");
+        $(".main-content").toggleClass("dark");
+        return false;
     });
 });
