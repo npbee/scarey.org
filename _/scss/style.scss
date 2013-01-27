@@ -13,6 +13,11 @@
     font-style: normal;
 }
 
+.wf-loading {
+    /* Hide the blog title and post titles while web fonts are loading */
+    visibility: hidden;
+  }
+
 /* ========================================BASE */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {display: block; }
 
@@ -33,7 +38,7 @@ html {
 
 body {
     margin: 0;
-    font-family: "Open Sans", sans-serif;
+    font-family: "brandon-grotesque", sans-serif;
     font-weight:300;
     background: url("../img/background.png");
     color:#cdcdcd;
@@ -55,7 +60,7 @@ a {
     }
 
 h1 {
-    font-weight:300;
+    font-weight:400;
     margin: 0;
     padding:0;
 }

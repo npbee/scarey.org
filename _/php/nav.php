@@ -19,5 +19,5 @@
 	<a class="contact-nav-mobile" data-icon="&#xe004;" aria-hidden="true" href="/contact"><span class="">Contact</span></a>
 </nav>
 <?php
-print strftime('%c');
+//print strftime('%c');
 ?>
