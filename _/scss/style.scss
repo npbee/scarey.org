@@ -60,18 +60,21 @@ a {
     }
 
 h1 {
-    font-weight:400;
+    font-weight:300;
+    font-size:3em;
     margin: 0;
     padding:0;
 }
 
 h2 {
     font-weight:300;
+    font-size:2em;
     margin: 0;
 }
 
 p {
     margin:0;
+    font-size:$regularfont;
 }
 
 
@@ -193,6 +196,7 @@ footer {
     color: $offblack;
     padding:$padding/2;
     text-align:center;
+    font-size:$regularfont;
     @include transition(background .2s);
     &:hover {
         background: darken($orange, 10%);
@@ -211,10 +215,11 @@ footer {
     text-transform: uppercase;
     background:#111;
     @include background-image(linear-gradient(#222, #222 30%, #111 70%, #111));
-    padding:$padding 0;
     overflow:auto;
     [data-icon]:before {
         font-size:2.5em;
+        display:inline-block;
+        margin-top:$smallpadding*3;
         @include at-breakpoint($medium) {
             content:"";
             font-size:1em;
@@ -233,6 +238,8 @@ footer {
         margin-right:5px;
         padding-top:0;
         color: $orange;
+        font-size:$largefont;
+        font-weight:100;
         @include at-breakpoint($medium) {
             float:none;
             display:inline;
@@ -294,6 +301,7 @@ footer {
     }
     span {
         text-transform:uppercase;
+        font-size:$regularfont;
     }
     [data-icon]:before {
         font-size:4em;
@@ -344,10 +352,11 @@ footer {
     text-align:center;
     margin-bottom:1em;
     overflow:auto;
+    font-size:1.3em;
     a {
         background:#333;
         display:block;
-        padding:$padding*2;
+        padding:$padding*2 0;
         border-right:1px solid #111;
         border-bottom:1px solid transparent;
         line-height:.1em;
@@ -455,6 +464,7 @@ footer {
     width:100%;
     padding:$padding 0;
     text-align:right;
+    font-size:$regularfont;
     @include at-breakpoint($medium) {
         text-align:center;
     }
@@ -522,9 +532,9 @@ footer {
 .album-blurb {
     padding-bottom:$padding*2;
      p {
-        line-height:1.5em;
+        line-height:$regularfont;
         text-align: justify;
-        margin-bottom:1.5em;
+        margin-bottom:$regularfont;
     }
     @include at-breakpoint($medium) {
         @include span-columns(4 omega, 8);
@@ -545,6 +555,7 @@ footer {
         clear:both;
         overflow:auto;
         margin:$smallpadding*2 0;
+        font-size:$regularfont;
     }
     .album-track-name {
         float:left;
@@ -560,7 +571,6 @@ footer {
 
 .album-purchase {
     a {
-        outline:1px solid black;
         display:block;
         width:100%;
         clear:both;
@@ -657,12 +667,57 @@ a.active {
 /* ====================HOME PAGE */
 .home {
     overflow: hidden;
-    .logo-home {
-        float:left;
-        padding-top:10%;
+    background:
+        url("../img/home_art.png") no-repeat right bottom,
+        url("../img/background.png") repeat;
+
+    /* ==========NAV*/
+    
+    .main-nav {
+        a {
+            @include span-columns(2, 12);
+            &:last-child {
+                @include span-columns(2 omega, 12);
+            }
+        }
+        .logo-nav, .more-nav {display:none;}
     }
-    .main-content {
-        background: url("../img/home_art.png") no-repeat right bottom;
+
+    .logo-home {
+        padding-top:4em;
+        width:100%;
+        @include at-breakpoint($medium) {
+            float:left;
+            text-align:left;
+        }
+    }
+
+    .social-home {
+        a {
+            @include span-columns(3, 12);
+            text-align:center;
+            &:last-child {
+                @include span-columns(3 omega, 12);
+                @include at-breakpoint($medium) {
+                    @include reset-columns;
+                }
+            }
+            color:darken($lightblack, 15%);
+            &:hover {
+                color:$orange;
+            }
+            @include at-breakpoint($medium) {
+                text-align:left;
+                @include reset-columns;
+                padding:0 $padding;
+                    &:first-child {
+                        padding-left:0;
+                    }
+            }
+        }
+         [data-icon]:before {
+            font-size:$largefont;
+         }
     }
 }
 
