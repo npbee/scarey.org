@@ -20,16 +20,19 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
     box-sizing: border-box;
 }
 
+html, body, .wrap {
+    padding:0;
+    margin:0;
+    height:100%;
+}
+
 html {
     -webkit-text-size-adjust: 100%; /* 2 */
     -ms-text-size-adjust: 100%; /* 2 */
-    height:100%;
 }
 
 body {
     margin: 0;
-    height:100%;
-    position:relative;
     font-family: "Open Sans", sans-serif;
     font-weight:300;
     background: url("../img/background.png");
@@ -87,16 +90,18 @@ iframe {
 }
 
 /* ========================================LAYOUT */
+/* ====================WRAP */
+body > .wrap {
+    height:auto;
+    min-height:100%;
+}
 
-/* ====================CONTAINER */
+/* ====================MAIN CONTENT */
 .main-content {
     @include container;
     //@include susy-grid-background;
-
-    min-height:100%;
-    position:relative;
-    padding-bottom: 6em;
     clear:both;
+    padding-bottom:6em;
     h1 {
         text-align:center;
     }
@@ -112,10 +117,10 @@ iframe {
 /* ====================FOOTER */
 footer {
     clear: both;
-    position: relative;
     z-index: 10;
-    height: 4em;
-    margin-top: -3em;
+    position:relative;
+    height:4em;
+    margin-top:-4em;
     a {
         position: relative;
         top:$smallpadding*2;
@@ -147,6 +152,18 @@ footer {
 
 
 /* ========================================MODULES */
+/* ====================CLEARFIX */
+.clearfix:after {content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;}
+.clearfix {display: inline-block;}
+/* Hides from IE-mac \*/
+* html .clearfix { height: 1%;}
+.clearfix {display: block;}
+/* End hide from IE-mac */
+
 /* ====================FONT ICON */
 [data-icon]:before {
     font-family: 'entypo';
