@@ -372,7 +372,6 @@ footer {
             color:$white;
             border-right:none;
             padding:$padding*2 0 $padding;
-            margin-bottom:$padding;
         }
     }
     @include at-breakpoint($medium) {
@@ -675,9 +674,18 @@ a.active {
     
     .main-nav {
         a {
-            @include span-columns(2, 12);
+            display:inline-block;
+            width:16%;
+            color:$lightblack;
+            text-align:center;
+            padding-bottom:$smallpadding;
             &:last-child {
-                @include span-columns(2 omega, 12);
+                float:right;
+            }
+            @include at-breakpoint($medium) {
+                color:$white;
+                width:auto;
+                padding:0 $padding/2;
             }
         }
         .logo-nav, .more-nav {display:none;}
