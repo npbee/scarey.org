@@ -220,7 +220,7 @@ footer {
 .main-nav {
     text-transform: uppercase;
     background:#111;
-    @include background-image(linear-gradient(#222, #222 30%, #111 70%, #111));
+    //@include background-image(linear-gradient(#222, #222 30%, #111 70%, #111));
     overflow:auto;
     [data-icon]:before {
         font-size:2em;
@@ -240,6 +240,7 @@ footer {
             padding:0 $padding/2;
             position:relative;
             top:-5px;
+            color:$grey;
         }
     }
     .logo-nav {
@@ -248,7 +249,6 @@ footer {
         padding-top:0;
         color: $orange;
         font-size:2em;
-        font-weight:100;
         top:0;
         @include at-breakpoint($medium) {
             font-size:2em;

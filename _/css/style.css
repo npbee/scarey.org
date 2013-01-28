@@ -280,11 +280,6 @@ footer {
 .main-nav {
   text-transform: uppercase;
   background: #111;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #222222), color-stop(30%, #222222), color-stop(70%, #111111), color-stop(100%, #111111));
-  background-image: -webkit-linear-gradient(#222222, #222222 30%, #111111 70%, #111111);
-  background-image: -moz-linear-gradient(#222222, #222222 30%, #111111 70%, #111111);
-  background-image: -o-linear-gradient(#222222, #222222 30%, #111111 70%, #111111);
-  background-image: linear-gradient(#222222, #222222 30%, #111111 70%, #111111);
   overflow: auto; }
   /* line 225, ../scss/style.scss */
   .main-nav [data-icon]:before {
@@ -308,18 +303,18 @@ footer {
       .main-nav a {
         padding: 0 0.5em;
         position: relative;
-        top: -5px; } }
-  /* line 245, ../scss/style.scss */
+        top: -5px;
+        color: #9a9a9a; } }
+  /* line 246, ../scss/style.scss */
   .main-nav .logo-nav {
     float: left;
     margin-right: 5px;
     padding-top: 0;
     color: #c08a59;
     font-size: 2em;
-    font-weight: 100;
     top: 0; }
     @media (min-width: 40em) {
-      /* line 245, ../scss/style.scss */
+      /* line 246, ../scss/style.scss */
       .main-nav .logo-nav {
         font-size: 2em;
         float: none;
