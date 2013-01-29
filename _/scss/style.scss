@@ -116,6 +116,7 @@ body > .wrap {
     //@include susy-grid-background;
     clear:both;
     padding-bottom:6em;
+    position:relative;
     h1 {
         text-align:center;
     }
@@ -675,19 +676,22 @@ footer {
 }
 
 /* ====================ACTIVE MENUS */
-.blog a.blog-nav, 
-.tour a.tour-nav, 
-.albums a.albums-nav, 
-.media a.media-nav, 
-.store a.store-nav, 
-.contact a.contact-nav {
-        color: $blue;
-}
+// .blog a.blog-nav, 
+// .tour a.tour-nav, 
+// .albums a.albums-nav, 
+// .media a.media-nav, 
+// .store a.store-nav, 
+// .contact a.contact-nav {
+//         color: $blue;
+// }
 
 a.active {
-    border-bottom: 1px solid $orange;
+    color:$blue;
 }
 
+a.page-active {
+    border-bottom:1px solid $orange;
+}
 /* ====================HOME PAGE */
 .home {
     overflow: hidden;
