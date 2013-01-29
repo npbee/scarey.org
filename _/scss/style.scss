@@ -61,7 +61,7 @@ a {
 
 h1 {
     font-weight:300;
-    font-size:2.2em;
+    font-size:3em;
     margin: 0;
     padding:0;
     @include at-breakpoint($medium) {
@@ -222,10 +222,11 @@ footer {
     background:#111;
     //@include background-image(linear-gradient(#222, #222 30%, #111 70%, #111));
     overflow:auto;
+    padding: $padding/2 0;
     [data-icon]:before {
-        font-size:2em;
+        font-size:2.5em;
         display:inline-block;
-        margin-top:$smallpadding;
+        margin-top:$smallpadding*1.5;
         @include at-breakpoint($medium) {
             content:"";
             font-size:1em;
@@ -246,9 +247,8 @@ footer {
     .logo-nav {
         float:left;
         margin-right:5px;
-        padding-top:0;
         color: $orange;
-        font-size:2em;
+        font-size:2.5em;
         top:0;
         @include at-breakpoint($medium) {
             font-size:2em;
@@ -257,9 +257,11 @@ footer {
         }
     }
     .more-nav {
-        padding-right:$padding;
+        padding:0 $padding;
         float:right;
         color:$lightblack;
+        border-left:1px solid #222;
+        margin-top:3px;
         @include at-breakpoint($medium) {
             display:none;
         }
@@ -686,50 +688,50 @@ a.active {
     /* ==========NAV*/
     
     .main-nav {
+        background: rgba(17,17,17,.8);
+        width:100%;
         a {
-            display:inline-block;
-            width:16%;
-            color:$lightblack;
+            display:block;
+            float:left;
+            width:50%;
+            padding:1em;
             text-align:center;
-            padding-bottom:$smallpadding;
-            &:last-child {
-                float:right;
+            color: $lightblack;
+            border-right:1px solid #333;
+            &:nth-child(2), &:nth-child(5), &:nth-child(7) {
+                border-right:none;
             }
-            @include at-breakpoint($medium) {
-                color:$white;
-                width:auto;
-                padding:0 $padding/2;
+            border-bottom:1px solid #333;
+            &:nth-child(6), &:nth-child(7) {
+                border-bottom:none;
             }
         }
+        [data-icon]:before {
+            font-size:4em;
+            display:block;
+            margin-bottom:$smallpadding;
+        }
+        .hide {position:static;font-size:2em;}
         .logo-nav, .more-nav {display:none;}
     }
 
     .logo-home {
-        padding-top:4em;
+        font-size:5em;
         width:100%;
         @include at-breakpoint($medium) {
-            float:left;
-            text-align:left;
         }
     }
 
     .social-home {
+        text-align:center;
+        margin-top:$padding*2;
         a {
-            @include span-columns(3, 12);
-            text-align:center;
-            &:last-child {
-                @include span-columns(3 omega, 12);
-                @include at-breakpoint($medium) {
-                    @include reset-columns;
-                }
-            }
             color:darken($lightblack, 15%);
+            padding:0 $padding;
             &:hover {
                 color:$orange;
             }
             @include at-breakpoint($medium) {
-                text-align:left;
-                @include reset-columns;
                 padding:0 $padding;
                     &:first-child {
                         padding-left:0;
