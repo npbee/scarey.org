@@ -41,7 +41,7 @@ body {
   font-family: "brandon-grotesque", sans-serif;
   font-weight: 300;
   background: url("../img/background.png");
-  color: #cdcdcd; }
+  color: #ababab; }
 
 /* line 47, ../scss/style.scss */
 a {
@@ -64,7 +64,7 @@ a:hover {
 /* line 62, ../scss/style.scss */
 h1 {
   font-weight: 300;
-  font-size: 3em;
+  font-size: 2.8em;
   margin: 0;
   padding: 0; }
   @media (min-width: 40em) {
@@ -117,10 +117,10 @@ body > .wrap {
 /* line 114, ../scss/style.scss */
 .main-content {
   *zoom: 1;
-  max-width: 84em;
-  _width: 84em;
-  padding-left: 0.5em;
-  padding-right: 0.5em;
+  max-width: 85em;
+  _width: 85em;
+  padding-left: 1em;
+  padding-right: 1em;
   margin-left: auto;
   margin-right: auto;
   clear: both;
@@ -136,9 +136,9 @@ body > .wrap {
   @media (min-width: 40em) {
     /* line 114, ../scss/style.scss */
     .main-content {
-      max-width: 84em;
-      padding-left: 0.5em;
-      padding-right: 0.5em;
+      max-width: 85em;
+      padding-left: 1em;
+      padding-right: 1em;
       margin-left: auto;
       margin-right: auto; }
       /* line 38, ../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
@@ -149,9 +149,9 @@ body > .wrap {
   @media (min-width: 80em) {
     /* line 114, ../scss/style.scss */
     .main-content {
-      max-width: 84em;
-      padding-left: 0.5em;
-      padding-right: 0.5em;
+      max-width: 85em;
+      padding-left: 1em;
+      padding-right: 1em;
       margin-left: auto;
       margin-right: auto; }
       /* line 38, ../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
@@ -197,7 +197,7 @@ footer {
     @media (min-width: 40em) {
       /* line 138, ../scss/style.scss */
       footer a {
-        padding: 0 2em;
+        padding: 0 1em;
         float: none;
         width: auto;
         margin-right: auto; } }
@@ -458,7 +458,7 @@ footer {
       /* line 370, ../scss/style.scss */
       .page-nav a {
         background: none;
-        color: #e6e6e6;
+        color: #ababab;
         border-right: none;
         padding: 2em 0 1em; } }
 
@@ -469,9 +469,9 @@ footer {
   @media (min-width: 40em) {
     /* line 396, ../scss/style.scss */
     .tour .page-nav a {
-      max-width: 84em;
-      padding-left: 0.5em;
-      padding-right: 0.5em;
+      max-width: 85em;
+      padding-left: 1em;
+      padding-right: 1em;
       margin-left: auto;
       margin-right: auto;
       float: none;
@@ -490,9 +490,9 @@ footer {
   @media (min-width: 40em) {
     /* line 409, ../scss/style.scss */
     .albums .page-nav a {
-      max-width: 84em;
-      padding-left: 0.5em;
-      padding-right: 0.5em;
+      max-width: 85em;
+      padding-left: 1em;
+      padding-right: 1em;
       margin-left: auto;
       margin-right: auto;
       float: none;
@@ -511,9 +511,9 @@ footer {
   @media (min-width: 40em) {
     /* line 422, ../scss/style.scss */
     .media .page-nav a {
-      max-width: 84em;
-      padding-left: 0.5em;
-      padding-right: 0.5em;
+      max-width: 85em;
+      padding-left: 1em;
+      padding-right: 1em;
       margin-left: auto;
       margin-right: auto;
       float: none;
@@ -623,74 +623,88 @@ footer {
   text-align: center;
   margin-bottom: 2em; }
 
-/* line 534, ../scss/style.scss */
-.album-cover img {
-  margin-bottom: 2em;
-  max-width: 100%;
-  height: auto; }
-  @media (min-width: 40em) {
-    /* line 534, ../scss/style.scss */
-    .album-cover img {
-      max-width: 50%;
-      width: 49.09091%;
-      float: left;
-      margin-right: 1.81818%; } }
+/* line 533, ../scss/style.scss */
+.album-cover {
+  text-align: center; }
+  /* line 535, ../scss/style.scss */
+  .album-cover img {
+    margin-bottom: 2em;
+    max-width: 100%;
+    height: auto; }
+    @media (min-width: 40em) {
+      /* line 535, ../scss/style.scss */
+      .album-cover img {
+        max-width: 75%;
+        margin: 0 auto;
+        margin-bottom: 2em; } }
+    @media (min-width: 80em) {
+      /* line 535, ../scss/style.scss */
+      .album-cover img {
+        margin-bottom: 3em;
+        max-width: 50%;
+        width: 49.09091%;
+        float: left;
+        margin-right: 1.81818%; } }
 
-/* line 545, ../scss/style.scss */
+/* line 552, ../scss/style.scss */
 .album-blurb {
   padding-bottom: 2em; }
-  /* line 547, ../scss/style.scss */
+  /* line 554, ../scss/style.scss */
   .album-blurb p {
     line-height: 1.5em;
     text-align: justify;
     margin-bottom: 1.5em; }
-  @media (min-width: 40em) {
-    /* line 545, ../scss/style.scss */
+  @media (min-width: 80em) {
+    /* line 552, ../scss/style.scss */
     .album-blurb {
       width: 49.09091%;
       float: right;
       margin-right: 0; } }
 
-/* line 560, ../scss/style.scss */
+/* line 567, ../scss/style.scss */
 .album-tracklist h2 {
   background: #333333;
   border-radius: 3px 3px 0 0;
   padding: 5px;
   border-bottom: 1px solid #c08a59;
   margin-bottom: 5px; }
-/* line 567, ../scss/style.scss */
+/* line 574, ../scss/style.scss */
 .album-tracklist .album-track {
   clear: both;
   overflow: auto;
   margin: 10px 0;
   font-size: 1.5em; }
-/* line 573, ../scss/style.scss */
+/* line 580, ../scss/style.scss */
 .album-tracklist .album-track-name {
   float: left; }
-/* line 576, ../scss/style.scss */
+/* line 583, ../scss/style.scss */
 .album-tracklist .album-track-duration {
   float: right; }
 @media (min-width: 40em) {
-  /* line 559, ../scss/style.scss */
+  /* line 566, ../scss/style.scss */
+  .album-tracklist {
+    margin-bottom: 2em; } }
+@media (min-width: 80em) {
+  /* line 566, ../scss/style.scss */
   .album-tracklist {
     clear: both;
     width: 49.09091%;
     float: left;
     margin-right: 1.81818%; } }
 
-/* line 586, ../scss/style.scss */
+/* line 596, ../scss/style.scss */
 .album-purchase a {
   display: block;
   width: 100%;
   clear: both;
   margin: 1em 0; }
   @media (min-width: 40em) {
-    /* line 586, ../scss/style.scss */
+    /* line 596, ../scss/style.scss */
     .album-purchase a {
       width: 90%;
-      margin: 0 auto 1em; } }
-@media (min-width: 40em) {
-  /* line 585, ../scss/style.scss */
+      margin: 0 auto 2em; } }
+@media (min-width: 80em) {
+  /* line 595, ../scss/style.scss */
   .album-purchase {
     width: 49.09091%;
     float: right;
@@ -698,11 +712,11 @@ footer {
     text-align: center; } }
 
 /* ====================MEDIA PAGE */
-/* line 604, ../scss/style.scss */
+/* line 614, ../scss/style.scss */
 .audio-main iframe {
   width: 100%; }
 
-/* line 610, ../scss/style.scss */
+/* line 620, ../scss/style.scss */
 .video-main .video-wrapper {
   position: relative;
   padding-bottom: 56.25%;
@@ -710,7 +724,7 @@ footer {
   padding-top: 25px;
   height: 0;
   margin-bottom: 5em; }
-/* line 617, ../scss/style.scss */
+/* line 627, ../scss/style.scss */
 .video-main .video-wrapper iframe {
   position: absolute;
   top: 0;
@@ -719,32 +733,32 @@ footer {
   height: 100%; }
 
 /* ====================CONTACT PAGE */
-/* line 629, ../scss/style.scss */
+/* line 639, ../scss/style.scss */
 .contact-block {
   text-align: center;
   margin-bottom: 4em;
   word-wrap: break-word; }
-  /* line 633, ../scss/style.scss */
+  /* line 643, ../scss/style.scss */
   .contact-block div {
     margin-bottom: 1em; }
-  /* line 636, ../scss/style.scss */
+  /* line 646, ../scss/style.scss */
   .contact-block h1 {
     color: #6599b0;
     text-transform: uppercase; }
   @media (min-width: 40em) {
-    /* line 640, ../scss/style.scss */
+    /* line 650, ../scss/style.scss */
     .contact-block .booking-us-can {
       width: 49.39759%;
       float: left;
       margin-right: 1.20482%; } }
   @media (min-width: 40em) {
-    /* line 645, ../scss/style.scss */
+    /* line 655, ../scss/style.scss */
     .contact-block .publicity-us, .contact-block .tour-press {
       width: 32.53012%;
       float: left;
       margin-right: 1.20482%; } }
   @media (min-width: 40em) {
-    /* line 650, ../scss/style.scss */
+    /* line 660, ../scss/style.scss */
     .contact-block .publicity-uk-eu {
       width: 32.53012%;
       float: right;
@@ -752,7 +766,7 @@ footer {
 
 /* ========================================STATES */
 /* ========================================THEMES */
-/* line 663, ../scss/style.scss */
+/* line 673, ../scss/style.scss */
 .main-content {
   -webkit-transition: opacity 0.2s;
   -moz-transition: opacity 0.2s;
@@ -760,7 +774,7 @@ footer {
   transition: opacity 0.2s; }
 
 /* ====================ACTIVE MENUS */
-/* line 673, ../scss/style.scss */
+/* line 683, ../scss/style.scss */
 .blog a.blog-nav,
 .tour a.tour-nav,
 .albums a.albums-nav,
@@ -769,21 +783,21 @@ footer {
 .contact a.contact-nav {
   color: #6599b0; }
 
-/* line 677, ../scss/style.scss */
+/* line 687, ../scss/style.scss */
 a.active {
   border-bottom: 1px solid #c08a59; }
 
 /* ====================HOME PAGE */
-/* line 682, ../scss/style.scss */
+/* line 692, ../scss/style.scss */
 .home {
   overflow: hidden;
   background: url("../img/home_art.png") no-repeat right bottom, url("../img/background.png") repeat;
   /* ==========NAV*/ }
-  /* line 690, ../scss/style.scss */
+  /* line 700, ../scss/style.scss */
   .home .main-nav {
     background: rgba(17, 17, 17, 0.8);
     width: 100%; }
-    /* line 693, ../scss/style.scss */
+    /* line 703, ../scss/style.scss */
     .home .main-nav a {
       display: block;
       float: left;
@@ -793,46 +807,66 @@ a.active {
       color: #333333;
       border-right: 1px solid #333333;
       border-bottom: 1px solid #333333; }
-      /* line 701, ../scss/style.scss */
+      /* line 711, ../scss/style.scss */
       .home .main-nav a:nth-child(2), .home .main-nav a:nth-child(5), .home .main-nav a:nth-child(7) {
         border-right: none; }
-      /* line 705, ../scss/style.scss */
+      /* line 715, ../scss/style.scss */
       .home .main-nav a:nth-child(6), .home .main-nav a:nth-child(7) {
         border-bottom: none; }
-    /* line 709, ../scss/style.scss */
+      /* line 718, ../scss/style.scss */
+      .home .main-nav a:hover {
+        color: #c08a59; }
+      @media (min-width: 40em) {
+        /* line 703, ../scss/style.scss */
+        .home .main-nav a {
+          display: inline-block;
+          width: auto;
+          border: none;
+          float: none; } }
+    /* line 728, ../scss/style.scss */
     .home .main-nav [data-icon]:before {
       font-size: 4em;
       display: block;
       margin-bottom: 5px; }
-    /* line 714, ../scss/style.scss */
+    /* line 733, ../scss/style.scss */
     .home .main-nav .hide {
       position: static;
       font-size: 2em; }
-    /* line 715, ../scss/style.scss */
+    /* line 734, ../scss/style.scss */
     .home .main-nav .logo-nav, .home .main-nav .more-nav {
       display: none; }
-  /* line 718, ../scss/style.scss */
+    @media (min-width: 40em) {
+      /* line 700, ../scss/style.scss */
+      .home .main-nav {
+        background: rgba(17, 17, 17, 0.5);
+        border-radius: 3px; } }
+  /* line 741, ../scss/style.scss */
   .home .logo-home {
-    font-size: 5em;
+    font-size: 4.5em;
+    font-weight: 100;
     width: 100%; }
-  /* line 725, ../scss/style.scss */
+    @media (min-width: 40em) {
+      /* line 741, ../scss/style.scss */
+      .home .logo-home {
+        font-size: 10em; } }
+  /* line 750, ../scss/style.scss */
   .home .social-home {
     text-align: center;
     margin-top: 2em; }
-    /* line 728, ../scss/style.scss */
+    /* line 753, ../scss/style.scss */
     .home .social-home a {
       color: #0d0d0d;
       padding: 0 1em; }
-      /* line 731, ../scss/style.scss */
+      /* line 756, ../scss/style.scss */
       .home .social-home a:hover {
         color: #c08a59; }
       @media (min-width: 40em) {
-        /* line 728, ../scss/style.scss */
+        /* line 753, ../scss/style.scss */
         .home .social-home a {
           padding: 0 1em; }
-          /* line 736, ../scss/style.scss */
+          /* line 761, ../scss/style.scss */
           .home .social-home a:first-child {
             padding-left: 0; } }
-    /* line 741, ../scss/style.scss */
+    /* line 766, ../scss/style.scss */
     .home .social-home [data-icon]:before {
       font-size: 3em; }

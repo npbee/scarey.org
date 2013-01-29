@@ -41,7 +41,7 @@ body {
     font-family: "brandon-grotesque", sans-serif;
     font-weight:300;
     background: url("../img/background.png");
-    color:#cdcdcd;
+    color:$white;
 }
 
 a {
@@ -61,7 +61,7 @@ a {
 
 h1 {
     font-weight:300;
-    font-size:3em;
+    font-size:2.8em;
     margin: 0;
     padding:0;
     @include at-breakpoint($medium) {
@@ -151,7 +151,7 @@ footer {
             color: lighten($lightblack, 20%);
         }
         @include at-breakpoint($medium) {
-            padding:0 $padding*2;
+            padding:0 $padding;
            @include reset-columns;
         }
     }
@@ -531,11 +531,18 @@ footer {
 }
 
 .album-cover {
+    text-align:center;
     img {
         margin-bottom:2em;
         max-width:100%;
         height:auto;
         @include at-breakpoint($medium) {
+            max-width:75%;
+            margin:0 auto;
+            margin-bottom:2em;
+        }
+        @include at-breakpoint($large) {
+            margin-bottom:3em;
             max-width:50%;
             @include span-columns(4, 8);
         }
@@ -549,7 +556,7 @@ footer {
         text-align: justify;
         margin-bottom:$regularfont;
     }
-    @include at-breakpoint($medium) {
+    @include at-breakpoint($large) {
         @include span-columns(4 omega, 8);
     }
     @include at-breakpoint($large) {
@@ -577,6 +584,9 @@ footer {
         float:right;
     }
     @include at-breakpoint($medium) {
+        margin-bottom: $padding*2;
+    }
+    @include at-breakpoint($large) {
         clear:both;
         @include span-columns(4, 8);
     }
@@ -590,10 +600,10 @@ footer {
         margin:$padding 0;
         @include at-breakpoint($medium) {
             width:90%;
-            margin:0 auto $padding;
+            margin:0 auto $padding*2;
         }
     }
-    @include at-breakpoint($medium) {
+    @include at-breakpoint($large) {
         @include span-columns(4 omega, 8);
         text-align:center;
     }
@@ -705,6 +715,15 @@ a.active {
             &:nth-child(6), &:nth-child(7) {
                 border-bottom:none;
             }
+            &:hover {
+                color:$orange;
+            }
+            @include at-breakpoint($medium) {
+                display:inline-block;
+                width:auto;
+                border:none;
+                float:none;
+            }
         }
         [data-icon]:before {
             font-size:4em;
@@ -713,12 +732,18 @@ a.active {
         }
         .hide {position:static;font-size:2em;}
         .logo-nav, .more-nav {display:none;}
+        @include at-breakpoint($medium) {
+            background: rgba(17,17,17,.5);
+            border-radius:3px;
+        }
     }
 
     .logo-home {
-        font-size:5em;
+        font-size:4.5em;
+        font-weight: 100;
         width:100%;
         @include at-breakpoint($medium) {
+            font-size:10em;
         }
     }
 
