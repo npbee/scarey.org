@@ -1,18 +1,8 @@
-$(function() {
-/* -----------------------------------------------
-MOBILE FLYOUT
------------------------------------------------- */
-    $(".more-nav").click(function() {
-        $("#mobile-flyout").toggleClass("open");
-        $(".main-content").toggleClass("dark");
-        return false;
-    });
-});
 
-// });
-// History.js It!
-// v1.0.1 - 30 September, 2012
-// https://gist.github.com/854622
+
+/* -----------------------------------------------
+HISTORY
+------------------------------------------------ */
 
 (function(window,undefined){
     
@@ -123,8 +113,9 @@ MOBILE FLYOUT
             $body.addClass('loading');
  
             $("#main-content").animate({
-                "left": "100%"
-            }, 600, "easeInOutExpo", function () {
+                "left": "100%",
+                "opacity": 0
+            }, 300, "easeOutExpo", function () {
                 doAjax();
             });
             
@@ -180,8 +171,9 @@ MOBILE FLYOUT
 
                         // Page transitions
                             $("#main-content").animate({
-                                "left": "0%"
-                            }, 600, "easeOutExpo");
+                                "left": "0%",
+                                "opacity": 1
+                            });
      
                         // Complete the change
                         if ( $body.ScrollTo||false ) { $body.ScrollTo(scrollOptions); } /* http://balupton.com/projects/jquery-scrollto */
@@ -212,3 +204,14 @@ MOBILE FLYOUT
     }); // end onDomLoad
  
 })(window); // end closure
+
+$(function() {
+/* -----------------------------------------------
+MOBILE FLYOUT
+------------------------------------------------ */
+    $(".more-nav").click(function() {
+        $("#mobile-flyout").toggleClass("open");
+        $(".main-content").toggleClass("dark");
+        return false;
+    });
+});
