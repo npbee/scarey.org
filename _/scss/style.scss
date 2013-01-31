@@ -667,10 +667,7 @@ footer {
 
 
 /* ========================================STATES */
-.changing {
-    opacity:0;
-    @include transition(opacity 0.5s);
-}
+
 
 /* ========================================THEMES */
 //Opacity transition for mobile menu

@@ -78,7 +78,7 @@ HISTORY
             var $this = $(this);
 
             // Ajaxify
-            $this.find('a:internal:not(.no-ajaxy)').click(function(event){
+            $this.find('.page-nav a').click(function(event){
                 // Prepare
                 var
                     $this = $(this),
@@ -113,7 +113,7 @@ HISTORY
             $body.addClass('loading');
  
             $("#main-content").animate({
-                "left": "100%",
+                "left" : "100%",
                 "opacity": 0
             }, 600, "easeOutExpo", function () {
                 doAjax();
@@ -145,14 +145,12 @@ HISTORY
                         }
 
                         // Update the menu
-                        $menuChildren = $menu.find(menuChildrenSelector);
-                        $menuChildren.filter(activeSelector).removeClass(activeClass);
-                        $menuChildren = $menuChildren.has('a[href^="' + relativeUrl + '"],a[href^="/' + relativeUrl + '"],a[href^="' + url + '"]');
-                        if ($menuChildren.length === 1) {
-                            $menuChildren.addClass(activeClass);
-                        } else if (window.location.pathname === "/") {
-                            $("#home-link").addClass("active");
-                        }
+                        // $menuChildren = $menu.find(menuChildrenSelector);
+                        // $menuChildren.filter(activeSelector).removeClass(activeClass);
+                        // $menuChildren = $menuChildren.has('a[href^="' + relativeUrl + '"],a[href^="/' + relativeUrl + '"],a[href^="' + url + '"]');
+                        // if ($menuChildren.length === 1) {
+                        //     $menuChildren.addClass(activeClass);
+                        // }
 
                         // Update the content
                         $content.html(contentHtml).ajaxify();
@@ -183,17 +181,10 @@ HISTORY
                         }
                         
                         // Page transitions
-                        $("#main-content").css("left", "-100px").delay(100).animate({
+                        $("#main-content").css("left", "-20px").delay(100).animate({
                             "left": 0,
                             "opacity": 1
                         }, 600, "easeOutExpo");
-
-                        $("#footer").css("left", "-100px").animate({
-                            "left": 0,
-                            "opacity": 1
-                        }, 500, "easeOutExpo", function(){
-                            scrollTo("logo", 0);
-                        });
 
                         // Complete the change
                         $body.removeClass('loading');
@@ -214,11 +205,17 @@ HISTORY
 /* -----------------------------------------------
 MOBILE FLYOUT
 ------------------------------------------------ */
-var navFly = $(function() {
-    $(".more-nav").click(function() {
-        $("#mobile-flyout").toggleClass("open");
-        $(".main-content").toggleClass("dark");
-        return false;
-    });
+var navFly = {
+    init: function() {
+        $(".more-nav").click(function() {
+            $("#mobile-flyout").toggleClass("open");
+            $(".main-content").toggleClass("dark");
+            return false;
+        });
+    }
+};
+
+$(function() {
+    navFly.init();
 });
 
