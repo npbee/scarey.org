@@ -174,6 +174,7 @@ HISTORY
                         
 
                         $("#main-content").css({
+                            "left" : 0,
                             "opacity" : 1
                         });
 
@@ -211,7 +212,8 @@ PAGE INITS
 ------------------------------------------------ */
 $(document).ready(function() {
     $("#main-content").css({
-        "opacity" : 1
+        "opacity" : 1,
+        "left" : 0
     });
 
     $(".more-nav").click(function() {

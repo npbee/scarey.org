@@ -118,6 +118,7 @@ body > .wrap {
     padding-bottom:6em;
     position:relative;
     opacity:0;
+    left:-100px;
     h1 {
         text-align:center;
     }
@@ -131,6 +132,7 @@ body > .wrap {
 }
 
 .no-js .main-content {
+    left: 0 !important;
     opacity: 1 !important; //for no-js users
 }
 
@@ -678,7 +680,10 @@ footer {
 /* ========================================THEMES */
 //Opacity transition for mobile menu & state changes
 .main-content  {
-    @include transition(left 200ms, opacity 200ms, right 200ms);
+     -webkit-transform: translateZ(0);
+    @include transition(all 200ms);
+
+
 }
 
 /* ====================ACTIVE MENUS */
