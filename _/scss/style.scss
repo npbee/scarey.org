@@ -38,7 +38,7 @@ html {
 
 body {
     margin: 0;
-    font-family: "brandon-grotesque", sans-serif;
+    font-family: "brandon-grotesque", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-weight:300;
     background: url("../img/background.png");
     color:$white;
@@ -117,6 +117,7 @@ body > .wrap {
     clear:both;
     padding-bottom:6em;
     position:relative;
+    opacity:0;
     h1 {
         text-align:center;
     }
@@ -127,6 +128,10 @@ body > .wrap {
     @include at-breakpoint($large) {
         @include container;
     }
+}
+
+.no-js .main-content {
+    opacity: 1 !important; //for no-js users
 }
 
 /* ====================FOOTER */
@@ -668,11 +673,10 @@ footer {
 
 /* ========================================STATES */
 
-
 /* ========================================THEMES */
-//Opacity transition for mobile menu
+//Opacity transition for mobile menu & state changes
 .main-content  {
-    @include transition(opacity .2s);
+    @include transition(left 200ms, opacity 200ms, right 200ms);
 }
 
 /* ====================ACTIVE MENUS */
