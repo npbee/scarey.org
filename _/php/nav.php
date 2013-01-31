@@ -18,6 +18,3 @@
 	<a class="store-nav-mobile" data-icon="&#xe005;" aria-hidden="true" href="/store"><span class="">Store</span></a>
 	<a class="contact-nav-mobile" data-icon="&#xe004;" aria-hidden="true" href="/contact"><span class="">Contact</span></a>
 </nav>
-<?php
-print strftime('%c');
-?>

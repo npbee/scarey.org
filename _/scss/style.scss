@@ -530,6 +530,10 @@ footer {
     h1 {
         clear:both;
     }
+    @include at-breakpoint($medium) {
+        max-width:90%;
+        margin: 0 auto;
+    }
 }
 .album-release {
     text-align:center;
@@ -543,8 +547,6 @@ footer {
         max-width:100%;
         height:auto;
         @include at-breakpoint($medium) {
-            max-width:75%;
-            margin:0 auto;
             margin-bottom:2em;
         }
         @include at-breakpoint($large) {
@@ -605,7 +607,7 @@ footer {
         clear:both;
         margin:$padding 0;
         @include at-breakpoint($medium) {
-            width:90%;
+            width:100%;
             margin:0 auto $padding*2;
         }
     }
@@ -680,14 +682,14 @@ footer {
 }
 
 /* ====================ACTIVE MENUS */
-// .blog a.blog-nav, 
-// .tour a.tour-nav, 
-// .albums a.albums-nav, 
-// .media a.media-nav, 
-// .store a.store-nav, 
-// .contact a.contact-nav {
-//         color: $blue;
-// }
+.blog a.blog-nav, 
+.tour a.tour-nav, 
+.albums a.albums-nav, 
+.media a.media-nav, 
+.store a.store-nav, 
+.contact a.contact-nav {
+        color: $blue;
+}
 
 a.active {
     color:$blue;
