@@ -76,7 +76,7 @@ HISTORY
         $.fn.ajaxify = function(){
             // Prepare
             var $this = $(this);
-            
+
             // Ajaxify
             $this.find('a:internal:not(.no-ajaxy)').click(function(event){
                 // Prepare
@@ -115,88 +115,94 @@ HISTORY
             $("#main-content").animate({
                 "left": "100%",
                 "opacity": 0
-            }, 300, "easeOutExpo", function () {
+            }, 600, "easeOutExpo", function () {
                 doAjax();
             });
             
             // Ajax Request the Traditional Page
             function doAjax() {
+                // Ajax Request the Traditional Page
                 $.ajax({
                     url: url,
-                    success: function(data, textStatus, jqXHR){
+                    success: function (data, textStatus, jqXHR) {
                         // Prepare
-                        var
-                            $data = $(documentHtml(data)),
+                        var $data = $(documentHtml(data)),
                             $dataBody = $data.find('.document-body:first'),
                             $dataContent = $dataBody.find(contentSelector).filter(':first'),
                             $menuChildren, contentHtml, $scripts;
-                        
+
                         // Fetch the scripts
                         $scripts = $dataContent.find('.document-script');
-                        if ( $scripts.length ) {
+                        if ($scripts.length) {
                             $scripts.detach();
                         }
-     
+
                         // Fetch the content
-                        contentHtml = $dataContent.html()||$data.html();
-                        if ( !contentHtml ) {
+                        contentHtml = $dataContent.html() || $data.html();
+                        if (!contentHtml) {
                             document.location.href = url;
                             return false;
                         }
-                        
+
                         // Update the menu
                         $menuChildren = $menu.find(menuChildrenSelector);
                         $menuChildren.filter(activeSelector).removeClass(activeClass);
-                        $menuChildren = $menuChildren.has('a[href^="'+relativeUrl+'"],a[href^="/'+relativeUrl+'"],a[href^="'+url+'"]');
-                        if ( $menuChildren.length === 1 ) { $menuChildren.addClass(activeClass); }
-     
+                        $menuChildren = $menuChildren.has('a[href^="' + relativeUrl + '"],a[href^="/' + relativeUrl + '"],a[href^="' + url + '"]');
+                        if ($menuChildren.length === 1) {
+                            $menuChildren.addClass(activeClass);
+                        } else if (window.location.pathname === "/") {
+                            $("#home-link").addClass("active");
+                        }
+
                         // Update the content
-                        //$content.stop(true,true);
                         $content.html(contentHtml).ajaxify();
-                        //$content.html(contentHtml).ajaxify().css('opacity',100).show(); /* you could fade in here if you'd like */
-     
+
+                        //reinitialize
+                        navFly.init();
+
                         // Update the title
                         document.title = $data.find('.document-title:first').text();
                         try {
-                            document.getElementsByTagName('title')[0].innerHTML = document.title.replace('<','&lt;').replace('>','&gt;').replace(' & ',' &amp; ');
-                        }
-                        catch ( Exception ) { }
-                        
+                            document.getElementsByTagName('title')[0].innerHTML = document.title.replace('<', '&lt;').replace('>', '&gt;').replace(' & ', ' &amp; ');
+                        } catch (Exception) {}
+
                         // Add the scripts
-                        $scripts.each(function(){
-                            var $script = $(this), scriptText = $script.text(), scriptNode = document.createElement('script');
+                        $scripts.each(function () {
+                            var $script = $(this),
+                                scriptText = $script.text(),
+                                scriptNode = document.createElement('script');
                             scriptNode.appendChild(document.createTextNode(scriptText));
                             contentNode.appendChild(scriptNode);
                         });
-
+                        
+                        // Scroll to top
+                        function scrollTo(id, delay) {
+                            $("html:not(:animated),body:not(:animated)").delay(delay).animate({
+                                scrollTop: $("#" + id).offset().top
+                            }, 600);
+                        }
+                        
                         // Page transitions
-                            $("#main-content").animate({
-                                "left": "0%",
-                                "opacity": 1
-                            });
-     
+                        $("#main-content").css("left", "-100px").delay(100).animate({
+                            "left": 0,
+                            "opacity": 1
+                        }, 600, "easeOutExpo");
+
+                        $("#footer").css("left", "-100px").animate({
+                            "left": 0,
+                            "opacity": 1
+                        }, 500, "easeOutExpo", function(){
+                            scrollTo("logo", 0);
+                        });
+
                         // Complete the change
-                        if ( $body.ScrollTo||false ) { $body.ScrollTo(scrollOptions); } /* http://balupton.com/projects/jquery-scrollto */
                         $body.removeClass('loading');
-                        $window.trigger(completedEventName);
-        
-                        // Inform Google Analytics of the change
-                        if ( typeof window._gaq !== 'undefined' ) {
-                            window._gaq.push(['_trackPageview', relativeUrl]);
-                        }
-     
-                        // Inform ReInvigorate of a state change
-                        if ( typeof window.reinvigorate !== 'undefined' && typeof window.reinvigorate.ajax_track !== 'undefined' ) {
-                            reinvigorate.ajax_track(url);
-                            // ^ we use the full url here as that is what reinvigorate supports
-                        }
                     },
-                    error: function(jqXHR, textStatus, errorThrown){
+                    error: function (jqXHR, textStatus, errorThrown) {
                         document.location.href = url;
                         return false;
                     }
-                }); // end ajax
-            
+                }); // end Ajax
             }
  
         }); // end onStateChange
@@ -205,13 +211,14 @@ HISTORY
  
 })(window); // end closure
 
-$(function() {
 /* -----------------------------------------------
 MOBILE FLYOUT
 ------------------------------------------------ */
+var navFly = $(function() {
     $(".more-nav").click(function() {
         $("#mobile-flyout").toggleClass("open");
         $(".main-content").toggleClass("dark");
         return false;
     });
 });
+
