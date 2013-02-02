@@ -221,5 +221,13 @@ $(document).ready(function() {
             $(".main-content").toggleClass("dark");
             return false;
         });
-});
 
+    $('.camera_wrap').camera({
+        fx: 'scrollHorz',
+        autoAdvance: false,
+        mobileAutoAdvance: false,
+        loader: 'none',
+        transPeriod: '300',
+        minHeight: '500px'
+    });
+});
