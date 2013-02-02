@@ -230,4 +230,13 @@ $(document).ready(function() {
         transPeriod: '300',
         minHeight: '500px'
     });
+
+    $('.camera_wrap2').camera({
+        fx: 'scrollHorz',
+        autoAdvance: false,
+        mobileAutoAdvance: false,
+        loader: 'none',
+        transPeriod: '300',
+        minHeight: '500px'
+    });
 });

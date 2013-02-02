@@ -452,10 +452,14 @@ footer {
 article {
     //@include container;
     //@include susy-grid-background;
-    margin-bottom:2em;
+    margin-bottom:$padding*6;
+    &:after {
+        content:"";
+        display:table;
+    }
 }
 .post-date {
-    @include span-columns(6 omega, 12);
+    margin-bottom:$padding/2;
 }
 
 .post-title {
@@ -568,9 +572,9 @@ article {
     text-decoration: none;
 }
 .camera_loader {
-    background: #fff url(../images/camera-loader.gif) no-repeat center;
-    background: rgba(255, 255, 255, 0.9) url(../images/camera-loader.gif) no-repeat center;
-    border: 1px solid #ffffff;
+    background: #fff url(../img/ajaxloader.gif) no-repeat center;
+    background: rgba(255, 255, 255, 0.9) url(../img/ajaxloader.gif) no-repeat center;
+    border: 1px solid $orange;
     -webkit-border-radius: 18px;
     -moz-border-radius: 18px;
     border-radius: 18px;
@@ -678,7 +682,7 @@ article {
     list-style: none;
     margin: 0;
     padding: 0;
-    text-align: right;
+    text-align: center;
 }
 .camera_wrap .camera_pag .camera_pag_ul li {
     -webkit-border-radius: 8px;
@@ -705,15 +709,13 @@ article {
         inset 0px 1px 1px rgba(0,0,0,0.2);
 }
 .camera_wrap .camera_pag .camera_pag_ul li > span {
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    height: 8px;
-    left: 4px;
+    border-radius: 8px;
+    height: 16px;
+    left: 8px;
     overflow: hidden;
     position: absolute;
-    top: 4px;
-    width: 8px;
+    top: 8px;
+    width: 16px;
 }
 .camera_commands_emboss .camera_pag .camera_pag_ul li:hover > span {
     -moz-box-shadow:
@@ -786,16 +788,14 @@ article {
     width: 40px;
 }
 .camera_wrap .camera_pag .camera_pag_ul li {
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    border-radius: 8px;
+    border-radius: 16px;
     cursor: pointer;
     display: inline-block;
-    height: 16px;
-    margin: 20px 5px;
+    height: 32px;
+    margin: 20px 20px;
     position: relative;
     text-indent: -9999px;
-    width: 16px;
+    width: 32px;
 }
 .camera_thumbs_cont {
     -webkit-border-bottom-right-radius: 4px;
@@ -887,20 +887,22 @@ article {
 }
 .camera_caption {
     color: $white;
-    font-size:2em;
+    font-size:1.3em;
 }
 .camera_caption > div {
     background: #000;
     background: rgba(0, 0, 0, 0.8);
 }
 .camera_wrap .camera_pag .camera_pag_ul li {
-    background: #b7b7b7;
+
+    background: $orange;
 }
 .camera_wrap .camera_pag .camera_pag_ul li:hover > span {
-    background: #b7b7b7;
+    background: $orange;
+    @include transition(background 200ms);
 }
 .camera_wrap .camera_pag .camera_pag_ul li.cameracurrent > span {
-    background: #434648;
+    background: $orange;
 }
 .camera_pag_ul li img {
     border: 4px solid #e6e6e6;
@@ -916,7 +918,7 @@ article {
     background: rgba(216, 216, 216, 0.85);
 }
 .camera_wrap .camera_pag .camera_pag_ul li {
-    background: #b7b7b7;
+    background: $offblack;
 }
 .camera_thumbs_cont ul li > img {
     border-color: 1px solid #000;
