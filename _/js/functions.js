@@ -145,7 +145,11 @@ HISTORY
                         $content.html(contentHtml).ajaxify();
 
                         //reinitialize
+                        contentAnim.init();
                         navFly.init();
+                        camera.init();
+                        albumFilter.init();
+                        localScrollinit.init();
 
                         // Update the title
                         document.title = $data.find('.document-title:first').text();
@@ -153,15 +157,19 @@ HISTORY
                             document.getElementsByTagName('title')[0].innerHTML = document.title.replace('<', '&lt;').replace('>', '&gt;').replace(' & ', ' &amp; ');
                         } catch (Exception) {}
 
-                        // Add the scripts
-                        $scripts.each(function () {
-                            var $script = $(this),
-                                scriptText = $script.text(),
-                                scriptNode = document.createElement('script');
-                            scriptNode.appendChild(document.createTextNode(scriptText));
-                            contentNode.appendChild(scriptNode);
+                        //Add the scripts
+                        $scripts.each(function(){
+                        var $script = $(this), scriptText = $script.text(), scriptSrc = $script.attr('src'), scriptNode = document.createElement('script');
+                        if(scriptSrc) {
+                        scriptNode.src = scriptSrc;
+                        contentNode.appendChild(scriptNode);
+                        }
+                        else{
+                        scriptNode.appendChild(document.createTextNode(scriptText));
+                        contentNode.appendChild(scriptNode);
+                        }
                         });
-                        
+
                         // Scroll to top
                         function scrollTo(id, delay) {
                             $("html:not(:animated),body:not(:animated)").delay(delay).animate({
@@ -206,46 +214,72 @@ var navFly = {
     }
 };
 
+/* -----------------------------------------------
+CONTENT SLIDE
+------------------------------------------------ */
+var contentAnim = {
+    init: function() {
+        $("#main-content").css({
+            "opacity" : 1,
+            "left" : 0
+        });
+    }
+};
 
+/* -----------------------------------------------
+CAMERA PLUGIN
+------------------------------------------------ */
+var camera = {
+    init: function() {
+        $('.camera_wrap').camera({
+            fx: 'scrollHorz',
+            autoAdvance: false,
+            mobileAutoAdvance: false,
+            loader: 'none',
+            transPeriod: '300',
+            minHeight: '500px'
+        });
+
+        $('.camera_wrap2').camera({
+            fx: 'scrollHorz',
+            autoAdvance: false,
+            mobileAutoAdvance: false,
+            loader: 'none',
+            transPeriod: '300',
+            minHeight: '500px'
+        });
+    }
+};
+
+/* -----------------------------------------------
+ALBUM FILTER
+------------------------------------------------ */
+var albumFilter = {
+    init: function() {
+        $('.filter-toggle').click(function() {
+            $(this).next().toggleClass("filter-show");
+        });
+    }
+};
+
+/* -----------------------------------------------
+LOCALSCROLL
+------------------------------------------------ */
+var localScrollInit = {
+    init: function() {
+        
+    }
+};
 /* -----------------------------------------------
 PAGE INITS
 ------------------------------------------------ */
 $(document).ready(function() {
-    $("#main-content").css({
-        "opacity" : 1,
-        "left" : 0
-    });
-
-    $(".more-nav").click(function() {
-            $("#mobile-flyout").toggleClass("open");
-            $(".main-content").toggleClass("dark");
-            return false;
-        });
-
-    $('.camera_wrap').camera({
-        fx: 'scrollHorz',
-        autoAdvance: false,
-        mobileAutoAdvance: false,
-        loader: 'none',
-        transPeriod: '300',
-        minHeight: '500px'
-    });
-
-    $('.camera_wrap2').camera({
-        fx: 'scrollHorz',
-        autoAdvance: false,
-        mobileAutoAdvance: false,
-        loader: 'none',
-        transPeriod: '300',
-        minHeight: '500px'
-    });
-
+    contentAnim.init();
+    navFly.init();
+    camera.init();
+    albumFilter.init();
     $.localScroll({
         hash: true,
         duration: '300'
-    });
-
-    $('.filter-toggle').click(function() {
-        $(this).next().toggleClass("filter-show");
     });
 });
