@@ -239,4 +239,13 @@ $(document).ready(function() {
         transPeriod: '300',
         minHeight: '500px'
     });
+
+    $.localScroll({
+        hash: true,
+        duration: '300'
+    });
+
+    $('.filter-toggle').click(function() {
+        $(this).next().toggleClass("filter-show");
+    });
 });
