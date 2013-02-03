@@ -1000,12 +1000,18 @@ article {
 
 /* ====================ALBUMS PAGE */
 .album-block {
+    clear:both;
     h1 {
         clear:both;
     }
+    overflow:auto;
+    &:after {
+        content: "";
+        display:table;
+    }
     @include at-breakpoint($medium) {
         max-width:90%;
-        margin: 0 auto;
+        margin: 0 auto 5em;
     }
 }
 .album-release {
