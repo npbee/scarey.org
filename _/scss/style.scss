@@ -213,6 +213,7 @@ footer {
     padding:$padding/2;
     text-align:center;
     font-size:$regularfont;
+    cursor:pointer;
     @include transition(background .2s);
     &:hover {
         background: darken($orange, 10%);
@@ -1078,6 +1079,10 @@ article {
         @include span-columns(4 omega, 8);
         text-align:center;
     }
+}
+
+.LP-nav {
+    text-align:center;
 }
 
 /* ====================MEDIA PAGE */
