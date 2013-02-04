@@ -279,7 +279,7 @@ $(document).ready(function() {
     camera.init();
     albumFilter.init();
     $.localScroll({
-        hash: true,
+        hash: false,
         duration: '300'
     });
 });

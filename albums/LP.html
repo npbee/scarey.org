@@ -9,18 +9,23 @@
             <?php include "../_/php/nav.php" ?>
 
             <div class="page-nav">
-                <a class="page-active" href="/albums/LP">LP's</a>
-                <a href="/albums/EP">EP's</a>
-                <a href="/albums/Other">Other</a>
+                <div class="main-page-nav">
+                    <a class="page-active" href="/albums/LP">LP's</a>
+                    <a href="/albums/EP">EP's</a>
+                    <a href="/albums/Other">Other</a>
+                </div>
+
+                <div class="album-filter">
+                    <a class="filter-toggle" data-icon="&#xe002;" aria-hidden="true">Filter</a>
+                    <div class="LP-filter">
+                        <a class="second-album" href="#second-album"><img src="../_/img/second-album-thumb.jpg" alt="Second Album thumbnail" /><span class="album-filter-title">Second Album</span></a>
+                        <a class="all-we-grow" href="#all-we-grow"><img src="../_/img/all-we-grow-thumb.jpg" alt="All We Grow thumbnail" /><span class="album-filter-title">All We Grow</span></a>
+                    </div>
+                </div>
+
             </div>
 
-            <div class="album-filter">
-                <a class="filter-toggle dark-button" data-icon="&#xe002;" aria-hidden="true">Filter</a>
-                <div class="LP-filter">
-                    <a class="second-album" href="#second-album"><img src="../_/img/second-album-thumb.jpg" alt="Second Album thumbnail" /><span class="album-filter-title">Second Album</span></a>
-                    <a class="all-we-grow" href="#all-we-grow"><img src="../_/img/all-we-grow-thumb.jpg" alt="All We Grow thumbnail" /><span class="album-filter-title">All We Grow</span></a>
-                </div>
-            </div>
+            
 
         </header>
 
