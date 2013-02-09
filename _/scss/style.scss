@@ -260,6 +260,9 @@ footer {
     }
     a {
         display:inline-block;
+        &:hover {
+            color: $blue;
+        }
         @include at-breakpoint($medium) {
             padding:0 $padding/2;
             position:relative;
@@ -292,6 +295,20 @@ footer {
     .hide {
         @include at-breakpoint($medium) {
             position:static;
+        }
+    }
+}
+
+/* Sticky nav */
+.sticky {
+    @include at-breakpoint($medium) {
+        position:fixed;
+        width:100%;
+        z-index: 1;
+        opacity:.8;
+        @include transition(opacity 200ms);
+        &:hover {
+            opacity: 1;
         }
     }
 }

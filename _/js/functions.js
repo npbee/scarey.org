@@ -273,6 +273,29 @@ var localScrollInit = {
 };
 
 /* -----------------------------------------------
+STICKY NAV
+------------------------------------------------ */
+//create a stick nav
+var menuOffset = $('#nav')[0].offsetTop; // replace #menu with the id or class of the target navigation
+$(document).bind('ready scroll', function() {
+    var docScroll = $(document).scrollTop();
+    if (docScroll >= 300) {
+        if (!$('#nav').hasClass('sticky')) {
+            $('#nav').addClass('sticky').css({
+                top: '-300px'
+            }).stop().animate({
+                top: 0
+            }, 500);
+        }
+    } else {
+        $('#nav').removeClass('sticky').removeAttr('style');
+    }
+
+});
+
+
+
+/* -----------------------------------------------
 PAGE INITS
 ------------------------------------------------ */
 $(document).ready(function() {
