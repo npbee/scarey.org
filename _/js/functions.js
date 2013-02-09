@@ -262,6 +262,7 @@ var albumFilter = {
     }
 };
 
+
 /* -----------------------------------------------
 LOCALSCROLL
 ------------------------------------------------ */
@@ -270,16 +271,17 @@ var localScrollInit = {
         
     }
 };
+
 /* -----------------------------------------------
 PAGE INITS
 ------------------------------------------------ */
 $(document).ready(function() {
     contentAnim.init();
     navFly.init();
-    camera.init();
     albumFilter.init();
     $.localScroll({
         hash: false,
         duration: '300'
     });
+    photosetGrid.init();
 });
