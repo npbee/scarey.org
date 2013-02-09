@@ -293,6 +293,9 @@ $(document).bind('ready scroll', function() {
 
 });
 
+/* -----------------------------------------------
+COLORBOX
+------------------------------------------------ */
 
 
 /* -----------------------------------------------
@@ -306,4 +309,17 @@ $(document).ready(function() {
         hash: false,
         duration: '300'
     });
+    var width = $(window).width();
+    if (width >= 600) {
+        $(".photo-container a").colorbox({
+            rel : "group",
+            scalePhotos: true,
+            maxHeight: "900px"
+        });
+    } else {
+        $('.photo-container a').click(function(e) {
+            event.preventDefault();
+        });
+    }
+    
 });
