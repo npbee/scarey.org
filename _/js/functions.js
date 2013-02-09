@@ -283,5 +283,4 @@ $(document).ready(function() {
         hash: false,
         duration: '300'
     });
-    photosetGrid.init();
 });

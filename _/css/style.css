@@ -573,27 +573,27 @@ article {
     max-width: 100%; }
 
 /* ====================TOUR PAGE */
-/* line 493, ../scss/style.scss */
+/* line 499, ../scss/style.scss */
 .tour-header {
   clear: both; }
-  /* line 495, ../scss/style.scss */
+  /* line 501, ../scss/style.scss */
   .tour-header h1 {
     display: none;
     color: #6599b0; }
     @media (min-width: 40em) {
-      /* line 495, ../scss/style.scss */
+      /* line 501, ../scss/style.scss */
       .tour-header h1 {
         display: inline-block;
         width: 32.53012%;
         float: left;
         margin-right: 1.20482%; }
-        /* line 501, ../scss/style.scss */
+        /* line 507, ../scss/style.scss */
         .tour-header h1:last-child {
           width: 32.53012%;
           float: right;
           margin-right: 0; } }
 
-/* line 508, ../scss/style.scss */
+/* line 514, ../scss/style.scss */
 .tour-entry {
   clear: both;
   width: 100%;
@@ -601,80 +601,80 @@ article {
   text-align: right;
   font-size: 1.5em; }
   @media (min-width: 40em) {
-    /* line 508, ../scss/style.scss */
+    /* line 514, ../scss/style.scss */
     .tour-entry {
       text-align: center; } }
-  /* line 517, ../scss/style.scss */
+  /* line 523, ../scss/style.scss */
   .tour-entry div {
     margin: 1em 0; }
     @media (min-width: 40em) {
-      /* line 517, ../scss/style.scss */
+      /* line 523, ../scss/style.scss */
       .tour-entry div {
         margin: 0;
         display: inline-block;
         width: 32.53012%;
         float: left;
         margin-right: 1.20482%; }
-        /* line 523, ../scss/style.scss */
+        /* line 529, ../scss/style.scss */
         .tour-entry div:last-child {
           width: 32.53012%;
           float: right;
           margin-right: 0; } }
-  /* line 529, ../scss/style.scss */
+  /* line 535, ../scss/style.scss */
   .tour-entry .tour-date:before, .tour-entry .tour-city:before, .tour-entry .tour-venue:before {
     float: left;
     color: #6599b0; }
     @media (min-width: 40em) {
-      /* line 529, ../scss/style.scss */
+      /* line 535, ../scss/style.scss */
       .tour-entry .tour-date:before, .tour-entry .tour-city:before, .tour-entry .tour-venue:before {
         display: none; } }
-  /* line 538, ../scss/style.scss */
+  /* line 544, ../scss/style.scss */
   .tour-entry .tour-date:before {
     content: "DATE"; }
-  /* line 543, ../scss/style.scss */
+  /* line 549, ../scss/style.scss */
   .tour-entry .tour-city:before {
     content: "CITY"; }
-  /* line 548, ../scss/style.scss */
+  /* line 554, ../scss/style.scss */
   .tour-entry .tour-venue:before {
     content: "VENUE"; }
 
 /* ====================ALBUMS PAGE */
-/* line 556, ../scss/style.scss */
+/* line 562, ../scss/style.scss */
 .album-block {
   clear: both;
   overflow: auto; }
-  /* line 558, ../scss/style.scss */
+  /* line 564, ../scss/style.scss */
   .album-block h1 {
     clear: both; }
-  /* line 562, ../scss/style.scss */
+  /* line 568, ../scss/style.scss */
   .album-block:after {
     content: "";
     display: table; }
   @media (min-width: 40em) {
-    /* line 556, ../scss/style.scss */
+    /* line 562, ../scss/style.scss */
     .album-block {
       max-width: 90%;
       margin: 0 auto 5em; } }
 
-/* line 571, ../scss/style.scss */
+/* line 577, ../scss/style.scss */
 .album-release {
   text-align: center;
   margin-bottom: 2em; }
 
-/* line 576, ../scss/style.scss */
+/* line 582, ../scss/style.scss */
 .album-cover {
   text-align: center; }
-  /* line 578, ../scss/style.scss */
+  /* line 584, ../scss/style.scss */
   .album-cover img {
     margin-bottom: 2em;
     max-width: 100%;
     height: auto; }
     @media (min-width: 40em) {
-      /* line 578, ../scss/style.scss */
+      /* line 584, ../scss/style.scss */
       .album-cover img {
         margin-bottom: 2em; } }
     @media (min-width: 80em) {
-      /* line 578, ../scss/style.scss */
+      /* line 584, ../scss/style.scss */
       .album-cover img {
         margin-bottom: 3em;
         max-width: 50%;
@@ -682,65 +682,65 @@ article {
         float: left;
         margin-right: 1.81818%; } }
 
-/* line 593, ../scss/style.scss */
+/* line 599, ../scss/style.scss */
 .album-blurb {
   padding-bottom: 2em; }
-  /* line 595, ../scss/style.scss */
+  /* line 601, ../scss/style.scss */
   .album-blurb p {
     line-height: 1.5em;
     text-align: justify;
     margin-bottom: 1.5em; }
   @media (min-width: 80em) {
-    /* line 593, ../scss/style.scss */
+    /* line 599, ../scss/style.scss */
     .album-blurb {
       width: 49.09091%;
       float: right;
       margin-right: 0; } }
 
-/* line 608, ../scss/style.scss */
+/* line 614, ../scss/style.scss */
 .album-tracklist h2 {
   background: #333333;
   border-radius: 3px 3px 0 0;
   padding: 5px;
   border-bottom: 1px solid #c08a59;
   margin-bottom: 5px; }
-/* line 615, ../scss/style.scss */
+/* line 621, ../scss/style.scss */
 .album-tracklist .album-track {
   clear: both;
   overflow: auto;
   margin: 10px 0;
   font-size: 1.5em; }
-/* line 621, ../scss/style.scss */
+/* line 627, ../scss/style.scss */
 .album-tracklist .album-track-name {
   float: left; }
-/* line 624, ../scss/style.scss */
+/* line 630, ../scss/style.scss */
 .album-tracklist .album-track-duration {
   float: right; }
 @media (min-width: 40em) {
-  /* line 607, ../scss/style.scss */
+  /* line 613, ../scss/style.scss */
   .album-tracklist {
     margin-bottom: 2em; } }
 @media (min-width: 80em) {
-  /* line 607, ../scss/style.scss */
+  /* line 613, ../scss/style.scss */
   .album-tracklist {
     clear: both;
     width: 49.09091%;
     float: left;
     margin-right: 1.81818%; } }
 
-/* line 637, ../scss/style.scss */
+/* line 643, ../scss/style.scss */
 .album-purchase a {
   display: block;
   width: 100%;
   clear: both;
   margin: 1em 0; }
   @media (min-width: 40em) {
-    /* line 637, ../scss/style.scss */
+    /* line 643, ../scss/style.scss */
     .album-purchase a {
       width: 100%;
       margin: 0 auto 2em; } }
 @media (min-width: 80em) {
-  /* line 636, ../scss/style.scss */
+  /* line 642, ../scss/style.scss */
   .album-purchase {
     width: 49.09091%;
     float: right;
@@ -748,97 +748,98 @@ article {
     text-align: center; } }
 
 /* ==========ALBUMS FILTER */
-/* line 655, ../scss/style.scss */
+/* line 661, ../scss/style.scss */
 .no-js .album-filter {
   display: none; }
 
-/* line 658, ../scss/style.scss */
+/* line 664, ../scss/style.scss */
 .album-filter {
   text-align: center;
   clear: both; }
-  /* line 661, ../scss/style.scss */
+  /* line 667, ../scss/style.scss */
   .album-filter .filter-toggle {
-    opacity: .3;
+    opacity: .5;
     background: #111111;
     display: block;
     width: 100%;
     cursor: pointer;
-    padding: 1em;
+    padding: 1em 0;
     -webkit-transition: opacity 200ms;
     -moz-transition: opacity 200ms;
     -o-transition: opacity 200ms;
     transition: opacity 200ms; }
-    /* line 669, ../scss/style.scss */
+    /* line 675, ../scss/style.scss */
     .album-filter .filter-toggle:hover {
       opacity: 1;
       border-bottom: none; }
     @media (min-width: 40em) {
-      /* line 661, ../scss/style.scss */
+      /* line 667, ../scss/style.scss */
       .album-filter .filter-toggle {
         background: none;
         position: absolute;
+        padding-bottom: 0;
         top: 12px;
         right: 3em;
         text-align: right;
         width: 10%; } }
     @media (min-width: 80em) {
-      /* line 661, ../scss/style.scss */
+      /* line 667, ../scss/style.scss */
       .album-filter .filter-toggle {
         right: 6em; } }
-  /* line 685, ../scss/style.scss */
+  /* line 692, ../scss/style.scss */
   .album-filter .filter-show {
     height: 140px;
     padding: 10px 0;
     background: #333333;
     border-top: 1px solid #111111;
     border-bottom: 1px solid #111111; }
-    /* line 691, ../scss/style.scss */
+    /* line 698, ../scss/style.scss */
     .album-filter .filter-show .filter-toggle {
       opacity: 1; }
-    /* line 694, ../scss/style.scss */
+    /* line 701, ../scss/style.scss */
     .album-filter .filter-show a {
       display: inline-block; }
-  /* line 698, ../scss/style.scss */
+  /* line 705, ../scss/style.scss */
   .album-filter div {
     -webkit-transition: all 300ms;
     -moz-transition: all 300ms;
     -o-transition: all 300ms;
     transition: all 300ms;
-    overflow: hidden;
+    overflow-y: hidden;
     height: 0; }
     @media (min-width: 80em) {
-      /* line 698, ../scss/style.scss */
+      /* line 705, ../scss/style.scss */
       .album-filter div {
         margin: 0 auto; } }
-  /* line 706, ../scss/style.scss */
+  /* line 713, ../scss/style.scss */
   .album-filter a {
     padding: 0 1em;
     display: inline-block; }
-    /* line 709, ../scss/style.scss */
+    /* line 716, ../scss/style.scss */
     .album-filter a:hover {
       border-bottom: none; }
-      /* line 711, ../scss/style.scss */
+      /* line 718, ../scss/style.scss */
       .album-filter a:hover img {
         opacity: 1; }
-  /* line 716, ../scss/style.scss */
+  /* line 723, ../scss/style.scss */
   .album-filter img {
     opacity: .5;
     -webkit-transition: opacity 200ms;
     -moz-transition: opacity 200ms;
     -o-transition: opacity 200ms;
     transition: opacity 200ms; }
-  /* line 720, ../scss/style.scss */
+  /* line 727, ../scss/style.scss */
   .album-filter .album-filter-title {
     display: block;
     line-height: 1.5em;
     font-size: .8em; }
 
 /* ====================MEDIA PAGE */
-/* line 729, ../scss/style.scss */
+/* line 736, ../scss/style.scss */
 .audio-main iframe {
   width: 100%; }
 
-/* line 735, ../scss/style.scss */
+/* line 742, ../scss/style.scss */
 .video-main .video-wrapper {
   position: relative;
   padding-bottom: 56.25%;
@@ -846,7 +847,7 @@ article {
   padding-top: 25px;
   height: 0;
   margin-bottom: 5em; }
-/* line 742, ../scss/style.scss */
+/* line 749, ../scss/style.scss */
 .video-main .video-wrapper iframe {
   position: absolute;
   top: 0;
@@ -856,32 +857,32 @@ article {
 
 /* ====================STORE PAGE */
 /* ====================CONTACT PAGE */
-/* line 758, ../scss/style.scss */
+/* line 765, ../scss/style.scss */
 .contact-block {
   text-align: center;
   margin-bottom: 4em;
   word-wrap: break-word; }
-  /* line 762, ../scss/style.scss */
+  /* line 769, ../scss/style.scss */
   .contact-block div {
     margin-bottom: 1em; }
-  /* line 765, ../scss/style.scss */
+  /* line 772, ../scss/style.scss */
   .contact-block h1 {
     color: #6599b0;
     text-transform: uppercase; }
   @media (min-width: 40em) {
-    /* line 769, ../scss/style.scss */
+    /* line 776, ../scss/style.scss */
     .contact-block .booking-us-can {
       width: 49.39759%;
       float: left;
       margin-right: 1.20482%; } }
   @media (min-width: 40em) {
-    /* line 774, ../scss/style.scss */
+    /* line 781, ../scss/style.scss */
     .contact-block .publicity-us, .contact-block .tour-press {
       width: 32.53012%;
       float: left;
       margin-right: 1.20482%; } }
   @media (min-width: 40em) {
-    /* line 779, ../scss/style.scss */
+    /* line 786, ../scss/style.scss */
     .contact-block .publicity-uk-eu {
       width: 32.53012%;
       float: right;
@@ -889,7 +890,7 @@ article {
 
 /* ========================================STATES */
 /* ========================================THEMES */
-/* line 791, ../scss/style.scss */
+/* line 798, ../scss/style.scss */
 .main-content {
   -webkit-transition: all 200ms;
   -moz-transition: all 200ms;
@@ -897,7 +898,7 @@ article {
   transition: all 200ms; }
 
 /* ====================ACTIVE MENUS */
-/* line 803, ../scss/style.scss */
+/* line 810, ../scss/style.scss */
 .blog a.blog-nav,
 .tour a.tour-nav,
 .albums a.albums-nav,
@@ -906,28 +907,28 @@ article {
 .contact a.contact-nav {
   color: #6599b0; }
 
-/* line 807, ../scss/style.scss */
+/* line 814, ../scss/style.scss */
 a.active {
   color: #6599b0; }
 
-/* line 811, ../scss/style.scss */
+/* line 818, ../scss/style.scss */
 a.page-active {
   border-bottom: 1px solid #c08a59; }
 
 /* ====================HOME PAGE */
-/* line 815, ../scss/style.scss */
+/* line 822, ../scss/style.scss */
 .home {
   background: url("../img/home_art.png") no-repeat right bottom, url("../img/background.png") repeat;
   /* ==========NAV*/ }
-  /* line 819, ../scss/style.scss */
+  /* line 826, ../scss/style.scss */
   .home .main-content {
     width: 100%;
     padding-bottom: 0; }
-  /* line 826, ../scss/style.scss */
+  /* line 833, ../scss/style.scss */
   .home .main-nav {
     width: 100%;
     overflow: visible; }
-    /* line 829, ../scss/style.scss */
+    /* line 836, ../scss/style.scss */
     .home .main-nav a {
       display: block;
       background: rgba(17, 17, 17, 0.8);
@@ -938,17 +939,17 @@ a.page-active {
       color: #ababab;
       border-right: 1px solid #333333;
       border-bottom: 1px solid #333333; }
-      /* line 838, ../scss/style.scss */
+      /* line 845, ../scss/style.scss */
       .home .main-nav a:nth-child(2), .home .main-nav a:nth-child(5), .home .main-nav a:nth-child(7) {
         border-right: none; }
-      /* line 842, ../scss/style.scss */
+      /* line 849, ../scss/style.scss */
       .home .main-nav a:nth-child(6), .home .main-nav a:nth-child(7) {
         border-bottom: none; }
-      /* line 845, ../scss/style.scss */
+      /* line 852, ../scss/style.scss */
       .home .main-nav a:hover {
         color: #c08a59; }
       @media (min-width: 40em) {
-        /* line 829, ../scss/style.scss */
+        /* line 836, ../scss/style.scss */
         .home .main-nav a {
           background: none;
           display: inline-block;
@@ -956,61 +957,61 @@ a.page-active {
           border: none;
           float: none;
           padding: 1em; } }
-    /* line 857, ../scss/style.scss */
+    /* line 864, ../scss/style.scss */
     .home .main-nav [data-icon]:before {
       font-size: 4em;
       display: block;
       margin-bottom: 5px;
       color: #333333; }
-    /* line 863, ../scss/style.scss */
+    /* line 870, ../scss/style.scss */
     .home .main-nav .hide {
       position: static;
       font-size: 2em; }
-    /* line 864, ../scss/style.scss */
+    /* line 871, ../scss/style.scss */
     .home .main-nav .logo-nav, .home .main-nav .more-nav {
       display: none; }
     @media (min-width: 40em) {
-      /* line 826, ../scss/style.scss */
+      /* line 833, ../scss/style.scss */
       .home .main-nav {
         background: rgba(17, 17, 17, 0.5);
         border-radius: 3px; } }
-  /* line 871, ../scss/style.scss */
+  /* line 878, ../scss/style.scss */
   .home .logo-home {
     font-size: 4.5em;
     font-weight: 100;
     width: 100%; }
     @media (min-width: 40em) {
-      /* line 871, ../scss/style.scss */
+      /* line 878, ../scss/style.scss */
       .home .logo-home {
         font-size: 10em; } }
-  /* line 880, ../scss/style.scss */
+  /* line 887, ../scss/style.scss */
   .home .social-home {
     text-align: center;
     margin-top: 2em; }
-    /* line 883, ../scss/style.scss */
+    /* line 890, ../scss/style.scss */
     .home .social-home a {
       color: #0d0d0d;
       width: 24.09639%;
       float: left;
       margin-right: 1.20482%;
       display: inline; }
-      /* line 886, ../scss/style.scss */
+      /* line 893, ../scss/style.scss */
       .home .social-home a:last-child {
         width: 24.09639%;
         float: right;
         margin-right: 0;
         #margin-left: -1em;
         display: inline; }
-      /* line 889, ../scss/style.scss */
+      /* line 896, ../scss/style.scss */
       .home .social-home a:hover {
         color: #c08a59; }
       @media (min-width: 40em) {
-        /* line 883, ../scss/style.scss */
+        /* line 890, ../scss/style.scss */
         .home .social-home a {
           padding: 0 1em; }
-          /* line 894, ../scss/style.scss */
+          /* line 901, ../scss/style.scss */
           .home .social-home a:first-child {
             padding-left: 0; } }
-    /* line 899, ../scss/style.scss */
+    /* line 906, ../scss/style.scss */
     .home .social-home [data-icon]:before {
       font-size: 3em; }
