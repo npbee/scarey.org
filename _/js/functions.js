@@ -1,4 +1,64 @@
 /* -----------------------------------------------
+MOBILE FLYOUT
+------------------------------------------------ */
+var navFly = {
+    init: function() {
+        $(".more-nav").click(function() {
+            $("#mobile-flyout").toggleClass("open");
+            $(".main-content").toggleClass("dark");
+            return false;
+        });
+    }
+};
+
+/* -----------------------------------------------
+CONTENT SLIDE
+------------------------------------------------ */
+var contentAnim = {
+    init: function() {
+        $("#main-content").css({
+            "opacity" : 1,
+            "left" : 0
+        });
+    }
+};
+
+/* -----------------------------------------------
+ALBUM FILTER
+------------------------------------------------ */
+var albumFilter = {
+    init: function() {
+        $('.filter-toggle').click(function() {
+            $(this).next().toggleClass("filter-show");
+        });
+    }
+};
+
+/* -----------------------------------------------
+STICKY NAV
+------------------------------------------------ */
+//create a stick nav
+$(document).bind('ready scroll', function() {
+    var docScroll = $(document).scrollTop();
+    if (docScroll >= 300) {
+        if (!$('#nav').hasClass('sticky')) {
+            $('#nav').addClass('sticky').css({
+                top: '-300px'
+            }).stop().animate({
+                top: 0
+            }, 500);
+        }
+    } else {
+        $('#nav').removeClass('sticky').removeAttr('style');
+    }
+
+});
+
+/* -----------------------------------------------
+COLORBOX
+------------------------------------------------ */
+
+/* -----------------------------------------------
 HISTORY
 ------------------------------------------------ */
 
@@ -23,19 +83,16 @@ HISTORY
             contentSelector = '.wrap',
             $content = $(contentSelector).filter(':first'),
             contentNode = $content.get(0),
-            $menu = $('#nav'),
-            activeClass = 'active',
-            activeSelector = '.active',
-            menuChildrenSelector = 'a',
-            completedEventName = 'statechangecomplete',
+            //$menu = $('#nav'),
+            //activeClass = 'active',
+            //activeSelector = '.active',
+            //menuChildrenSelector = 'a',
+            //completedEventName = 'statechangecomplete',
             /* Application Generic Variables */
             $window = $(window),
             $body = $(document.body),
-            rootUrl = History.getRootUrl(),
-            scrollOptions = {
-                duration: 800,
-                easing:'swing'
-            };
+            rootUrl = History.getRootUrl()
+            ;
         
         // Ensure Content
         if ( $content.length === 0 ) {
@@ -43,7 +100,7 @@ HISTORY
         }
         
         // Internal Helper
-        $.expr[':'].internal = function(obj, index, meta, stack){
+        $.expr[':'].internal = function(obj){
             // Prepare
             var
                 $this = $(obj),
@@ -84,7 +141,7 @@ HISTORY
                     title = $this.attr('title')||null;
                 
                 // Continue as normal for cmd clicks etc
-                if ( event.which == 2 || event.metaKey ) { return true; }
+                if ( event.which === 2 || event.metaKey ) { return true; }
                 
                 // Ajaxify this link
                 History.pushState(null,title,url);
@@ -104,8 +161,7 @@ HISTORY
             // Prepare Variables
             var
                 State = History.getState(),
-                url = State.url,
-                relativeUrl = url.replace(rootUrl,'');
+                url = State.url;
  
             // Set Loading
             $body.addClass('loading');
@@ -113,12 +169,12 @@ HISTORY
             // Ajax Request the Traditional Page
                 $.ajax({
                     url: url,
-                    success: function (data, textStatus, jqXHR) {
+                    success: function (data) {
                         // Prepare
                         var $data = $(documentHtml(data)),
                             $dataBody = $data.find('.document-body:first'),
                             $dataContent = $dataBody.find(contentSelector).filter(':first'),
-                            $menuChildren, contentHtml, $scripts;
+                            contentHtml, $scripts;
 
                         // Fetch the scripts
                         $scripts = $dataContent.find('.document-script');
@@ -147,9 +203,7 @@ HISTORY
                         //reinitialize
                         contentAnim.init();
                         navFly.init();
-                        camera.init();
                         albumFilter.init();
-                        localScrollinit.init();
 
                         // Update the title
                         document.title = $data.find('.document-title:first').text();
@@ -170,12 +224,6 @@ HISTORY
                         }
                         });
 
-                        // Scroll to top
-                        function scrollTo(id, delay) {
-                            $("html:not(:animated),body:not(:animated)").delay(delay).animate({
-                                scrollTop: $("#" + id).offset().top
-                            }, 600);
-                        }
                         
                         // Page transitions
                         //$("#main-content").css("left", "-100px");
@@ -189,7 +237,7 @@ HISTORY
                         // Complete the change
                         $body.removeClass('loading');
                     },
-                    error: function (jqXHR, textStatus, errorThrown) {
+                    error: function (errorThrown) {
                         document.location.href = url;
                         return false;
                     }
@@ -201,125 +249,50 @@ HISTORY
  
 })(window); // end closure
 
-/* -----------------------------------------------
-MOBILE FLYOUT
------------------------------------------------- */
-var navFly = {
-    init: function() {
-        $(".more-nav").click(function() {
-            $("#mobile-flyout").toggleClass("open");
-            $(".main-content").toggleClass("dark");
-            return false;
-        });
-    }
-};
 
-/* -----------------------------------------------
-CONTENT SLIDE
------------------------------------------------- */
-var contentAnim = {
-    init: function() {
-        $("#main-content").css({
-            "opacity" : 1,
-            "left" : 0
-        });
-    }
-};
-
-/* -----------------------------------------------
-CAMERA PLUGIN
------------------------------------------------- */
-var camera = {
-    init: function() {
-        $('.camera_wrap').camera({
-            fx: 'scrollHorz',
-            autoAdvance: false,
-            mobileAutoAdvance: false,
-            loader: 'none',
-            transPeriod: '300',
-            minHeight: '500px'
-        });
-
-        $('.camera_wrap2').camera({
-            fx: 'scrollHorz',
-            autoAdvance: false,
-            mobileAutoAdvance: false,
-            loader: 'none',
-            transPeriod: '300',
-            minHeight: '500px'
-        });
-    }
-};
-
-/* -----------------------------------------------
-ALBUM FILTER
------------------------------------------------- */
-var albumFilter = {
-    init: function() {
-        $('.filter-toggle').click(function() {
-            $(this).next().toggleClass("filter-show");
-        });
-    }
-};
-
-
-/* -----------------------------------------------
-LOCALSCROLL
------------------------------------------------- */
-var localScrollInit = {
-    init: function() {
-        
-    }
-};
-
-/* -----------------------------------------------
-STICKY NAV
------------------------------------------------- */
-//create a stick nav
-var menuOffset = $('#nav')[0].offsetTop; // replace #menu with the id or class of the target navigation
-$(document).bind('ready scroll', function() {
-    var docScroll = $(document).scrollTop();
-    if (docScroll >= 300) {
-        if (!$('#nav').hasClass('sticky')) {
-            $('#nav').addClass('sticky').css({
-                top: '-300px'
-            }).stop().animate({
-                top: 0
-            }, 500);
-        }
-    } else {
-        $('#nav').removeClass('sticky').removeAttr('style');
-    }
-
-});
-
-/* -----------------------------------------------
-COLORBOX
------------------------------------------------- */
 
 
 /* -----------------------------------------------
 PAGE INITS
 ------------------------------------------------ */
 $(document).ready(function() {
+    //Inits
     contentAnim.init();
     navFly.init();
     albumFilter.init();
+
+    //Localscroll
     $.localScroll({
         hash: false,
         duration: '300'
     });
+
+    //Content Animation backup
+    $("#main-content").css({
+        "opacity" : 1,
+        "left" : 0
+    });
+
+    //Colorbox (only load if desktop)
     var width = $(window).width();
     if (width >= 600) {
         $(".photo-container a").colorbox({
             rel : "group",
             scalePhotos: true,
-            maxHeight: "900px"
+            maxHeight: "900px",
+            speed: 200,
+            opacity: ".7"
         });
     } else {
         $('.photo-container a').click(function(e) {
             event.preventDefault();
         });
     }
+
+    //hiSRC
+    $('.hisrc img').hisrc({
+        useTransparentGif: true,
+        transparentGifSrc: "_/img/spacer.gif"
+    });
     
 });
