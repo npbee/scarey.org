@@ -306,15 +306,29 @@ footer {
 
 /* Sticky nav */
 .sticky {
-    @include at-breakpoint($medium) {
+    @include at-breakpoint($large) {
         position:fixed;
         width:100%;
         z-index: 1;
-        opacity:.8;
-        @include transition(opacity 200ms);
-        &:hover {
-            opacity: 1;
+        //opacity:.8;
+        .logo-nav {
+            font-size:1.2em;
         }
+        a {
+            top:-1px;
+        }
+        padding:0.2em 0;
+        @include transition(all 200ms);
+        // &:hover {
+        //     padding:0.5em 0;
+        //     a {
+        //         top:-5px;
+        //     }
+        //     .logo-nav {
+        //         font-size:2em;
+        //         top:0px;
+        //     }
+        // }
     }
 }
 
@@ -492,9 +506,7 @@ article {
         display:table;
     }
 }
-.post-date {
-    margin-bottom:$padding/2;
-}
+
 
 .post-title {
     float:right;
@@ -820,6 +832,8 @@ article {
         height:0;
         @include at-breakpoint($large) {
             margin: 0 auto;
+            border-radius: $border-radius;
+            width:400px;
         }
     }
     a {
