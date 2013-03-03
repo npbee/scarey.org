@@ -289,10 +289,9 @@ $(document).ready(function() {
         });
     }
 
-    //hiSRC
-    $('.hisrc img').hisrc({
-        useTransparentGif: true,
-        transparentGifSrc: "_/img/spacer.gif"
+    //Album cover slider
+    $('.album-cover img').click(function() {
+        $('.album-cover img').toggleClass("album-cover-toggled");
     });
     
 });
