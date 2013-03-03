@@ -39,7 +39,7 @@ html {
 body {
     margin: 0;
     font-family: "brandon-grotesque", "Helvetica Neue", "Helvetica Neue", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    font-weight:300;
+    font-weight:100;
     background: url("../img/background.png");
     color:$white;
 }
@@ -247,14 +247,15 @@ footer {
     overflow:auto;
     padding: $padding/2 0;
     [data-icon]:before {
-        font-size:2.5em;
+        font-size:2em;
         display:inline-block;
-        margin-top:$smallpadding*1.5;
+        margin-top:$smallpadding;
         @include at-breakpoint($medium) {
             content:"";
             font-size:1em;
         }
     }
+    //text-align:center;
     @include at-breakpoint($medium) {
         text-align:center;
     }
@@ -272,9 +273,9 @@ footer {
     }
     .logo-nav {
         float:left;
-        margin-right:5px;
+        //margin-right:5px;
         color: $orange;
-        font-size:2.5em;
+        font-size:1.8em;
         top:0;
         @include transition(text-shadow 200ms);
         &:hover {
@@ -285,11 +286,16 @@ footer {
             font-size:2em;
             float:none;
             display:inline;
+            &:after {
+                content:"";
+            }
         }
     }
     .more-nav {
         padding:0 $padding;
-        float:right;
+        //float:right;
+        position:absolute;
+        right:0;
         color:$lightblack;
         border-left:1px solid #222;
         margin-top:3px;
@@ -939,7 +945,16 @@ article {
 .media a.media-nav, 
 .store a.store-nav, 
 .contact a.contact-nav {
-        color: $blue;
+        color: lighten($lightblack, 10%);
+        font-size:1.8em;
+        font-weight:300;
+        margin:0 0 0 $padding/4;
+        @include at-breakpoint($medium) {
+            color:$blue;
+            font-size:1em;
+            font-weight:100;
+            margin-left:0;
+        }
 }
 
 a.active {
