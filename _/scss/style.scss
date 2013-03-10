@@ -39,7 +39,7 @@ html {
 body {
     margin: 0;
     font-family: "brandon-grotesque", "Helvetica Neue", "Helvetica Neue", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    font-weight:300;
+    font-weight:100;
     background: url("../img/background.png");
     color:$white;
 }
@@ -49,7 +49,7 @@ body {
 
 a {
   text-decoration:none;
-  color:#e6e6e6;
+  color:$white;
   @include transition(color .2s);
 }
 
@@ -60,6 +60,7 @@ a {
     a:active,
     a:hover {
         outline: 0;
+        color:$orange;
     }
 
 h1 {
@@ -126,6 +127,9 @@ body > .wrap {
     left:-80px;
     h1 {
         text-align:center;
+    }
+    a {
+        font-style: italic;
     }
     @include at-breakpoint($medium) {
         @include container;
@@ -217,9 +221,11 @@ footer {
     text-align:center;
     font-size:$regularfont;
     cursor:pointer;
+    font-style:normal;
     @include transition(background .2s);
     &:hover {
         background: darken($orange, 10%);
+        color:$offblack;
     }
 }
 
@@ -261,6 +267,7 @@ footer {
     }
     a {
         display:inline-block;
+        font-weight:300;
         &:hover {
             color: $blue;
         }
@@ -642,7 +649,7 @@ article {
 .tour-entry {
     clear:both;
     width:100%;
-    padding:$padding 0;
+    padding:$padding/2 0;
     text-align:right;
     font-size:$regularfont;
     @include at-breakpoint($medium) {
