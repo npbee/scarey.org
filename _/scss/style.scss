@@ -39,7 +39,7 @@ html {
 body {
     margin: 0;
     font-family: "brandon-grotesque", "Helvetica Neue", "Helvetica Neue", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    font-weight:100;
+    font-weight:300;
     background: url("../img/background.png");
     color:$white;
 }
@@ -124,12 +124,9 @@ body > .wrap {
     padding-bottom:6em;
     position:relative;
     opacity:0;
-    left:-80px;
+    //left:-80px;
     h1 {
         text-align:center;
-    }
-    a {
-        font-style: italic;
     }
     @include at-breakpoint($medium) {
         @include container;
@@ -268,6 +265,7 @@ footer {
     a {
         display:inline-block;
         font-weight:300;
+        font-style:none !important;
         &:hover {
             color: $blue;
         }
@@ -932,6 +930,11 @@ article {
 
 /* ========================================STATES */
 
+//jquery history loading
+.loading {
+
+}
+
 /* ========================================THEMES */
 .italic {
     font-style: italic;
@@ -1044,7 +1047,10 @@ a.page-active {
         font-weight: 100;
         width:100%;
         @include at-breakpoint($medium) {
-            font-size:10em;
+            font-size:9em;
+        }
+        @include at-breakpoint($large) {
+            font-size:15em;
         }
     }
 

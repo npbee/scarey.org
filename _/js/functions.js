@@ -17,8 +17,8 @@ CONTENT SLIDE
 var contentAnim = {
     init: function() {
         $("#main-content").css({
-            "opacity" : 1,
-            "left" : 0
+            "opacity" : 1
+            //"left" : 0
         });
     }
 };
@@ -293,5 +293,6 @@ $(document).ready(function() {
     $('.album-cover img').click(function() {
         $('.album-cover img').toggleClass("album-cover-toggled");
     });
+
     
 });
