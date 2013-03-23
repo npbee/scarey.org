@@ -1,8 +1,9 @@
 <nav id="nav" class="main-nav">
+	<a class="logo-nav" href="/" class="logo">S. Carey</a>
 	<a class="blog-nav" data-icon="" aria-hidden="true" href="/blog"><span class="">Blog</span></a>
 	<a class="tour-nav" data-icon="" aria-hidden="true" href="/tour/2010+"><span class="">Tour</span></a>
 	<a class="albums-nav" data-icon="" aria-hidden="true" href="/albums/lp"><span class="">Albums</span></a>
-	<a class="logo-nav" href="/" class="logo">S. Carey</a>
+	
 	<a class="media-nav" data-icon="" aria-hidden="true" href="/media/audio"><span class="">Media</span></a>
 	<a class="store-nav" data-icon="" aria-hidden="true" href="/store"><span class="">Store</span></a>
 	<a class="contact-nav" data-icon="" aria-hidden="true" href="/contact"><span class="">Contact</span></a>

@@ -40,8 +40,10 @@ body {
     margin: 0;
     font-family: "brandon-grotesque", "Helvetica Neue", "Helvetica Neue", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-weight:300;
-    background: url("../img/background.png");
-    color:$white;
+    //background: url("../img/background_light.png");
+    //background: url('https://fiber.google.com/img/bg_gradient.png?da') repeat-x;
+    background: #f7f7f7 url("../img/bg_gradient.png") repeat-x;
+    color:$offblack;
 }
 .no-js body {
     font-weight:100;
@@ -49,7 +51,7 @@ body {
 
 a {
   text-decoration:none;
-  color:$white;
+  color:$offblack;
   @include transition(color .2s);
 }
 
@@ -94,7 +96,8 @@ strong {
 }
 
 img {
-    border: 0;
+    border: 1px solid #d9d9d9;
+    border-radius:3px;
 }
 
 ul {
@@ -124,12 +127,13 @@ body > .wrap {
     padding-bottom:6em;
     position:relative;
     opacity:0;
-    //left:-80px;
+    left:-80px;
     h1 {
         text-align:center;
     }
     @include at-breakpoint($medium) {
         @include container;
+
     }
 
     @include at-breakpoint($large) {
@@ -245,9 +249,9 @@ footer {
 /* ==========MAIN-NAV */
 .main-nav {
     text-transform: uppercase;
-    background:#111;
+    //background:$grey;
     //@include background-image(linear-gradient(#222, #222 30%, #111 70%, #111));
-    overflow:auto;
+    //overflow:auto;
     padding: $padding/2 0;
     [data-icon]:before {
         font-size:2em;
@@ -261,6 +265,14 @@ footer {
     //text-align:center;
     @include at-breakpoint($medium) {
         text-align:center;
+        padding:0;
+        &:after {
+            content: url('../img/scarey_line_spacer.png');
+            display:block;
+            line-height:0;
+            position:relative;
+            top:-5px;
+        }
     }
     a {
         display:inline-block;
@@ -273,7 +285,7 @@ footer {
             padding:0 $padding/2;
             position:relative;
             top:-5px;
-            color:$grey;
+            //color:$grey;
         }
     }
     .logo-nav {
@@ -288,9 +300,11 @@ footer {
             text-shadow: (0px 1px 10px darken($orange,15%));
         }
         @include at-breakpoint($medium) {
-            font-size:2em;
+            font-size:6.5em;
+            font-weight:100;
             float:none;
-            display:inline;
+            line-height:1;
+            display:block;
             &:after {
                 content:"";
             }
@@ -302,7 +316,7 @@ footer {
         position:absolute;
         right:0;
         color:$lightblack;
-        border-left:1px solid #222;
+        border-left:1px solid #999;
         margin-top:3px;
         @include at-breakpoint($medium) {
             display:none;
@@ -436,13 +450,13 @@ footer {
     text-align:center;
     margin-bottom:1em;
     overflow:auto;
-    font-size:1.3em;
+    //font-size:1.3em;
     position:relative;
     a {
-        background:#333;
+        background:#d9d9d9;
         display:block;
         padding:$padding*2 0;
-        border-right:1px solid #111;
+        border-right:1px solid #999;
         border-bottom:1px solid transparent;
         line-height:.1em;
         &:last-child {
@@ -454,7 +468,7 @@ footer {
         }
         @include at-breakpoint($medium) {
             background:none;
-            color:$white;
+            color:$offblack;
             border-right:none;
             padding:$padding*2 0 $padding;
         }
@@ -629,6 +643,10 @@ article {
 }
 
 /* ====================TOUR PAGE */
+.tour-year-block {
+    max-width:75em;
+    margin:0 auto;
+}
 .tour-header {
     clear:both;
     h1 {
@@ -962,7 +980,7 @@ article {
         @include at-breakpoint($medium) {
             color:$blue;
             font-size:1em;
-            font-weight:100;
+            //font-weight:100;
             margin-left:0;
         }
 }
@@ -978,7 +996,8 @@ a.page-active {
 .home {
     background:
         url("../img/home_art.png") no-repeat right bottom,
-        url("../img/background.png") repeat;
+        //url("../img/background_light.png") repeat;
+        #f7f7f7 url("../img/bg_gradient.png") repeat-x;
     .main-content {
         width:100%;
         padding-bottom:0;
@@ -1039,6 +1058,9 @@ a.page-active {
             //background: rgba(17,17,17,.5);
             background:none;
             border-radius:3px;
+            &:after {
+                    content: "";
+                }
         }
     }
 
@@ -1056,7 +1078,7 @@ a.page-active {
 
     .social-home {
         text-align:center;
-        margin-top:$padding*2;
+        margin-top:$padding*5;
         a {
             color:darken($lightblack, 15%);
             @include span-columns(3,12);
