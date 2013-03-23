@@ -30,6 +30,7 @@ var albumFilter = {
     init: function() {
         $('.filter-toggle').click(function() {
             $(this).next().toggleClass("filter-show");
+            $(this).toggleClass('grey');
         });
     }
 };
