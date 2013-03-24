@@ -62,7 +62,7 @@ a {
     a:active,
     a:hover {
         outline: 0;
-        color:$orange;
+        color:$blue;
     }
 
 h1 {
@@ -125,8 +125,8 @@ body > .wrap {
     clear:both;
     padding-bottom:8em;
     position:relative;
-    opacity:0;
-    left:-80px;
+    opacity:1;
+    //top:-40px;
     h1 {
         text-align:center;
     }
@@ -172,8 +172,11 @@ footer {
             color: lighten($lightblack, 20%);
         }
         @include at-breakpoint($medium) {
-            padding:0 $padding*3;
+            padding:0 $padding;
            @include reset-columns;
+        }
+        @include at-breakpoint($large) {
+            padding: 0 $padding*3;
         }
     }
     .logo-footer {
@@ -268,13 +271,13 @@ footer {
     @include at-breakpoint($medium) {
         text-align:center;
         padding:0;
-        &:after {
-            content: url('../img/scarey_line_spacer.png');
-            display:block;
-            line-height:0;
-            position:relative;
-            top:-5px;
-        }
+        // &:after {
+        //     content: url('../img/scarey_line_spacer.png');
+        //     display:block;
+        //     line-height:0;
+        //     position:relative;
+        //     top:-5px;
+        // }
     }
     a {
         display:inline-block;
@@ -322,14 +325,16 @@ footer {
         }
     }
     .more-nav {
-        padding:0 $padding*2;
+        padding:$padding/2 $padding*2;
         //float:right;
         position:absolute;
+        top:7px;
         right:0;
         color:$lightblack;
         border-left:1px solid $darkgrey;
-        margin-top:3px;
+        //margin-top:3px;
         cursor: pointer;
+        //@include background-image(radial-gradient(45px, 45px, $grey 10px, $darkgrey 30px));
         @include at-breakpoint($medium) {
             display:none;
         }
@@ -506,11 +511,17 @@ footer {
     a {
         width:33.33%;
         float:left;
+        &:last-child {
+            width:33.34%;
+        }
         @include at-breakpoint($medium) {
-            @include container;
+                @include container;
                 float:none;
                 width:auto;
                 display:inline-block;
+                &:last-child {
+                    width: auto;
+                }
             }
     }
 }
@@ -828,8 +839,9 @@ article {
 .album-filter {
     text-align:center;
     clear:both;
+    @include transition(all 200ms);
     .filter-toggle {
-        opacity:.5;
+        //opacity:.5;
         display:block;
         width:100%;
         cursor: pointer;
@@ -838,7 +850,7 @@ article {
         //border-bottom:none;
         @include transition(opacity 200ms);
         &:hover {
-            background:#d9d9d9;
+            background:$blue;
         }
         @include at-breakpoint($medium) {
             background:none;
@@ -861,7 +873,7 @@ article {
         @include transition(all 200ms);
     }
     .filter-show {
-        background: $darkgrey;
+        background: $grey;
         li {
             display:inline-block;
             padding:$padding 0;
@@ -883,8 +895,9 @@ article {
     a {
         padding:0 $padding;
         display:inline-block;
+        @include transition(all 200ms);
         &:hover {
-            border-bottom: none;
+            //border-bottom: none;
             img {
                     opacity:1;
             }

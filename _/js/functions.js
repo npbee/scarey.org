@@ -17,8 +17,8 @@ CONTENT SLIDE
 var contentAnim = {
     init: function() {
         $("#main-content").css({
-            "opacity" : 1,
-            "left" : 0
+             "opacity" : 1
+             //"top" : 0
         });
     }
 };
@@ -56,26 +56,21 @@ $(document).bind('ready scroll', function() {
 });
 
 /* -----------------------------------------------
-COLORBOX
------------------------------------------------- */
-
-/* -----------------------------------------------
 HISTORY
 ------------------------------------------------ */
 
 (function(window,undefined){
-    
     // Prepare our Variables
     var
         History = window.History,
         $ = window.jQuery,
         document = window.document;
- 
+
     // Check to see if History.js is enabled for our Browser
     if ( !History.enabled ) {
         return false;
     }
- 
+
     // Wait for Document
     $(function(){
         // Prepare Variables
@@ -84,22 +79,16 @@ HISTORY
             contentSelector = '.wrap',
             $content = $(contentSelector).filter(':first'),
             contentNode = $content.get(0),
-            //$menu = $('#nav'),
-            //activeClass = 'active',
-            //activeSelector = '.active',
-            //menuChildrenSelector = 'a',
-            //completedEventName = 'statechangecomplete',
-            /* Application Generic Variables */
             $window = $(window),
             $body = $(document.body),
             rootUrl = History.getRootUrl()
             ;
-        
+
         // Ensure Content
         if ( $content.length === 0 ) {
             $content = $body;
         }
-        
+
         // Internal Helper
         $.expr[':'].internal = function(obj){
             // Prepare
@@ -107,14 +96,14 @@ HISTORY
                 $this = $(obj),
                 url = $this.attr('href')||'',
                 isInternalLink;
-            
+
             // Check link
             isInternalLink = url.substring(0,rootUrl.length) === rootUrl || url.indexOf(':') === -1;
-            
+
             // Ignore or Keep
             return isInternalLink;
         };
-        
+
         // HTML Helper
         var documentHtml = function(html){
             // Prepare
@@ -123,11 +112,11 @@ HISTORY
                 .replace(/<(html|head|body|title|meta|script)([\s\>])/gi,'<div class="document-$1"$2')
                 .replace(/<\/(html|head|body|title|meta|script)\>/gi,'</div>')
             ;
-            
+
             // Return
             return result;
         };
-        
+
         // Ajaxify Helper
         $.fn.ajaxify = function(){
             // Prepare
@@ -140,33 +129,37 @@ HISTORY
                     $this = $(this),
                     url = $this.attr('href'),
                     title = $this.attr('title')||null;
-                
+
                 // Continue as normal for cmd clicks etc
                 if ( event.which === 2 || event.metaKey ) { return true; }
-                
+
                 // Ajaxify this link
                 History.pushState(null,title,url);
                 event.preventDefault();
                 return false;
             });
-            
+
             // Chain
             return $this;
         };
-        
+
         // Ajaxify our Internal Links
         $body.ajaxify();
-        
+
         // Hook into State Changes
         $window.bind('statechange',function(){
             // Prepare Variables
             var
                 State = History.getState(),
                 url = State.url;
- 
+
             // Set Loading
             $body.addClass('loading');
-            
+            $("#main-content").css({
+                opacity: 0
+                },
+                800);
+
             // Ajax Request the Traditional Page
                 $.ajax({
                     url: url,
@@ -225,29 +218,28 @@ HISTORY
                         }
                         });
 
-                        
-                        // Page transitions
-                        //$("#main-content").css("left", "-100px");
-                        
-
                         $("#main-content").css({
-                            "left" : 0,
                             "opacity" : 1
                         });
 
                         // Complete the change
                         $body.removeClass('loading');
+
+                        // Inform Google Analytics of the change
+                        if ( typeof window._gaq !== 'undefined' ) {
+                            window._gaq.push(['_trackPageview', relativeUrl]);
+                        }
                     },
                     error: function (errorThrown) {
                         document.location.href = url;
                         return false;
                     }
                 }); // end Ajax
- 
+
         }); // end onStateChange
- 
+
     }); // end onDomLoad
- 
+
 })(window); // end closure
 
 
@@ -264,15 +256,15 @@ $(document).ready(function() {
 
     //Localscroll
     $.localScroll({
-        hash: false,
+        hash: true,
         duration: '300'
     });
 
     //Content Animation backup
-    $("#main-content").css({
-        "opacity" : 1,
-        "left" : 0
-    });
+    // $("#main-content").css({
+    //     "opacity" : 1,
+    //     "left" : 0
+    // });
 
     //Colorbox (only load if desktop)
     var width = $(window).width();
@@ -294,5 +286,4 @@ $(document).ready(function() {
     $('.album-cover img').click(function() {
         $('.album-cover img').toggleClass("album-cover-toggled");
     });
-    
 });
