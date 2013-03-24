@@ -43,7 +43,7 @@ body {
     //background: url("../img/background_light.png");
     //background: url('https://fiber.google.com/img/bg_gradient.png?da') repeat-x;
     //background: #f7f7f7 url("../img/bg_gradient.png") repeat-x;
-    background: url("../img/home_art.png") no-repeat fixed right bottom,
+    background: url("../img/home_art_greyscale.png") no-repeat fixed right bottom,
         //url("../img/background_light.png") repeat;
         #f7f7f7 url("../img/bg_gradient.png") repeat-x;
     color:$offblack;
@@ -967,6 +967,7 @@ article {
     text-align:center;
     margin-bottom:$padding*4;
     word-wrap: break-word;
+    clear:both;
     div {
         margin-bottom:$padding;
     }
@@ -989,6 +990,12 @@ article {
             @include span-columns(4 omega, 12);
         }
     }
+}
+
+.copyright {
+    font-size:.6em;
+    padding-top:$padding*6;
+    margin-bottom:0;
 }
 
 
@@ -1059,13 +1066,13 @@ a.page-active {
         background:none;
         a {
             display:block;
-            background: rgba(17,17,17,.8);
+            //background: rgba(17,17,17,.8);
             float:left;
             width:50%;
             padding:1em 0;
             text-align:center;
             color: $white;
-            border-right:1px solid #333;
+            border-right:1px solid $darkgrey;
             font-size:2em;
             &:first-child {
                 border-radius:5px 0 0 0;
@@ -1076,7 +1083,7 @@ a.page-active {
             &:nth-child(2), &:nth-child(5), &:nth-child(7) {
                 border-right:none;
             }
-            border-bottom:1px solid #333;
+            border-bottom:1px solid $darkgrey;
             &:nth-child(6), &:nth-child(7) {
                 border-bottom:none;
             }
@@ -1124,9 +1131,13 @@ a.page-active {
 
     .social-home {
         text-align:center;
-        margin-top:$padding*5;
+        clear:both;
+        position:fixed;
+        bottom: 0;
+        width:100%;
+        //padding-top:$padding*10;
         a {
-            color:darken($lightblack, 15%);
+            color:$lightblack;
             @include span-columns(3,12);
             &:last-child {
                 @include span-columns(3 omega, 12);
