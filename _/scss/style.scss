@@ -42,7 +42,10 @@ body {
     font-weight:300;
     //background: url("../img/background_light.png");
     //background: url('https://fiber.google.com/img/bg_gradient.png?da') repeat-x;
-    background: #f7f7f7 url("../img/bg_gradient.png") repeat-x;
+    //background: #f7f7f7 url("../img/bg_gradient.png") repeat-x;
+    background: url("../img/home_art.png") no-repeat fixed right bottom,
+        //url("../img/background_light.png") repeat;
+        #f7f7f7 url("../img/bg_gradient.png") repeat-x;
     color:$offblack;
 }
 .no-js body {
@@ -361,7 +364,17 @@ footer {
             top:-1px;
         }
         padding:0.2em 0;
+        .logo-nav {
+            font-weight:300;
+        }
         @include transition(all 200ms);
+        &:after {
+            content: url('../img/scarey_line_spacer.png');
+            display:block;
+            line-height:0;
+            position:relative;
+            top:-5px;
+        }
         // &:hover {
         //     padding:0.5em 0;
         //     a {
