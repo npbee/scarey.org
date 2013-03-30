@@ -286,4 +286,9 @@ $(document).ready(function() {
     $('.album-cover img').click(function() {
         $('.album-cover img').toggleClass("album-cover-toggled");
     });
+
+
+    $("#2010-swipe").bind('swipeleft', function (event, ui) {
+        $.mobile.changePage('/2011');
+    });
 });
