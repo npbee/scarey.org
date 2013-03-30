@@ -42,10 +42,8 @@ body {
     font-weight:300;
     //background: url("../img/background_light.png");
     //background: url('https://fiber.google.com/img/bg_gradient.png?da') repeat-x;
-    //background: #f7f7f7 url("../img/bg_gradient.png") repeat-x;
-    background: url("../img/home_art_greyscale.png") no-repeat fixed right bottom,
-        //url("../img/background_light.png") repeat;
-        #f7f7f7 url("../img/bg_gradient.png") repeat-x;
+    background: #f7f7f7 url("../img/bg_gradient.png") repeat-x;
+
     color:$offblack;
 }
 .no-js body {
@@ -412,6 +410,7 @@ footer {
     position:absolute;
     left:-99999px;
     @include transition(all .2s);
+
     a {
         display:block;
         float:left;
@@ -444,8 +443,11 @@ footer {
     z-index:1;
 }
 
+.closed {
+
+}
 .dark {
-    opacity:.2;
+    opacity:.2 !important;
 }
 
 .main-nav-check {
@@ -1004,6 +1006,103 @@ article {
 //jquery history loading
 .loading {
 
+}
+
+//transitions
+.in {
+    -webkit-animation-fill-mode: both;
+    -webkit-animation-timing-function: ease-out;
+    -webkit-animation-duration: 300ms;
+    -moz-animation-fill-mode: both;
+    -moz-animation-timing-function: ease-out;
+    -moz-animation-duration: 300ms;
+    animation-fill-mode: both;
+    animation-timing-function: ease-out;
+    animation-duration: 300ms;
+}
+.out {
+    -webkit-animation-fill-mode: both;
+    -webkit-animation-timing-function: ease-in;
+    -webkit-animation-duration: 325ms;
+    -moz-animation-fill-mode: both;
+    -moz-animation-timing-function: ease-in;
+    -moz-animation-duration: 325ms;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in;
+    animation-duration: 325ms;
+}
+@-webkit-keyframes slideinfromright {
+    from { -webkit-transform: translateX(100%); }
+    to { -webkit-transform: translateX(0); }
+}
+@-moz-keyframes slideinfromright {
+    from { -moz-transform: translateX(100%); }
+    to { -moz-transform: translateX(0); }
+}
+@keyframes slideinfromright {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+}
+@-webkit-keyframes slideinfromleft {
+    from { -webkit-transform: translateX(-100%); }
+    to { -webkit-transform: translateX(0); }
+}
+@-moz-keyframes slideinfromleft {
+    from { -moz-transform: translateX(-100%); }
+    to { -moz-transform: translateX(0); }
+}
+@keyframes slideinfromleft {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+@-webkit-keyframes slideouttoleft {
+    from { -webkit-transform: translateX(0); }
+    to { -webkit-transform: translateX(-100%); }
+}
+@-moz-keyframes slideouttoleft {
+    from { -moz-transform: translateX(0); }
+    to { -moz-transform: translateX(-100%); }
+}
+@keyframes slideouttoleft {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+}
+@-webkit-keyframes slideouttoright {
+    from { -webkit-transform: translateX(0); }
+    to { -webkit-transform: translateX(100%); }
+}
+@-moz-keyframes slideouttoright {
+    from { -moz-transform: translateX(0); }
+    to { -moz-transform: translateX(100%); }
+}
+@keyframes slideouttoright {
+    from { transform: translateX(0); }
+    to { transform: translateX(100%); }
+}
+
+.slide.out, .slide.in {
+    -webkit-animation-timing-function: ease-out;
+    -webkit-animation-duration: 300ms;
+    -moz-animation-timing-function: ease-out;
+    -moz-animation-duration: 300ms;
+    animation-timing-function: ease-out;
+    animation-duration: 300ms;
+}
+.slide.out {
+    -webkit-transform: translateX(-100%);
+    -webkit-animation-name: slideouttoleft;
+    -moz-transform: translateX(-100%);
+    -moz-animation-name: slideouttoleft;
+    transform: translateX(-100%);
+    animation-name: slideouttoleft;
+}
+.slide.in {
+    -webkit-transform: translateX(0);
+    -webkit-animation-name: slideinfromright;
+    -moz-transform: translateX(0);
+    -moz-animation-name: slideinfromright;
+    transform: translateX(0);
+    animation-name: slideinfromright;
 }
 
 /* ========================================THEMES */

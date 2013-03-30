@@ -4,7 +4,7 @@ MOBILE FLYOUT
 var navFly = {
     init: function() {
         $(".more-nav").click(function() {
-            $("#mobile-flyout").toggleClass("open");
+            $("#mobile-flyout").toggleClass("open slide in");
             $(".main-content").toggleClass("dark");
             return false;
         });
@@ -155,10 +155,11 @@ HISTORY
 
             // Set Loading
             $body.addClass('loading');
-            $("#main-content").css({
-                opacity: 0
-                },
-                800);
+            $("#main-content").removeClass("in").addClass("slide out");
+            // $("#main-content").css({
+            //     opacity: 0
+            //     },
+            //     800);
 
             // Ajax Request the Traditional Page
                 $.ajax({
@@ -218,9 +219,10 @@ HISTORY
                         }
                         });
 
-                        $("#main-content").css({
-                            "opacity" : 1
-                        });
+                        // $("#main-content").css({
+                        //     "opacity" : 1
+                        // });
+                        $("#main-content").addClass("slide in");
 
                         // Complete the change
                         $body.removeClass('loading');
