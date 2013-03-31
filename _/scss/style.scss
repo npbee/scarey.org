@@ -132,7 +132,7 @@ body > .wrap {
         text-align:center;
     }
     img {
-        border: 1px solid #d9d9d9;
+        outline: 1px solid #d9d9d9;
         border-radius:3px;
     }
     @include at-breakpoint($medium) {
@@ -302,7 +302,7 @@ footer {
         float:left;
         //margin-right:5px;
         color: $orange;
-        font-size:1.8em;
+        font-size:1.5em;
         top:0;
         margin-left:5px;
         @include transition(text-shadow 200ms);
@@ -326,7 +326,7 @@ footer {
         }
     }
     .more-nav {
-        padding:$padding/2 $padding*2;
+        padding:$padding/3 $padding*1.5;
         //float:right;
         position:absolute;
         top:7px;
@@ -418,20 +418,20 @@ footer {
         padding:1em 0;
         text-align:center;
         background:$darkgrey;
-        border-right:1px solid $grey;
+        outline:1px solid $grey;
         &:nth-child(even) {
             border-right:none;
         }
-        border-top:1px solid $grey;
+        //border-top:1px solid $grey;
         &:nth-child(5), &:nth-child(6) {
-            border-bottom:1px solid $grey;
+            //border-bottom:1px solid $grey;
         }
     }
     span {
         text-transform:uppercase;
     }
     [data-icon]:before {
-        font-size:4em;
+        font-size:2.5em;
         display:block;
         color: $lightblack;
         margin-bottom:$smallpadding;
@@ -707,7 +707,7 @@ article {
 .tour-entry {
     clear:both;
     width:100%;
-    padding:$padding/2 0;
+    padding:0 0 $padding/2 0;
     text-align:right;
     font-size:$regularfont;
     @include at-breakpoint($medium) {
@@ -1041,10 +1041,10 @@ article {
     from { -webkit-transform: translateX(10%); opacity:0;}
     to { -webkit-transform: translateX(0);opacity:1; }
 }
-@-moz-keyframes slideinfromright {
-    from { -moz-transform: translateX(10%); opacity:0;}
-    to { -moz-transform: translateX(0);opacity:1; }
-}
+// @-moz-keyframes slideinfromright {
+//     from { -moz-transform: translateX(10%); opacity:0;}
+//     to { -moz-transform: translateX(0);opacity:1; }
+// }
 @keyframes slideinfromright {
     from { transform: translateX(10%); opacity:0;}
     to { transform: translateX(0);opacity: 1}
@@ -1063,31 +1063,33 @@ article {
     to { transform: translateX(-10%); opacity:0;}
 }
 
-.slide.out, .slide.in {
-    -webkit-animation-timing-function: ease-out;
-    -webkit-animation-duration: 350ms;
-    -moz-animation-timing-function: ease-out;
-    -moz-animation-duration: 350ms;
-    animation-timing-function: ease-out;
-    animation-duration: 350ms;
+@-moz-keyframes fadeout {
+    from { opacity: 1; }
+    to { opacity: 0; }
 }
+
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
 .slide.out {
     -webkit-transform: translateX(-10%);
     -webkit-animation-name: slideouttoleft;
-    -moz-transform: translateX(-10%);
-    -moz-animation-name: slideouttoleft;
-    transform: translateX(-10%);
-    animation-name: slideouttoleft;
+    moz-animation-duration: 200ms;
+    -moz-animation-name: fadeout;
+    // transform: translateX(-10%);
+    // animation-name: slideouttoleft;
     opacity:0;
 }
 .slide.in {
     opacity:1;
     -webkit-transform: translateX(0);
     -webkit-animation-name: slideinfromright;
-    -moz-transform: translateX(0);
-    -moz-animation-name: slideinfromright;
-    transform: translateX(0);
-    animation-name: slideinfromright;
+    -moz-animation-duration: 225ms;
+    -moz-animation-name: fadein;
+    // transform: translateX(0);
+    // animation-name: slideinfromright;
 }
 
 
@@ -1113,7 +1115,7 @@ article {
 .store a.store-nav, 
 .contact a.contact-nav {
         color: lighten($lightblack, 10%);
-        font-size:1.8em;
+        font-size:1.5em;
         font-weight:300;
         margin:0 0 0 $padding/4;
         @include at-breakpoint($medium) {

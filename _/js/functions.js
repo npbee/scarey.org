@@ -4,7 +4,7 @@ MOBILE FLYOUT
 var navFly = {
     init: function() {
         $(".more-nav").click(function() {
-            $("#mobile-flyout").toggleClass("open slide in");
+            $("#mobile-flyout").toggleClass("open slide");
             $(".main-content").toggleClass("dark");
             return false;
         });
