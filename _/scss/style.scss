@@ -68,11 +68,11 @@ a {
 
 h1 {
     font-weight:300;
-    font-size:2.8em;
+    font-size:2.5em;
     margin: 0;
     padding:0;
     @include at-breakpoint($medium) {
-        font-size:3em;
+        //font-size:3em;
     }
 }
 
@@ -190,6 +190,22 @@ footer {
 
 
 /* ========================================MODULES */
+/* ====================BIG VIDEOS */
+    .video-wrapper {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 */
+        padding-top: 25px;
+        height: 0;
+        margin-bottom:5em;
+    }
+    .video-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
 /* ====================CLEARFIX */
 .clearfix:after {content: ".";
     display: block;
@@ -567,7 +583,7 @@ footer {
 article {
     //@include container;
     //@include susy-grid-background;
-    margin-bottom:$padding*6;
+    margin:$padding 0 $padding*6;
     &:after {
         content:"";
         display:table;
@@ -580,10 +596,19 @@ article {
 }
 
 .post-content {
+    line-height:2.5em;
+    margin: $padding auto;
     text-align:center;
     clear:both;
     img {
         max-width:100%;
+    }
+    p {
+        margin:0 auto;
+        //text-align:justify;
+        @include at-breakpoint($large) {
+            max-width:50%;
+        }
     }
 }
 .photoset-wrap {
@@ -597,6 +622,20 @@ article {
         overflow:hidden;
         @include at-breakpoint($medium) {
             width:250px;
+        }
+    }
+}
+
+.audio-player {
+    embed {
+        border: 1px solid $darkgrey;
+        width:100%;
+        height:100px;
+        @include at-breakpoint($medium) {
+            width:75%;
+        }
+        @include at-breakpoint($medium) {
+            width:50%;
         }
     }
 }
@@ -947,22 +986,22 @@ article {
     }
 }
 
-.video-main {
-    .video-wrapper {
-        position: relative;
-        padding-bottom: 56.25%; /* 16:9 */
-        padding-top: 25px;
-        height: 0;
-        margin-bottom:5em;
-    }
-    .video-wrapper iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-}
+// .video-main {
+//     .video-wrapper {
+//         position: relative;
+//         padding-bottom: 56.25%; /* 16:9 */
+//         padding-top: 25px;
+//         height: 0;
+//         margin-bottom:5em;
+//     }
+//     .video-wrapper iframe {
+//         position: absolute;
+//         top: 0;
+//         left: 0;
+//         width: 100%;
+//         height: 100%;
+//     }
+// }
 
 /* ====================STORE PAGE */
 .store {
@@ -1100,12 +1139,10 @@ article {
 }
 
 
-//Opacity transition for mobile menu & state changes
-.main-content  {
-    @include transition(all 200ms);
-
-
-}
+// //Opacity transition for mobile menu & state changes
+// .main-content  {
+//     @include transition(all 200ms);
+// }
 
 /* ====================ACTIVE MENUS */
 .blog a.blog-nav, 
