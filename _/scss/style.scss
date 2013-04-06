@@ -126,8 +126,6 @@ body > .wrap {
     clear:both;
     padding-bottom:8em;
     position:relative;
-    opacity:1;
-    //top:-40px;
     h1 {
         text-align:center;
     }
@@ -605,9 +603,8 @@ article {
     }
     p {
         margin:0 auto;
-        //text-align:justify;
         @include at-breakpoint($large) {
-            max-width:50%;
+            max-width: 60%;
         }
     }
 }
@@ -746,14 +743,14 @@ article {
 .tour-entry {
     clear:both;
     width:100%;
-    padding:0 0 $padding/2 0;
+    padding:0 0 $padding 0;
     text-align:right;
     font-size:$regularfont;
     @include at-breakpoint($medium) {
         text-align:center;
     }
     div {
-        margin:$padding 0;
+        margin:$padding/4 0;
         @include at-breakpoint($medium) {
             margin:0;
             display:inline-block;

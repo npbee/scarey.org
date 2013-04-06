@@ -12,18 +12,6 @@ var navFly = {
 };
 
 /* -----------------------------------------------
-CONTENT SLIDE
------------------------------------------------- */
-var contentAnim = {
-    init: function() {
-        $("#main-content").css({
-             "opacity" : 1
-             //"top" : 0
-        });
-    }
-};
-
-/* -----------------------------------------------
 ALBUM FILTER
 ------------------------------------------------ */
 var albumFilter = {
@@ -156,10 +144,6 @@ HISTORY
             // Set Loading
             $body.addClass('loading');
             $("#main-content").removeClass("in").addClass("slide out");
-            // $("#main-content").css({
-            //     opacity: 0
-            //     },
-            //     800);
 
             // Ajax Request the Traditional Page
                 $.ajax({
@@ -184,19 +168,10 @@ HISTORY
                             return false;
                         }
 
-                        // Update the menu
-                        // $menuChildren = $menu.find(menuChildrenSelector);
-                        // $menuChildren.filter(activeSelector).removeClass(activeClass);
-                        // $menuChildren = $menuChildren.has('a[href^="' + relativeUrl + '"],a[href^="/' + relativeUrl + '"],a[href^="' + url + '"]');
-                        // if ($menuChildren.length === 1) {
-                        //     $menuChildren.addClass(activeClass);
-                        // }
-
                         // Update the content
                         $content.html(contentHtml).ajaxify();
 
                         //reinitialize
-                        contentAnim.init();
                         navFly.init();
                         albumFilter.init();
 
@@ -219,9 +194,6 @@ HISTORY
                         }
                         });
 
-                        // $("#main-content").css({
-                        //     "opacity" : 1
-                        // });
                         $("#main-content").addClass("slide in");
 
                         // Complete the change
@@ -252,7 +224,6 @@ PAGE INITS
 ------------------------------------------------ */
 $(document).ready(function() {
     //Inits
-    contentAnim.init();
     navFly.init();
     albumFilter.init();
 
@@ -262,11 +233,6 @@ $(document).ready(function() {
         duration: '300'
     });
 
-    //Content Animation backup
-    // $("#main-content").css({
-    //     "opacity" : 1,
-    //     "left" : 0
-    // });
 
     //Colorbox (only load if desktop)
     var width = $(window).width();
@@ -290,7 +256,14 @@ $(document).ready(function() {
     });
 
 
-    $("#2010-swipe").bind('swipeleft', function (event, ui) {
-        $.mobile.changePage('/2011');
+    //check if it's a long parapraph in tumblr
+    $('.post-content p').each(function() {
+        var plength = $(this).text().split(' ').length;
+        console.log(plength);
+        if (plength >= 10) {
+            $(this).css('text-align', 'justify');
+        }
     });
+
+
 });
