@@ -1,0 +1,1094 @@
+/*------------------------------------------------------------
+
+   _______ _______ _     _ __   __
+   |______ |______  \___/    \_/
+   ______| |______ _/   \_    |
+
+  ----------------------------------------------------------
+
+  Theme:   Sexy
+  Author:  Big Cartel
+           http://bigcartel.com
+
+           Big Cartel Stores CSS
+           Copyright 2008 Big Cartel LLC.
+           More info at: http://bigcartel.com
+
+------------------------------------------------------------*/
+
+
+
+/*============================================================
+ Base
+============================================================*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+
+body {
+  margin: 0;
+  text-align: center;
+  font-family: "brandon-grotesque", "Helvetica Neue", "Helvetica Neue", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  color: #111;
+  background: #f7f7f7 url("_/img/bg_gradient.png") repeat-x
+  }
+
+ul, ol {
+  }
+
+li {
+  list-style: none;
+  }
+
+h2 {
+
+  }
+
+h3 {
+
+
+  }
+
+p {
+
+  }
+
+a  {
+  text-decoration: none;
+  color:#111;
+  }
+
+a:link, a:visited {
+  }
+
+a:hover, a:active {
+  }
+
+a img  {
+  }
+
+img {
+  -ms-interpolation-mode: bicubic;
+  }
+
+input,
+textarea {
+
+  }
+
+hr {
+
+  }
+
+
+
+/*============================================================
+ Wrapper
+============================================================*/
+
+#wrap {
+    max-width:1200px;
+    margin: 3em auto;
+  }
+
+
+
+/*============================================================
+ Header
+============================================================*/
+
+#header {
+    margin-top:20px;
+  }
+
+#header.image h1 span {
+  display:none;
+  }
+
+#header h1 {
+
+  }
+
+#header h1 span {
+  }
+
+
+/*============================================================
+ Main Content Area
+============================================================*/
+
+#main {
+
+  }
+
+
+/* Title ---------------------------------------------------*/
+
+#main-title {
+    display:none;
+  }
+
+#main-title h2 {
+  }
+
+
+/* Content -------------------------------------------------*/
+
+#main-content {
+    margin: 2em auto;
+
+  }
+
+* html #main-content {
+
+  }
+
+
+
+/*============================================================
+ Navigation
+============================================================*/
+
+#navigation {
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    background:#222;
+    color:#dedede;
+    padding:10px 0;
+  }
+  #navigation a {
+    color:#ababab;
+  }
+
+#navigation div.pod {
+    float:left;
+    padding-left:80px;
+  }
+
+* html #navigation div.pod {
+
+  }
+
+#navigation div.pod h3 {
+
+  }
+
+* html #navigation div.pod h3 {
+
+  }
+
+#navigation div.pod ul {
+
+  }
+
+#navigation div.pod li {
+
+  }
+
+#navigation div.pod li a {
+}
+
+/* MiniCart Contents -------------------------------------------*/
+
+#minicart {
+    
+  }
+  #minicart > * {
+    float:left;
+  }
+
+.minicart-title {
+    padding:0 10px;
+}
+
+#minicart:after {
+
+}
+
+#minicart h3 {
+
+
+  }
+
+* html #minicart h3 {
+
+  }
+
+#minicart .minicart-contents {
+    padding:3px 20px;
+  }
+
+    #minicart .minicart-contents li {
+        display:inline;
+    }
+
+#minicart .minicart-items {
+  }
+
+#minicart .minicart-total {
+
+  }
+
+#minicart .minicart-options {
+    padding:3px 0;
+  }
+
+.minicart-options:after {
+
+ 
+}
+#minicart .minicart-view {
+    float:left;
+    padding-right:20px;
+  }
+
+#minicart .minicart-view a {
+
+  }
+
+#minicart .minicart-view a:hover {
+
+}
+#minicart .minicart-view span {
+
+  }
+
+#minicart .minicart-checkout {
+    float:right;
+  }
+
+#minicart .minicart-checkout a {
+
+  }
+
+#minicart .minicart-checkout a:hover {
+
+}
+#minicart .minicart-checkout span {
+
+  }
+
+
+/* Categories -------------------------------------------*/
+.categories-title {
+    float:left;
+    padding-right:10px;
+}
+.categories-list {
+    float:left;
+}
+    .categories-list li {
+        display:inline;
+    }
+    .categories-list li a {
+        display:inline-block;
+        padding:3px 20px;
+    }
+
+/* Help -------------------------------------------*/
+.help-title {
+    float:left;
+}
+.help-list {
+    float:left;
+}
+    .help-list li {
+        display:inline;
+    }
+    .help-list li a {
+        display:inline-block;
+        padding:3px 20px;
+    }
+
+/* Search --------------------------------------------------*/
+
+#search-input {
+
+  }
+
+#search-submit {
+
+  }
+
+#search-submit span {
+  
+  }
+
+
+/* Artists -------------------------------------------------*/
+
+#artists-select {
+  
+  }
+
+
+/* Big Cartel Badge ----------------------------------------*/
+
+#badge {
+    float:right;
+    padding-right:10px;
+  }
+
+#badge a {
+
+  }
+
+#badge span {
+
+  }
+
+
+
+/*============================================================
+ Footer
+============================================================*/
+
+#footer {
+
+  }
+
+
+
+/*============================================================
+ Alerts
+============================================================*/
+
+p.alert-noproducts,
+p.alert-noitems {
+ 
+  }
+
+div#error {
+
+  }
+
+div#error h2,
+div#error p {
+
+  }
+
+div#error ul {
+
+  }
+
+div#error li {
+
+  }
+
+.form-error {
+
+  }
+
+
+
+/*============================================================
+ Site Link
+============================================================*/
+
+#website {
+    position:absolute;
+    bottom:10px;
+    left:0;
+  }
+
+#website a {
+    padding:10px;
+    background:#111;
+    border-radius:0 3px 0 0;
+    color:#ababab;
+    -webkit-transition: opacity 200ms;
+    -moz-transition: opacity 200ms;
+    transition: opacity 200ms;
+  }
+  #website a:hover {
+    opacity:.9;
+  }
+
+
+
+/*************************************************************
+
+ Store Pages
+
+*************************************************************/
+
+
+
+/*============================================================
+ Product List
+============================================================*/
+
+#products .product {
+    width:50%;
+    float:left;
+    margin:2.5em 0;
+}
+
+.home .product, #products-page .product {
+
+}
+
+.product-img {
+
+}
+
+.product-info {
+
+
+}
+#products div.product p {
+
+  }
+
+#products .product-title {
+    margin:.5em 0;
+  }
+
+#products .product-price {
+
+
+  }
+
+#products .product-status {
+
+  }
+
+#products .product-a {
+
+
+  }
+
+#products .product-a h3,
+#products .product-a p {
+
+
+  }
+
+#products .product-a:hover h3,
+#products .product-a:hover p {
+
+  }
+
+#product-1, #product-4, #product-7, #product-10, #product-13, #product-16, #product-19, #product-22, #product-25, #product-28,
+#product-31, #product-34, #product-37, #product-40, #product-43, #product-46, #product-49, #product-52, #product-55, #product-58,
+#product-61, #product-64, #product-67, #product-70, #product-73, #product-76, #product-79, #product-82, #product-85, #product-88,
+#product-91, #product-94, #product-97, #product-100 {
+
+  }
+
+#product-2, #product-5, #product-8, #product-11, #product-14, #product-17, #product-20, #product-23, #product-26, #product-29,
+#product-32, #product-35, #product-38, #product-41, #product-44, #product-47, #product-50, #product-53, #product-56, #product-59,
+#product-62, #product-65, #product-68, #product-71, #product-74, #product-77, #product-80, #product-83, #product-86, #product-89,
+#product-92, #product-95, #product-98 {
+
+  }
+
+#product-3, #product-6, #product-9, #product-12, #product-15, #product-18, #product-21, #product-24, #product-27, #product-30,
+#product-33, #product-36, #product-39, #product-42, #product-45, #product-48, #product-51, #product-54, #product-57, #product-60,
+#product-63, #product-66, #product-69, #product-72, #product-75, #product-78, #product-81, #product-84, #product-87, #product-90,
+#product-93, #product-96, #product-99 {
+
+  }
+
+
+/* Pagination
+------------------------------------------------------------*/
+
+.pagination {
+
+  }
+
+.pagination span,
+.pagination a {
+
+  }
+
+.pagination span.disabled {
+
+  }
+
+.pagination span.current {
+
+  }
+
+.pagination span.yadda {
+
+  }
+
+
+/* Stilts
+------------------------------------------------------------*/
+
+span.stilt {
+
+  }
+
+#product-image {
+
+  }
+
+
+#product-image span.stilt {
+
+  }
+
+#product-image img {
+
+  }
+
+
+
+/*============================================================
+ Product Detail
+============================================================*/
+
+#product-content {
+
+  }
+
+#product-images {
+
+  }
+
+a#product-image span.icon_zoom {
+
+  }
+
+a#product-image:hover span.icon_zoom {
+
+  }
+
+#product-images .product-img {
+
+
+  }
+
+#product-images .images-nav {
+
+  }
+
+#product-images .images-list {
+
+  }
+
+#product-images .images-list li {
+
+  }
+
+#product-images .images-list li.image-1 {
+
+  }
+
+#product-images .images-prev {
+
+  }
+
+#product-images .images-next {
+
+  }
+
+#product-images .images-prev a {
+
+  }
+
+#product-images .images-next a {
+
+  }
+
+#product-images .images-prev span,
+#product-images .images-next span {
+
+  }
+
+#product-details {
+
+  }
+
+#product-details ul {
+
+  }
+
+#product-details ol {
+
+  }
+
+#product-details li {
+
+  }
+
+#product-details ol li {
+
+  }
+
+#product-details .price {
+
+  }
+
+#product-form {
+
+  }
+
+#product-details .info,
+#product-form .options {
+
+  }
+
+#product-form .options select {
+
+  }
+
+#product-form .options ul {
+
+  }
+
+#product-form .options li {
+
+  }
+
+#product-form .options li input {
+
+  }
+
+#product-form .options li label {
+
+  }
+
+#product-form .options li.sold label {
+
+  }
+
+#product-addtocart {
+
+  }
+
+
+
+#product-details div.sold h4,
+#product-details div.soon h4 {
+
+  }
+
+#product-details div.sold h4 {
+
+  }
+
+#inventory {
+
+  }
+
+#inventory h3 {
+
+  }
+
+#inventory ul {
+
+  }
+
+#inventory li {
+
+  }
+
+#inventory .bar {
+
+  }
+
+#inventory .bar span {
+
+  }
+
+#inventory .bar span em {
+
+  }
+
+#inventory span.sold {
+
+  }
+
+
+
+/*============================================================
+ Cart
+============================================================*/
+
+#cart-content {
+
+  }
+
+#cart-table {
+
+  }
+
+#cart-table td,
+#cart-table th {
+
+  }
+
+#update-btn-head {
+
+  }
+
+
+/* Cart Table Columns --------------------------------------*/
+
+#col-item    {  }
+#col-price    {  }
+#col-qty    {  }
+#col-total    {  }
+#col-options  {  }
+
+
+/* Cart Table Header ---------------------------------------*/
+
+#cart-head {
+
+  }
+
+#cart-head th {
+
+  }
+
+#head-item {
+
+  }
+
+#head-options span {
+
+  }
+
+
+/* Cart Table Body -----------------------------------------*/
+
+
+
+#cart-body th {
+
+  }
+
+#cart-body td {
+
+  }
+
+#cart-body tr.row-alt th,
+#cart-body tr.row-alt td {
+
+  }
+
+#cart-body .item-price {
+
+  }
+
+#cart-body .item-qty input {
+
+  }
+
+#cart-body .item-total {
+
+  }
+
+#cart-body .item-options {
+
+  }
+
+#cart-body .item-options .remove-btn {
+
+  }
+
+#cart-body .item-options span {
+
+  }
+
+
+/* Cart Footer ---------------------------------------------*/
+
+#cart-footer {
+
+  }
+
+#cart-footer .cart-update {
+
+  }
+
+#cart-footer .update-btn {
+
+  }
+
+#cart-footer .cart-shipping {
+
+  }
+
+#cart-footer #country {
+
+  }
+
+#cart-footer .cart-discount {
+
+  }
+
+#cart-footer #cart_discount_code {
+
+  }
+
+#cart-footer .cart-discount p {
+
+  }
+
+#cart-footer .cart-total {
+
+  }
+
+#cart-footer .cart-total h3 {
+
+  }
+
+#cart-footer .cart-total p {
+
+  }
+
+#cart-footer .cart-total #cart-shipping-tax p {
+
+  }
+
+#cart-footer .cart-options {
+
+  }
+
+#cart-footer .cart-checkout {
+
+  }
+
+#cart-footer .checkout-btn {
+
+  }
+
+#cart-footer .update-btn span,
+#cart-footer .checkout-btn span {
+  }
+
+span.total-discount,
+span.total-shipping {
+
+  }
+
+
+
+/*============================================================
+ FAQ
+============================================================*/
+
+#faq-content {
+
+  }
+
+#faq-content .faq-list dt {
+
+  }
+
+#faq-content .faq-list dd {
+
+  }
+
+
+
+/*============================================================
+ Contact
+============================================================*/
+
+#contact-content {
+
+  }
+
+#contact-form {
+
+  }
+
+#contact-form label {
+
+
+  }
+
+#contact-form input,
+#contact-form textarea {
+
+  }
+
+#contact-form textarea {
+
+  }
+
+#contact-form p,
+#captcha-div {
+
+  }
+
+#contact-form p {
+
+  }
+
+#contact-submit {
+
+  }
+
+
+
+
+
+/*============================================================
+ Success
+============================================================*/
+
+body.success #main-content h2 {
+
+  }
+
+body.success #main-content p {
+
+  }
+
+
+
+/*============================================================
+ Custom Pages
+============================================================*/
+
+#faq-content {
+
+  }
+
+body.custom #main-content {
+
+  }
+
+body.custom #main-content strong {
+
+  }
+
+body.custom #main-content em {
+
+  }
+
+body.custom #main-content code,
+body.custom #main-content pre {
+
+  }
+
+body.custom #main-content h2,
+body.custom #main-content h3,
+body.custom #main-content h4 {
+
+  }
+
+body.custom #main-content ul,
+body.custom #main-content ol,
+body.custom #main-content blockquote {
+
+  }
+
+body.custom #main-content ul li {
+
+  }
+
+body.custom #main-content ol li {
+
+  }
+
+body.custom #main-content blockquote {
+
+  }
+
+body.custom #main-content dt {
+
+  }
+
+body.custom #main-content dd {
+
+  }
+
+
+
+
+/*============================================================
+  Basic Styles - used for the simple controls.
+============================================================*/
+
+/* Font */
+*
+{font-family: {{ theme.font | font_family_for_group }};}
+
+
+/* Background */
+body {
+  background-color: {{ theme.background }};
+{% if theme.background_image != blank %}
+  background-image: url({{ theme.background_image.url }});
+  background-repeat: repeat;
+{% endif %}
+  }
+
+
+/* Text */
+
+
+
+/* Links */
+a:link,
+a:visited,
+#products .product-a h3,
+#products .product-a p
+{color: {{ theme.links }};}
+
+
+/* Links rollover */
+a:hover,
+a:active,
+#products .product-a:hover h3,
+#products .product-a:hover p
+{color: {{ theme.links_rollover }};}
+
+
+/* Header background */
+#main-title,
+#navigation div.pod h3,
+#minicart h3,
+#cart-head
+{background-color: {{ theme.header_background }};}
+
+
+/* Header text */
+#main-title h2,
+#navigation div.pod h3,
+#minicart h3,
+#minicart .minicart-contents,
+#cart-head
+{color: {{ theme.header_text }};}
+
+#minicart .minicart-total
+{border-left-color: {{ theme.header_text }};}
+
+
+/* Sidebar links */
+#navigation div.pod a
+{color: {{ theme.sidebar_links }};}
+
+
+/* Sidebar rollovers */
+#navigation div.pod a:hover
+{color: {{ theme.sidebar_rollovers }};}
+
+
+/* Products background */
+#products,
+#products .product-pic,
+#product-images .images-nav
+{background-color: {{ theme.products_background }};}
+
+
+
+/*============================================================
+  Custom Styles - add and override styles below.
+============================================================*/
