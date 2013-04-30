@@ -262,6 +262,7 @@ $(document).ready(function() {
         console.log(plength);
         if (plength >= 10) {
             $(this).css('text-align', 'justify');
+            $(this).siblings().css('text-align', 'justify');
         }
     });
 
