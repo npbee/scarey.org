@@ -35,3 +35,13 @@ $regularfont: 1.4em;
 $largefont: 3em;
 
 $border-radius: 3px;
+
+
+//Album filter calcualtions
+$album_filter_width: 800px;
+
+@function album_thumb_width($album_filter_width, $number_of_albums) {
+  @return ($album_filter_width / $number_of_albums);
+}
+
+

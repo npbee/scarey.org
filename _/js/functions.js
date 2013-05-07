@@ -20,6 +20,32 @@ var albumFilter = {
             $(this).next().toggleClass("filter-show");
             $(this).toggleClass('grey');
         });
+        $('.filter-scroll-right').click(function() {
+            $('.filter-thumbs li').animate({
+                left: '150px'
+            }, 200);
+        });
+    }
+};
+
+//Album filter slider
+var slider = {
+    init: function() {
+        window.mySwipe = $("#slider").Swipe({
+            continuous: false
+        }).data('Swipe');
+    //     Swipe(document.getElementById('slider'), {
+    //         continuous: false,
+    //         callback: function(pos) {
+    //             var i = bullets.length;
+    //             while (i--) {
+    //             bullets[i].className = ' ';
+    //         }
+    //         bullets[pos].className = 'on';
+    //     }
+    //     });
+    //     var bullets = document.getElementById('position').getElementsByTagName('a');
+    // }
     }
 };
 
@@ -174,6 +200,7 @@ HISTORY
                         //reinitialize
                         navFly.init();
                         albumFilter.init();
+                        slider.init();
 
                         // Update the title
                         document.title = $data.find('.document-title:first').text();
@@ -226,6 +253,7 @@ $(document).ready(function() {
     //Inits
     navFly.init();
     albumFilter.init();
+    slider.init();
 
     //Localscroll
     $.localScroll({
@@ -266,5 +294,8 @@ $(document).ready(function() {
         }
     });
 
-
 });
+
+
+
+  

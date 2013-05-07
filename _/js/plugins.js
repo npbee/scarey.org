@@ -31,3 +31,567 @@
 (function(e,t,i){function o(i,o,n){var h=t.createElement(i);return o&&(h.id=V+o),n&&(h.style.cssText=n),e(h)}function n(e){var t=T.length,i=(N+e)%t;return 0>i?t+i:i}function h(e,t){return Math.round((/%/.test(e)?("x"===t?C.width():C.height())/100:1)*parseInt(e,10))}function r(e){return P.photo||P.photoRegex.test(e)}function l(e){return P.retinaUrl&&i.devicePixelRatio>1?e.replace(P.photoRegex,P.retinaSuffix):e}function s(){var t,i=e.data(B,J);null==i?(P=e.extend({},X),console&&console.log&&console.log("Error: cboxElement missing settings object")):P=e.extend({},i);for(t in P)e.isFunction(P[t])&&"on"!==t.slice(0,2)&&(P[t]=P[t].call(B));P.rel=P.rel||B.rel||e(B).data("rel")||"nofollow",P.href=P.href||e(B).attr("href"),P.title=P.title||B.title,"string"==typeof P.href&&(P.href=e.trim(P.href))}function a(i,o){e(t).trigger(i),st.trigger(i),e.isFunction(o)&&o.call(B)}function d(){var e,t,i,o,n,h=V+"Slideshow_",r="click."+V;P.slideshow&&T[1]?(t=function(){clearTimeout(e)},i=function(){(P.loop||T[N+1])&&(e=setTimeout($.next,P.slideshowSpeed))},o=function(){L.html(P.slideshowStop).unbind(r).one(r,n),st.bind(tt,i).bind(et,t).bind(it,n),m.removeClass(h+"off").addClass(h+"on")},n=function(){t(),st.unbind(tt,i).unbind(et,t).unbind(it,n),L.html(P.slideshowStart).unbind(r).one(r,function(){$.next(),o()}),m.removeClass(h+"on").addClass(h+"off")},P.slideshowAuto?o():n()):m.removeClass(h+"off "+h+"on")}function c(t){q||(B=t,s(),T=e(B),N=0,"nofollow"!==P.rel&&(T=e("."+Y).filter(function(){var t,i=e.data(this,J);return i&&(t=e(this).data("rel")||i.rel||this.rel),t===P.rel}),N=T.index(B),-1===N&&(T=T.add(B),N=T.length-1)),O||(O=j=!0,m.css({visibility:"hidden",display:"block"}),k=o(at,"LoadedContent","width:0; height:0; overflow:hidden").appendTo(g),_=x.height()+b.height()+g.outerHeight(!0)-g.height(),K=v.width()+y.width()+g.outerWidth(!0)-g.width(),z=k.outerHeight(!0),D=k.outerWidth(!0),P.returnFocus&&(e(B).blur(),st.one(ot,function(){e(B).focus()})),p.css({opacity:parseFloat(P.opacity),cursor:P.overlayClose?"pointer":"auto",visibility:"visible"}).show(),P.w=h(P.initialWidth,"x"),P.h=h(P.initialHeight,"y"),$.position(),rt&&C.bind("resize."+lt+" scroll."+lt,function(){p.css({width:C.width(),height:C.height(),top:C.scrollTop(),left:C.scrollLeft()})}).trigger("resize."+lt),d(),a(Z,P.onOpen),R.add(H).hide(),F.html(P.close).show()),$.load(!0))}function u(){!m&&t.body&&(Q=!1,C=e(i),m=o(at).attr({id:J,"class":ht?V+(rt?"IE6":"IE"):""}).hide(),p=o(at,"Overlay",rt?"position:absolute":"").hide(),W=o(at,"LoadingOverlay").add(o(at,"LoadingGraphic")),w=o(at,"Wrapper"),g=o(at,"Content").append(H=o(at,"Title"),E=o(at,"Current"),M=o(at,"Next"),S=o(at,"Previous"),L=o(at,"Slideshow"),F=o(at,"Close")),w.append(o(at).append(o(at,"TopLeft"),x=o(at,"TopCenter"),o(at,"TopRight")),o(at,!1,"clear:left").append(v=o(at,"MiddleLeft"),g,y=o(at,"MiddleRight")),o(at,!1,"clear:left").append(o(at,"BottomLeft"),b=o(at,"BottomCenter"),o(at,"BottomRight"))).find("div div").css({"float":"left"}),I=o(at,!1,"position:absolute; width:9999px; visibility:hidden; display:none"),R=M.add(S).add(E).add(L),e(t.body).append(p,m.append(w,I)))}function f(){function i(e){e.which>1||e.shiftKey||e.altKey||e.metaKey||(e.preventDefault(),c(this))}return m?(Q||(Q=!0,M.click(function(){$.next()}),S.click(function(){$.prev()}),F.click(function(){$.close()}),p.click(function(){P.overlayClose&&$.close()}),e(t).bind("keydown."+V,function(e){var t=e.keyCode;O&&P.escKey&&27===t&&(e.preventDefault(),$.close()),O&&P.arrowKey&&T[1]&&(37===t?(e.preventDefault(),S.click()):39===t&&(e.preventDefault(),M.click()))}),e.isFunction(e.fn.on)?e(t).on("click."+V,"."+Y,i):e("."+Y).live("click."+V,i)),!0):!1}var p,m,w,g,x,v,y,b,T,C,k,I,W,H,E,L,M,S,F,R,P,_,K,z,D,B,N,A,O,j,q,U,$,G,Q,X={transition:"elastic",speed:300,width:!1,initialWidth:"600",innerWidth:!1,maxWidth:!1,height:!1,initialHeight:"450",innerHeight:!1,maxHeight:!1,scalePhotos:!0,scrolling:!0,inline:!1,html:!1,iframe:!1,fastIframe:!0,photo:!1,href:!1,title:!1,rel:!1,opacity:.9,preloading:!0,className:!1,retinaImage:!1,retinaUrl:!1,retinaSuffix:"@2x.$1",current:"image {current} of {total}",previous:"previous",next:"next",close:"close",xhrError:"This content failed to load.",imgError:"This image failed to load.",open:!1,returnFocus:!0,reposition:!0,loop:!0,slideshow:!1,slideshowAuto:!0,slideshowSpeed:2500,slideshowStart:"start slideshow",slideshowStop:"stop slideshow",photoRegex:/\.(gif|png|jp(e|g|eg)|bmp|ico)((#|\?).*)?$/i,onOpen:!1,onLoad:!1,onComplete:!1,onCleanup:!1,onClosed:!1,overlayClose:!0,escKey:!0,arrowKey:!0,top:!1,bottom:!1,left:!1,right:!1,fixed:!1,data:void 0},J="colorbox",V="cbox",Y=V+"Element",Z=V+"_open",et=V+"_load",tt=V+"_complete",it=V+"_cleanup",ot=V+"_closed",nt=V+"_purge",ht=!e.support.leadingWhitespace,rt=ht&&!i.XMLHttpRequest,lt=V+"_IE6",st=e({}),at="div";e.colorbox||(e(u),$=e.fn[J]=e[J]=function(t,i){var o=this;if(t=t||{},u(),f()){if(e.isFunction(o))o=e("<a/>"),t.open=!0;else if(!o[0])return o;i&&(t.onComplete=i),o.each(function(){e.data(this,J,e.extend({},e.data(this,J)||X,t))}).addClass(Y),(e.isFunction(t.open)&&t.open.call(o)||t.open)&&c(o[0])}return o},$.position=function(e,t){function i(e){x[0].style.width=b[0].style.width=g[0].style.width=parseInt(e.style.width,10)-K+"px",g[0].style.height=v[0].style.height=y[0].style.height=parseInt(e.style.height,10)-_+"px"}var o,n,r,l=0,s=0,a=m.offset();C.unbind("resize."+V),m.css({top:-9e4,left:-9e4}),n=C.scrollTop(),r=C.scrollLeft(),P.fixed&&!rt?(a.top-=n,a.left-=r,m.css({position:"fixed"})):(l=n,s=r,m.css({position:"absolute"})),s+=P.right!==!1?Math.max(C.width()-P.w-D-K-h(P.right,"x"),0):P.left!==!1?h(P.left,"x"):Math.round(Math.max(C.width()-P.w-D-K,0)/2),l+=P.bottom!==!1?Math.max(C.height()-P.h-z-_-h(P.bottom,"y"),0):P.top!==!1?h(P.top,"y"):Math.round(Math.max(C.height()-P.h-z-_,0)/2),m.css({top:a.top,left:a.left,visibility:"visible"}),e=m.width()===P.w+D&&m.height()===P.h+z?0:e||0,w[0].style.width=w[0].style.height="9999px",o={width:P.w+D+K,height:P.h+z+_,top:l,left:s},0===e&&m.css(o),m.dequeue().animate(o,{duration:e,complete:function(){i(this),j=!1,w[0].style.width=P.w+D+K+"px",w[0].style.height=P.h+z+_+"px",P.reposition&&setTimeout(function(){C.bind("resize."+V,$.position)},1),t&&t()},step:function(){i(this)}})},$.resize=function(e){O&&(e=e||{},e.width&&(P.w=h(e.width,"x")-D-K),e.innerWidth&&(P.w=h(e.innerWidth,"x")),k.css({width:P.w}),e.height&&(P.h=h(e.height,"y")-z-_),e.innerHeight&&(P.h=h(e.innerHeight,"y")),e.innerHeight||e.height||(k.css({height:"auto"}),P.h=k.height()),k.css({height:P.h}),$.position("none"===P.transition?0:P.speed))},$.prep=function(t){function i(){return P.w=P.w||k.width(),P.w=P.mw&&P.mw<P.w?P.mw:P.w,P.w}function h(){return P.h=P.h||k.height(),P.h=P.mh&&P.mh<P.h?P.mh:P.h,P.h}if(O){var l,s="none"===P.transition?0:P.speed;k.empty().remove(),k=o(at,"LoadedContent").append(t),k.hide().appendTo(I.show()).css({width:i(),overflow:P.scrolling?"auto":"hidden"}).css({height:h()}).prependTo(g),I.hide(),e(A).css({"float":"none"}),l=function(){function t(){ht&&m[0].style.removeAttribute("filter")}var i,h,l=T.length,d="frameBorder",c="allowTransparency";O&&(h=function(){clearTimeout(U),W.remove(),a(tt,P.onComplete)},ht&&A&&k.fadeIn(100),H.html(P.title).add(k).show(),l>1?("string"==typeof P.current&&E.html(P.current.replace("{current}",N+1).replace("{total}",l)).show(),M[P.loop||l-1>N?"show":"hide"]().html(P.next),S[P.loop||N?"show":"hide"]().html(P.previous),P.slideshow&&L.show(),P.preloading&&e.each([n(-1),n(1)],function(){var t,i,o=T[this],n=e.data(o,J);n&&n.href?(t=n.href,e.isFunction(t)&&(t=t.call(o))):t=e(o).attr("href"),t&&(r(t)||n.photo)&&(i=new Image,i.src=t)})):R.hide(),P.iframe?(i=o("iframe")[0],d in i&&(i[d]=0),c in i&&(i[c]="true"),P.scrolling||(i.scrolling="no"),e(i).attr({src:P.href,name:(new Date).getTime(),"class":V+"Iframe",allowFullScreen:!0,webkitAllowFullScreen:!0,mozallowfullscreen:!0}).one("load",h).appendTo(k),st.one(nt,function(){i.src="//about:blank"}),P.fastIframe&&e(i).trigger("load")):h(),"fade"===P.transition?m.fadeTo(s,1,t):t())},"fade"===P.transition?m.fadeTo(s,0,function(){$.position(0,l)}):$.position(s,l)}},$.load=function(t){var n,d,c,u=$.prep;j=!0,A=!1,B=T[N],t||s(),G&&m.add(p).removeClass(G),P.className&&m.add(p).addClass(P.className),G=P.className,a(nt),a(et,P.onLoad),P.h=P.height?h(P.height,"y")-z-_:P.innerHeight&&h(P.innerHeight,"y"),P.w=P.width?h(P.width,"x")-D-K:P.innerWidth&&h(P.innerWidth,"x"),P.mw=P.w,P.mh=P.h,P.maxWidth&&(P.mw=h(P.maxWidth,"x")-D-K,P.mw=P.w&&P.w<P.mw?P.w:P.mw),P.maxHeight&&(P.mh=h(P.maxHeight,"y")-z-_,P.mh=P.h&&P.h<P.mh?P.h:P.mh),n=P.href,U=setTimeout(function(){W.appendTo(g)},100),P.inline?(c=o(at).hide().insertBefore(e(n)[0]),st.one(nt,function(){c.replaceWith(k.children())}),u(e(n))):P.iframe?u(" "):P.html?u(P.html):r(n)?(n=l(n),e(A=new Image).addClass(V+"Photo").bind("error",function(){P.title=!1,u(o(at,"Error").html(P.imgError))}).one("load",function(){var e;P.retinaImage&&i.devicePixelRatio>1&&(A.height=A.height/i.devicePixelRatio,A.width=A.width/i.devicePixelRatio),P.scalePhotos&&(d=function(){A.height-=A.height*e,A.width-=A.width*e},P.mw&&A.width>P.mw&&(e=(A.width-P.mw)/A.width,d()),P.mh&&A.height>P.mh&&(e=(A.height-P.mh)/A.height,d())),P.h&&(A.style.marginTop=Math.max(P.mh-A.height,0)/2+"px"),T[1]&&(P.loop||T[N+1])&&(A.style.cursor="pointer",A.onclick=function(){$.next()}),ht&&(A.style.msInterpolationMode="bicubic"),setTimeout(function(){u(A)},1)}),setTimeout(function(){A.src=n},1)):n&&I.load(n,P.data,function(t,i){u("error"===i?o(at,"Error").html(P.xhrError):e(this).contents())})},$.next=function(){!j&&T[1]&&(P.loop||T[N+1])&&(N=n(1),$.load())},$.prev=function(){!j&&T[1]&&(P.loop||N)&&(N=n(-1),$.load())},$.close=function(){O&&!q&&(q=!0,O=!1,a(it,P.onCleanup),C.unbind("."+V+" ."+lt),p.fadeTo(200,0),m.stop().fadeTo(300,0,function(){m.add(p).css({opacity:1,cursor:"auto"}).hide(),a(nt),k.empty().remove(),setTimeout(function(){q=!1,a(ot,P.onClosed)},1)}))},$.remove=function(){e([]).add(m).add(p).remove(),m=null,e("."+Y).removeData(J).removeClass(Y),e(t).unbind("click."+V)},$.element=function(){return e(B)},$.settings=X)})(jQuery,document,window);
 
 
+/*
+ * Swipe 2.0
+ *
+ * Brad Birdsall
+ * Copyright 2013, MIT License
+ *
+*/
+
+function Swipe(container, options) {
+
+  "use strict";
+
+  // utilities
+  var noop = function() {}; // simple no operation function
+  var offloadFn = function(fn) { setTimeout(fn || noop, 0) }; // offload a functions execution
+  
+  // check browser capabilities
+  var browser = {
+    addEventListener: !!window.addEventListener,
+    touch: ('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch,
+    transitions: (function(temp) {
+      var props = ['transitionProperty', 'WebkitTransition', 'MozTransition', 'OTransition', 'msTransition'];
+      for ( var i in props ) if (temp.style[ props[i] ] !== undefined) return true;
+      return false;
+    })(document.createElement('swipe'))
+  };
+
+  // quit if no root element
+  if (!container) return;
+  var element = container.children[0];
+  var slides, slidePos, width, length;
+  options = options || {};
+  var index = parseInt(options.startSlide, 10) || 0;
+  var speed = options.speed || 300;
+  options.continuous = options.continuous !== undefined ? options.continuous : true;
+
+  function setup() {
+
+    // cache slides
+    slides = element.children;
+    length = slides.length;
+
+    // set continuous to false if only one slide
+    if (slides.length < 2) options.continuous = false;
+
+    //special case if two slides
+    if (browser.transitions && options.continuous && slides.length < 3) {
+      element.appendChild(slides[0].cloneNode(true));
+      element.appendChild(element.children[1].cloneNode(true));
+      slides = element.children;
+    }
+
+    // create an array to store current positions of each slide
+    slidePos = new Array(slides.length);
+
+    // determine width of each slide
+    width = container.getBoundingClientRect().width || container.offsetWidth;
+
+    element.style.width = (slides.length * width) + 'px';
+
+    // stack elements
+    var pos = slides.length;
+    while(pos--) {
+
+      var slide = slides[pos];
+
+      slide.style.width = width + 'px';
+      slide.setAttribute('data-index', pos);
+
+      if (browser.transitions) {
+        slide.style.left = (pos * -width) + 'px';
+        move(pos, index > pos ? -width : (index < pos ? width : 0), 0);
+      }
+
+    }
+
+    // reposition elements before and after index
+    if (options.continuous && browser.transitions) {
+      move(circle(index-1), -width, 0);
+      move(circle(index+1), width, 0);
+    }
+
+    if (!browser.transitions) element.style.left = (index * -width) + 'px';
+
+    container.style.visibility = 'visible';
+
+  }
+
+  function prev() {
+
+    if (options.continuous) slide(index-1);
+    else if (index) slide(index-1);
+
+  }
+
+  function next() {
+
+    if (options.continuous) slide(index+1);
+    else if (index < slides.length - 1) slide(index+1);
+
+  }
+
+  function circle(index) {
+
+    // a simple positive modulo using slides.length
+    return (slides.length + (index % slides.length)) % slides.length;
+
+  }
+
+  function slide(to, slideSpeed) {
+
+    // do nothing if already on requested slide
+    if (index == to) return;
+    
+    if (browser.transitions) {
+
+      var direction = Math.abs(index-to) / (index-to); // 1: backward, -1: forward
+
+      // get the actual position of the slide
+      if (options.continuous) {
+        var natural_direction = direction;
+        direction = -slidePos[circle(to)] / width;
+
+        // if going forward but to < index, use to = slides.length + to
+        // if going backward but to > index, use to = -slides.length + to
+        if (direction !== natural_direction) to =  -direction * slides.length + to;
+
+      }
+
+      var diff = Math.abs(index-to) - 1;
+
+      // move all the slides between index and to in the right direction
+      while (diff--) move( circle((to > index ? to : index) - diff - 1), width * direction, 0);
+            
+      to = circle(to);
+
+      move(index, width * direction, slideSpeed || speed);
+      move(to, 0, slideSpeed || speed);
+
+      if (options.continuous) move(circle(to - direction), -(width * direction), 0); // we need to get the next in place
+      
+    } else {     
+      
+      to = circle(to);
+      animate(index * -width, to * -width, slideSpeed || speed);
+      //no fallback for a circular continuous if the browser does not accept transitions
+    }
+
+    index = to;
+    offloadFn(options.callback && options.callback(index, slides[index]));
+  }
+
+  function move(index, dist, speed) {
+
+    translate(index, dist, speed);
+    slidePos[index] = dist;
+
+  }
+
+  function translate(index, dist, speed) {
+
+    var slide = slides[index];
+    var style = slide && slide.style;
+
+    if (!style) return;
+
+    style.webkitTransitionDuration = 
+    style.MozTransitionDuration = 
+    style.msTransitionDuration = 
+    style.OTransitionDuration = 
+    style.transitionDuration = speed + 'ms';
+
+    style.webkitTransform = 'translate(' + dist + 'px,0)' + 'translateZ(0)';
+    style.msTransform = 
+    style.MozTransform = 
+    style.OTransform = 'translateX(' + dist + 'px)';
+
+  }
+
+  function animate(from, to, speed) {
+
+    // if not an animation, just reposition
+    if (!speed) {
+
+      element.style.left = to + 'px';
+      return;
+
+    }
+    
+    var start = +new Date;
+    
+    var timer = setInterval(function() {
+
+      var timeElap = +new Date - start;
+      
+      if (timeElap > speed) {
+
+        element.style.left = to + 'px';
+
+        if (delay) begin();
+
+        options.transitionEnd && options.transitionEnd.call(event, index, slides[index]);
+
+        clearInterval(timer);
+        return;
+
+      }
+
+      element.style.left = (( (to - from) * (Math.floor((timeElap / speed) * 100) / 100) ) + from) + 'px';
+
+    }, 4);
+
+  }
+
+  // setup auto slideshow
+  var delay = options.auto || 0;
+  var interval;
+
+  function begin() {
+
+    interval = setTimeout(next, delay);
+
+  }
+
+  function stop() {
+
+    delay = 0;
+    clearTimeout(interval);
+
+  }
+
+
+  // setup initial vars
+  var start = {};
+  var delta = {};
+  var isScrolling;      
+
+  // setup event capturing
+  var events = {
+
+    handleEvent: function(event) {
+
+      switch (event.type) {
+        case 'touchstart': this.start(event); break;
+        case 'touchmove': this.move(event); break;
+        case 'touchend': offloadFn(this.end(event)); break;
+        case 'webkitTransitionEnd':
+        case 'msTransitionEnd':
+        case 'oTransitionEnd':
+        case 'otransitionend':
+        case 'transitionend': offloadFn(this.transitionEnd(event)); break;
+        case 'resize': offloadFn(setup.call()); break;
+      }
+
+      if (options.stopPropagation) event.stopPropagation();
+
+    },
+    start: function(event) {
+
+      var touches = event.touches[0];
+
+      // measure start values
+      start = {
+
+        // get initial touch coords
+        x: touches.pageX,
+        y: touches.pageY,
+
+        // store time to determine touch duration
+        time: +new Date
+
+      };
+      
+      // used for testing first move event
+      isScrolling = undefined;
+
+      // reset delta and end measurements
+      delta = {};
+
+      // attach touchmove and touchend listeners
+      element.addEventListener('touchmove', this, false);
+      element.addEventListener('touchend', this, false);
+
+    },
+    move: function(event) {
+
+      // ensure swiping with one touch and not pinching
+      if ( event.touches.length > 1 || event.scale && event.scale !== 1) return
+
+      if (options.disableScroll) event.preventDefault();
+
+      var touches = event.touches[0];
+
+      // measure change in x and y
+      delta = {
+        x: touches.pageX - start.x,
+        y: touches.pageY - start.y
+      }
+
+      // determine if scrolling test has run - one time test
+      if ( typeof isScrolling == 'undefined') {
+        isScrolling = !!( isScrolling || Math.abs(delta.x) < Math.abs(delta.y) );
+      }
+
+      // if user is not trying to scroll vertically
+      if (!isScrolling) {
+
+        // prevent native scrolling 
+        event.preventDefault();
+
+        // stop slideshow
+        stop();
+
+        // increase resistance if first or last slide
+        if (options.continuous) { // we don't add resistance at the end
+
+          translate(circle(index-1), delta.x + slidePos[circle(index-1)], 0);
+          translate(index, delta.x + slidePos[index], 0);
+          translate(circle(index+1), delta.x + slidePos[circle(index+1)], 0);
+
+        } else {
+
+          delta.x = 
+            delta.x / 
+              ( (!index && delta.x > 0               // if first slide and sliding left
+                || index == slides.length - 1        // or if last slide and sliding right
+                && delta.x < 0                       // and if sliding at all
+              ) ?                      
+              ( Math.abs(delta.x) / width + 1 )      // determine resistance level
+              : 1 );                                 // no resistance if false
+          
+          // translate 1:1
+          translate(index-1, delta.x + slidePos[index-1], 0);
+          translate(index, delta.x + slidePos[index], 0);
+          translate(index+1, delta.x + slidePos[index+1], 0);
+        }
+
+      }
+
+    },
+    end: function(event) {
+
+      // measure duration
+      var duration = +new Date - start.time;
+
+      // determine if slide attempt triggers next/prev slide
+      var isValidSlide = 
+            Number(duration) < 250               // if slide duration is less than 250ms
+            && Math.abs(delta.x) > 20            // and if slide amt is greater than 20px
+            || Math.abs(delta.x) > width/2;      // or if slide amt is greater than half the width
+
+      // determine if slide attempt is past start and end
+      var isPastBounds = 
+            !index && delta.x > 0                            // if first slide and slide amt is greater than 0
+            || index == slides.length - 1 && delta.x < 0;    // or if last slide and slide amt is less than 0
+
+      if (options.continuous) isPastBounds = false;
+      
+      // determine direction of swipe (true:right, false:left)
+      var direction = delta.x < 0;
+
+      // if not scrolling vertically
+      if (!isScrolling) {
+
+        if (isValidSlide && !isPastBounds) {
+
+          if (direction) {
+
+            if (options.continuous) { // we need to get the next in this direction in place
+
+              move(circle(index-1), -width, 0);
+              move(circle(index+2), width, 0);
+
+            } else {
+              move(index-1, -width, 0);
+            }
+
+            move(index, slidePos[index]-width, speed);
+            move(circle(index+1), slidePos[circle(index+1)]-width, speed);
+            index = circle(index+1);  
+                      
+          } else {
+            if (options.continuous) { // we need to get the next in this direction in place
+
+              move(circle(index+1), width, 0);
+              move(circle(index-2), -width, 0);
+
+            } else {
+              move(index+1, width, 0);
+            }
+
+            move(index, slidePos[index]+width, speed);
+            move(circle(index-1), slidePos[circle(index-1)]+width, speed);
+            index = circle(index-1);
+
+          }
+
+          options.callback && options.callback(index, slides[index]);
+
+        } else {
+
+          if (options.continuous) {
+
+            move(circle(index-1), -width, speed);
+            move(index, 0, speed);
+            move(circle(index+1), width, speed);
+
+          } else {
+
+            move(index-1, -width, speed);
+            move(index, 0, speed);
+            move(index+1, width, speed);
+          }
+
+        }
+
+      }
+
+      // kill touchmove and touchend event listeners until touchstart called again
+      element.removeEventListener('touchmove', events, false)
+      element.removeEventListener('touchend', events, false)
+
+    },
+    transitionEnd: function(event) {
+
+      if (parseInt(event.target.getAttribute('data-index'), 10) == index) {
+        
+        if (delay) begin();
+
+        options.transitionEnd && options.transitionEnd.call(event, index, slides[index]);
+
+      }
+
+    }
+
+  }
+
+  // trigger setup
+  setup();
+
+  // start auto slideshow if applicable
+  if (delay) begin();
+
+
+  // add event listeners
+  if (browser.addEventListener) {
+    
+    // set touchstart event on element    
+    if (browser.touch) element.addEventListener('touchstart', events, false);
+
+    if (browser.transitions) {
+      element.addEventListener('webkitTransitionEnd', events, false);
+      element.addEventListener('msTransitionEnd', events, false);
+      element.addEventListener('oTransitionEnd', events, false);
+      element.addEventListener('otransitionend', events, false);
+      element.addEventListener('transitionend', events, false);
+    }
+
+    // set resize event on window
+    window.addEventListener('resize', events, false);
+
+  } else {
+
+    window.onresize = function () { setup() }; // to play nice with old IE
+
+  }
+
+  // expose the Swipe API
+  return {
+    setup: function() {
+
+      setup();
+
+    },
+    slide: function(to, speed) {
+      
+      // cancel slideshow
+      stop();
+      
+      slide(to, speed);
+
+    },
+    prev: function() {
+
+      // cancel slideshow
+      stop();
+
+      prev();
+
+    },
+    next: function() {
+
+      // cancel slideshow
+      stop();
+
+      next();
+
+    },
+    getPos: function() {
+
+      // return current index position
+      return index;
+
+    },
+    getNumSlides: function() {
+      
+      // return total number of slides
+      return length;
+    },
+    kill: function() {
+
+      // cancel slideshow
+      stop();
+
+      // reset element
+      element.style.width = 'auto';
+      element.style.left = 0;
+
+      // reset slides
+      var pos = slides.length;
+      while(pos--) {
+
+        var slide = slides[pos];
+        slide.style.width = '100%';
+        slide.style.left = 0;
+
+        if (browser.transitions) translate(pos, 0, 0);
+
+      }
+
+      // removed event listeners
+      if (browser.addEventListener) {
+
+        // remove current event listeners
+        element.removeEventListener('touchstart', events, false);
+        element.removeEventListener('webkitTransitionEnd', events, false);
+        element.removeEventListener('msTransitionEnd', events, false);
+        element.removeEventListener('oTransitionEnd', events, false);
+        element.removeEventListener('otransitionend', events, false);
+        element.removeEventListener('transitionend', events, false);
+        window.removeEventListener('resize', events, false);
+
+      }
+      else {
+
+        window.onresize = null;
+
+      }
+
+    }
+  }
+
+}
+
+
+if ( window.jQuery || window.Zepto ) {
+  (function($) {
+    $.fn.Swipe = function(params) {
+      return this.each(function() {
+        $(this).data('Swipe', new Swipe($(this)[0], params));
+      });
+    }
+  })( window.jQuery || window.Zepto )
+}
