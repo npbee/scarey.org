@@ -116,10 +116,6 @@
         background:$darkgrey;
         border-bottom:1px solid transparent;
         @include transition(background 200ms, border 200ms);
-        &:hover {
-                background: $darkgrey !important;
-                border-bottom:1px solid $darkestgrey;
-        }
         @include at-breakpoint($medium) {
             background:none;
             position:absolute;
@@ -135,6 +131,13 @@
         @include at-breakpoint($large) {
             top:85px;
         }
+    }
+     .filter-close {
+        position:absolute;
+        top:-9999px;
+        right:-9999px;
+        font-size:3em;
+        cursor:pointer;
     }
     ul {
         height:0;
@@ -158,40 +161,37 @@
             left:0;
             position:relative;
         }
-        #position{
+        .position{
             text-align:center;
             list-style:none;
             margin:0 auto;
             padding:0;
             height:30px;
             width: 100%;
+            a {
+                display:inline-block;
+                width:10px;
+                height:10px;
+                padding:0;
+                border-radius:10px;
+                background:$lightblack;
+                box-shadow:inset 0 1px 3px $offblack,0 0 1px 1px $lightblack;
+                margin:0 2px;
+                cursor:pointer
+            }
+            .on {
+                box-shadow:inset 0 1px 3px -1px $orange,0 1px 2px rgba(0,0,0,.5);
+                background-color:$orange;
+                background-image:-webkit-gradient(linear, 0 0, 0 100%, from($orange), to(darken($orange, 10%)));
+                background-image:-webkit-linear-gradient($orange, darken($orange, 10%));
+                background-image:-moz-linear-gradient($orange, darken($orange, 10%));
+                background-image:-o-linear-gradient($orange, darken($orange, 10%));
+                background-image:linear-gradient($orange, darken($orange, 10%));
+            }
         }
-
-        #position a{
-            display:inline-block;
-            width:10px;
-            height:10px;
-            padding:0;
-            border-radius:10px;
-            background:#141414;
-            box-shadow:inset 0 1px 3px black,0 0 1px 1px #202020;
-            margin:0 2px;
-            cursor:pointer
-        }
-
-        #position a.on{
-            box-shadow:inset 0 1px 3px -1px #28b4ea,0 1px 2px rgba(0,0,0,.5);
-            background-color:#1293dc;
-            background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#1293dc), to(#0f6297));
-            background-image:-webkit-linear-gradient(#1293dc, #0f6297);
-            background-image:-moz-linear-gradient(#1293dc, #0f6297);
-            background-image:-o-linear-gradient(#1293dc, #0f6297);
-            background-image:linear-gradient(#1293dc, #0f6297);
-        }
-        @include at-breakpoint($medium) {
-        
-        }
-        @include at-breakpoint($large) {
+        .filter-close {
+            top:-20px;
+            right:-35px;
         }
     }
     a {

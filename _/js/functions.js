@@ -17,13 +17,10 @@ ALBUM FILTER
 var albumFilter = {
     init: function() {
         $('.filter-toggle').click(function() {
-            $(this).next().toggleClass("filter-show");
-            $(this).toggleClass('grey');
+            $('#slider').toggleClass("filter-show");
         });
-        $('.filter-scroll-right').click(function() {
-            $('.filter-thumbs li').animate({
-                left: '150px'
-            }, 200);
+        $('.filter-close').click(function() {
+            $('#slider').removeClass("filter-show");
         });
     }
 };
@@ -31,21 +28,21 @@ var albumFilter = {
 //Album filter slider
 var slider = {
     init: function() {
+        var bullets = [];
+        $("#position a ").each(function() {
+            var bullet = $(this);
+            bullets.push(bullet);
+        });
         window.mySwipe = $("#slider").Swipe({
-            continuous: false
+            continuous: false,
+            callback: function(pos) {
+                var i = bullets.length;
+                while(i--) {
+                    bullets[i].removeClass("on");
+                }
+                bullets[pos].addClass("on");
+            }
         }).data('Swipe');
-    //     Swipe(document.getElementById('slider'), {
-    //         continuous: false,
-    //         callback: function(pos) {
-    //             var i = bullets.length;
-    //             while (i--) {
-    //             bullets[i].className = ' ';
-    //         }
-    //         bullets[pos].className = 'on';
-    //     }
-    //     });
-    //     var bullets = document.getElementById('position').getElementsByTagName('a');
-    // }
     }
 };
 
