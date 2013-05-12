@@ -1,0 +1,71 @@
+.contact-block {
+    text-align:center;
+    margin-bottom:$padding*4;
+    word-wrap: break-word;
+    clear:both;
+    div {
+        margin-bottom:$padding;
+    }
+    h1 {
+        color:$blue;
+        text-transform: uppercase;
+    }
+    .booking-us-can {
+        @include at-breakpoint($medium) {
+            @include span-columns(6, 12);
+        }
+    }
+    .publicity-us, .tour-press {
+        @include at-breakpoint($medium) {
+            @include span-columns(4, 12);
+        }
+    }
+    .publicity-uk-eu {
+        @include at-breakpoint($medium) {
+            @include span-columns(4 omega, 12);
+        }
+    }
+}
+
+.copyright {
+    font-size:.6em;
+    padding-top:$padding*6;
+    margin-bottom:0;
+}
+
+/* FEEDBACK FORM */
+.feedback-block {
+    position:relative;
+}
+form {
+    width:50%;
+    margin: 0 auto;
+    .main-label {
+        float:left;
+        padding-right:5px;
+        width:20%;
+    }
+    input, textarea {
+        width:80%;
+        padding:10px;
+        outline:none;
+        border: 1px solid #d9d9d9;
+        border-radius: 3px;
+        @include transition(border 200ms);
+        &:focus {
+            border: 1px solid $orange;
+        }
+    }
+    textarea {
+        height:200px;
+    }
+    input[type=submit] {
+        float:right;
+    }
+}
+label.error {
+    width:100%;
+    text-align:right;
+    float:right;
+    color: red;
+}

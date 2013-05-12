@@ -242,6 +242,9 @@ footer {
 
 
 /* ====================HEADER */
+header {
+    margin-bottom: 1em;
+}
 /* ==========MAIN-NAV */
 .main-nav {
     text-transform: uppercase;
@@ -783,40 +786,7 @@ article {
 
 
 /* ====================CONTACT PAGE */
-.contact-block {
-    text-align:center;
-    margin-bottom:$padding*4;
-    word-wrap: break-word;
-    clear:both;
-    div {
-        margin-bottom:$padding;
-    }
-    h1 {
-        color:$blue;
-        text-transform: uppercase;
-    }
-    .booking-us-can {
-        @include at-breakpoint($medium) {
-            @include span-columns(6, 12);
-        }
-    }
-    .publicity-us, .tour-press {
-        @include at-breakpoint($medium) {
-            @include span-columns(4, 12);
-        }
-    }
-    .publicity-uk-eu {
-        @include at-breakpoint($medium) {
-            @include span-columns(4 omega, 12);
-        }
-    }
-}
-
-.copyright {
-    font-size:.6em;
-    padding-top:$padding*6;
-    margin-bottom:0;
-}
+@import "_contact.scss";
 
 
 /* ========================================STATES */
