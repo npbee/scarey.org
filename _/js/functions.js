@@ -2,7 +2,7 @@
 MOBILE FLYOUT
 ------------------------------------------------ */
 var navFly = {
-    init: function() {
+    init: function () {
         $(".more-nav").click(function() {
             $("#mobile-flyout").toggleClass("open slide");
             $(".main-content").toggleClass("dark");
