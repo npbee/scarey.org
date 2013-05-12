@@ -1,0 +1,20 @@
+*{margin:0;padding:0;box-sizing:border-box}body{margin:0;text-align:center;font-family:"brandon-grotesque","Helvetica Neue","Helvetica Neue","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;font-weight:300;color:#111;background:#f7f7f7 url("../img/bg_gradient.png") repeat-x;min-width:900px}
+li{list-style:none}a{text-decoration:none;color:#111}img{-ms-interpolation-mode:bicubic}#wrap{max-width:1200px;margin:3em auto}#header{position:absolute;top:10px;left:10px;z-index:2;min-width:500px;text-align:left}
+#header.image h1 span{display:none}#main-title{display:none}#main-content{margin:8em auto}#navigation:before{content:"∨";float:right;width:20px;color:#d9d9d9;position:relative;top:2px;text-align:right}
+#navigation:hover:before{-webkit-transform:rotate(180deg);text-align:left}#navigation{position:fixed;top:0;right:0;color:#666;padding:10px;text-align:left;height:45px;min-width:230px;overflow:hidden;border-left:1px solid #d9d9d9;-webkit-transition:all 200ms;-moz-transition:all 200ms;-o-transition:all 200ms;-ms-transition:all 200ms;transition:all 200ms}
+#navigation a{color:#afafaf;-webkit-transition:color 100ms;display:block;width:100%}#navigation a:before{content:"";display:inline-block;border-left:1px solid #333}
+#navigation a:hover{color:#c08a59}#navigation:hover{height:100%;background:#f7f7f7;box-shadow:1px 0 10px 1px #afafaf}#navigation:hover #main{opacity:.3;background:#333}
+#minicart h3{float:left}#minicart .minicart-contents{padding:3px 20px;float:left}#minicart .minicart-contents li{display:inline}#minicart .minicart-options{padding:3px 0;clear:both}
+.categories-title{padding-right:10px}#categories{position:relative}.categories-list{text-align:left;width:100%}.categories-list li{display:block}.categories-list li a,#navigation a{display:block;width:100%;padding:10px 0 10px 0}
+.help-list li{display:inline}.help-list li a{display:inline-block}#badge{position:fixed;bottom:0;right:10px}#website{position:fixed;bottom:10px;left:0}
+#website a{padding:10px;background:#111;border-radius:0 3px 0 0;color:#ababab;-webkit-transition:opacity 200ms;-moz-transition:opacity 200ms;transition:opacity 200ms}
+#website a:hover{opacity:.9}#products .product{width:50%;float:left;margin:2.5em 0}#products .product-title{margin:.5em 0}.pagination{clear:both}.pagination span,.pagination a{font-size:1.5em;padding:20px}
+#product-details{padding:50px 10px;font-size:1.5em}#product-details .info{padding:40px 0}#product-form .options{display:inline-block;font-size:2em}select{background:transparent;min-width:300px;font-size:.5em;height:50px;border:1px solid #d9d9d9;color:#333}
+#product-addtocart{display:inline-block}button{outline:0;border:0;background:#c08a59;border-radius:3px;color:#111;padding:.5em;text-align:center;font-size:1em;cursor:pointer;font-style:normal;-webkit-transition:background 200ms}
+button:hover{background:#a7703f;\}#cart-table{border-collapse:collapse;width:100%}#cart-table td,#cart-table th{padding:10px;min-width:100px;border:1px solid #d9d9d9}
+.row th:first-child a{display:inline-block;min-width:350px}#cart-footer{margin:2em 0;float:right;text-align:right}#cart-footer .cart-total{margin:1em 0}
+*{font-family:{{theme.font | font_family_for_group}}}body{background-color:{{theme.background}};{% if theme.background_image!= blank %}background-image:url({{theme.background_image.url}
+});background-repeat:repeat;{% endif %}}a:link,a:visited,#products .product-a h3,#products .product-a p{color:{{theme.links}}}a:hover,a:active,#products .product-a:hover h3,#products .product-a:hover p{color:{{theme.links_rollover}
+}}#main-title,#navigation div.pod h3,#minicart h3,#cart-head{background-color:{{theme.header_background}}}#main-title h2,#navigation div.pod h3,#minicart h3,#minicart .minicart-contents,#cart-head{color:{{theme.header_text}
+}}#minicart .minicart-total{border-left-color:{{theme.header_text}}}#navigation div.pod a{color:{{theme.sidebar_links}}}#navigation div.pod a:hover{color:{{theme.sidebar_rollovers}
+}}#products,#products .product-pic,#product-images .images-nav{background-color:{{theme.products_background}}}

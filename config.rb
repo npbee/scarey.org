@@ -8,7 +8,7 @@ images_dir = "_/img"
 javascripts_dir = "_/js"
 fonts_dir = "../fonts"
 
-output_style = :compressed
+output_style = :compact
 
 # To enable relative paths to assets via compass helper functions. Uncomment:
 # relative_assets = true
@@ -24,3 +24,5 @@ color_output = false
 # and then run:
 # sass-convert -R --from scss --to sass _/scss scss && rm -rf sass && mv scss sass
 preferred_syntax = :scss
+
+sass_options = { :debug_info => true }

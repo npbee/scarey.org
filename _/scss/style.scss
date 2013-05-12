@@ -234,31 +234,7 @@ footer {
 }
 
 /* ====================BUTTONS */
-.button {
-    background: $orange;
-    border-radius:3px;
-    color: $offblack;
-    padding:$padding/2;
-    text-align:center;
-    font-size:$regularfont;
-    cursor:pointer;
-    font-style:normal;
-    @include transition(background .2s);
-    &:hover {
-        background: darken($orange, 10%);
-        color:$offblack;
-    }
-}
-
-.dark-button {
-    background: $offblack;
-    text-align:center;
-    @include transition(background .2s);
-    &:hover {
-        background: darken($offblack, 5%);
-    }
-}
-
+@import "_buttons.scss";
 
 
 /* ====================SLIDER */

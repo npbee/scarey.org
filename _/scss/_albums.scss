@@ -53,14 +53,15 @@
     }
 }
 
+.album-tracklist h2, .album-purchase h2 {
+    padding:$smallpadding;
+    border-bottom:1px solid $darkgrey;
+    margin-bottom:$smallpadding;
+    text-align:left
+}
+
 .album-tracklist {
-    h2 {
-        background:$darkgrey;
-        border-radius:3px 3px 0 0;
-        padding:$smallpadding;
-        border-bottom:1px solid $orange;
-        margin-bottom:$smallpadding;
-    }
+    padding-bottom:2em;
     .album-track {
         clear:both;
         overflow:auto;
@@ -89,8 +90,7 @@
         clear:both;
         margin:$padding 0;
         @include at-breakpoint($medium) {
-            width:100%;
-            margin:0 auto $padding*2;
+            margin:$smallpadding*2 auto;
         }
     }
     @include at-breakpoint($large) {
