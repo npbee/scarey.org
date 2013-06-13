@@ -255,7 +255,8 @@ $(document).ready(function() {
     //Localscroll
     $.localScroll({
         hash: true,
-        duration: '300'
+        duration: '1000',
+        easing:'easeInOutExpo'
     });
 
 

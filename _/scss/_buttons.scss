@@ -1,17 +1,17 @@
 .button {
     background: $grey;
     @include background-image(linear-gradient($orange, darken($orange, 10%))); 
-    border:1px solid $darkgrey;
+    border:1px solid transparent;
     border-radius:3px;
     color: $offblack;
-    padding:$padding/2;
+    padding:$padding $padding/2;
     text-align:center;
     font-size:$regularfont;
     cursor:pointer;
     font-style:normal;
     @include transition(border .2s);
     &:hover {
-        border:1px solid $darkestgrey;
+        border:1px solid $lightblack;
         color:$offblack;
     }
 }
