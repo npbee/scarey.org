@@ -402,7 +402,7 @@ header {
 .mobile-flyout {
     width:100%;
     position:absolute;
-    right:-99999px;
+    left:-99999px;
     @include transition(all 400ms ease-in-out);
 
     a {
@@ -433,7 +433,7 @@ header {
 }
 
 .open {
-    right:0;
+    left:0;
     z-index:1;
 }
 

@@ -203,7 +203,7 @@ header { margin-bottom: 1em; }
 
 /* ==========MOBILE-FLYOUT */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/_\/scss\/style\.scss}line{font-family:\00003402}}
-.mobile-flyout { width: 100%; position: absolute; right: -99999px; -webkit-transition: all 400ms ease-in-out; -moz-transition: all 400ms ease-in-out; -o-transition: all 400ms ease-in-out; transition: all 400ms ease-in-out; }
+.mobile-flyout { width: 100%; position: absolute; left: -99999px; -webkit-transition: all 400ms ease-in-out; -moz-transition: all 400ms ease-in-out; -o-transition: all 400ms ease-in-out; transition: all 400ms ease-in-out; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/_\/scss\/style\.scss}line{font-family:\00003408}}
 .mobile-flyout a { display: block; float: left; width: 50%; padding: 1.5em 0; text-align: center; background: #eaeaea; outline: 1px solid #d9d9d9; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/_\/scss\/style\.scss}line{font-family:\00003416}}
@@ -214,7 +214,7 @@ header { margin-bottom: 1em; }
 .mobile-flyout [data-icon]:before { font-size: 2.5em; display: block; color: #111111; margin-bottom: 5px; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/_\/scss\/style\.scss}line{font-family:\00003435}}
-.open { right: 0; z-index: 1; }
+.open { left: 0; z-index: 1; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/_\/scss\/style\.scss}line{font-family:\00003443}}
 .dark { opacity: .2 !important; }
