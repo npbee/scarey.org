@@ -152,6 +152,10 @@ footer {
     position:relative;
     height:6em;
     margin-top:-6em;
+    text-align:center;
+    border-top:1px solid #e1e1e1;
+    background:$offblack;
+    //@include background-image(linear-gradient(color-stops(#f7f7f7, #f7f7f7 1%, #afafaf)));
     a {
         position: relative;
         top:1em;
@@ -398,17 +402,17 @@ header {
 .mobile-flyout {
     width:100%;
     position:absolute;
-    left:-99999px;
-    @include transition(all .2s);
+    right:-99999px;
+    @include transition(all 400ms ease-in-out);
 
     a {
         display:block;
         float:left;
         width:50%;
-        padding:1em 0;
+        padding:1.5em 0;
         text-align:center;
-        background:$darkgrey;
-        outline:1px solid $grey;
+        background:$grey;
+        outline:1px solid $darkgrey;
         &:nth-child(even) {
             border-right:none;
         }
@@ -423,13 +427,13 @@ header {
     [data-icon]:before {
         font-size:2.5em;
         display:block;
-        color: $lightblack;
+        color: $offblack;
         margin-bottom:$smallpadding;
     }
 }
 
 .open {
-    left:0;
+    right:0;
     z-index:1;
 }
 
@@ -545,13 +549,7 @@ header {
 }
 
 
-/* ====================FOOTER */
-footer {
-    text-align:center;
-    border-top:1px solid #e1e1e1;
-    background:$grey;
-    //@include background-image(linear-gradient(color-stops(#f7f7f7, #f7f7f7 1%, #afafaf)));
-}
+
 
 /* ====================BLOG */
 article {
@@ -634,7 +632,7 @@ article {
     Change the following styles to modify the appearance of ColorBox.  They are
     ordered & tabbed in a way that represents the nesting of the generated HTML.
 */
-#cboxOverlay{background:url(../img/overlay.png) repeat 0 0;}
+#cboxOverlay{background: rgba($offblack, 1)}
 #cboxContent{
     background:$offblack; 
     &:hover {
@@ -697,74 +695,7 @@ article {
 }
 
 /* ====================TOUR PAGE */
-.tour-year-block {
-    max-width:75em;
-    margin:0 auto;
-}
-.tour-header {
-    clear:both;
-    h1 {
-        display:none;
-        color: $blue;
-        @include at-breakpoint($medium) {
-            display:inline-block;
-            @include span-columns(4, 12);
-            &:last-child {
-                @include span-columns(4 omega, 12);
-            }
-        }
-    }
-}
-
-.tour-entry {
-    clear:both;
-    width:100%;
-    padding:0 0 $padding 0;
-    text-align:right;
-    font-size:$regularfont;
-    @include at-breakpoint($medium) {
-        text-align:center;
-    }
-    div {
-        margin:$padding/4 0;
-        @include at-breakpoint($medium) {
-            margin:0;
-            display:inline-block;
-            @include span-columns(4, 12);
-            &:last-child {
-                @include span-columns(4 omega, 12);
-            }
-        }
-    }
-    .tour-date, .tour-city, .tour-venue {
-        &:before {
-            float:left;
-            color:$blue;
-            @include at-breakpoint($medium) {
-                display:none;
-            }
-        }
-    }
-    .tour-date {
-        &:before {
-            content: "DATE";
-        }
-    }
-    .tour-city {
-        &:before {
-            content:"CITY";
-        }
-    }
-    .tour-venue {
-        &:before {
-            content:"VENUE";
-        }
-    }
-}
-
-.no-dates {
-    text-align:center;
-}
+@import "_tour.scss";
 
 /* ====================ALBUMS PAGE */
 @import "_albums.scss";
@@ -912,11 +843,4 @@ a.page-active {
 }
 /* ====================HOME PAGE */
 @import "_home.scss";
-
-
-
-
-
-
-
 

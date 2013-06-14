@@ -52,7 +52,7 @@ STICKY NAV
 //create a stick nav
 $(document).bind('ready scroll', function() {
     var docScroll = $(document).scrollTop();
-    if (docScroll >= 300) {
+    if (docScroll >= 500) {
         if (!$('#nav').hasClass('sticky')) {
             $('#nav').addClass('sticky').css({
                 top: '-300px'
