@@ -132,9 +132,9 @@ footer .logo-footer { width: 32.53012%; float: left; margin-right: 1.20482%; dis
 
 /* ====================BUTTONS */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/_\/scss\/_buttons\.scss}line{font-family:\000031}}
-.button { background: #eaeaea; background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #c08a59), color-stop(100%, #a7703f)); background-image: -webkit-linear-gradient(#c08a59, #a7703f); background-image: -moz-linear-gradient(#c08a59, #a7703f); background-image: -o-linear-gradient(#c08a59, #a7703f); background-image: linear-gradient(#c08a59, #a7703f); border: 1px solid transparent; border-radius: 3px; color: #111111; padding: 1em 0.5em; text-align: center; font-size: 1.4em; cursor: pointer; font-style: normal; -webkit-transition: border 0.2s; -moz-transition: border 0.2s; -o-transition: border 0.2s; transition: border 0.2s; }
+.button { background: #c08a59; border: 1px solid transparent; border-radius: 3px; color: #111111; padding: 1em 0.5em; text-align: center; font-size: 1.4em; cursor: pointer; font-style: normal; -webkit-transition: border 0.2s; -moz-transition: border 0.2s; -o-transition: border 0.2s; transition: border 0.2s; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/_\/scss\/_buttons\.scss}line{font-family:\0000313}}
-.button:hover { border: 1px solid #333333; color: #111111; }
+.button:hover { background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #c08a59), color-stop(100%, #bc824e)); background-image: -webkit-linear-gradient(#c08a59, #bc824e); background-image: -moz-linear-gradient(#c08a59, #bc824e); background-image: -o-linear-gradient(#c08a59, #bc824e); background-image: linear-gradient(#c08a59, #bc824e); color: #111111; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/_\/scss\/_buttons\.scss}line{font-family:\0000319}}
 .dark-button { background: #111111; text-align: center; -webkit-transition: background 0.2s; -moz-transition: background 0.2s; -o-transition: background 0.2s; transition: background 0.2s; }
@@ -651,7 +651,7 @@ a.page-active { border-bottom: 1px solid #c08a59; }
 
 /* ====================HOME PAGE */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/_\/scss\/_home\.scss}line{font-family:\000031}}
-.home { background: url("../img/home_art.png") no-repeat right bottom, #f7f7f7 url("../img/bg_gradient.png") repeat-x; /* ==========NAV*/ }
+.home { background: url("../img/scarey_homepage_art.svg") no-repeat right bottom, #f7f7f7 url("../img/bg_gradient.png") repeat-x; /* ==========NAV*/ }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/_\/scss\/_home\.scss}line{font-family:\000036}}
 .home .main-content { width: 100%; padding-bottom: 0; left: 0; opacity: 1; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/_\/scss\/_home\.scss}line{font-family:\0000315}}
