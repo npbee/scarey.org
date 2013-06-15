@@ -81,7 +81,7 @@ body > .wrap { height: auto; min-height: 100%; }
 
 /* ====================FOOTER */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/_\/scss\/style\.scss}line{font-family:\00003149}}
-footer { clear: both; position: relative; height: 6em; margin-top: -6em; text-align: center; border-top: 1px solid #e1e1e1; background: #111111; }
+footer { clear: both; position: relative; height: 6em; margin-top: -6em; text-align: center; border-top: 1px solid #e1e1e1; background: #eaeaea; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/_\/scss\/style\.scss}line{font-family:\00003159}}
 footer a { position: relative; top: 1em; color: #333333; font-size: 2em; width: 15.66265%; float: left; margin-right: 1.20482%; display: inline; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/_\/scss\/style\.scss}line{font-family:\00003165}}
