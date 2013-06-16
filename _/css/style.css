@@ -651,7 +651,7 @@ a.page-active { border-bottom: 1px solid #c08a59; }
 
 /* ====================HOME PAGE */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/_\/scss\/_home\.scss}line{font-family:\000031}}
-.home { background: url("../img/scarey_homepage_art.svg") no-repeat right bottom, #f7f7f7 url("../img/bg_gradient.png") repeat-x; /* ==========NAV*/ }
+.home { background: url("../img/home_art.png") no-repeat right bottom, #f7f7f7 url("../img/bg_gradient.png") repeat-x; /* ==========NAV*/ }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/_\/scss\/_home\.scss}line{font-family:\000036}}
 .home .main-content { width: 100%; padding-bottom: 0; left: 0; opacity: 1; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/_\/scss\/_home\.scss}line{font-family:\0000315}}
