@@ -43,6 +43,7 @@ body {
     //background: url("../img/background_light.png");
     //background: url('https://fiber.google.com/img/bg_gradient.png?da') repeat-x;
     background: #f7f7f7 url("../img/bg_gradient.png") repeat-x;
+    overflow-x:hidden;
 
     color:$offblack;
 }
@@ -123,6 +124,8 @@ body > .wrap {
     clear:both;
     padding-bottom:8em;
     position:relative;
+    opacity: 1;
+    @include transition(opacity 400ms ease-out);
     h1 {
         text-align:center;
     }
@@ -400,11 +403,14 @@ header {
 
 /* ==========MOBILE-FLYOUT */
 .mobile-flyout {
+    @include at-breakpoint($medium) {display:none;}
     width:100%;
     position:absolute;
-    left:-99999px;
-    @include transition(all 400ms ease-in-out);
-
+    //left:-700px;
+    @include transform(translateX(100%));
+    z-index:1;
+    opacity:0;
+    @include transition(all 200ms ease-in-out);
     a {
         display:block;
         float:left;
@@ -416,9 +422,7 @@ header {
         &:nth-child(even) {
             border-right:none;
         }
-        //border-top:1px solid $grey;
         &:nth-child(5), &:nth-child(6) {
-            //border-bottom:1px solid $grey;
         }
     }
     span {
@@ -728,13 +732,13 @@ article {
 .in {
     -webkit-animation-fill-mode: both;
     -webkit-animation-timing-function: ease-out;
-    -webkit-animation-duration: 350ms;
+    -webkit-animation-duration: 200ms;
     -moz-animation-fill-mode: both;
     -moz-animation-timing-function: ease-out;
-    -moz-animation-duration: 350ms;
+    -moz-animation-duration: 200ms;
     animation-fill-mode: both;
     animation-timing-function: ease-out;
-    animation-duration: 350ms;
+    animation-duration: 200ms;
 }
 .out {
     -webkit-animation-fill-mode: both;
@@ -755,8 +759,8 @@ article {
 //     from { -moz-transform: translateX(10%); opacity:0;}
 //     to { -moz-transform: translateX(0);opacity:1; }
 // }
-@keyframes slideinfromright {
-    from { transform: translateX(10%); opacity:0;}
+@keyframes slideinfromleft {
+    from { transform: translateX(-100%); opacity:0;}
     to { transform: translateX(0);opacity: 1}
 }
 
@@ -786,17 +790,18 @@ article {
 .slide.out {
     -webkit-transform: translateX(-10%);
     -webkit-animation-name: slideouttoleft;
-    moz-animation-duration: 200ms;
+    -moz-animation-duration: 200ms;
     -moz-animation-name: fadeout;
     // transform: translateX(-10%);
     // animation-name: slideouttoleft;
     opacity:0;
 }
+
 .slide.in {
     opacity:1;
     -webkit-transform: translateX(0);
     -webkit-animation-name: slideinfromright;
-    -moz-animation-duration: 225ms;
+    -moz-animation-duration: 200ms;
     -moz-animation-name: fadein;
     // transform: translateX(0);
     // animation-name: slideinfromright;
