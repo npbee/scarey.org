@@ -44,9 +44,12 @@ body {
     //background: url('https://fiber.google.com/img/bg_gradient.png?da') repeat-x;
     background: #f7f7f7 url("../img/bg_gradient.png") repeat-x;
     overflow-x:hidden;
-
     color:$offblack;
+    @include at-breakpoint($medium) {
+        overflow:auto;
+    }
 }
+
 .no-js body {
     font-weight:100;
 }
@@ -407,7 +410,7 @@ header {
     width:100%;
     position:absolute;
     //left:-700px;
-    @include transform(translateX(100%));
+    @include transform(translateX(-100%));
     z-index:1;
     opacity:0;
     @include transition(all 200ms ease-in-out);
@@ -588,7 +591,7 @@ article {
 }
 .photoset-wrap {
    img {
-        
+
    }
     .photo-container {
         display:inline-block;
@@ -631,14 +634,14 @@ article {
 .cboxIframe{width:100%; height:100%; display:block; border:0;}
 #colorbox, #cboxContent, #cboxLoadedContent{box-sizing:content-box; -moz-box-sizing:content-box; -webkit-box-sizing:content-box;}
 
-/* 
+/*
     User Style:
     Change the following styles to modify the appearance of ColorBox.  They are
     ordered & tabbed in a way that represents the nesting of the generated HTML.
 */
 #cboxOverlay{background: rgba($offblack, 1)}
 #cboxContent{
-    background:$offblack; 
+    background:$offblack;
     &:hover {
         #cboxPrevious, #cboxNext, #cboxClose {
             opacity:.3;
@@ -666,18 +669,18 @@ article {
         opacity: 1 !important;
     }
 }
-    #cboxPrevious{ 
-        left:0; 
-        background:url(../img/controls_sprite.png) no-repeat 0 0; 
+    #cboxPrevious{
+        left:0;
+        background:url(../img/controls_sprite.png) no-repeat 0 0;
     }
     #cboxNext{
         right:0;
-        background:url(../img/controls_sprite.png) no-repeat -300px 0; 
+        background:url(../img/controls_sprite.png) no-repeat -300px 0;
     }
     #cboxClose{
-        top:0; 
-        right:0; 
-        background:url(../img/controls_sprite.png) no-repeat -400px 0; 
+        top:0;
+        right:0;
+        background:url(../img/controls_sprite.png) no-repeat -400px 0;
     }
 #cboxLoadingOverlay{background:url(../img/loading_background.png) no-repeat center center;}
 #cboxLoadingGraphic{background:url(../img/ajax_loader.gif) no-repeat center center;}
@@ -821,11 +824,11 @@ article {
 // }
 
 /* ====================ACTIVE MENUS */
-.blog a.blog-nav, 
-.tour a.tour-nav, 
-.albums a.albums-nav, 
-.media a.media-nav, 
-.store a.store-nav, 
+.blog a.blog-nav,
+.tour a.tour-nav,
+.albums a.albums-nav,
+.media a.media-nav,
+.store a.store-nav,
 .contact a.contact-nav {
         color: lighten($lightblack, 10%);
         font-size:1.5em;

@@ -1,5 +1,5 @@
 <nav id="nav" class="main-nav">
-	
+
 	<a class="blog-nav" data-icon="" aria-hidden="true" href="/blog"><span class="">Blog</span></a>
 	<a class="tour-nav" data-icon="" aria-hidden="true" href="/tour/2013"><span class="">Tour</span></a>
 	<a class="albums-nav" data-icon="" aria-hidden="true" href="/albums/lp"><span class="">Albums</span></a>
