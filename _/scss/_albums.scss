@@ -151,12 +151,7 @@
         overflow:hidden;
     }
     .filter-show {
-        background:$grey;
-        background: url("../img/bg_gradient.png") repeat-x;
-        border-top:1px solid $darkgrey;
-        border-bottom: 1px solid $darkgrey;
-        border-left:1px solid $darkgrey;
-        border-right:1px solid $darkgrey;
+
         ul {
             height:250px;
             opacity:1;
@@ -216,11 +211,17 @@
 
     /* Swipe CSS */
     .swipe {
+        background:$grey;
+        background: url("../img/bg_gradient.png") repeat-x;
+        border-top:1px solid $darkgrey;
+        border-bottom: 1px solid $darkgrey;
+        border-left:1px solid $darkgrey;
+        border-right:1px solid $darkgrey;
         overflow: hidden;
         visibility: hidden;
         position: relative;
         @include at-breakpoint($medium) {
-            width:40%;
+            //width:40%;
             margin: 0 auto;
         }
     }
