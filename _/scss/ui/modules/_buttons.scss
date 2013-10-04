@@ -2,20 +2,19 @@
     $BUTTONS
 \*------------------------------------*/
 .button {
-    background: $orange;
+    background: $lightblack;
+    color: $background;
     //@include background-image(linear-gradient($orange, darken($orange, 4%)));
     border:1px solid transparent;
     border-radius:3px;
-    color: $offblack;
     padding:$padding $padding/2;
     text-align:center;
     font-size:$regularfont;
     cursor:pointer;
     font-style:normal;
-    @include transition(border .2s);
+    @include transition(color .2s);
     &:hover {
-        @include background-image(linear-gradient($orange, darken($orange, 3%)));
-        color:$offblack;
+        color:$orange;
     }
 }
 

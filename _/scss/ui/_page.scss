@@ -39,7 +39,7 @@ body > .wrap {
     width:95%;
     margin:0 auto;
     clear:both;
-    padding-bottom:$base-spacing-unit;
+    padding-bottom:6em;
     position:relative;
     opacity: 1;
     @include transition(opacity 400ms ease-out);

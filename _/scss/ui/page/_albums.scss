@@ -6,13 +6,11 @@
     h1 {
         clear:both;
     }
-    margin: 4em auto;
+    margin: $base-spacing-unit*4 auto;
     &:first-child {
         margin-top:0;
     }
     @include at-breakpoint($medium) {
-        max-width:90%;
-
         &:after {
             content: url('../img/scarey_line_spacer_smaller.png');
             display:table;
@@ -23,20 +21,19 @@
 }
 .album-release {
     text-align:center;
-    margin-bottom:2em;
+    margin-bottom:$base-spacing-unit*2;
 }
 
 .album-cover {
     text-align:center;
     img {
-        margin-bottom:2em;
+        margin-bottom:$base-spacing-unit*2;
         max-width:100%;
         height:auto;
         @include at-breakpoint($medium) {
-            margin-bottom:2em;
         }
         @include at-breakpoint($large) {
-            margin-bottom:3em;
+            margin-bottom:$base-spacing-unit*2;
             max-width:50%;
             @include span-columns(4, 8);
         }
@@ -44,37 +41,32 @@
 }
 
 .album-blurb {
-    padding-bottom:$padding*2;
+    padding-bottom:$base-spacing-unit*2;
      p {
+        @extend .delta;
         text-align: justify;
-        margin-bottom:$regularfont;
+        margin-bottom:$base-spacing-unit;
     }
     @include at-breakpoint($large) {
         @include span-columns(4 omega, 8);
     }
-    @include at-breakpoint($large) {
-    }
 }
 
 .album-tracklist h2, .album-purchase h2 {
-    padding:$smallpadding;
-    border-bottom:1px solid $grey;
-    //border-top:1px solid $grey;
-    //border-right: 1px solid $grey;
-    //border-left: 1px solid $grey;
+    border-bottom:1px solid $darkgrey;
     border-radius:3px 3px 0 0;
-    margin-bottom:$smallpadding;
+    margin-bottom:$base-spacing-unit/2;
     text-align:left;
-    background: $lightgrey;
+    //background: $lightgrey;
 }
 
 .album-tracklist {
-    padding-bottom:2em;
+    padding-bottom:$base-spacing-unit*2;
     .album-track {
         clear:both;
         overflow:auto;
-        margin:$smallpadding*2 0;
-        font-size:$regularfont;
+        margin:$base-spacing-unit/2 0;
+        //font-size:$regularfont;
     }
     .album-track-name {
         float:left;
