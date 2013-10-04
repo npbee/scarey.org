@@ -1,0 +1,61 @@
+/*------------------------------------*\
+    $BLOG STYLES
+\*------------------------------------*/
+article {
+    //@include container;
+    //@include susy-grid-background;
+    margin:$padding 0 $padding*6;
+    &:after {
+        content:"";
+        display:table;
+    }
+}
+
+
+.post-title {
+    float:right;
+}
+
+.post-content {
+    line-height:2.5em;
+    margin: $padding auto;
+    text-align:center;
+    clear:both;
+    img {
+        max-width:100%;
+    }
+    p {
+        margin:0 auto;
+        @include at-breakpoint($large) {
+            max-width: 60%;
+        }
+    }
+}
+.photoset-wrap {
+   img {
+
+   }
+    .photo-container {
+        display:inline-block;
+        margin: $padding/4;
+        border-radius:3px;
+        overflow:hidden;
+        @include at-breakpoint($medium) {
+            width:250px;
+        }
+    }
+}
+
+.audio-player {
+    embed {
+        border: 1px solid $darkgrey;
+        width:100%;
+        height:100px;
+        @include at-breakpoint($medium) {
+            width:75%;
+        }
+        @include at-breakpoint($medium) {
+            width:50%;
+        }
+    }
+}

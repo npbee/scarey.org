@@ -1,0 +1,125 @@
+/*------------------------------------*\
+    $BASE
+\*------------------------------------*/
+
+html, body, .wrap {
+    padding:0;
+    margin:0;
+    height:100%;
+}
+
+html {
+    -webkit-text-size-adjust: 100%; /* 2 */
+    -ms-text-size-adjust: 100%; /* 2 */
+}
+
+body {
+    margin: 0;
+    font-family: "brandon-grotesque", "Helvetica Neue", "Helvetica Neue", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight:300;
+    font-size: $base-font-size;
+    background: $background url("../img/bg_gradient.png") repeat-x;
+    overflow-x:hidden;
+    color:$offblack;
+    @include at-breakpoint($medium) {
+        overflow:auto;
+    }
+}
+
+.no-js body {
+    font-weight:100;
+}
+
+a {
+  text-decoration:none;
+  color:$offblack;
+  @include transition(color .2s);
+}
+
+    a:focus {
+        outline: thin dotted;
+    }
+
+    a:active,
+    a:hover {
+        outline: 0;
+        color:$blue;
+    }
+
+h1 {
+    margin: 0;
+    padding:0;
+}
+
+h2 {
+    margin: 0;
+}
+
+p {
+    margin:0;
+}
+
+
+b,
+strong {
+    font-weight: bold;
+}
+
+img {
+    border:0;
+}
+
+ul {
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+
+iframe {
+    border:none;
+}
+
+
+/****
+* Footer
+****/
+footer {
+    clear: both;
+    //z-index: 10;
+    position:relative;
+    height:6em;
+    margin-top:-6em;
+    text-align:center;
+    border-top:1px solid #e1e1e1;
+    background:$offblack;
+    //@include background-image(linear-gradient(color-stops(#f7f7f7, #f7f7f7 1%, #afafaf)));
+    a {
+        @extend .beta;
+        position: relative;
+        top:1em;
+        color:$lightblack;
+        @include span-columns(2, 12);
+        &:last-child {
+            @include span-columns(2 omega, 12);
+            @include at-breakpoint($medium) {
+                @include reset-columns;
+            }
+        }
+        &:hover {
+            color: lighten($lightblack, 20%);
+        }
+        @include at-breakpoint($medium) {
+            padding:0 $padding;
+           @include reset-columns;
+        }
+        @include at-breakpoint($large) {
+            padding: 0 $padding*3;
+        }
+    }
+    .logo-footer {
+        @include span-columns(4, 12);
+        @include at-breakpoint($medium) {
+            @include reset-columns;
+        }
+    }
+}

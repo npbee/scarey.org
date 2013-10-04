@@ -1,0 +1,86 @@
+/*------------------------------------*\
+    $TOUR STYLES
+\*------------------------------------*/
+.tour-year-block {
+    max-width:75em;
+    margin:0 auto;
+}
+.tour-header {
+    clear:both;
+    h1 {
+        display:none;
+        color: $blue;
+        @include at-breakpoint($medium) {
+            display:inline-block;
+            @include span-columns(4, 12);
+            &:last-child {
+                @include span-columns(4 omega, 12);
+            }
+        }
+    }
+}
+
+.tour-entry {
+    clear:both;
+    width:100%;
+    padding:0 0 $padding 0;
+    text-align:right;
+    font-size:$regularfont;
+    @include at-breakpoint($medium) {
+        text-align:center;
+    }
+    div {
+        margin:$padding/4 0;
+        @include at-breakpoint($medium) {
+            display:inline-block;
+            @include span-columns(4, 12);
+            &:last-child {
+                @include span-columns(4 omega, 12);
+            }
+        }
+    }
+}
+
+.tour-date, .tour-city, .tour-venue {
+    position:relative;
+    &:before {
+        float:left;
+        color:$blue;
+        @include at-breakpoint($medium) {
+            display:none;
+        }
+    }
+}
+
+.tour-date, .tour-city {
+    @include at-breakpoint($large) {
+        &:after {
+            content:"";
+            position:absolute;
+            top:50%;
+            width:35%;
+            right: -15%;
+            border-bottom: 1px dotted $darkgrey;
+        }
+    }
+}
+
+.tour-date {
+    &:before {
+        content: "DATE";
+    }
+}
+.tour-city {
+    &:before {
+        content:"CITY";
+    }
+}
+.tour-venue {
+    &:before {
+        content:"VENUE";
+    }
+}
+
+.no-dates {
+    text-align:center;
+}

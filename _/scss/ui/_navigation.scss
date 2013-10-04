@@ -1,0 +1,303 @@
+/*------------------------------------*\
+    $NAVIGATION
+\*------------------------------------*/
+header {
+    margin-bottom: $base-spacing-unit;
+}
+
+
+.more-nav {
+    @extend .gamma;
+    border-left: 1px solid $darkgrey;
+    float: right;
+    padding: 0 $base-spacing-unit;
+    @include at-breakpoint($medium) {
+        display: none;
+    }
+    &[data-icon]:before {
+        @include at-breakpoint($medium) {
+            content:"";
+            font-size:1em;
+        }
+    }
+}
+
+.main-nav {
+    padding: $padding 0;
+    text-transform: uppercase;
+    @include at-breakpoint($medium) {
+        text-align:center;
+        padding:0;
+    }
+    a {
+        &:hover {
+            color: $blue;
+        }
+        @include at-breakpoint($medium) {
+            padding:0 $padding/4;
+            position:relative;
+            top:-10px;
+            //color:$grey;
+        }
+        @include at-breakpoint($large) {
+            padding:0 $padding/2;
+            top:-20px;
+        }
+    }
+    .logo-nav {
+        @extend .gamma;
+        float:left;
+        color: $orange;
+        margin-left:5px;
+        top: 0;
+        &:hover {
+            color:$orange;
+        }
+        @include at-breakpoint($medium) {
+            margin-left:0;
+            font-weight:100;
+            font-size: $kilo-size;
+            float:none;
+            line-height:1;
+            display:inline;
+            &:after {
+                content:"";
+            }
+        }
+        @include at-breakpoint($large) {
+            font-size: $mega-size;
+        }
+    }
+}
+
+
+
+/****
+* Sticky Nav
+****/
+.sticky {
+    @include at-breakpoint($large) {
+        position:fixed;
+        width:100%;
+        z-index: 1;
+        background:$background;
+        .logo-nav {
+            font-size: $h2-size;
+            font-weight: 300;
+        }
+        a {
+            top:-1px;
+        }
+        padding:$base-spacing-unit/2 0 0;
+        &:after {
+            content: url('../img/scarey_line_spacer_smaller.png');
+            display:block;
+            line-height:0;
+            position:relative;
+            top:-5px;
+        }
+    }
+}
+
+/* Hide irrelevant icons on small view */
+.blog .tour-nav, .blog .albums-nav, .blog .media-nav, .blog .store-nav, .blog .contact-nav,
+.tour .blog-nav, .tour .albums-nav, .tour .media-nav, .tour .store-nav, .tour .contact-nav,
+.albums .blog-nav, .albums .tour-nav, .albums .media-nav, .albums .store-nav, .albums .contact-nav,
+.media .blog-nav, .media .tour-nav, .media .albums-nav, .media .store-nav, .media .contact-nav,
+.store .blog-nav, .store .tour-nav, .store .albums-nav, .store .media-nav, .store .contact-nav,
+.contact .blog-nav, .contact .tour-nav, .contact .albums-nav, .contact .media-nav, .contact .store-nav {
+    display:none;
+    @include at-breakpoint($medium) {
+        display:inline;
+    }
+}
+
+//Only for no-js
+.close-nav {
+    display:none;
+}
+
+
+/****
+* Active menus
+****/
+.blog a.blog-nav,
+.tour a.tour-nav,
+.albums a.albums-nav,
+.media a.media-nav,
+.store a.store-nav,
+.contact a.contact-nav {
+    @extend .gamma;
+        color: lighten($lightblack, 10%);
+        margin:0 0 0 $padding/4;
+        @include at-breakpoint($medium) {
+            color:$blue;
+            font-size:1em;
+            margin-left:0;
+        }
+}
+
+a.active {
+    color:$blue;
+}
+
+
+
+
+
+/****
+* Mobile Flyout
+****/
+.mobile-flyout {
+    @include at-breakpoint($medium) {display:none;}
+    width:100%;
+    position:absolute;
+    z-index:10;
+    @include transform(translate3d(-100%,0,0));
+    @include transition(all 200ms ease-in-out);
+    a {
+        display:block;
+        float:left;
+        width:50%;
+        padding:$base-spacing-unit 0;
+        text-align:center;
+        background:$grey;
+        outline:1px solid $darkgrey;
+        &:nth-child(even) {
+            border-right:none;
+        }
+        &:nth-child(5), &:nth-child(6) {
+        }
+    }
+    span {
+        text-transform:uppercase;
+    }
+    [data-icon]:before {
+        font-size:$h1-size;
+        display:block;
+        color: $offblack;
+        margin-bottom: $base-spacing-unit/2;
+    }
+}
+
+.dark {
+    opacity:.2 !important;
+}
+
+.main-nav-check {
+    display:none;
+}
+
+.nojs-mobile-nav {
+    display:none;
+}
+
+.no-js {
+    .more-nav {
+        display:none;
+    }
+    .nojs-mobile-nav {
+        display:block;
+        float:right;
+        padding-right:$padding;
+        cursor: pointer;
+        @include at-breakpoint($medium) {
+            display:none;
+        }
+    }
+    #main-nav-check:checked + #mobile-flyout {
+
+            left:0;
+            z-index:1;
+    }
+}
+
+/* ====================PAGE NAV */
+.page-nav {
+    text-align:center;
+    margin-bottom:1em;
+    overflow:auto;
+    //font-size:1.3em;
+    position:relative;
+    a {
+        background:$lightblack;
+        color: $background;
+        display:inline-block;
+        font-weight: 300;
+        padding:$padding*2 0;
+        outline:1px solid #999;
+        border-bottom:1px solid transparent;
+        line-height:.1em;
+        &:first-child {
+            border-left: none;
+        }
+        &:last-child {
+            border-right:none;
+        }
+        &:hover {
+            border-bottom:1px solid $orange;
+            @include transition(border .1s);
+        }
+        @include at-breakpoint($medium) {
+            background:none;
+            color:$offblack;
+            border-right:none;
+            outline:none;
+            padding:$padding*2 0 $padding;
+        }
+    }
+}
+
+.tour .page-nav {
+    a {
+        width:25%;
+        float:left;
+        @include at-breakpoint($medium) {
+            @include container;
+                float:none;
+                width:auto;
+                display:inline-block;
+            }
+        }
+}
+
+.albums .main-page-nav {
+    a {
+        width:33.33%;
+        float:left;
+        &:last-child {
+            width:33.34%;
+        }
+        @include at-breakpoint($medium) {
+                @include container;
+                float:none;
+                width:auto;
+                display:inline-block;
+                &:last-child {
+                    width: auto;
+                }
+            }
+    }
+}
+
+.media .page-nav {
+    a {
+        width:50%;
+        float:left;
+        @include at-breakpoint($medium) {
+            @include container;
+                float:none;
+                width:auto;
+                display:inline-block;
+            }
+    }
+}
+
+a.page-active {
+    border-bottom:1px solid $orange !important;
+    color: $orange;
+    @include at-breakpoint($medium) {
+        color: $offblack;
+    }
+}
+

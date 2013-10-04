@@ -1,0 +1,63 @@
+/*------------------------------------*\
+    $PAGE
+\*------------------------------------*/
+
+/****
+* Font-face
+****/
+@font-face {
+    font-family: 'entypo';
+    src:url('../fonts/entypo/entypo.eot');
+    src:url('../fonts/entypo/entypo.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/entypo/entypo.svg#entypo') format('svg'),
+        url('../fonts/entypo/entypo.woff') format('woff'),
+        url('../fonts/entypo/entypo.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/****
+* Typekit prevent FOUT
+****/
+.wf-loading {
+    /* Hide the blog title and post titles while web fonts are loading */
+    visibility: hidden;
+  }
+
+
+body > .wrap {
+    height:auto;
+    min-height:100%;
+}
+
+
+/****
+  * Main content
+  ****/
+  .main-content {
+    width:95%;
+    margin:0 auto;
+    clear:both;
+    padding-bottom:$base-spacing-unit;
+    position:relative;
+    opacity: 1;
+    @include transition(opacity 400ms ease-out);
+    h1 {
+        text-align:center;
+    }
+    img {
+        outline: 1px solid #d9d9d9;
+        border-radius:3px;
+    }
+    @include at-breakpoint($medium) {
+        @include container;
+    }
+}
+
+.no-js .main-content {
+    left: 0 !important;
+    opacity: 1 !important; //for no-js users
+}
+
+

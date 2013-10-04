@@ -7,7 +7,7 @@ $large: 80em 12;
     @media only screen and (max-width: 1260px){ @content; }
   }
   @if $point == small{
-    @media only screen and (max-width: 700px), 
+    @media only screen and (max-width: 700px),
                     only screen and (max-device-width: 480px),
                     only screen and (-webkit-min-device-pixel-ratio: 1.5),
                     only screen and (-o-min-device-pixel-ratio: 3/2),
@@ -16,33 +16,3 @@ $large: 80em 12;
     {@content}
   }
 }
-
-/* ========================================PADDINGS */
-$smallpadding: 5px;
-$padding: 1em;
-
-/* ========================================MIXINS */
-$orange: #C08A59;
-$blue: #5b93ab;
-$white: #ababab;
-$lightgrey: #f2f2f2;
-$grey: #eaeaea;
-$darkgrey: #d9d9d9;
-$darkestgrey: #999999;
-$offblack: #111;
-$lightblack: #333;
-
-$regularfont: 1.4em;
-$largefont: 3em;
-
-$border-radius: 3px;
-
-
-//Album filter calcualtions
-$album_filter_width: 800px;
-
-@function album_thumb_width($album_filter_width, $number_of_albums) {
-  @return ($album_filter_width / $number_of_albums);
-}
-
-

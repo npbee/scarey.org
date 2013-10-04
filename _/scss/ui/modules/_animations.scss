@@ -1,0 +1,77 @@
+/*------------------------------------*\
+    $ANIMATIONS
+\*------------------------------------*/
+
+
+.slide-out {
+    @include transform(translate3d(-100%,0,0));
+    //@include animation(slide-out-to-left 200ms);
+}
+
+.slide-in {
+    @include transform(translate3d(0,0,0));
+    //@include animation(slide-in-from-left 200ms);
+}
+
+.animate-in {
+    @include animation(slide-in-from-right 400ms cubic-bezier(0.950, 0.050, 0.795, 0.035));
+}
+
+.animate-out {
+    @include animation(slide-out-to-left 400ms cubic-bezier(0.950, 0.050, 0.795, 0.035));
+
+}
+
+@include keyframes(slide-in-from-left) {
+    0% {
+        @include transform(translate3d(-100%,0,0));
+        opacity: 0;
+    }
+    75% {
+        opacity: 0.5;
+    }
+    100% {
+        @include transform(translate3d(0,0,0));
+        opacity: 1;
+    }
+}
+
+@include keyframes(slide-out-to-left) {
+    0% {
+        @include transform(translate3d(0,0,0));
+        opacity: 1;
+    }
+    100% {
+        @include transform(translate3d(-100%,0,0));
+        opacity: 0;
+    }
+}
+
+@include keyframes(slide-in-from-right) {
+    0% {
+        @include transform(translate3d(100%,0,0));
+        opacity: 0;
+    }
+    100% {
+        @include transform(translate3d(0,0,0));
+        opacity: 1;
+    }
+}
+
+@include keyframes(fade-in) {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@include keyframes(fade-out) {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

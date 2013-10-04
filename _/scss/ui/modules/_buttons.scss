@@ -1,6 +1,9 @@
+/*------------------------------------*\
+    $BUTTONS
+\*------------------------------------*/
 .button {
     background: $orange;
-    //@include background-image(linear-gradient($orange, darken($orange, 4%))); 
+    //@include background-image(linear-gradient($orange, darken($orange, 4%)));
     border:1px solid transparent;
     border-radius:3px;
     color: $offblack;
@@ -11,7 +14,7 @@
     font-style:normal;
     @include transition(border .2s);
     &:hover {
-        @include background-image(linear-gradient($orange, darken($orange, 3%))); 
+        @include background-image(linear-gradient($orange, darken($orange, 3%)));
         color:$offblack;
     }
 }
