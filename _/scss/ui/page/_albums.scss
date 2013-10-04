@@ -19,13 +19,15 @@
         }
     }
 }
+
+.album-release, .album-cover {
+    text-align: center;
+}
 .album-release {
-    text-align:center;
-    margin-bottom:$base-spacing-unit*2;
+    margin-bottom:$base-spacing-unit;
 }
 
 .album-cover {
-    text-align:center;
     img {
         margin-bottom:$base-spacing-unit*2;
         max-width:100%;
@@ -53,12 +55,12 @@
 }
 
 .album-tracklist h2, .album-purchase h2 {
-    border-bottom:1px solid $darkgrey;
+    border-bottom:1px solid darken($darkgrey, 25%);
     border-radius:3px 3px 0 0;
     margin-bottom:$base-spacing-unit/2;
     text-align:left;
-    //background: $lightgrey;
 }
+
 
 .album-tracklist {
     padding-bottom:$base-spacing-unit*2;
@@ -88,9 +90,12 @@
         display:block;
         width:100%;
         clear:both;
-        margin:$padding 0;
+        margin:$base-spacing-unit 0;
+        &:first-of-type {
+            margin-top: 0;
+        }
         @include at-breakpoint($medium) {
-            margin:$smallpadding*2 auto;
+            //margin:$base-spacing-unit*2 auto;
         }
     }
     @include at-breakpoint($large) {
@@ -104,34 +109,23 @@
 .no-js .album-filter {
     display:none; //no js?  no filter :(
 }
+
+
+
 .album-filter {
     text-align:center;
     clear:both;
-    @include transition(all 200ms);
-    .filter-toggle {
-        display:block;
-        width:100%;
-        cursor: pointer;
-        padding:$padding 0;
-        background:$darkgrey;
-        border-bottom:1px solid transparent;
-        @include transition(background 200ms, border 200ms);
-        @include at-breakpoint($medium) {
-            background:none;
-            position:absolute;
-            padding-bottom:0;
-            top:65px;
-            right:50px;
-            width:150px;
-            border-radius:3px 3px 0 0;
-            &:hover {
-                background:none;
-            }
-        }
-        @include at-breakpoint($large) {
-            top:85px;
-        }
+    position: relative;
+    .swipe {
+        background:$grey;
+        height: 0;
+        overflow: hidden;
+        position: absolute;
+        width: 100%;
+        z-index: 2;
+        @include transition(height 200ms ease-in-out, opacity 200ms ease-in-out);
     }
+
      .filter-close {
         position:absolute;
         top:-9999px;
@@ -140,58 +134,7 @@
         cursor:pointer;
     }
     ul {
-        height:0;
-        opacity: 0;
-        @include transition(height 200ms ease-in-out, opacity 200ms ease-in-out);
         overflow:hidden;
-    }
-    .filter-show {
-
-        ul {
-            height:250px;
-            opacity:1;
-            @include transition(height 200ms ease-in-out, opacity 200ms ease-in-out);
-            width:$album_filter_width;
-        }
-        li {
-            float:left;
-            width: album_thumb_width($album_filter_width, 4);
-            padding:$padding 0;
-            left:0;
-            position:relative;
-        }
-        .position{
-            text-align:center;
-            list-style:none;
-            margin:0 auto;
-            padding:0;
-            height:30px;
-            width: 100%;
-            a {
-                display:inline-block;
-                width:10px;
-                height:10px;
-                padding:0;
-                border-radius:10px;
-                background:$lightblack;
-                box-shadow:inset 0 1px 3px $offblack,0 0 1px 1px $lightblack;
-                margin:0 2px;
-                cursor:pointer
-            }
-            .on {
-                box-shadow:inset 0 1px 3px -1px $orange,0 1px 2px rgba(0,0,0,.5);
-                background-color:$orange;
-                background-image:-webkit-gradient(linear, 0 0, 0 100%, from($orange), to(darken($orange, 10%)));
-                background-image:-webkit-linear-gradient($orange, darken($orange, 10%));
-                background-image:-moz-linear-gradient($orange, darken($orange, 10%));
-                background-image:-o-linear-gradient($orange, darken($orange, 10%));
-                background-image:linear-gradient($orange, darken($orange, 10%));
-            }
-        }
-        .filter-close {
-            top:-20px;
-            right:-35px;
-        }
     }
     a {
         padding:0 $padding;
@@ -204,14 +147,94 @@
     }
 }
 
-    /* Swipe CSS */
+.position {
+    position: absolute;
+    top: -9999px;
+}
+
+/****
+* Filter open
+****/
+.filter-show {
     .swipe {
-        background:$grey;
-        background: url("../img/bg_gradient.png") repeat-x;
+        height: 270px;
         border-top:1px solid $darkgrey;
         border-bottom: 1px solid $darkgrey;
         border-left:1px solid $darkgrey;
         border-right:1px solid $darkgrey;
+    }
+    ul {
+        width:$album_filter_width;
+    }
+    li {
+        float:left;
+        width: album_thumb_width($album_filter_width, 4);
+        padding:$padding 0;
+        left:0;
+        position:relative;
+    }
+    .position{
+        text-align:center;
+        list-style:none;
+        margin:0 auto;
+        padding:0;
+        top: 270px;
+        height:30px;
+        width: 100%;
+        z-index: 3;
+        a {
+            display:inline-block;
+            width:10px;
+            height:10px;
+            padding:0;
+            border-radius:10px;
+            background:$lightblack;
+            box-shadow:inset 0 1px 3px $offblack,0 0 1px 1px $lightblack;
+            margin:0 2px;
+            cursor:pointer
+        }
+        .on {
+            box-shadow:inset 0 1px 3px -1px $orange,0 1px 2px rgba(0,0,0,.5);
+            background-color:$orange;
+            background-image:-webkit-gradient(linear, 0 0, 0 100%, from($orange), to(darken($orange, 10%)));
+            background-image:-webkit-linear-gradient($orange, darken($orange, 10%));
+            background-image:-moz-linear-gradient($orange, darken($orange, 10%));
+            background-image:-o-linear-gradient($orange, darken($orange, 10%));
+            background-image:linear-gradient($orange, darken($orange, 10%));
+        }
+    }
+    .filter-close {
+        top:-20px;
+        right:-35px;
+    }
+}
+
+
+/****
+* Filter toggle
+****/
+a.filter-toggle {
+    display:block;
+    width:100%;
+    cursor: pointer;
+    padding:$base-spacing-unit;
+    background:$darkgrey;
+    border-bottom:1px solid transparent;
+    @include at-breakpoint($medium) {
+        background:none;
+        padding: 0 $base-spacing-unit;
+        &:hover {
+            background:none;
+        }
+    }
+    @include at-breakpoint($large) {
+        top:85px;
+    }
+}
+
+
+    /* Swipe CSS */
+    .swipe {
         overflow: hidden;
         visibility: hidden;
         position: relative;

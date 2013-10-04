@@ -36,10 +36,10 @@ var albumFilter = {
     init: function() {
 
         $('.filter-toggle').click(function() {
-            $('#slider').toggleClass("filter-show");
+            $('.album-filter').toggleClass("filter-show");
         });
         $('.filter-close').click(function() {
-            $('#slider').removeClass("filter-show");
+            $('.album-filter').removeClass("filter-show");
         });
 
         this.navigate();

@@ -3,9 +3,9 @@
 <body class="albums">
 
     <div class="wrap">
-    
+
         <header>
-            
+
             <?php include "../_/php/nav.php" ?>
 
             <div class="page-nav">
@@ -19,23 +19,22 @@
         </header>
 
             <div class="album-filter">
-                    <a class="filter-toggle" data-icon="&#xe002;" aria-hidden="true">Filter</a>
-                    <div id="slider" class="swipe">
-                        <ul class="swipe-wrap">
-                            <li id="second-album-thumb"><a class="second-album" href="#second-album"><img src="../_/img/all-we-grow-thumb.jpg" alt="Second Album thumbnail" /><span class="album-filter-title">Second Album</span></a></li>
-                            <li id="all-we-grow-thumb"><a class="all-we-grow" href="#all-we-grow"><img src="../_/img/all-we-grow-thumb.jpg" alt="All We Grow thumbnail" /><span class="album-filter-title">All We Grow</span></a></li>
-                        </ul>
+                <a class="filter-toggle" data-icon="&#xe002;" aria-hidden="true">Filter</a>
+                <div id="slider" class="swipe">
+                    <ul class="swipe-wrap">
+                        <li id="second-album-thumb"><a class="second-album" href="#second-album"><img src="../_/img/all-we-grow-thumb.jpg" alt="Second Album thumbnail" /><span class="album-filter-title">Second Album</span></a></li>
+                        <li id="all-we-grow-thumb"><a class="all-we-grow" href="#all-we-grow"><img src="../_/img/all-we-grow-thumb.jpg" alt="All We Grow thumbnail" /><span class="album-filter-title">All We Grow</span></a></li>
+                    </ul>
 
-                        <div id="position" class="position">
-                            <a class= "on" onclick="mySwipe.slide(0, 300);return false;"></a>
-                            <a onclick="mySwipe.slide(1, 300);return false;"></a>
-                        </div>
-                        
-                        <a class="filter-close" data-icon="&#10060;" aria-hidden="true"><span class="hide">Close</span></a>
+                    <a class="filter-close" data-icon="&#10060;" aria-hidden="true"><span class="hide">Close</span></a>
 
-                    </div>
                 </div>
-                
+                <div id="position" class="position">
+                    <a class= "on" onclick="mySwipe.slide(0, 300);return false;"></a>
+                    <a onclick="mySwipe.slide(1, 300);return false;"></a>
+                </div>
+            </div>
+
         <div id="main-content" class="main-content">
 
             <div class="album-block" id="second-album">
@@ -96,7 +95,7 @@
                     <a class="button">CD/LP</a>
                     <a class="button">Spotify</a>
                 </div>
-                
+
             </div>
 
             <div class="album-block" id="all-we-grow">
