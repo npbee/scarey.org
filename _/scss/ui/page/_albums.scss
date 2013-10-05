@@ -110,148 +110,141 @@
     display:none; //no js?  no filter :(
 }
 
-
-
-.album-filter {
-    text-align:center;
-    clear:both;
+.filter {
+    text-align: center;
     position: relative;
-    .swipe {
-        background:$grey;
-        height: 0;
-        overflow: hidden;
-        position: absolute;
+    li {
+        float: left;
+        padding: $base-spacing-unit/2 0;
+        position: relative;
         width: 100%;
-        z-index: 2;
-        @include transition(height 200ms ease-in-out, opacity 200ms ease-in-out);
+        @include at-breakpoint($medium) {
+            float: none;
+            display: inline-block;
+            padding: $base-spacing-unit;
+            width: auto;
+        }
     }
-
-     .filter-close {
-        position:absolute;
-        top:-9999px;
-        right:-9999px;
-        font-size:3em;
-        cursor:pointer;
-    }
-    ul {
-        overflow:hidden;
-    }
-    a {
-        padding:0 $padding;
-        display:inline-block;
-    }
-    .album-filter-title {
-        display:block;
-        line-height:1.5em;
-        font-size:.8em;
+    li span {
+        display: block;
     }
 }
+
+
+
+.filter__slider {
+    background: $grey;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    max-height: 0;
+    z-index: 2;
+    @include transition(max-height 300ms);
+    @include at-breakpoint($medium) {
+        position: relative;
+    }
+}
+
+
+.filter__slider-wrap {
+    overflow: hidden;
+    position: relative;
+    width: auto;
+}
+
+
+.filter-toggle {
+    background: $grey;
+    display: block;
+    //float: left;
+    padding: $base-spacing-unit 0;
+    margin-top: -$base-spacing-unit;
+    @include transition(background 300ms);
+    @include at-breakpoint($medium) {
+        background: none;
+    }
+}
+
+.filter-close {
+    position: absolute;
+    top: -$base-spacing-unit/2;
+    right: $base-spacing-unit/2;
+    font-size: $kilo-size;
+    opacity: 0;
+    padding-right: $base-spacing-unit/2;
+    @include transition(opacity 300ms);
+}
+
+
+
 
 .position {
-    position: absolute;
-    top: -9999px;
+    clear: both;
+    padding-bottom: $base-spacing-unit/2;
+    text-align: center;
+    a {
+        background: $lightblack;
+        border-radius: 15px;
+        display:inline-block;
+        height: 15px;
+        margin: 0 $base-spacing-unit/4;
+        width: 15px;
+    }
+    .on {
+        background: $orange;
+    }
+    @include at-breakpoint($medium) {
+        display: none;
+    }
 }
 
-/****
-* Filter open
-****/
-.filter-show {
-    .swipe {
-        height: 270px;
-        border-top:1px solid $darkgrey;
-        border-bottom: 1px solid $darkgrey;
-        border-left:1px solid $darkgrey;
-        border-right:1px solid $darkgrey;
-    }
-    ul {
-        width:$album_filter_width;
-    }
-    li {
-        float:left;
-        width: album_thumb_width($album_filter_width, 4);
-        padding:$padding 0;
-        left:0;
-        position:relative;
-    }
-    .position{
-        text-align:center;
-        list-style:none;
-        margin:0 auto;
-        padding:0;
-        top: 270px;
-        height:30px;
-        width: 100%;
-        z-index: 3;
-        a {
-            display:inline-block;
-            width:10px;
-            height:10px;
-            padding:0;
-            border-radius:10px;
-            background:$lightblack;
-            box-shadow:inset 0 1px 3px $offblack,0 0 1px 1px $lightblack;
-            margin:0 2px;
-            cursor:pointer
+
+.showing {
+    .filter-toggle {
+        background: $darkgrey;
+        @include at-breakpoint($medium) {
+            background: none;
         }
-        .on {
-            box-shadow:inset 0 1px 3px -1px $orange,0 1px 2px rgba(0,0,0,.5);
-            background-color:$orange;
-            background-image:-webkit-gradient(linear, 0 0, 0 100%, from($orange), to(darken($orange, 10%)));
-            background-image:-webkit-linear-gradient($orange, darken($orange, 10%));
-            background-image:-moz-linear-gradient($orange, darken($orange, 10%));
-            background-image:-o-linear-gradient($orange, darken($orange, 10%));
-            background-image:linear-gradient($orange, darken($orange, 10%));
-        }
+    }
+    .filter__slider {
+        border-bottom: 1px solid $lightblack;
+        max-height: 500px;
     }
     .filter-close {
-        top:-20px;
-        right:-35px;
+        opacity: 1;
     }
 }
 
 
-/****
-* Filter toggle
-****/
-a.filter-toggle {
-    display:block;
-    width:100%;
-    cursor: pointer;
-    padding:$base-spacing-unit;
-    background:$darkgrey;
-    border-bottom:1px solid transparent;
-    @include at-breakpoint($medium) {
-        background:none;
-        padding: 0 $base-spacing-unit;
-        &:hover {
-            background:none;
-        }
-    }
-    @include at-breakpoint($large) {
-        top:85px;
-    }
-}
-
-
-    /* Swipe CSS */
-    .swipe {
-        overflow: hidden;
-        visibility: hidden;
-        position: relative;
-        @include at-breakpoint($medium) {
-            //width:40%;
-            margin: 0 auto;
-        }
-    }
-    .swipe-wrap {
-        overflow: hidden;
-        position: relative;
-    }
-    .swipe-wrap > li {
-        float:left;
-        width:100%;
-        position: relative;
-    }
+/* Swipe CSS */
+// .swipe {
+//     overflow: hidden;
+//     visibility: hidden;
+//     position: relative;
+//     @include at-breakpoint($medium) {
+//         //width:40%;
+//         margin: 0 auto;
+//         visibility: visible;
+//     }
+// }
+// .swipe-wrap {
+//     overflow: hidden;
+//     position: relative;
+//     @include at-breakpoint($medium) {
+//         text-align: center;
+//     }
+// }
+// .swipe-wrap > li {
+//     float:left;
+//     width:100%;
+//     position: relative;
+//     @include at-breakpoint($medium) {
+//         display: inline-block;
+//         padding: 0 $base-spacing-unit;
+//         float: none;
+//         width: auto;
+//     }
+// }
 
 
 .grey {

@@ -1,3 +1,11 @@
+window.scarey = window.scarey || {};
+
+
+//Breakpoints
+scarey.medium = "screen and (min-width: 45em)";
+
+
+
 /* -----------------------------------------------
 SMOOTH SCROLLING
 ------------------------------------------------ */
@@ -32,39 +40,49 @@ var navFly = {
 /* -----------------------------------------------
 ALBUM FILTER
 ------------------------------------------------ */
-var albumFilter = {
-    init: function() {
+scarey.albumFilter = function() {
 
-        $('.filter-toggle').click(function() {
-            $('.album-filter').toggleClass("filter-show");
-        });
-        $('.filter-close').click(function() {
-            $('.album-filter').removeClass("filter-show");
-        });
+    var filter = $('.filter'),
+          filterToggle = $('.filter-toggle'),
+          filterClose = $('.filter-close'),
+          filterItems = $('.filter__slider-wrap a');
 
-        this.navigate();
-    },
+    filterToggle.on('click', function() {
+        filter.toggleClass('showing');
+    });
 
-    //allow for permalinks
-    navigate: function() {
-        var hash = window.location.hash,
-              $target = $(hash);
-        if ( hash ) {
-            $.scrollTo( $target, 1000, {
-                easing: 'easeInOutExpo'
-            })
-        }
-    }
-};
+    filterClose.on('click', function() {
+        filter.removeClass('showing');
+    });
+
+    filterItems.on('click', function() {
+        filter.removeClass('showing');
+    });
+
+
+}
+
+
+
+
+
 
 //Album filter slider
 var slider = {
     init: function() {
+        if ( matchMedia(scarey.medium).matches) {
+            return;
+        } else {
+            this.swipe();
+        }
+    },
+    swipe: function() {
         var bullets = [];
         $("#position a ").each(function() {
             var bullet = $(this);
             bullets.push(bullet);
         });
+
         window.mySwipe = $("#slider").Swipe({
             continuous: false,
             callback: function(pos) {
@@ -247,7 +265,7 @@ var history = {
 
                             //reinitialize
                             navFly.init();
-                            albumFilter.init();
+                            scarey.albumFilter();
                             slider.init();
                             smoothScroll.init();
 
@@ -306,7 +324,7 @@ PAGE INITS
 $(document).ready(function() {
     //Inits
     navFly.init();
-    albumFilter.init();
+    scarey.albumFilter();
     slider.init();
     smoothScroll.init();
 
