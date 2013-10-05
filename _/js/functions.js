@@ -9,32 +9,28 @@ scarey.medium = "screen and (min-width: 45em)";
 /* -----------------------------------------------
 SMOOTH SCROLLING
 ------------------------------------------------ */
-var smoothScroll = {
-    init: function() {
-        //Localscroll
-        $.localScroll({
-            hash: true,
-            duration: '1000',
-            easing:'easeInOutExpo'
-        });
-    }
+scarey.smoothScroll = function() {
+    //Localscroll
+    $.localScroll({
+        hash: true,
+        duration: '1000',
+        easing:'easeInOutExpo'
+    });
 };
 
 /* -----------------------------------------------
 MOBILE FLYOUT
 ------------------------------------------------ */
-var navFly = {
-    init: function () {
-        $(".more-nav").click(function() {
-            if ( $("#mobile-flyout").hasClass("slide-in")) {
-                $("#mobile-flyout").removeClass("slide-in").addClass("slide-out");
-            } else {
-                $("#mobile-flyout").addClass('slide-in')
-            }
-            $(".main-content").toggleClass("dark");
-            event.preventDefault();
-        });
-    }
+scarey.nav = function() {
+    $(".more-nav").click(function() {
+        if ( $("#mobile-flyout").hasClass("slide-in")) {
+            $("#mobile-flyout").removeClass("slide-in").addClass("slide-out");
+        } else {
+            $("#mobile-flyout").addClass('slide-in')
+        }
+        $(".main-content").toggleClass("dark");
+        event.preventDefault();
+    });
 };
 
 /* -----------------------------------------------
@@ -59,16 +55,10 @@ scarey.albumFilter = function() {
         filter.removeClass('showing');
     });
 
-
 }
 
-
-
-
-
-
 //Album filter slider
-var slider = {
+scarey.slider = {
     init: function() {
         if ( matchMedia(scarey.medium).matches) {
             return;
@@ -99,39 +89,28 @@ var slider = {
 /* -----------------------------------------------
 STICKY NAV
 ------------------------------------------------ */
-//create a stick nav
-$(document).bind('ready scroll', function() {
-    var docScroll = $(document).scrollTop();
-    if (docScroll >= 500) {
-        if (!$('#nav').hasClass('sticky')) {
-            $('#nav').addClass('sticky').css({
-                top: '-300px'
-            }).stop().animate({
-                top: 0
-            }, 500);
+scarey.stickyNav = function() {
+    $(document).on('scroll', function() {
+        var docScroll = $(document).scrollTop();
+        if (docScroll >= 500) {
+            if (!$('#nav').hasClass('sticky')) {
+                $('#nav').addClass('sticky').css({
+                    top: '-300px'
+                }).stop().animate({
+                    top: 0
+                }, 500);
+            }
+        } else {
+            $('#nav').removeClass('sticky').removeAttr('style');
         }
-    } else {
-        $('#nav').removeClass('sticky').removeAttr('style');
-    }
 
-});
+    });
+};
 
 /* -----------------------------------------------
 HISTORY
 ------------------------------------------------ */
-var history = {
-    animate: function() {
-        if ( $("#main-content").hasClass("animate-out") ) {
-            $("#main-content").removeClass("animate-out").addClass("animate-in");
-        } else {
-            $("#main-content").addClass("animate-out").removeClass("animate-in");
-        }
-    }
-};
-
-
-
-(function(window,undefined){
+scarey.history = (function(window,undefined){
     // Prepare our Variables
     var
         History = window.History,
@@ -264,10 +243,10 @@ var history = {
                             $content.html(contentHtml).ajaxify();
 
                             //reinitialize
-                            navFly.init();
+                            scarey.nav();
                             scarey.albumFilter();
-                            slider.init();
-                            smoothScroll.init();
+                            scarey.slider.init();
+                            scarey.smoothScroll();
 
                             // Update the title
                             document.title = $data.find('.document-title:first').text();
@@ -316,23 +295,23 @@ var history = {
 })(window); // end closure
 
 
-
-
 /* -----------------------------------------------
-PAGE INITS
+COLORBOX
 ------------------------------------------------ */
-$(document).ready(function() {
-    //Inits
-    navFly.init();
-    scarey.albumFilter();
-    slider.init();
-    smoothScroll.init();
+scarey.colorbox = {
+    init: function() {
 
-
-
-    //Colorbox (only load if desktop)
-    var width = $(window).width();
-    if (width >= 600) {
+        //load and execute colorbox only if non-mobile
+        if ( matchMedia(scarey.medium).matches) {
+            $.getScript('/_/js/libs/colorbox.js', function() {
+                scarey.colorbox.go();
+            });
+            //this.go();
+        } else {
+            return
+        }
+    },
+    go: function() {
         $(".photo-container a").colorbox({
             rel : "group",
             scalePhotos: true,
@@ -340,27 +319,39 @@ $(document).ready(function() {
             speed: 200,
             opacity: ".7"
         });
-    } else {
-        $('.photo-container a').click(function(e) {
-            event.preventDefault();
-        });
     }
-
-    //Album cover slider
-    $('.album-cover img').click(function() {
-        $('.album-cover img').toggleClass("album-cover-toggled");
-    });
+}
 
 
-    //check if it's a long parapraph in tumblr
+
+
+/* -----------------------------------------------
+BLOG
+------------------------------------------------ */
+scarey.blog = function() {
     $('.post-content p').each(function() {
         var plength = $(this).text().split(' ').length;
-        console.log(plength);
         if (plength >= 10) {
             $(this).css('text-align', 'justify');
             $(this).siblings().css('text-align', 'justify');
         }
     });
+}
+
+
+
+/* -----------------------------------------------
+PAGE INITS
+------------------------------------------------ */
+$(document).ready(function() {
+    //Inits
+    scarey.nav();
+    scarey.stickyNav();
+    scarey.albumFilter();
+    scarey.slider.init();
+    scarey.smoothScroll();
+    scarey.colorbox.init();
+    scarey.blog();
 
 });
 
