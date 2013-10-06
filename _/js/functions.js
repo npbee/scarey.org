@@ -49,8 +49,8 @@ ALBUM FILTER
 scarey.albumFilter = function() {
 
     var filter = $('.filter'),
-          filterToggle = $('.filter-toggle'),
-          filterClose = $('.filter-close'),
+          filterToggle = $('.filter__toggle'),
+          filterClose = $('.filter__close'),
           filterItems = $('.filter__slider-wrap a'),
           hash = location.hash,
           target;
@@ -92,17 +92,49 @@ scarey.slider = {
               itemWidth = items.innerWidth(),
               prev = $(".prev"),
               next = $(".next"),
+              bullets = [],
+              bulletCount,
+              activeBullet,
+              position = $('#position'),
               initial,
               posStr,
               pos,
-              dist;
+              dist,
+              i;
 
+        //set the amount of albums to show for each slide
         if ( matchMedia(scarey.large).matches) {
             initial = 4;
         } else {
             initial = 2;
         }
 
+        //setting bullets based on slide count
+        bulletCount = items.length / initial;
+        for ( i = 0; i < bulletCount; i++) {
+            position.append("<a class='bullet'></a>");
+        }
+
+        //push newly append bullets to an array
+        $("#position a").each(function() {
+            var bullet = $(this);
+            bullets.push(bullet);
+        });
+
+        //add active state to initial bullet
+        activeBullet = 0;
+        $(bullets[activeBullet]).addClass('on');
+
+        //set active bullet by keeping a running count
+        function setActiveBullet(b) {
+            activeBullet +=  b;
+            $(bullets).each(function() {
+                $(this).removeClass('on');
+            });
+            $(bullets[activeBullet]).addClass('on');
+        }
+
+        //set initial width of carousel container
         initialDist = itemWidth * initial;
 
         //set slider container width
@@ -116,11 +148,19 @@ scarey.slider = {
             return matrix.substr(7, matrix.length - 8).split(', ');
         };
 
-
+        //event handlers
         next.on('click', function() {
+
+            //find what the current transform value is
             posStr = matrixToArray(sliderWrap.css('transform'))[4];
+
+            //convert value from string to array
             pos = parseInt(posStr, 10);
+
+            //distance to slide equals the inital distance - the distance traveled so far
             dist = initialDist - pos;
+
+            //if we're at the end don't do anything
             if ( dist === (itemWidth * items.length) ) {
                 return;
             } else {
@@ -132,6 +172,8 @@ scarey.slider = {
                     "transform": "translateX(-" + dist + "px)",
 
                 });
+                //increase bullet active count by 1
+                setActiveBullet(1);
             }
         });
 
@@ -149,18 +191,28 @@ scarey.slider = {
                     "-ms-transform": "translateX(" + dist + "px)",
                     "transform": "translateX(" + dist + "px)",
                 });
+                setActiveBullet(-1);
             }
         });
-
-
-
     },
     swipe: function() {
-        var bullets = [];
+        var slides = $("#slider li"),
+              slideLength = slides.length,
+              bullet,
+              bullets = [],
+              position = $("#position"),
+              i;
+
+        $(slides).each(function() {
+            position.append("<a class='bullet'></a>");
+        });
+
         $("#position a ").each(function() {
             var bullet = $(this);
             bullets.push(bullet);
         });
+
+        $("#position a:first-child").addClass('on');
 
         window.mySwipe = $("#slider").Swipe({
             continuous: false,
@@ -297,85 +349,74 @@ scarey.history = (function(window,undefined){
             // Set Loading
             $body.addClass('loading');
             $("#main-content").removeClass("animate-in").addClass("animate-out");
-            //$("#main-content").removeClass("in").addClass("slide out");
 
-            $("#main-content").on("webkitAnimationStart", function() {
-                animating = true;
-            });
+            // Ajax Request the Traditional Page
+            $.ajax({
+                url: url,
+                success: function (data) {
+                    // Prepare
+                    var $data = $(documentHtml(data)),
+                        $dataBody = $data.find('.document-body:first'),
+                        $dataContent = $dataBody.find(contentSelector).filter(':first'),
+                        contentHtml, $scripts;
 
-            if ( !animating ) {
+                    // Fetch the scripts
 
-                // Ajax Request the Traditional Page
-                    $.ajax({
-                        url: url,
-                        success: function (data) {
-                            // Prepare
-                            var $data = $(documentHtml(data)),
-                                $dataBody = $data.find('.document-body:first'),
-                                $dataContent = $dataBody.find(contentSelector).filter(':first'),
-                                contentHtml, $scripts;
+                    $scripts = $dataContent.find('.document-script');
+                    if ($scripts.length) {
+                        $scripts.detach();
+                    }
 
-                            // Fetch the scripts
-                            $scripts = $dataContent.find('.document-script');
-                            if ($scripts.length) {
-                                $scripts.detach();
-                            }
+                    // Fetch the content
 
-                            // Fetch the content
-                            contentHtml = $dataContent.html() || $data.html();
-                            if (!contentHtml) {
-                                document.location.href = url;
-                                return false;
-                            }
+                    contentHtml = $dataContent.html() || $data.html();
+                    if (!contentHtml) {
+                        document.location.href = url;
+                        return false;
+                    }
 
-                            // Update the content
-                            $content.html(contentHtml).ajaxify();
+                    // Update the content
+                    $content.html(contentHtml).ajaxify();
 
-                            //reinitialize
-                            scarey.nav();
-                            scarey.albumFilter();
-                            scarey.slider.init();
-                            scarey.smoothScroll();
+                    //reinitialize
+                    scarey.nav();
+                    scarey.albumFilter();
+                    scarey.slider.init();
 
-                            // Update the title
-                            document.title = $data.find('.document-title:first').text();
-                            try {
-                                document.getElementsByTagName('title')[0].innerHTML = document.title.replace('<', '&lt;').replace('>', '&gt;').replace(' & ', ' &amp; ');
-                            } catch (Exception) {}
 
-                            //Add the scripts
-                            $scripts.each(function(){
-                            var $script = $(this), scriptText = $script.text(), scriptSrc = $script.attr('src'), scriptNode = document.createElement('script');
-                            if(scriptSrc) {
-                            scriptNode.src = scriptSrc;
-                            contentNode.appendChild(scriptNode);
-                            }
-                            else{
-                            scriptNode.appendChild(document.createTextNode(scriptText));
-                            contentNode.appendChild(scriptNode);
-                            }
-                            });
+                    // Update the title
+                    document.title = $data.find('.document-title:first').text();
+                    try {
+                        document.getElementsByTagName('title')[0].innerHTML = document.title.replace('<', '&lt;').replace('>', '&gt;').replace(' & ', ' &amp; ');
+                    } catch (Exception) {}
 
-                           $("#main-content").removeClass("animate-out").addClass("animate-in");
-                            // Complete the change
-                            $body.removeClass('loading');
+                    //Add the scripts
+                    $scripts.each(function(){
+                    var $script = $(this), scriptText = $script.text(), scriptSrc = $script.attr('src'), scriptNode = document.createElement('script');
+                    if(scriptSrc) {
+                    scriptNode.src = scriptSrc;
+                    contentNode.appendChild(scriptNode);
+                    }
+                    else{
+                    scriptNode.appendChild(document.createTextNode(scriptText));
+                    contentNode.appendChild(scriptNode);
+                    }
+                    });
 
-                            $("#main-content").on("webkitAnimationEnd", function() {
-                                animating = false;
-                            });
+                   $("#main-content").removeClass("animate-out").addClass("animate-in");
+                    // Complete the change
+                    $body.removeClass('loading');
 
-                            // Inform Google Analytics of the change
-                            if ( typeof window._gaq !== 'undefined' ) {
-                                window._gaq.push(['_trackPageview', relativeUrl]);
-                            }
-                        },
-                        error: function (errorThrown) {
-                            document.location.href = url;
-                            return false;
-                        }
-                    }); // end Ajax
-
-            }
+                    // Inform Google Analytics of the change
+                    if ( typeof window._gaq !== 'undefined' ) {
+                        window._gaq.push(['_trackPageview', relativeUrl]);
+                    }
+                },
+                error: function (errorThrown) {
+                    document.location.href = url;
+                    return false;
+                }
+            }); // end Ajax
 
         }); // end onStateChange
 
@@ -438,10 +479,8 @@ $(document).ready(function() {
     scarey.stickyNav();
     scarey.albumFilter();
     scarey.slider.init();
-    //scarey.scroll();
     scarey.colorbox.init();
     scarey.blog();
-
 });
 
 

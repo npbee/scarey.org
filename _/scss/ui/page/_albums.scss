@@ -105,11 +105,18 @@
 }
 
 
-/* ==========ALBUMS FILTER */
+/*------------------------------------*\
+    $ALBUM FILTER
+\*------------------------------------*/
 .no-js .album-filter {
     display:none; //no js?  no filter :(
 }
 
+
+
+/****
+* General Filter styles
+****/
 .filter {
     text-align: center;
     position: relative;
@@ -120,7 +127,6 @@
         width: 100%;
         @include at-breakpoint($medium) {
             float: left;
-            //display: inline-block;
             padding: $base-spacing-unit;
             width: 300px;
         }
@@ -132,6 +138,9 @@
 
 
 
+/****
+* FIlter slider
+****/
 .filter__slider {
     background: $grey;
     overflow: hidden;
@@ -160,19 +169,27 @@
 }
 
 
-.filter-toggle {
+
+/****
+* FIlter controls
+****/
+.filter__toggle {
     background: $grey;
+    cursor: pointer;
     display: block;
     //float: left;
-    padding: $base-spacing-unit 0;
+    padding: $base-spacing-unit/2 0;
     margin-top: -$base-spacing-unit;
+    &:before {
+        font-size: $h1-size;
+    }
     @include transition(background 300ms);
     @include at-breakpoint($medium) {
         background: none;
     }
 }
 
-.filter-close {
+.filter__close {
     position: absolute;
     top: -$base-spacing-unit/2;
     right: $base-spacing-unit/2;
@@ -182,9 +199,41 @@
     @include transition(opacity 300ms);
 }
 
+.filter__controls {
+    display: none;
+    @include at-breakpoint($medium) {
+        display: block;
+        font-size: $mega-size;
+        height: 100%;
+        top: 0;
+        width: 100%;
+        .prev, .next {
+            cursor: pointer;
+            height: 100%;
+            padding: $mega-size $base-spacing-unit/4 0;
+            position: absolute;
+            top: 0;
+            @include transition(background 200ms);
+            &:hover {
+                @include at-breakpoint($large) {
+                    background: rgba($lightblack, 0.8);
+                }
+            }
+        }
+        .prev {
+            left: 0
+        }
+        .next {
+            right: 0;
+        }
+    }
+}
 
 
 
+/****
+* Slider position
+****/
 .position {
     clear: both;
     padding-bottom: $base-spacing-unit/2;
@@ -201,13 +250,16 @@
         background: $orange;
     }
     @include at-breakpoint($medium) {
-        display: none;
+        //display: none;
     }
 }
 
 
+/****
+* Filter active state
+****/
 .showing {
-    .filter-toggle {
+    .filter__toggle {
         background: $darkgrey;
         @include at-breakpoint($medium) {
             background: none;
@@ -218,16 +270,11 @@
         border-top: 1px solid $darkgrey;
         max-height: 500px;
     }
-    .filter-close {
+    .filter__close {
         opacity: 1;
     }
 }
 
-
-.grey {
-    background: $darkgrey !important;
-    border-bottom:1px solid $darkestgrey !important;
-}
 
 //Fix anchor links jumping too far, want to keep album title in view on the page
 @include at-breakpoint($large) {
