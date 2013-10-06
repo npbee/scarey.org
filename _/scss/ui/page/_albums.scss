@@ -119,10 +119,10 @@
         position: relative;
         width: 100%;
         @include at-breakpoint($medium) {
-            float: none;
-            display: inline-block;
+            float: left;
+            //display: inline-block;
             padding: $base-spacing-unit;
-            width: auto;
+            width: 300px;
         }
     }
     li span {
@@ -141,7 +141,9 @@
     z-index: 2;
     @include transition(max-height 300ms);
     @include at-breakpoint($medium) {
+        margin: 0 auto;
         position: relative;
+        //width: 600px;
     }
 }
 
@@ -150,6 +152,11 @@
     overflow: hidden;
     position: relative;
     width: auto;
+    @include at-breakpoint($medium) {
+        @include transform(translateX(0));
+        @include transition(all 500ms ease-in-out);
+        //width: 3000px;
+    }
 }
 
 
@@ -207,44 +214,14 @@
         }
     }
     .filter__slider {
-        border-bottom: 1px solid $lightblack;
+        border-bottom: 1px solid $darkgrey;
+        border-top: 1px solid $darkgrey;
         max-height: 500px;
     }
     .filter-close {
         opacity: 1;
     }
 }
-
-
-/* Swipe CSS */
-// .swipe {
-//     overflow: hidden;
-//     visibility: hidden;
-//     position: relative;
-//     @include at-breakpoint($medium) {
-//         //width:40%;
-//         margin: 0 auto;
-//         visibility: visible;
-//     }
-// }
-// .swipe-wrap {
-//     overflow: hidden;
-//     position: relative;
-//     @include at-breakpoint($medium) {
-//         text-align: center;
-//     }
-// }
-// .swipe-wrap > li {
-//     float:left;
-//     width:100%;
-//     position: relative;
-//     @include at-breakpoint($medium) {
-//         display: inline-block;
-//         padding: 0 $base-spacing-unit;
-//         float: none;
-//         width: auto;
-//     }
-// }
 
 
 .grey {
@@ -257,8 +234,8 @@
     .album-block:not(:first-child):before {
         content:"";
         display:block;
-        margin-top:-100px;
-        height:100px;
+        margin-top:-150px;
+        height:150px;
         visibility: hidden;
     }
 }

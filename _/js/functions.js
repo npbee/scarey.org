@@ -3,19 +3,29 @@ window.scarey = window.scarey || {};
 
 //Breakpoints
 scarey.medium = "screen and (min-width: 45em)";
+scarey.large = "screen and (min-width: 90em)";
 
 
 
 /* -----------------------------------------------
 SMOOTH SCROLLING
 ------------------------------------------------ */
-scarey.smoothScroll = function() {
+scarey.scroll = function(target) {
     //Localscroll
-    $.localScroll({
-        hash: true,
-        duration: '1000',
-        easing:'easeInOutExpo'
-    });
+    // $.localScroll({
+    //     hash: true,
+    //     duration: '1000',
+    //     easing:'easeInOutExpo'
+    // });
+//console.log(target);
+    $.scrollTo(
+        $(target),
+        1000,
+        {
+            easing: 'easeInOutExpo'
+        }
+    );
+
 };
 
 /* -----------------------------------------------
@@ -41,7 +51,9 @@ scarey.albumFilter = function() {
     var filter = $('.filter'),
           filterToggle = $('.filter-toggle'),
           filterClose = $('.filter-close'),
-          filterItems = $('.filter__slider-wrap a');
+          filterItems = $('.filter__slider-wrap a'),
+          hash = location.hash,
+          target;
 
     filterToggle.on('click', function() {
         filter.toggleClass('showing');
@@ -51,20 +63,97 @@ scarey.albumFilter = function() {
         filter.removeClass('showing');
     });
 
-    filterItems.on('click', function() {
+    filterItems.on('click', function(e) {
+        target = $(this).attr('href');
+        e.preventDefault();
         filter.removeClass('showing');
+        setTimeout(function() {
+            scarey.scroll(target);
+        },300);
+
     });
 
 }
+
 
 //Album filter slider
 scarey.slider = {
     init: function() {
         if ( matchMedia(scarey.medium).matches) {
-            return;
+            this.carousel();
         } else {
             this.swipe();
         }
+    },
+    carousel: function() {
+        var slider = $(".filter__slider"),
+              sliderWrap = $(".filter__slider-wrap"),
+              items = $(".filter__slider-wrap li"),
+              itemWidth = items.innerWidth(),
+              prev = $(".prev"),
+              next = $(".next"),
+              initial,
+              posStr,
+              pos,
+              dist;
+
+        if ( matchMedia(scarey.large).matches) {
+            initial = 4;
+        } else {
+            initial = 2;
+        }
+
+        initialDist = itemWidth * initial;
+
+        //set slider container width
+        slider.css("width", (itemWidth * initial));
+
+        //set slider wrap width
+        sliderWrap.css("width", (itemWidth * items.length));
+
+        //for getting transform value
+        function matrixToArray(matrix) {
+            return matrix.substr(7, matrix.length - 8).split(', ');
+        };
+
+
+        next.on('click', function() {
+            posStr = matrixToArray(sliderWrap.css('transform'))[4];
+            pos = parseInt(posStr, 10);
+            dist = initialDist - pos;
+            if ( dist === (itemWidth * items.length) ) {
+                return;
+            } else {
+                sliderWrap.css({
+                    "-webkit-transform": "translateX(-" + dist + "px)",
+                    "-moz-transform": "translateX(-" + dist + "px)",
+                    "-o-transform": "translateX(-" + dist + "px)",
+                    "-ms-transform": "translateX(-" + dist + "px)",
+                    "transform": "translateX(-" + dist + "px)",
+
+                });
+            }
+        });
+
+        prev.on('click', function() {
+            posStr = matrixToArray(sliderWrap.css('transform'))[4];
+            pos = parseInt(posStr, 10);
+            dist = initialDist + pos;
+            if ( pos == 0) {
+                return;
+            } else {
+                sliderWrap.css({
+                    "-webkit-transform": "translateX(" + dist + "px)",
+                    "-moz-transform": "translateX(" + dist + "px)",
+                    "-o-transform": "translateX(" + dist + "px)",
+                    "-ms-transform": "translateX(" + dist + "px)",
+                    "transform": "translateX(" + dist + "px)",
+                });
+            }
+        });
+
+
+
     },
     swipe: function() {
         var bullets = [];
@@ -349,7 +438,7 @@ $(document).ready(function() {
     scarey.stickyNav();
     scarey.albumFilter();
     scarey.slider.init();
-    scarey.smoothScroll();
+    //scarey.scroll();
     scarey.colorbox.init();
     scarey.blog();
 
