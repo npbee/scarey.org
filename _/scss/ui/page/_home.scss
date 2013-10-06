@@ -1,5 +1,5 @@
 /*------------------------------------*\
-    $HOME PAGE
+    $HOME
 \*------------------------------------*/
 .home {
     background:
@@ -15,35 +15,30 @@
 
     /* ==========NAV*/
 
-    .main-nav {
+    .main-nav, .social-home {
         width:100%;
         overflow:visible;
         background:none;
+        padding: 0;
         a {
             display:block;
-            //background: rgba(17,17,17,.8);
-            float:left;
-            width:50%;
+            font-weight: 100;
             padding:1em 0;
             text-align:center;
-            color: $white;
-            border-right:1px solid $darkgrey;
-            font-size:2em;
-            &:first-child {
-                border-radius:5px 0 0 0;
-            }
-            &:nth-child(2) {
-                border-radius:0 5px 0 0;
-            }
-            &:nth-child(2), &:nth-child(5), &:nth-child(7) {
-                border-right:none;
-            }
-            border-bottom:1px solid $darkgrey;
-            &:nth-child(6), &:nth-child(7) {
-                border-bottom:none;
-            }
+            color: $offblack;
+            font-size:$h1-size;
+            border-bottom: 1px solid $darkgrey;
             &:hover {
                 color:$orange;
+            }
+            &:first-child {
+                border-top: 1px solid $grey;
+                @include at-breakpoint($medium) {
+                    border-top: none;
+                }
+            }
+            &:last-child {
+                border-bottom: none;
             }
             @include at-breakpoint($medium) {
                 background:none;
@@ -59,45 +54,25 @@
             display:table;
             clear:both;
         }
-        [data-icon]:before {
-            font-size:4em;
-            display:block;
-            margin-bottom:$smallpadding;
-            color:$lightblack;
-        }
-        .hide {position:static;font-size:2em;}
         .logo-nav, .more-nav {display:none;}
-        @include at-breakpoint($medium) {
-            //background: rgba(17,17,17,.5);
-            background:none;
-            border-radius:3px;
-            &:after {
-                    content: "";
-                }
-        }
+
     }
 
     .logo-home {
-        font-size:4.5em;
+        font-size: $kilo-size;
         font-weight: 100;
-        width:100%;
         @include at-breakpoint($medium) {
-            font-size:9em;
+            font-size:$giga-size;
         }
         @include at-breakpoint($large) {
-            font-size:15em;
+            font-size:$giga-size*3;
         }
     }
 
     .social-home {
         text-align:center;
-        margin-top:$padding*4;
         a {
             color:$lightblack;
-            @include span-columns(3,12);
-            &:last-child {
-                @include span-columns(3 omega, 12);
-            }
             &:hover {
                 color:$orange;
             }
@@ -109,7 +84,7 @@
             }
         }
          [data-icon]:before {
-            font-size:$largefont;
+            font-size:$kilo-size;
          }
          @include at-breakpoint($medium) {
             width: 92%;

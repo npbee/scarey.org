@@ -90,14 +90,13 @@ footer {
     height:6em;
     margin-top:-6em;
     text-align:center;
-    border-top:1px solid #e1e1e1;
     background:$offblack;
     //@include background-image(linear-gradient(color-stops(#f7f7f7, #f7f7f7 1%, #afafaf)));
     a {
         @extend .beta;
         position: relative;
         top:1em;
-        color:$lightblack;
+        color:darken($darkgrey,20%);
         @include span-columns(2, 12);
         &:last-child {
             @include span-columns(2 omega, 12);
@@ -106,7 +105,7 @@ footer {
             }
         }
         &:hover {
-            color: lighten($lightblack, 20%);
+            color: $orange;
         }
         @include at-breakpoint($medium) {
             padding:0 $padding;
