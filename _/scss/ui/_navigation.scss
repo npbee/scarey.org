@@ -248,18 +248,18 @@ a.active {
     }
 }
 
-.tour .page-nav {
-    a {
-        width:25%;
-        float:left;
-        @include at-breakpoint($medium) {
-            @include container;
-                float:none;
-                width:auto;
-                display:inline-block;
-            }
-        }
-}
+// .tour .page-nav {
+//     a {
+//         width:25%;
+//         float:left;
+//         @include at-breakpoint($medium) {
+//             @include container;
+//                 float:none;
+//                 width:auto;
+//                 display:inline-block;
+//             }
+//         }
+// }
 
 .albums .main-page-nav {
     a {
@@ -280,7 +280,7 @@ a.active {
     }
 }
 
-.media .page-nav {
+.media .page-nav, .tour .page-nav {
     a {
         width:50%;
         float:left;

@@ -97,22 +97,30 @@ footer .logo-footer { width: 32.53012%; float: left; margin-right: 1.20482%; dis
 .wf-loading { /* Hide the blog title and post titles while web fonts are loading */ visibility: hidden; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/_\/scss\/ui\/_page\.scss}line{font-family:\0000329}}
-body > .wrap { height: auto; min-height: 100%; }
+body > .wrap { height: auto; min-height: 100%; overflow-x: hidden; }
 
 /**** Main content ***/
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/_\/scss\/ui\/_page\.scss}line{font-family:\0000338}}
-.main-content { width: 95%; margin: 0 auto; clear: both; padding-bottom: 6em; position: relative; opacity: 1; -webkit-transition: opacity 400ms ease-out; -moz-transition: opacity 400ms ease-out; -o-transition: opacity 400ms ease-out; transition: opacity 400ms ease-out; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/_\/scss\/ui\/_page\.scss}line{font-family:\0000346}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/_\/scss\/ui\/_page\.scss}line{font-family:\0000339}}
+.main-content { width: 95%; margin: 0 auto; clear: both; padding-bottom: 10em; position: relative; opacity: 1; -webkit-transition: opacity 1000ms ease-in-out; -moz-transition: opacity 1000ms ease-in-out; -o-transition: opacity 1000ms ease-in-out; transition: opacity 1000ms ease-in-out; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/_\/scss\/ui\/_page\.scss}line{font-family:\0000347}}
 .main-content h1 { text-align: center; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/_\/scss\/ui\/_page\.scss}line{font-family:\0000349}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/_\/scss\/ui\/_page\.scss}line{font-family:\0000350}}
 .main-content img { outline: 1px solid #d9d9d9; border-radius: 3px; }
-@media (min-width: 45em) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/_\/scss\/ui\/_page\.scss}line{font-family:\0000338}}
+@media (min-width: 45em) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/_\/scss\/ui\/_page\.scss}line{font-family:\0000339}}
   .main-content { max-width: 85em; padding-left: 1em; padding-right: 1em; margin-left: auto; margin-right: auto; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/CodeKit\.app\/Contents\/Resources\/engines\/compass\/frameworks\/compass\/stylesheets\/compass\/utilities\/general\/_clearfix\.scss}line{font-family:\0000338}}
   .main-content:after { content: ""; display: table; clear: both; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/_\/scss\/ui\/_page\.scss}line{font-family:\0000358}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/_\/scss\/ui\/_page\.scss}line{font-family:\0000359}}
 .no-js .main-content { left: 0 !important; opacity: 1 !important; }
+
+/****
+* Loading state
+****/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/_\/scss\/ui\/_page\.scss}line{font-family:\0000368}}
+.loading { opacity: 0.7; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/_\/scss\/ui\/_page\.scss}line{font-family:\0000370}}
+.loading:before { content: ""; left: 0; top: -10px; position: absolute; width: 0%; height: 10px; background: #c08a59; -webkit-animation: grow 200ms ease-in-out infinite; -moz-animation: grow 200ms ease-in-out infinite; -ms-animation: grow 200ms ease-in-out infinite; -o-animation: grow 200ms ease-in-out infinite; animation: grow 200ms ease-in-out infinite; }
 
 /*------------------------------------*\ $TYPOGRAPHY
 \*------------------------------------*/
@@ -256,13 +264,6 @@ a.active { color: #5b93ab; }
 @media (min-width: 45em) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/_\/scss\/ui\/_navigation\.scss}line{font-family:\00003222}}
   .page-nav a { background: none; color: #111111; border-right: none; outline: none; padding: 2em 0 1em; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/_\/scss\/ui\/_navigation\.scss}line{font-family:\00003252}}
-.tour .page-nav a { width: 25%; float: left; }
-@media (min-width: 45em) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/_\/scss\/ui\/_navigation\.scss}line{font-family:\00003252}}
-  .tour .page-nav a { max-width: 85em; padding-left: 1em; padding-right: 1em; margin-left: auto; margin-right: auto; float: none; width: auto; display: inline-block; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/CodeKit\.app\/Contents\/Resources\/engines\/compass\/frameworks\/compass\/stylesheets\/compass\/utilities\/general\/_clearfix\.scss}line{font-family:\0000338}}
-  .tour .page-nav a:after { content: ""; display: table; clear: both; } }
-
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/_\/scss\/ui\/_navigation\.scss}line{font-family:\00003265}}
 .albums .main-page-nav a { width: 33.33%; float: left; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/_\/scss\/ui\/_navigation\.scss}line{font-family:\00003268}}
@@ -275,11 +276,11 @@ a.active { color: #5b93ab; }
   .albums .main-page-nav a:last-child { width: auto; } }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/_\/scss\/ui\/_navigation\.scss}line{font-family:\00003284}}
-.media .page-nav a { width: 50%; float: left; }
+.media .page-nav a, .tour .page-nav a { width: 50%; float: left; }
 @media (min-width: 45em) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/_\/scss\/ui\/_navigation\.scss}line{font-family:\00003284}}
-  .media .page-nav a { max-width: 85em; padding-left: 1em; padding-right: 1em; margin-left: auto; margin-right: auto; float: none; width: auto; display: inline-block; }
+  .media .page-nav a, .tour .page-nav a { max-width: 85em; padding-left: 1em; padding-right: 1em; margin-left: auto; margin-right: auto; float: none; width: auto; display: inline-block; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/CodeKit\.app\/Contents\/Resources\/engines\/compass\/frameworks\/compass\/stylesheets\/compass\/utilities\/general\/_clearfix\.scss}line{font-family:\0000338}}
-  .media .page-nav a:after { content: ""; display: table; clear: both; } }
+  .media .page-nav a:after, .tour .page-nav a:after { content: ""; display: table; clear: both; } }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/_\/scss\/ui\/_navigation\.scss}line{font-family:\00003296}}
 a.page-active { border-bottom: 1px solid #c08a59 !important; color: #c08a59; }
@@ -560,6 +561,31 @@ a.page-active { border-bottom: 1px solid #c08a59 !important; color: #c08a59; }
   0% { opacity: 1; }
   /* line 74, ../scss/ui/modules/_animations.scss */
   100% { opacity: 0; } }
+
+@-moz-keyframes grow { /* line 82, ../scss/ui/modules/_animations.scss */
+  0% { width: 0%; }
+  /* line 85, ../scss/ui/modules/_animations.scss */
+  100% { width: 100%; } }
+
+@-webkit-keyframes grow { /* line 82, ../scss/ui/modules/_animations.scss */
+  0% { width: 0%; }
+  /* line 85, ../scss/ui/modules/_animations.scss */
+  100% { width: 100%; } }
+
+@-o-keyframes grow { /* line 82, ../scss/ui/modules/_animations.scss */
+  0% { width: 0%; }
+  /* line 85, ../scss/ui/modules/_animations.scss */
+  100% { width: 100%; } }
+
+@-ms-keyframes grow { /* line 82, ../scss/ui/modules/_animations.scss */
+  0% { width: 0%; }
+  /* line 85, ../scss/ui/modules/_animations.scss */
+  100% { width: 100%; } }
+
+@keyframes grow { /* line 82, ../scss/ui/modules/_animations.scss */
+  0% { width: 0%; }
+  /* line 85, ../scss/ui/modules/_animations.scss */
+  100% { width: 100%; } }
 
 /*------------------------------------*\ $BLOG STYLES
 \*------------------------------------*/

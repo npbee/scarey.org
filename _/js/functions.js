@@ -11,18 +11,14 @@ scarey.large = "screen and (min-width: 90em)";
 SMOOTH SCROLLING
 ------------------------------------------------ */
 scarey.scroll = function(target) {
-    //Localscroll
-    // $.localScroll({
-    //     hash: true,
-    //     duration: '1000',
-    //     easing:'easeInOutExpo'
-    // });
-//console.log(target);
     $.scrollTo(
         $(target),
         1000,
         {
-            easing: 'easeInOutExpo'
+            easing: 'easeInOutExpo',
+            onAfter: function() {
+                history.pushState(null, null, target);
+            }
         }
     );
 
@@ -347,8 +343,8 @@ scarey.history = (function(window,undefined){
                 animating;
 
             // Set Loading
-            $body.addClass('loading');
-            $("#main-content").removeClass("animate-in").addClass("animate-out");
+            //$body.addClass('loading');
+            $(".main-content").addClass('loading');
 
             // Ajax Request the Traditional Page
             $.ajax({
@@ -403,9 +399,7 @@ scarey.history = (function(window,undefined){
                     }
                     });
 
-                   $("#main-content").removeClass("animate-out").addClass("animate-in");
-                    // Complete the change
-                    $body.removeClass('loading');
+                    $(".main-content").removeClass("loading");
 
                     // Inform Google Analytics of the change
                     if ( typeof window._gaq !== 'undefined' ) {
@@ -481,6 +475,7 @@ $(document).ready(function() {
     scarey.slider.init();
     scarey.colorbox.init();
     scarey.blog();
+
 });
 
 
