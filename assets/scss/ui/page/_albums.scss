@@ -210,7 +210,7 @@
         .prev, .next {
             cursor: pointer;
             height: 100%;
-            padding: $mega-size $base-spacing-unit/4 0;
+            padding: $mega-size*1.2 $base-spacing-unit/4 0;
             position: absolute;
             top: 0;
             @include transition(background 200ms);
