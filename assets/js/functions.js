@@ -86,6 +86,7 @@ scarey.slider = {
               sliderWrap = $(".filter__slider-wrap"),
               items = $(".filter__slider-wrap li"),
               itemWidth = items.innerWidth(),
+              itemLength = items.length,
               prev = $(".prev"),
               next = $(".next"),
               bullets = [],
@@ -106,7 +107,7 @@ scarey.slider = {
         }
 
         //setting bullets based on slide count
-        bulletCount = items.length / initial;
+        bulletCount = itemLength / initial;
         for ( i = 0; i < bulletCount; i++) {
             position.append("<a class='bullet'></a>");
         }
@@ -131,13 +132,17 @@ scarey.slider = {
         }
 
         //set initial width of carousel container
-        initialDist = itemWidth * initial;
+        if ( itemLength < initial ) {
+            initialDist = itemWidth * itemLength;
+        } else {
+            initialDist = itemWidth * initial;
+        }
 
         //set slider container width
-        slider.css("width", (itemWidth * initial));
+        slider.css("width", initialDist);
 
         //set slider wrap width
-        sliderWrap.css("width", (itemWidth * items.length));
+        sliderWrap.css("width", (itemWidth * itemLength));
 
         //for getting transform value
         function matrixToArray(matrix) {
@@ -157,7 +162,7 @@ scarey.slider = {
             dist = initialDist - pos;
 
             //if we're at the end don't do anything
-            if ( dist === (itemWidth * items.length) ) {
+            if ( dist === (itemWidth * itemLength) ) {
                 return;
             } else {
                 sliderWrap.css({

@@ -97,30 +97,32 @@ footer .logo-footer { width: 32.53012%; float: left; margin-right: 1.20482%; dis
 .wf-loading { /* Hide the blog title and post titles while web fonts are loading */ visibility: hidden; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/assets\/scss\/ui\/_page\.scss}line{font-family:\0000329}}
-body > .wrap { height: auto; min-height: 100%; overflow-x: hidden; }
+body > .wrap { height: auto; min-height: 100%; }
+@media (min-width: 45em) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/assets\/scss\/ui\/_page\.scss}line{font-family:\0000329}}
+  body > .wrap { overflow-x: hidden; } }
 
 /**** Main content ***/
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/assets\/scss\/ui\/_page\.scss}line{font-family:\0000339}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/assets\/scss\/ui\/_page\.scss}line{font-family:\0000341}}
 .main-content { width: 95%; margin: 0 auto; clear: both; padding-bottom: 10em; position: relative; opacity: 1; -webkit-transition: opacity 1000ms ease-in-out; -moz-transition: opacity 1000ms ease-in-out; -o-transition: opacity 1000ms ease-in-out; transition: opacity 1000ms ease-in-out; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/assets\/scss\/ui\/_page\.scss}line{font-family:\0000347}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/assets\/scss\/ui\/_page\.scss}line{font-family:\0000349}}
 .main-content h1 { text-align: center; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/assets\/scss\/ui\/_page\.scss}line{font-family:\0000350}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/assets\/scss\/ui\/_page\.scss}line{font-family:\0000352}}
 .main-content img { outline: 1px solid #d9d9d9; border-radius: 3px; }
-@media (min-width: 45em) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/assets\/scss\/ui\/_page\.scss}line{font-family:\0000339}}
+@media (min-width: 45em) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/assets\/scss\/ui\/_page\.scss}line{font-family:\0000341}}
   .main-content { max-width: 85em; padding-left: 1em; padding-right: 1em; margin-left: auto; margin-right: auto; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/CodeKit\.app\/Contents\/Resources\/engines\/compass\/frameworks\/compass\/stylesheets\/compass\/utilities\/general\/_clearfix\.scss}line{font-family:\0000338}}
   .main-content:after { content: ""; display: table; clear: both; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/assets\/scss\/ui\/_page\.scss}line{font-family:\0000359}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/assets\/scss\/ui\/_page\.scss}line{font-family:\0000361}}
 .no-js .main-content { left: 0 !important; opacity: 1 !important; }
 
 /****
 * Loading state
 ****/
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/assets\/scss\/ui\/_page\.scss}line{font-family:\0000368}}
-.loading { opacity: 0.7; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/assets\/scss\/ui\/_page\.scss}line{font-family:\0000370}}
-.loading:before { content: ""; left: 0; top: -10px; position: absolute; width: 0%; height: 10px; background: #c08a59; -webkit-animation: grow 200ms ease-in-out infinite; -moz-animation: grow 200ms ease-in-out infinite; -ms-animation: grow 200ms ease-in-out infinite; -o-animation: grow 200ms ease-in-out infinite; animation: grow 200ms ease-in-out infinite; }
+.loading { opacity: 0.7; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/assets\/scss\/ui\/_page\.scss}line{font-family:\0000372}}
+.loading:before { content: ""; left: 0; top: -10px; position: absolute; width: 0%; height: 10px; background: #c08a59; -webkit-animation: grow 600ms ease-in-out infinite; -moz-animation: grow 600ms ease-in-out infinite; -ms-animation: grow 600ms ease-in-out infinite; -o-animation: grow 600ms ease-in-out infinite; animation: grow 600ms ease-in-out infinite; }
 
 /*------------------------------------*\ $TYPOGRAPHY
 \*------------------------------------*/
@@ -134,7 +136,7 @@ body > .wrap { height: auto; min-height: 100%; overflow-x: hidden; }
 h1, h2, h3, h4, h5, h6 { font-weight: 300; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/assets\/scss\/ui\/_typography\.scss}line{font-family:\0000320}}
-h1, .alpha { font-size: 36px; }
+h1, .alpha { font-size: 43px; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/assets\/scss\/ui\/_typography\.scss}line{font-family:\0000321}}
 h2, .beta, footer a { font-size: 30px; }
@@ -230,7 +232,7 @@ a.active { color: #5b93ab; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/assets\/scss\/ui\/_navigation\.scss}line{font-family:\00003172}}
 .mobile-flyout span { text-transform: uppercase; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/assets\/scss\/ui\/_navigation\.scss}line{font-family:\00003175}}
-.mobile-flyout [data-icon]:before { font-size: 36px; display: block; color: #111111; margin-bottom: 12px; }
+.mobile-flyout [data-icon]:before { font-size: 43px; display: block; color: #111111; margin-bottom: 12px; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/assets\/scss\/ui\/_navigation\.scss}line{font-family:\00003183}}
 .dark { opacity: .2 !important; }
@@ -753,7 +755,7 @@ article:after { content: ""; display: table; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/assets\/scss\/ui\/page\/_albums\.scss}line{font-family:\00003176}}
 .filter__toggle { background: #eaeaea; cursor: pointer; display: block; padding: 12px 0; margin-top: -24px; -webkit-transition: background 300ms; -moz-transition: background 300ms; -o-transition: background 300ms; transition: background 300ms; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/assets\/scss\/ui\/page\/_albums\.scss}line{font-family:\00003183}}
-.filter__toggle:before { font-size: 36px; }
+.filter__toggle:before { font-size: 43px; }
 @media (min-width: 45em) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/assets\/scss\/ui\/page\/_albums\.scss}line{font-family:\00003176}}
   .filter__toggle { background: none; } }
 
@@ -844,7 +846,7 @@ label.error { width: 100%; text-align: right; float: right; color: red; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/assets\/scss\/ui\/page\/_home\.scss}line{font-family:\0000318}}
 .home .main-nav, .home .social-home { width: 100%; overflow: visible; background: none; padding: 0; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/assets\/scss\/ui\/page\/_home\.scss}line{font-family:\0000323}}
-.home .main-nav a, .home .social-home a { display: block; font-weight: 100; padding: 1em 0; text-align: center; color: #111111; font-size: 36px; border-bottom: 1px solid #d9d9d9; }
+.home .main-nav a, .home .social-home a { display: block; font-weight: 100; padding: 1em 0; text-align: center; color: #111111; font-size: 43px; border-bottom: 1px solid #d9d9d9; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/assets\/scss\/ui\/page\/_home\.scss}line{font-family:\0000331}}
 .home .main-nav a:hover, .home .social-home a:hover { color: #c08a59; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nicholaspball\/Sites\/scarey\.org\/staging_2\.0\/assets\/scss\/ui\/page\/_home\.scss}line{font-family:\0000334}}

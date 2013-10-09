@@ -29,7 +29,9 @@
 body > .wrap {
     height:auto;
     min-height:100%;
-    overflow-x: hidden;
+    @include at-breakpoint($medium) {
+        overflow-x: hidden;
+    }
 }
 
 
@@ -75,7 +77,7 @@ body > .wrap {
         width: 0%;
         height: 10px;
         background: $orange;
-        @include animation(grow 200ms ease-in-out infinite);
+        @include animation(grow 600ms ease-in-out infinite);
     }
 }
 
