@@ -242,6 +242,9 @@
         height: 15px;
         margin: 0 $base-spacing-unit/4;
         width: 15px;
+        @include at-breakpoint($medium) {
+            margin: 0 $base-spacing-unit/2;
+        }
     }
     .on {
         background: $orange;

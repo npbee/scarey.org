@@ -243,6 +243,12 @@ scarey.slider = {
 
         $("#position a:first-child").addClass('on');
 
+        $(bullets).each(function(index) {
+            $(this).on("click", function() {
+                mySwipe.slide(index, 200);
+            });
+        });
+
         window.mySwipe = $("#slider").Swipe({
             continuous: false,
             callback: function(pos) {
@@ -378,8 +384,8 @@ scarey.history = (function(window,undefined){
                 animating;
 
             // Set Loading
-            //$body.addClass('loading');
-            $(".main-content").addClass('loading');
+            $body.addClass('loading');
+            //$(".main-content").addClass('loading');
 
             // Ajax Request the Traditional Page
             $.ajax({
@@ -434,7 +440,8 @@ scarey.history = (function(window,undefined){
                     }
                     });
 
-                    $(".main-content").removeClass("loading");
+                    //$(".main-content").removeClass("loading");
+                    $body.removeClass('loading');
 
                     // Inform Google Analytics of the change
                     if ( typeof window._gaq !== 'undefined' ) {
@@ -462,7 +469,6 @@ scarey.colorbox = {
 
         //load and execute colorbox only if non-mobile
         if ( matchMedia(scarey.medium).matches) {
-            console.log('yes');
             $.getScript('/assets/js/libs/colorbox.js', function() {
                 scarey.colorbox.go();
             });

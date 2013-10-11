@@ -68,14 +68,14 @@ body > .wrap {
 * Loading state
 ****/
 .loading {
-    opacity: 0.7;
+    //opacity: 0.7;
     &:before {
         content: "";
         left: 0;
-        top: -10px;
+        top: 0px;
         position: absolute;
         width: 0%;
-        height: 10px;
+        height: 5px;
         background: $orange;
         @include animation(grow 2s ease-in-out infinite);
     }
