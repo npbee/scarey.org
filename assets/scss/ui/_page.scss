@@ -77,7 +77,7 @@ body > .wrap {
         width: 0%;
         height: 10px;
         background: $orange;
-        @include animation(grow 600ms ease-in-out infinite);
+        @include animation(grow 2s ease-in-out infinite);
     }
 }
 

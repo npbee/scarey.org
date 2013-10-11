@@ -180,9 +180,6 @@
     //float: left;
     padding: $base-spacing-unit/2 0;
     margin-top: -$base-spacing-unit;
-    &:before {
-        font-size: $h1-size;
-    }
     @include transition(background 300ms);
     @include at-breakpoint($medium) {
         background: none;
@@ -201,16 +198,16 @@
 
 .filter__controls {
     display: none;
-    @include at-breakpoint($medium) {
+    @include at-breakpoint($large) {
         display: block;
-        font-size: $mega-size;
+        font-size: $h2-size;
         height: 100%;
         top: 0;
         width: 100%;
         .prev, .next {
             cursor: pointer;
             height: 100%;
-            padding: $mega-size*1.2 $base-spacing-unit/4 0;
+            padding: 130px $base-spacing-unit/4 0;
             position: absolute;
             top: 0;
             @include transition(background 200ms);

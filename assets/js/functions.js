@@ -8,6 +8,25 @@ scarey.large = "screen and (min-width: 90em)";
 
 
 /* -----------------------------------------------
+FASTCLICK
+------------------------------------------------ */
+//Enable fastclick only if not on desktop device
+scarey.fastclick =  {
+    init: function() {
+        if ( matchMedia(scarey.large).matches ) {
+            return
+        } else {
+            scarey.fastclick.go();
+        }
+    },
+    go: function() {
+        $.getScript('/assets/js/libs/fastClick.js', function() {
+                FastClick.attach(document.body);
+            });
+    }
+};
+
+/* -----------------------------------------------
 SMOOTH SCROLLING
 ------------------------------------------------ */
 scarey.scroll = function(target) {
@@ -16,6 +35,7 @@ scarey.scroll = function(target) {
         1000,
         {
             easing: 'easeInOutExpo',
+            axis: 'y', //setting the axis seems to avoid flickering on iOS
             onAfter: function() {
                 history.pushState(null, null, target);
             }
@@ -24,20 +44,27 @@ scarey.scroll = function(target) {
 
 };
 
+
+
 /* -----------------------------------------------
 MOBILE FLYOUT
 ------------------------------------------------ */
 scarey.nav = function() {
+    var topNav = $("#nav"),
+          flyOut = $("#mobile-flyout");
+
     $(".more-nav").click(function() {
-        if ( $("#mobile-flyout").hasClass("slide-in")) {
-            $("#mobile-flyout").removeClass("slide-in").addClass("slide-out");
+        if ( flyOut.hasClass("slide-in")) {
+            flyOut.removeClass("slide-in").addClass("slide-out");
         } else {
-            $("#mobile-flyout").addClass('slide-in')
+            flyOut.addClass('slide-in')
         }
         $(".main-content").toggleClass("dark");
         event.preventDefault();
     });
 };
+
+
 
 /* -----------------------------------------------
 ALBUM FILTER
@@ -69,13 +96,14 @@ scarey.albumFilter = function() {
 
     });
 
+
 }
 
 
 //Album filter slider
 scarey.slider = {
     init: function() {
-        if ( matchMedia(scarey.medium).matches) {
+        if ( matchMedia(scarey.large).matches) {
             this.carousel();
         } else {
             this.swipe();
@@ -227,6 +255,8 @@ scarey.slider = {
         }).data('Swipe');
     }
 };
+
+
 
 /* -----------------------------------------------
 STICKY NAV
@@ -432,7 +462,8 @@ scarey.colorbox = {
 
         //load and execute colorbox only if non-mobile
         if ( matchMedia(scarey.medium).matches) {
-            $.getScript('/_/js/libs/colorbox.js', function() {
+            console.log('yes');
+            $.getScript('/assets/js/libs/colorbox.js', function() {
                 scarey.colorbox.go();
             });
             //this.go();
@@ -480,6 +511,7 @@ $(document).ready(function() {
     scarey.slider.init();
     scarey.colorbox.init();
     scarey.blog();
+    scarey.fastclick.init();
 
 });
 

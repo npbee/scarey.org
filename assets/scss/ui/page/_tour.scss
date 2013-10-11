@@ -4,6 +4,36 @@
 .tour-year-block {
     max-width:75em;
     margin:0 auto;
+    > h2 {
+        color: $lightblack;
+        margin: -$base-spacing-unit/2 auto 0;
+        padding: $base-spacing-unit;
+        position: relative;
+        text-align: center;
+        //width: 15%;
+        min-width: 200px;
+        &:after, &:before {
+            content: "";
+            top: 48%;
+            top: calc(50% - 0.5px);
+            width: 35%;
+            height: 1px;
+            position: absolute;
+            background: $darkgrey;
+        }
+        &:after {
+            right: 0;
+            @include at-breakpoint($medium) {
+                right: $base-spacing-unit*3;
+            }
+        }
+        &:before {
+            left: 0;
+            @include at-breakpoint($medium) {
+                left: $base-spacing-unit*3;
+            }
+        }
+    }
 }
 .tour-header {
     clear:both;
@@ -23,9 +53,10 @@
 .tour-entry {
     clear:both;
     width:100%;
-    padding:0 0 $padding 0;
+    padding:0 0 $base-spacing-unit/2 0;
     text-align:right;
     font-size:$h4-size;
+    @include clearfix;
     @include at-breakpoint($medium) {
         text-align:center;
     }
