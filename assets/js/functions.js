@@ -568,12 +568,12 @@ scarey.colorbox = {
 /****
 * Album flipper
 ****/
-scarey.flipper = {
-    init: function() {
-        var album_container = $(".album-cover");
+scarey.flipper = function() {
+    var album_container = $(".album-cover");
 
-
-    }
+    album_container.on('click', function() {
+        $(this).toggleClass('album-cover--flipped');
+    });
 }
 
 
@@ -606,11 +606,7 @@ $(document).ready(function() {
     scarey.colorbox.init();
     scarey.blog();
     scarey.fastclick.init();
-
-
-    $('.album-cover').on('click', function() {
-        $(this).toggleClass('album-cover--flipped');
-    });
+    scarey.flipper();
 
 });
 
