@@ -17,7 +17,6 @@ article {
 }
 
 .post-content {
-    line-height:2.5em;
     margin: $padding auto;
     text-align:center;
     clear:both;
@@ -25,6 +24,7 @@ article {
         max-width:100%;
     }
     p {
+        @extend .gamma;
         margin:0 auto;
         @include at-breakpoint($large) {
             max-width: 60%;

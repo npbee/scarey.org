@@ -15,17 +15,16 @@
 
     /* ==========NAV*/
 
-    .main-nav, .social-home {
+
+    .main-nav {
         width:100%;
         overflow:visible;
-        background:none;
         padding: 0;
         a {
             display:block;
-            font-weight: 100;
-            padding:1em 0;
+            padding:$base-spacing-unit 0;
             text-align:center;
-            color: $offblack;
+            color: $lightblack;
             font-size:$h1-size;
             border-bottom: 1px solid $darkgrey;
             &:hover {
@@ -33,20 +32,23 @@
             }
             &:first-child {
                 border-top: 1px solid $grey;
+                margin-top: 100px; //height of logo
                 @include at-breakpoint($medium) {
                     border-top: none;
+                    margin-top: 0;
                 }
             }
             &:last-child {
                 border-bottom: none;
             }
             @include at-breakpoint($medium) {
-                background:none;
                 display:inline-block;
+                font-size: $h4-size;
                 width:auto;
                 border:none;
                 float:none;
-                padding:0 1em;
+                padding:$base-spacing-unit;
+                top: 0;
             }
         }
         &:after {
@@ -54,41 +56,86 @@
             display:table;
             clear:both;
         }
-        .logo-nav, .more-nav {display:none;}
+        .more-nav {display:none;}
 
-    }
-
-    .logo-home {
-        font-size: $kilo-size;
-        font-weight: 100;
-        @include at-breakpoint($medium) {
-            font-size:$giga-size;
-        }
-        @include at-breakpoint($large) {
-            font-size:$giga-size*3;
-        }
-    }
-
-    .social-home {
-        text-align:center;
-        a {
-            color:$lightblack;
-            &:hover {
-                color:$orange;
-            }
+        .logo-nav {
+            border: none;
+            padding: 0;
+            margin: 0;
+            position: absolute;
+            top: -80px; //height of logo
+            width: 100%;
             @include at-breakpoint($medium) {
-                padding:0 $padding;
-                &:first-child {
-                    padding-left:0;
+                position: fixed;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                right:0;
+                margin: auto;
+                height:50%;
+                width: 100%;
+                z-index: -1;
+            }
+            @include at-breakpoint($large) {
+                width: 70%;
+                height: 70%;
+            }
+            span {
+                position: absolute;
+                left: -9999px;
+                top: -9999px;
+            }
+            img {
+                background: url('/assets/img/logo/logo.png') no-repeat;
+                background-size: 100%;
+                width: 190px;
+                height: 100px;
+                background-position: 0 0;
+                border: none;
+                outline: none;
+                @include at-breakpoint($medium) {
+                    background: url('/assets/img/logo/logo.svg') no-repeat;
+                    background-size: 100%;
+                    width: 100%;
+                    height: auto;
                 }
             }
         }
-         [data-icon]:before {
-            font-size:$kilo-size;
-         }
-         @include at-breakpoint($medium) {
-            width: 92%;
-            margin: $padding*4 auto 0;
-         }
+
+    }
+
+}
+
+.social-home {
+    text-align:center;
+    @include clearfix;
+    a {
+        border-bottom: 1px solid $darkgrey;
+        color:$lightblack;
+        display: block;
+        padding: $base-spacing-unit 0;
+        &:hover {
+            color:$orange;
+        }
+        &:last-child {
+            border-bottom: none;
+        }
+        @include at-breakpoint($medium) {
+            float: none;
+            width: auto;
+            @include span-columns(3,12);
+            &:last-child {
+                @include omega;
+            }
+        }
+    }
+     [data-icon]:before {
+        font-size:$kilo-size;
+     }
+     @include at-breakpoint($medium) {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
     }
 }

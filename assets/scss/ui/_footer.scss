@@ -1,0 +1,63 @@
+/*------------------------------------*\
+    $FOOTER
+\*------------------------------------*/
+footer {
+    @include clearfix;
+    clear: both;
+    position:relative;
+    //height:6em;
+    //margin-top:-6em;
+    text-align:center;
+    background:$offblack;
+    a {
+        @extend .beta;
+        display: block;
+        float: left;
+        padding: $base-spacing-unit;
+        width: 50%;
+        color:darken($darkgrey,20%);
+        //@include span-columns(2, 12);
+        &:last-child {
+            @include at-breakpoint($medium) {
+                @include omega;
+            }
+        }
+        &:hover {
+            color: $orange;
+        }
+        @include at-breakpoint($medium) {
+            padding:$base-spacing-unit $base-spacing-unit;
+           @include span-columns(2,12);
+        }
+    }
+}
+
+.logo-footer {
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 2;
+    width: 50%;
+    height: 50%;
+    img {
+        width: 100%;
+        height: auto;
+        opacity: 0.3;
+        vertical-align: middle;
+        @include at-breakpoint($medium) {
+            opacity: 1;
+            width: 100px;
+        }
+    }
+    @include at-breakpoint($medium) {
+        padding: $base-spacing-unit $base-spacing-unit*3;
+        position: static;
+        width: auto;
+        height: auto;
+        @include span-columns(4,12);
+    }
+}
