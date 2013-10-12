@@ -140,7 +140,7 @@ scarey.carousel = function() {
 
     //set the amount of albums to show for each slide
     if ( matchMedia(scarey.large).matches) {
-        items_per_slide = 4;
+        items_per_slide = 2;
     } else {
         items_per_slide = 2;
     }
@@ -159,11 +159,16 @@ scarey.carousel = function() {
         bullets.push(bullet);
     });
 
-    //get the width of the viewport
+    // get the width of the viewport
     // if total items less than the amount set above,
     // then the width should just be the total items
-    if ( total_items < items_per_slide ) {
+    // and we should hide the bullets and arrows
+    if ( total_items <= items_per_slide ) {
         viewport_width = item_width * total_items;
+        $('.filter__controls').hide();
+        $(bullets).each(function() {
+            $(this).hide();
+        });
     } else {
         viewport_width = item_width * items_per_slide;
     }
@@ -560,6 +565,19 @@ scarey.colorbox = {
 
 
 
+/****
+* Album flipper
+****/
+scarey.flipper = {
+    init: function() {
+        var album_container = $(".album-cover");
+
+
+    }
+}
+
+
+
 
 /* -----------------------------------------------
 BLOG
@@ -588,6 +606,11 @@ $(document).ready(function() {
     scarey.colorbox.init();
     scarey.blog();
     scarey.fastclick.init();
+
+
+    $('.album-cover').on('click', function() {
+        $(this).toggleClass('album-cover--flipped');
+    });
 
 });
 

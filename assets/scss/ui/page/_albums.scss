@@ -27,18 +27,45 @@
     margin-bottom:$base-spacing-unit;
 }
 
+
+//includes flip animation
 .album-cover {
+    @include perspective(1000);
     img {
         margin-bottom:$base-spacing-unit*2;
         max-width:100%;
         height:auto;
-        @include at-breakpoint($medium) {
-        }
-        @include at-breakpoint($large) {
-            margin-bottom:$base-spacing-unit*2;
-            max-width:50%;
-            @include span-columns(4, 8);
-        }
+        width: 100%;
+        @include backface-visibility(hidden);
+    }
+    .front {
+        z-index: 2;
+    }
+    .back {
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include transform(rotateY(180deg));
+    }
+    @include at-breakpoint($medium) {
+        min-height: 800px;
+    }
+    @include at-breakpoint($large) {
+        margin-bottom:$base-spacing-unit*2;
+        max-width:50%;
+        @include span-columns(4, 8);
+    }
+}
+
+.flipper {
+    position: relative;
+    @include transition(all 300ms linear);
+    @include transform-style(preserve-3d);
+}
+
+.album-cover--flipped {
+    .flipper {
+        @include transform(rotateY(180deg));
     }
 }
 
@@ -127,8 +154,8 @@
         width: 100%;
         @include at-breakpoint($medium) {
             float: left;
-            padding: $base-spacing-unit;
-            width: 300px;
+            padding: $base-spacing-unit 0;
+            width: 250px;
         }
     }
     li span {
@@ -207,7 +234,7 @@
         .prev, .next {
             cursor: pointer;
             height: 100%;
-            padding: 130px $base-spacing-unit/4 0;
+            padding: 90px $base-spacing-unit/4 0; // for shame:  magic number
             position: absolute;
             top: 0;
             @include transition(background 200ms);
@@ -250,8 +277,11 @@
     .on {
         background: $orange;
     }
-    @include at-breakpoint($medium) {
-        //display: none;
+    @include at-breakpoint($large) {
+        padding-bottom: 0;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
     }
 }
 
