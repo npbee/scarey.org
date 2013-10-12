@@ -494,6 +494,7 @@ scarey.history = (function(window,undefined){
                     scarey.nav();
                     scarey.albumFilter();
                     scarey.slider.init();
+                    scarey.flipper();
 
 
                     // Update the title
