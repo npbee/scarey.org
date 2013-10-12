@@ -26,6 +26,8 @@ scarey.fastclick =  {
     }
 };
 
+
+
 /* -----------------------------------------------
 SMOOTH SCROLLING
 ------------------------------------------------ */
@@ -69,6 +71,8 @@ scarey.nav = function() {
 /* -----------------------------------------------
 ALBUM FILTER
 ------------------------------------------------ */
+
+//this is specifically for showing and hiding the filter
 scarey.albumFilter = function() {
 
     var filter = $('.filter'),
@@ -100,7 +104,7 @@ scarey.albumFilter = function() {
 };
 
 
-//Album filter slider
+//Logic for determing if we use the carousel or swipe
 scarey.slider = {
     init: function() {
         if ( matchMedia(scarey.large).matches) {
@@ -116,131 +120,175 @@ scarey.slider = {
 * Carousel
 ****/
 scarey.carousel = function() {
-        var slider = $(".filter__slider"),
-              sliderWrap = $(".filter__slider-wrap"),
-              items = $(".filter__slider-wrap li"),
-              itemWidth = items.innerWidth(),
-              itemLength = items.length,
-              prev = $(".prev"),
-              next = $(".next"),
-              bullets = [],
-              bulletCount,
-              activeBullet,
-              position = $('#position'),
-              initial,
-              posStr,
-              pos,
-              dist,
-              dir,
-              inc,
-              i;
+    var slider = $(".filter__slider"),
+          sliderWrap = $(".filter__slider-wrap"),
+          items = $(".filter__slider-wrap li"),
+          item_width = items.innerWidth(),
+          total_items = items.length,
+          prev = $(".prev"),
+          next = $(".next"),
+          bullets = [],
+          bullet_count,
+          active_bullet,
+          position = $('#position'),
+          items_per_slide,
+          pos_string,
+          pos,
+          transform,
+          end,
+          i;
 
-        //set the amount of albums to show for each slide
-        if ( matchMedia(scarey.large).matches) {
-            initial = 2;
-        } else {
-            initial = 2;
-        }
+    //set the amount of albums to show for each slide
+    if ( matchMedia(scarey.large).matches) {
+        items_per_slide = 4;
+    } else {
+        items_per_slide = 2;
+    }
 
-        //setting bullets based on slide count
-        bulletCount = itemLength / initial;
-        for ( i = 0; i < bulletCount; i++) {
-            position.append("<a class='bullet'></a>");
-        }
 
-        //push newly append bullets to an array
-        $("#position a").each(function() {
-            var bullet = $(this);
-            bullets.push(bullet);
+    //appending one bullet for each slide
+    bullet_count = total_items / items_per_slide;
+    for ( i = 0; i < bullet_count; i++) {
+        position.append("<a class='bullet'></a>");
+    }
+
+
+    //push newly append bullets to an array
+    $("#position a").each(function() {
+        var bullet = $(this);
+        bullets.push(bullet);
+    });
+
+    //get the width of the viewport
+    // if total items less than the amount set above,
+    // then the width should just be the total items
+    if ( total_items < items_per_slide ) {
+        viewport_width = item_width * total_items;
+    } else {
+        viewport_width = item_width * items_per_slide;
+    }
+
+    //set slider viewport width
+    slider.css("width", viewport_width);
+
+    //set slider wrap width
+    sliderWrap.css("width", (item_width * total_items));
+
+
+    // set active bullet initally to the first bullet
+    active_bullet = 0;
+
+    // call set active bullet function
+    setActiveBullet(0);
+
+
+
+    /****
+    * Set the active bullet
+    * The active bullet starts out a 0,
+    * and we add or subtract an amount
+    * depending on the increment given.
+    ****/
+    function setActiveBullet(increment) {
+        active_bullet +=  increment;
+        $(bullets).each(function() {
+            $(this).removeClass('on');
         });
+        $(bullets[active_bullet]).addClass('on');
+    }
 
-        //add active state to initial bullet
-        activeBullet = 0;
-        $(bullets[activeBullet]).addClass('on');
 
-        //set active bullet by keeping a running count
-        function setActiveBullet(b) {
-            activeBullet +=  b;
-            $(bullets).each(function() {
-                $(this).removeClass('on');
-            });
-            $(bullets[activeBullet]).addClass('on');
-        }
 
-        //set initial width of carousel container
-        if ( itemLength < initial ) {
-            initialDist = itemWidth * itemLength;
+    // Helper for getting transform value
+    function matrixToArray(matrix) {
+        return matrix.substr(7, matrix.length - 8).split(', ');
+    };
+
+
+    /****
+    * Generic slide function
+    * Takes a direction, increment, factor and provides a callback
+    ****/
+    function slide(direction, increment, delta, callback) {
+
+        // Use helper function to get what the current transform value is
+        // Returns a string
+        pos_string = matrixToArray(sliderWrap.css('transform'))[4];
+
+        //convert value abvoe to integer
+        pos = parseInt(pos_string, 10);
+
+
+        // Setting the new transform value
+        // If direction is set to forward, new value is:
+        // current position - ( viewport width * delta)
+        // Otherwise we going backward:
+        // current position + ( viewport width * delta)
+        if ( direction === "forward") {
+            transform = pos - (viewport_width * delta);
         } else {
-            initialDist = itemWidth * initial;
+            transform = pos + (viewport_width * delta);
         }
 
-        //set slider container width
-        slider.css("width", initialDist);
 
-        //set slider wrap width
-        sliderWrap.css("width", (itemWidth * itemLength));
+        //set the end of the carousel
+        end = ( direction === "forward" && Math.abs(pos) + viewport_width === ( item_width * total_items ) ) ||
+                  ( direction === "backward" && pos === 0);
 
-        //for getting transform value
-        function matrixToArray(matrix) {
-            return matrix.substr(7, matrix.length - 8).split(', ');
-        };
+        //if we're either end don't do anything
+        if ( end ) {
+            return;
+        } else if ( Modernizr.csstransforms3d ) {
+            sliderWrap.css({
+                "-webkit-transform": "translate3d(" + transform + "px, 0, 0)",
+                "-moz-transform": "translate3d(" + transform + "px,0,0)",
+                "-o-transform": "translate3d(" + transform + "px,0,0)",
+                "-ms-transform": "translate3d(" + transform + "px,0,0)",
+                "transform": "translate3d(" + transform + "px,0,0)",
+            });
+            callback(increment);
+        } else {
+            sliderWrap.css({
+                "-webkit-transform": "translateX(" + transform + "px)",
+                "-moz-transform": "translateX(" + transform + "px)",
+                "-o-transform": "translateX(" + transform + "px)",
+                "-ms-transform": "translateX(" + transform + "px)",
+                "transform": "translateX(" + transform + "px)",
+            });
+            callback(increment);
+        }
 
-        //event handlers
+    }
 
 
-        function slide(direction, callback, increment,factor) {
-            factor = factor || 1;
+    /****
+    * Next / Prev / Bullet click handlers
+    * Next / prev always have a factor of 1
+    * For bullets, get the delta between the current active bullet
+    * and the one that was clicked and use that to slide
+    * multiple sections
+    ****/
+    next.on('click', function() {
+        slide("forward", 1, 1, setActiveBullet);
+    });
 
-            //find what the current transform value is
-            posStr = matrixToArray(sliderWrap.css('transform'))[4];
+    prev.on('click', function() {
+        slide("backward",-1 , 1, setActiveBullet);
+    });
 
-            //convert value from string to integer
-            pos = parseInt(posStr, 10);
-
-            //distance to slide equals the inital distance - the distance traveled so far
-            if ( direction === "forward") {
-                dist = -((initialDist - pos) * factor);
-            } else {
-                dist = initialDist + pos;
-            }
-
-            //if we're either end don't do anything
-            if ( dist === (itemWidth * itemLength) || ( direction === "backward" && pos === 0 ) ) {
+    $(bullets).each(function(index) {
+        $(this).on('click', function() {
+            var delta = index - active_bullet,
+                  abs_delta = Math.abs(delta);
+            if ( index === active_bullet ) {
                 return;
+            } else if ( index > active_bullet ) {
+                slide("forward", delta, abs_delta, setActiveBullet);
             } else {
-                sliderWrap.css({
-                    "-webkit-transform": "translateX(" + dist + "px)",
-                    "-moz-transform": "translateX(" + dist + "px)",
-                    "-o-transform": "translateX(" + dist + "px)",
-                    "-ms-transform": "translateX(" + dist + "px)",
-                    "transform": "translateX(" + dist + "px)",
-
-                });
-
-                callback(increment);
-
-            }
-
-        }
-
-        next.on('click', function() {
-            slide("forward", setActiveBullet, 1);
+                slide("backward", delta, abs_delta, setActiveBullet);
+            };
         });
-
-        prev.on('click', function() {
-            slide("backward",setActiveBullet, -1);
-        });
-
-        $(bullets).each(function(index) {
-            var factor = index - activeBullet;
-            $(this).on('click', function() {
-                if ( index > activeBullet ) {
-                    slide("forward",setActiveBullet,1,  factor);
-                } else {
-                    slide("backward",setActiveBullet,-1, factor);
-                };
-            });
-        });
+    });
 };
 
 

@@ -16,7 +16,7 @@
     </script>
     <link rel="stylesheet" href="../assets/css/style.css">
     <!-- <link rel="stylesheet" href="../assets/css/camera.css"> -->
-    <script src="../assets/js/modernizr.js"></script>
+    <script src="../assets/js/libs/modernizr.js"></script>
     <!--[if IE]>
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
