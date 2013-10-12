@@ -140,7 +140,7 @@ scarey.carousel = function() {
 
     //set the amount of albums to show for each slide
     if ( matchMedia(scarey.large).matches) {
-        items_per_slide = 2;
+        items_per_slide = 4;
     } else {
         items_per_slide = 2;
     }

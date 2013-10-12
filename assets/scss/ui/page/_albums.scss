@@ -132,6 +132,8 @@
 }
 
 
+
+
 /*------------------------------------*\
     $ALBUM FILTER
 \*------------------------------------*/
@@ -299,7 +301,7 @@
     .filter__slider {
         border-bottom: 1px solid $darkgrey;
         border-top: 1px solid $darkgrey;
-        max-height: 500px;
+        max-height: 300px;
     }
     .filter__close {
         opacity: 1;
