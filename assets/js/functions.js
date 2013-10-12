@@ -97,19 +97,25 @@ scarey.albumFilter = function() {
     });
 
 
-}
+};
 
 
 //Album filter slider
 scarey.slider = {
     init: function() {
         if ( matchMedia(scarey.large).matches) {
-            this.carousel();
+            scarey.carousel();
         } else {
-            this.swipe();
+            scarey.swipe();
         }
-    },
-    carousel: function() {
+    }
+};
+
+
+/****
+* Carousel
+****/
+scarey.carousel = function() {
         var slider = $(".filter__slider"),
               sliderWrap = $(".filter__slider-wrap"),
               items = $(".filter__slider-wrap li"),
@@ -125,11 +131,13 @@ scarey.slider = {
               posStr,
               pos,
               dist,
+              dir,
+              inc,
               i;
 
         //set the amount of albums to show for each slide
         if ( matchMedia(scarey.large).matches) {
-            initial = 4;
+            initial = 2;
         } else {
             initial = 2;
         }
@@ -178,39 +186,26 @@ scarey.slider = {
         };
 
         //event handlers
-        next.on('click', function() {
+
+
+        function slide(direction, callback, increment,factor) {
+            factor = factor || 1;
 
             //find what the current transform value is
             posStr = matrixToArray(sliderWrap.css('transform'))[4];
 
-            //convert value from string to array
+            //convert value from string to integer
             pos = parseInt(posStr, 10);
 
             //distance to slide equals the inital distance - the distance traveled so far
-            dist = initialDist - pos;
-
-            //if we're at the end don't do anything
-            if ( dist === (itemWidth * itemLength) ) {
-                return;
+            if ( direction === "forward") {
+                dist = -((initialDist - pos) * factor);
             } else {
-                sliderWrap.css({
-                    "-webkit-transform": "translateX(-" + dist + "px)",
-                    "-moz-transform": "translateX(-" + dist + "px)",
-                    "-o-transform": "translateX(-" + dist + "px)",
-                    "-ms-transform": "translateX(-" + dist + "px)",
-                    "transform": "translateX(-" + dist + "px)",
-
-                });
-                //increase bullet active count by 1
-                setActiveBullet(1);
+                dist = initialDist + pos;
             }
-        });
 
-        prev.on('click', function() {
-            posStr = matrixToArray(sliderWrap.css('transform'))[4];
-            pos = parseInt(posStr, 10);
-            dist = initialDist + pos;
-            if ( pos == 0) {
+            //if we're either end don't do anything
+            if ( dist === (itemWidth * itemLength) || ( direction === "backward" && pos === 0 ) ) {
                 return;
             } else {
                 sliderWrap.css({
@@ -219,47 +214,74 @@ scarey.slider = {
                     "-o-transform": "translateX(" + dist + "px)",
                     "-ms-transform": "translateX(" + dist + "px)",
                     "transform": "translateX(" + dist + "px)",
+
                 });
-                setActiveBullet(-1);
+
+                callback(increment);
+
             }
-        });
-    },
-    swipe: function() {
-        var slides = $("#slider li"),
-              slideLength = slides.length,
-              bullet,
-              bullets = [],
-              position = $("#position"),
-              i;
 
-        $(slides).each(function() {
-            position.append("<a class='bullet'></a>");
+        }
+
+        next.on('click', function() {
+            slide("forward", setActiveBullet, 1);
         });
 
-        $("#position a ").each(function() {
-            var bullet = $(this);
-            bullets.push(bullet);
+        prev.on('click', function() {
+            slide("backward",setActiveBullet, -1);
         });
-
-        $("#position a:first-child").addClass('on');
 
         $(bullets).each(function(index) {
-            $(this).on("click", function() {
-                mySwipe.slide(index, 200);
+            var factor = index - activeBullet;
+            $(this).on('click', function() {
+                if ( index > activeBullet ) {
+                    slide("forward",setActiveBullet,1,  factor);
+                } else {
+                    slide("backward",setActiveBullet,-1, factor);
+                };
             });
         });
+};
 
-        window.mySwipe = $("#slider").Swipe({
-            continuous: false,
-            callback: function(pos) {
-                var i = bullets.length;
-                while(i--) {
-                    bullets[i].removeClass("on");
-                }
-                bullets[pos].addClass("on");
+
+/****
+* Swipe
+****/
+scarey.swipe =  function() {
+    var slides = $("#slider li"),
+          slideLength = slides.length,
+          bullet,
+          bullets = [],
+          position = $("#position"),
+          i;
+
+    $(slides).each(function() {
+        position.append("<a class='bullet'></a>");
+    });
+
+    $("#position a ").each(function() {
+        var bullet = $(this);
+        bullets.push(bullet);
+    });
+
+    $("#position a:first-child").addClass('on');
+
+    $(bullets).each(function(index) {
+        $(this).on("click", function() {
+            mySwipe.slide(index, 200);
+        });
+    });
+
+    window.mySwipe = $("#slider").Swipe({
+        continuous: false,
+        callback: function(pos) {
+            var i = bullets.length;
+            while(i--) {
+                bullets[i].removeClass("on");
             }
-        }).data('Swipe');
-    }
+            bullets[pos].addClass("on");
+        }
+    }).data('Swipe');
 };
 
 
