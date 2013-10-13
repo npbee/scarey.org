@@ -31,8 +31,8 @@
 //includes flip animation
 .album-cover {
     @include perspective(1000);
+    margin-bottom:$base-spacing-unit*2;
     img {
-        margin-bottom:$base-spacing-unit*2;
         max-width:100%;
         height:auto;
         width: 100%;
@@ -46,9 +46,6 @@
         top: 0;
         left: 0;
         @include transform(rotateY(180deg));
-    }
-    @include at-breakpoint($medium) {
-        min-height: 800px;
     }
     @include at-breakpoint($large) {
         margin-bottom:$base-spacing-unit*2;
@@ -66,6 +63,20 @@
 .album-cover--flipped {
     .flipper {
         @include transform(rotateY(180deg));
+    }
+}
+
+.flip-icon {
+    color: $lightblack;
+    display: block;
+    font-size: $milli-size;
+    @include at-breakpoint($medium) {
+        font-size: $base-font-size;
+    }
+    &[data-icon]:before {
+        padding-right: 5px;
+        position: relative;
+        top: 1px;
     }
 }
 
@@ -91,10 +102,12 @@
 
 .album-tracklist {
     padding-bottom:$base-spacing-unit*2;
+
     .album-track {
         clear:both;
         overflow:auto;
         margin:$base-spacing-unit/2 0;
+        position: relative;
         //font-size:$regularfont;
     }
     .album-track-name {
