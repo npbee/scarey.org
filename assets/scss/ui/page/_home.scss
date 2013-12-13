@@ -1,141 +1,48 @@
 /*------------------------------------*\
     $HOME
 \*------------------------------------*/
+
 .home {
-    background:
-        url("../img/home_art2.png") no-repeat right bottom,
-        //url("../img/background_light.png") repeat;
-        #f7f7f7 url("../img/bg_gradient.png") repeat-x;
-    .main-content {
-        width:100%;
-        padding-bottom:0;
-        left:0;
-        opacity:1;
+    .logo-nav {
+        visibility: hidden;
     }
-
-    /* ==========NAV*/
-
-
-    .main-nav {
-        width:100%;
-        overflow:visible;
-        padding: 0;
-        a {
-            display:block;
-            padding:$base-spacing-unit 0;
-            text-align:center;
-            color: $lightblack;
-            font-size:$h1-size;
-            border-bottom: 1px solid $grey;
-            &:hover {
-                color:$orange;
-            }
-            &:first-child {
-                border-top: 1px solid $grey;
-                margin-top: 100px; //height of logo
-                @include at-breakpoint($medium) {
-                    border-top: none;
-                    margin-top: 0;
-                }
-            }
-            &:last-child {
-                border-bottom: none;
-            }
-            @include at-breakpoint($medium) {
-                display:inline-block;
-                font-size: $h4-size;
-                width:auto;
-                border:none;
-                float:none;
-                padding:$base-spacing-unit;
-                top: 0;
-            }
-        }
-        &:after {
-            content:"";
-            display:table;
-            clear:both;
-        }
-        .more-nav {display:none;}
-
-        .logo-nav {
-            border: none;
-            padding: 0;
-            margin: 0;
-            position: absolute;
-            top: -80px; //height of logo
-            width: 100%;
-            @include at-breakpoint($medium) {
-                position: fixed;
-                left: 0;
-                top: 0;
-                bottom: 0;
-                right:0;
-                margin: auto;
-                height:50%;
-                width: 100%;
-                z-index: -1;
-            }
-            @include at-breakpoint($large) {
-                width: 70%;
-                height: 70%;
-            }
-            span {
-                position: absolute;
-                left: -9999px;
-                top: -9999px;
-            }
-            img {
-                background: url('/assets/img/logo/logo.svg') no-repeat;
-                background-size: 100%;
-                width: 190px;
-                height: 100px;
-                background-position: 0 0;
-                border: none;
-                outline: none;
-                @include at-breakpoint($medium) {
-                    background: url('/assets/img/logo/logo.svg') no-repeat;
-                    background-size: 100%;
-                    width: 100%;
-                    height: auto;
-                }
-            }
-        }
-
+    .headline-container {
+        margin: $base-spacing-unit*3 auto 0;
+        text-align: center;
     }
-
-}
-
-.social-home {
-    text-align:center;
-    @include clearfix;
-    a {
-        border-bottom: 1px solid $grey;
-        color:$lightblack;
-        display: block;
-        padding: $base-spacing-unit 0;
-        &:hover {
-            color:$orange;
-        }
-        &:last-child {
-            border-bottom: none;
-        }
+    .headline {
+        text-transform: uppercase;
+        text-align: center;
+    }
+    .headline--left,
+    .headline--right {
+        position: relative;
+        opacity: 0;
         @include at-breakpoint($medium) {
-            float: none;
-            width: auto;
-            @include span-columns(3,12);
-            &:last-child {
-                @include omega;
-            }
+            display: inline-block;
+            vertical-align: middle;
+            width: 50%;
         }
     }
-     [data-icon]:before {
-        font-size:$kilo-size;
-     }
-     @include at-breakpoint($medium) {
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        width: 100%;
+    .headline--left {
+        @include animation(slide-fade-from-left 1s 0.5s forwards);
+        @include at-breakpoint($medium) {
+            padding-right: $base-spacing-unit/2;
+            text-align: right;
+        }
+    }
+    .headline--right {
+        @include animation(slide-fade-from-right 1s 1s forwards);
+        color: $brand-main;
+        @include at-breakpoint($medium) {
+            text-align: left;
+        }
+    }
+    .tagline {
+        @include animation(slide-fade-from-bottom 1s 1.5s forwards);
+        clear: both;
+        text-align: center;
+        position: relative;
+        opacity: 0;
     }
 }

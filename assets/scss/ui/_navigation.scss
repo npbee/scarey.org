@@ -23,6 +23,7 @@ header {
 }
 
 .main-nav {
+    @include clearfix;
     padding: $padding 0;
     text-transform: uppercase;
     @include at-breakpoint($medium) {
@@ -105,7 +106,8 @@ header {
 .albums .blog-nav, .albums .tour-nav, .albums .media-nav, .albums .store-nav, .albums .contact-nav,
 .media .blog-nav, .media .tour-nav, .media .albums-nav, .media .store-nav, .media .contact-nav,
 .store .blog-nav, .store .tour-nav, .store .albums-nav, .store .media-nav, .store .contact-nav,
-.contact .blog-nav, .contact .tour-nav, .contact .albums-nav, .contact .media-nav, .contact .store-nav {
+.contact .blog-nav, .contact .tour-nav, .contact .albums-nav, .contact .media-nav, .contact .store-nav,
+.home .blog-nav, .home .tour-nav, .home .albums-nav, .home .media-nav, .home .store-nav, .home .contact-nav {
     display:none;
     @include at-breakpoint($medium) {
         display:inline;

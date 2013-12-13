@@ -18,7 +18,10 @@ body {
     font-family: "brandon-grotesque", "Helvetica Neue", "Helvetica Neue", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-weight:300;
     font-size: $base-font-size;
-    background: $background url("../img/bg_gradient.png") repeat-x;
+    -webkit-font-smoothing: antialiased !important;
+    //background: $background url("../img/bg_gradient.png") repeat-x;
+    background: url("../img/bg--image3.jpg") fixed center center no-repeat;
+    //background-size: cover;
     overflow-x:hidden;
     color:$lightblack;
     @include at-breakpoint($medium) {
