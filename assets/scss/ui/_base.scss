@@ -20,7 +20,7 @@ body {
     font-size: $base-font-size;
     background: $background url("../img/bg_gradient.png") repeat-x;
     overflow-x:hidden;
-    color:$offblack;
+    color:$lightblack;
     @include at-breakpoint($medium) {
         overflow:auto;
     }

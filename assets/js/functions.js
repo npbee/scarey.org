@@ -568,6 +568,7 @@ scarey.colorbox = {
 
 /****
 * Album flipper
+* Check for animations and hide "click to flip" if not supported
 ****/
 scarey.flipper = function() {
     var album_container = $(".album-cover");
