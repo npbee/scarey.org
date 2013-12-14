@@ -25,4 +25,4 @@ color_output = false
 # sass-convert -R --from scss --to sass _/scss scss && rm -rf sass && mv scss sass
 preferred_syntax = :scss
 
-sass_options = { :debug_info => false }
+sass_options = { :debug_info => true }

@@ -1,0 +1,23 @@
+<div class="filter">
+    <a class="filter__toggle" data-icon="&#xe000;" aria-hidden="true">Filter</a>
+    <div id="slider" class="filter__slider">
+        <ul class="filter__slider-wrap">
+
+            {% for item in page.filter %}
+                <li><a href="#{{ item.href }}"><img src="{{ item.src }}" alt="{{ item.title }}"><span class="filter-title">{{ item.title }}</span></a></li>
+            {% endfor %}
+
+        </ul>
+
+        <div id="position" class="position">
+
+        </div>
+
+        <div class="filter__controls">
+            <a class="prev" data-icon="&#xe006;" aria-hidden="true"><span class="hide">Prev</span></a>
+            <a class="next" data-icon="&#xe007;" aria-hidden="true"><span class="hide">Next</span></a>
+        </div>
+
+    </div>
+
+</div>

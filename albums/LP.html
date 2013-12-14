@@ -1,176 +1,124 @@
-<?php include "../assets/php/head.php" ?>
+---
 
-<body class="albums">
+layout: album
+body_class: albums
 
-    <div class="wrap">
+nav:
+    -   title: LP's
+        active: true
+        href: /albums/LP
+    -   title: EP's
+        href: /albums/EP
+    -   title: Other
+        href: /albums/other
 
-        <header>
+filter:
+    -   title: Range Of Light
+        src: ../assets/img/covers/all-we-grow-thumb.jpg
+        href: range-of-light
+    -   title: All We Grow
+        src: ../assets/img/covers/all-we-grow-thumb.jpg
+        href: all-we-grow
 
-            <?php include "../assets/php/nav.php" ?>
+albums:
+    -   title: Range of Light
+        hash: range-of-light
+        release: 04.01.2014
+        cover-front: ../assets/img/covers/all-we-grow.jpg
+        blurb: The debut album from S. Carey, All We Grow, is the result of a young lifetime immersed in music.  As a band member of Bon Iver, Sean Carey witnessed a flip of his formal training to step firmly into a worldwide-touring rock band. His performance degree in classical percussion and his love for jazz drumming prepared him for a central role in the inspiring force of the Bon Iver live show.
+        tracks:
+            -   title: Move
+                duration: 3.07
+            -   title: We Fell
+                duration: 4.55
+            -   title: In The Dirt
+                duration: 5.21
+            -   title: Rothko Fields
+                duration: 1.52
+            -   title: Mothers
+                duration: 5.02
+            -   title: Action 2:45
+                duration: 3.07
+            -   title: In The Stream
+                duration: 5.10
+            -   title: All We Grow
+                duration: 4.38
+            -   title: Broken
+                duration: 6.42
 
-            <div class="page-nav">
-                <div class="main-page-nav">
-                    <a class="page-active " href="/albums/LP">LP's</a>
-                    <a class="" href="/albums/EP">EP's</a>
-                    <a class="" href="/albums/Other">Other</a>
-                </div>
-            </div>
+        links:
+            -   text: iTunes
+                href: itunes
+            -   text: CD/LP
+                href: album
+            -   text: Spotify
+                href: spotify
+    -   title: All We Grow
+        hash: all-we-grow
+        release: 08.24.2010
+        cover-front: ../assets/img/covers/all-we-grow.jpg
+        blurb: The debut album from S. Carey, All We Grow, is the result of a young lifetime immersed in music.  As a band member of Bon Iver, Sean Carey witnessed a flip of his formal training to step firmly into a worldwide-touring rock band. His performance degree in classical percussion and his love for jazz drumming prepared him for a central role in the inspiring force of the Bon Iver live show.
+        tracks:
+            -   title: Move
+                duration: 3.07
+            -   title: We Fell
+                duration: 4.55
+            -   title: In The Dirt
+                duration: 5.21
+            -   title: Rothko Fields
+                duration: 1.52
+            -   title: Mothers
+                duration: 5.02
+            -   title: Action 2:45
+                duration: 3.07
+            -   title: In The Stream
+                duration: 5.10
+            -   title: All We Grow
+                duration: 4.38
+            -   title: Broken
+                duration: 6.42
 
-        </header>
+        links:
+            -   text: iTunes
+                href: itunes
+            -   text: CD/LP
+                href: album
+            -   text: Spotify
+                href: spotify
 
-            <div class="filter">
-                <a class="filter__toggle" data-icon="&#xe000;" aria-hidden="true">Filter</a>
-                <div id="slider" class="filter__slider">
-
-                    <ul class="filter__slider-wrap">
-
-                        <li id="second-album-thumb"><a class="second-album" href="#second-album"><img src="../assets/img/covers/all-we-grow-thumb.jpg" alt="Second Album thumbnail" /><span class="filter-title">Second Album</span></a></li>
-
-                        <li id="all-we-grow-thumb"><a class="all-we-grow" href="#all-we-grow"><img src="../assets/img/covers/all-we-grow-thumb.jpg" alt="All We Grow thumbnail" /><span class="filter-title">All We Grow</span></a></li>
-
-                    </ul>
-
-                    <div id="position" class="position">
-
-                    </div>
-
-                    <div class="filter__controls">
-                        <a class="prev" data-icon="&#xe006;" aria-hidden="true"><span class="hide">Prev</span></a>
-                        <a class="next" data-icon="&#xe007;" aria-hidden="true"><span class="hide">Next</span></a>
-                    </div>
-
-                </div>
-
-            </div>
-
-        <div id="main-content" class="main-content">
-
-            <div class="album-block" id="second-album">
-
-                <h1>Range Of Light</h1>
-
-                <div class="album-release">02.13.2014</div>
-
-                <div class="album-cover"><img src="../assets/img/covers/all-we-grow.jpg" alt="All We Grow album cover" width="1425" height="1425"/></div>
-
-                <div class="album-blurb">
-                    <p>The debut album from S. Carey, <span class="italic">All We Grow</span>, is the result of a young lifetime immersed in music.  As a band member of Bon Iver, Sean Carey witnessed a flip of his formal training to step firmly into a worldwide-touring rock band. His performance degree in classical percussion and his love for jazz drumming prepared him for a central role in the inspiring force of the Bon Iver live show.</p>
-                </div>
-
-                <div class="album-tracklist">
-                    <h2>Tracklist:</h2>
-                    <div class="album-track">
-                        <span class="album-track-name">1. Move</span>
-                        <span class="album-track-duration">3:07</span>
-                    </div>
-                    <div class="album-track">
-                        <span class="album-track-name">2. We Fell</span>
-                        <span class="album-track-duration">4:55</span>
-                    </div>
-                    <div class="album-track">
-                        <span class="album-track-name">3. In The Dirt</span>
-                        <span class="album-track-duration">5:21</span>
-                    </div>
-                    <div class="album-track">
-                        <span class="album-track-name">4. Rothko Fields</span>
-                        <span class="album-track-duration">1:52</span>
-                    </div>
-                    <div class="album-track">
-                        <span class="album-track-name">5. Mothers</span>
-                        <span class="album-track-duration">5:02</span>
-                    </div>
-                    <div class="album-track">
-                        <span class="album-track-name">6. Action</span>
-                        <span class="album-track-duration">2:45</span>
-                    </div>
-                    <div class="album-track">
-                        <span class="album-track-name">7. In The Stream</span>
-                        <span class="album-track-duration">5:10</span>
-                    </div>
-                    <div class="album-track">
-                        <span class="album-track-name">8. All We Grow</span>
-                        <span class="album-track-duration">4:38</span>
-                    </div>
-                    <div class="album-track">
-                        <span class="album-track-name">9. Broken</span>
-                        <span class="album-track-duration">6:42</span>
-                    </div>
-                </div><!-- End tracklist -->
-
-                <div class="album-purchase">
-                    <h2>Purchase:</h2>
-                    <a class="button">iTunes</a>
-                    <a class="button">CD/LP</a>
-                    <a class="button">Spotify</a>
-                </div>
-
-            </div>
-
-            <div class="album-block" id="all-we-grow">
-
-                <h1>All We Grow</h1>
-
-                <div class="album-release">08.24.2010</div>
-
-                <div class="album-cover"><img src="../assets/img/covers/all-we-grow.jpg" alt="All We Grow album cover" width="1425" height="1425"/></div>
-
-                <div class="album-blurb">
-                    <p>The debut album from S. Carey, All We Grow, is the result of a young lifetime immersed in music.  As a band member of Bon Iver, Sean Carey witnessed a flip of his formal training to step firmly into a worldwide-touring rock band. His performance degree in classical percussion and his love for jazz drumming prepared him for a central role in the inspiring force of the Bon Iver live show.</p>
-                </div>
-
-                <div class="album-tracklist">
-                    <h2>Tracklist:</h2>
-                    <div class="album-track">
-                        <span class="album-track-name">1. Move</span>
-                        <span class="album-track-duration">3:07</span>
-                    </div>
-                    <div class="album-track">
-                        <span class="album-track-name">2. We Fell</span>
-                        <span class="album-track-duration">4:55</span>
-                    </div>
-                    <div class="album-track">
-                        <span class="album-track-name">3. In The Dirt</span>
-                        <span class="album-track-duration">5:21</span>
-                    </div>
-                    <div class="album-track">
-                        <span class="album-track-name">4. Rothko Fields</span>
-                        <span class="album-track-duration">1:52</span>
-                    </div>
-                    <div class="album-track">
-                        <span class="album-track-name">5. Mothers</span>
-                        <span class="album-track-duration">5:02</span>
-                    </div>
-                    <div class="album-track">
-                        <span class="album-track-name">6. Action</span>
-                        <span class="album-track-duration">2:45</span>
-                    </div>
-                    <div class="album-track">
-                        <span class="album-track-name">7. In The Stream</span>
-                        <span class="album-track-duration">5:10</span>
-                    </div>
-                    <div class="album-track">
-                        <span class="album-track-name">8. All We Grow</span>
-                        <span class="album-track-duration">4:38</span>
-                    </div>
-                    <div class="album-track">
-                        <span class="album-track-name">9. Broken</span>
-                        <span class="album-track-duration">6:42</span>
-                    </div>
-                </div><!-- End tracklist -->
-
-                <div class="album-purchase">
-                    <h2>Purchase:</h2>
-                    <a class="button">iTunes</a>
-                    <a class="button">CD/LP</a>
-                </div>
-
-            </div>
+---
 
 
-        </div><!-- End main content -->
+    {% for album in page.albums %}
+    <div class="album-block" id="{{ album.hash }}">
 
-    </div><!-- End wrap -->
+        <h1 class="center">{{ album.title }}</h1>
+        <div class="album-release">{{ album.release }}</div>
 
-    <?php include "../assets/php/footer.php" ?>
+        <div class="album-cover">
+            <img src="{{ album.cover-front }}" alt="{{ album.title }} cover" width="1425" height="1425">
+        </div>
 
-<?php include "../assets/php/foot.php" ?>
+        <div class="album-blurb">
+            <p>{{ album.blurb }}</p>
+        </div>
+
+        <div class="album-tracklist">
+        <h2>Tracklist:</h2>
+        {% for track in album.tracks %}
+        <div class="album-track">
+            <span class="album-track-name">{{ forloop.index }}.  {{ track.title }}</span>
+            <span class="album-track-duration">{{ track.duration }}</span>
+        </div>
+        {% endfor %}
+        </div>
+
+        <div class="album-purchase">
+            <h2>Links:</h2>
+            {% for link in album.links %}
+            <a class="button" href="{{ link.href }}">{{ link.text }}</a>
+            {% endfor %}
+        </div>
+    </div>
+    {% endfor %}
+

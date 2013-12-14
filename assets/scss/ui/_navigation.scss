@@ -110,7 +110,7 @@ header {
 .home .blog-nav, .home .tour-nav, .home .albums-nav, .home .media-nav, .home .store-nav, .home .contact-nav {
     display:none;
     @include at-breakpoint($medium) {
-        display:inline;
+        display:inline-block;
     }
 }
 
@@ -264,7 +264,7 @@ a.active {
 //         }
 // }
 
-.albums .main-page-nav {
+.albums .page-nav {
     a {
         width:33.33%;
         float:left;

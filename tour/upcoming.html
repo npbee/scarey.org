@@ -1,20 +1,16 @@
-<?php include "../assets/php/head.php" ?>
+---
 
-<body class="tour">
+layout: default
+body_class: tour
 
-    <div class="wrap">
+nav:
+    -   title: Current Dates
+        active: true
+        href: /tour/upcoming
+    -   title: Past Dates
+        href: /tour/past
 
-        <header>
-
-            <?php include "../assets/php/nav.php" ?>
-
-            <div class="page-nav">
-                <a class="page-active" href="/tour/upcoming">Current Dates</a>
-                <a href="/tour/past">Past Dates</a>
-            </div>
-        </header>
-
-        <div id="main-content" class="main-content clearfix">
+---
 
                 <div class="tour-year-block" id="2013">
 
@@ -49,11 +45,3 @@
                     </div>
 
                 </div>
-
-        </div><!-- End main content -->
-
-    </div><!-- End Wrap -->
-
-    <?php include "../assets/php/footer.php" ?>
-
-<?php include "../assets/php/foot.php" ?>

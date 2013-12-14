@@ -1,0 +1,7 @@
+name: 'S. Carey'
+url: 'http://scarey.org'
+
+exclude: [
+  'node_modules',
+  'config.rb',
+]
