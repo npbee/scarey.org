@@ -1,0 +1,43 @@
+/*------------------------------------*\
+    $ANIMATIONS
+\*------------------------------------*/
+
+.slide-fade-from-left {
+    @include animation(slide-fade-from-left 1s forwards);
+    opacity: 0;
+    position: relative;
+}
+
+.slide-fade-from-right {
+    @include animation(slide-fade-from-right 1s forwards);
+    opacity: 0;
+    position: relative;
+}
+
+.slide-fade-to-right {
+    @include animation(slide-fade-to-right 1s forwards);
+    opacity: 0;
+    position: relative;
+}
+
+.slide-fade-from-bottom {
+    @include animation(slide-fade-from-bottom 1s forwards);
+    opacity: 0;
+    position: relative;
+}
+
+.anim--1 {
+    @include animation-delay(0.3s);
+}
+
+.anim--2 {
+    @include animation-delay(1s);
+}
+
+.anim--3 {
+    @include animation-delay(1.5s);
+}
+
+.anim--4 {
+    @include animation-delay(2s);
+}

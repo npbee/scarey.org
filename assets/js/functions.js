@@ -14,7 +14,7 @@ FASTCLICK
 scarey.fastclick =  {
     init: function() {
         if ( matchMedia(scarey.large).matches ) {
-            return
+            return;
         } else {
             scarey.fastclick.go();
         }
@@ -360,6 +360,9 @@ scarey.stickyNav = function() {
     });
 };
 
+
+
+
 /* -----------------------------------------------
 HISTORY
 ------------------------------------------------ */
@@ -459,8 +462,8 @@ scarey.history = (function(window,undefined){
                 animating;
 
             // Set Loading
-            $body.addClass('loading');
-            //$(".main-content").addClass('loading');
+            $(".main-content").removeClass('slide-fade-from-left');
+            $(".main-content").addClass('slide-fade-to-right');
 
             // Ajax Request the Traditional Page
             $.ajax({
@@ -516,8 +519,8 @@ scarey.history = (function(window,undefined){
                     }
                     });
 
-                    //$(".main-content").removeClass("loading");
-                    $body.removeClass('loading');
+                    $(".main-content").removeClass('slide-fade-to-right');
+                    $(".main-content").addClass('slide-fade-from-left');
 
                     // Inform Google Analytics of the change
                     if ( typeof window._gaq !== 'undefined' ) {
