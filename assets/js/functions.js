@@ -462,8 +462,8 @@ scarey.history = (function(window,undefined){
                 animating;
 
             // Set Loading
-            $(".main-content").removeClass('slide-fade-from-left');
-            $(".main-content").addClass('slide-fade-to-right');
+            //$(".main-content").removeClass('slide-fade-from-left');
+            //$(".main-content").addClass('slide-fade-to-right');
 
             // Ajax Request the Traditional Page
             $.ajax({
@@ -519,8 +519,8 @@ scarey.history = (function(window,undefined){
                     }
                     });
 
-                    $(".main-content").removeClass('slide-fade-to-right');
-                    $(".main-content").addClass('slide-fade-from-left');
+                    //$(".main-content").removeClass('slide-fade-to-right');
+                    //$(".main-content").addClass('slide-fade-from-left');
 
                     // Inform Google Analytics of the change
                     if ( typeof window._gaq !== 'undefined' ) {
@@ -579,7 +579,7 @@ scarey.flipper = function() {
     album_container.on('click', function() {
         $(this).toggleClass('album-cover--flipped');
     });
-}
+};
 
 
 
@@ -605,7 +605,7 @@ PAGE INITS
 $(document).ready(function() {
     //Inits
     scarey.nav();
-    scarey.stickyNav();
+    //scarey.stickyNav();
     scarey.albumFilter();
     scarey.slider.init();
     scarey.colorbox.init();

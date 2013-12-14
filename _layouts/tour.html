@@ -1,0 +1,55 @@
+{% include head.html %}
+
+<body class="{{ page.body_class }}">
+
+    <div class="wrap">
+
+        <header>
+                {% include nav.html %}
+
+                {% if page.nav %}
+                    <div class="page-nav">
+                        {% for nav in page.nav %}
+                        <a class="{% if nav.active %}page-active{% endif %}" href="{{ nav.href }}">{{ nav.title }}</a>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
+        </header>
+
+        <div id="main-content" class="main-content">
+
+            {% if page.shows %}
+            <div class="tour-year-block" id="2013">
+
+                <div class="tour-header">
+                   <h1 class="center">Date</h1>
+                   <h1 class="center">City</h1>
+                   <h1 class="center">Venue</h1>
+                </div>
+
+                {% for show in page.shows %}
+                {% if show.marker %}
+                <h2>{{ show.marker }}</h2>
+                {% endif %}
+                <div class="tour-entry">
+                    <div class="tour-date">{{ show.date }}</div>
+                    <div class="tour-city">{{ show.city }}</div>
+                    <div class="tour-venue"><a href="{{ show.href }}">{{ show.venue }}</a></div>
+                </div>
+                {% endfor %}
+
+            </div>
+            {% else %}
+            <p class="italic center">No shows currently scheduled.</p>
+            {% endif %}
+
+                {{ content }}
+
+        </div><!-- End main content -->
+
+    </div>
+
+    {% include footer.html %}
+
+{% include foot.html %}

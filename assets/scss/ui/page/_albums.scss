@@ -32,6 +32,7 @@
 .album-cover {
     @include perspective(1000);
     margin-bottom:$base-spacing-unit*2;
+    cursor: pointer;
     img {
         max-width:100%;
         height:auto;

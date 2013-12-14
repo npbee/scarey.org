@@ -2,8 +2,7 @@
     $ANIMATIONS
 \*------------------------------------*/
 
-// Core imported by default. You can also import 'animate' for predefined animations.
-@import "animation/core";
+
 
 .slide-fade-from-left {
     @include animation(slide-fade-from-left 1s forwards);

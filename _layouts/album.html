@@ -30,7 +30,15 @@
                         <div class="album-release">{{ album.release }}</div>
 
                         <div class="album-cover">
+                            {% if album.cover-back %}
+                            <div class="flipper">
+                                <img class="front" src="{{ album.cover-front }}" alt="{{ album.title }} cover" width="1425" height="1425">
+                                <img class="back" src="{{ album.cover-back }}" alt="{{ album.title }} back cover">
+                            </div>
+                            <span class="flip-icon" data-icon="">Click to rotate</span>
+                            {% else %}
                             <img src="{{ album.cover-front }}" alt="{{ album.title }} cover" width="1425" height="1425">
+                            {% endif %}
                         </div>
 
                         <div class="album-blurb">

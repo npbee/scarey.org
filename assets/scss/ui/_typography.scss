@@ -1,13 +1,35 @@
 /*------------------------------------*\
     $TYPOGRAPHY
 \*------------------------------------*/
+/****
+* Font-face
+****/
+@font-face {
+    font-family: 'icomoon';
+    src:url('../fonts/icons/icomoon.eot');
+    src:url('../fonts/icons/icomoon.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/icons/icomoon.svg#icomoon') format('svg'),
+        url('../fonts/icons/icomoon.woff') format('woff'),
+        url('../fonts/icons/icomoon.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/****
+* Typekit prevent FOUT
+****/
+.wf-loading {
+    /* Hide the blog title and post titles while web fonts are loading */
+    visibility: hidden;
+  }
 
 
 /****
 * Font icons
 ****/
 [data-icon]:before {
-    font-family: 'entypo';
+    font-family: 'icomoon';
     content: attr(data-icon);
     speak: none;
     font-weight: normal;
