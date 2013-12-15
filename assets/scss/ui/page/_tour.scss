@@ -115,3 +115,34 @@
 .no-dates {
     text-align:center;
 }
+
+
+
+
+/****
+* Tour
+****/
+.tour-block {
+    text-align: center;
+    clear: both;
+    margin-bottom: $base-spacing-unit;
+}
+
+.tour-event {
+    display: block;
+    float: left;
+    width: 100%;
+    font-size: $milli-size;
+    margin-bottom: $base-spacing-unit/2;
+    @include at-breakpoint($medium) {
+        @include span-columns(3, 12);
+    }
+    &:nth-child(3n) {
+        @include at-breakpoint($medium) {
+            @include span-columns(3 omega, 12);
+        }
+    }
+    p:first-child {
+        @extend .bold;
+    }
+}
