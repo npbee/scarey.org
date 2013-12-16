@@ -17,11 +17,9 @@ body {
     margin: 0;
     font-family: "brandon-grotesque", "Helvetica Neue", "Helvetica Neue", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-weight:300;
-    font-size: $base-font-size;
+    font-size: #{($base-font-size/16px)*1em}/#{$line-height-ratio};
     -webkit-font-smoothing: antialiased !important;
-    //background: $background url("../img/bg_gradient.png") repeat-x;
     background: url("../img/bg--image3.jpg") fixed center center no-repeat;
-    //background-size: cover;
     overflow-x:hidden;
     color:$lightblack;
     @include at-breakpoint($medium) {
@@ -35,7 +33,6 @@ body {
 
 a {
   text-decoration:none;
-  //color:$offblack;
   color: $lightblack;
   @include transition(color .2s);
 }
@@ -49,36 +46,3 @@ a {
         outline: 0;
         color:$blue;
     }
-
-h1 {
-    margin: 0;
-    padding:0;
-}
-
-h2 {
-    margin: 0;
-}
-
-p {
-    margin:0;
-}
-
-
-b,
-strong {
-    font-weight: bold;
-}
-
-img {
-    border:0;
-}
-
-ul {
-    list-style:none;
-    margin:0;
-    padding:0;
-}
-
-iframe {
-    border:none;
-}

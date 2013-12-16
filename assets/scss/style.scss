@@ -4,14 +4,9 @@
 
 
 
-@import "ui/reset";
+@import "reset";
 @import "mixins";
 @import "vars";
-@import "ui/base";
-@import "ui/page";
-@import "ui/typography";
-@import "ui/navigation";
-@import "ui/footer";
 
 @import "ui/modules/videos";
 @import "ui/modules/clearfix";
@@ -20,6 +15,12 @@
 @import "ui/modules/absoluteCenter";
 @import "ui/modules/timeline";
 
+
+@import "ui/base";
+@import "ui/page";
+@import "ui/typography";
+@import "ui/navigation";
+@import "ui/footer";
 
 @import "ui/page/blog";
 @import "ui/page/tour";

@@ -126,21 +126,17 @@
     text-align: center;
     clear: both;
     margin-bottom: $base-spacing-unit;
+    line-height: 1;
 }
 
 .tour-event {
-    display: block;
-    float: left;
+    display: inline-block;
     width: 100%;
-    font-size: $milli-size;
-    margin-bottom: $base-spacing-unit/2;
+    //font-size: $milli-size;
+    margin: $base-spacing-unit/2 0;
     @include at-breakpoint($medium) {
-        @include span-columns(3, 12);
-    }
-    &:nth-child(3n) {
-        @include at-breakpoint($medium) {
-            @include span-columns(3 omega, 12);
-        }
+        width: 25%;
+        margin-right: -$base-font-size/3; // Fighting space between inline block elements
     }
     p:first-child {
         @extend .bold;

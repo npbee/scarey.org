@@ -19,21 +19,40 @@
 
         <div id="main-content" class="main-content">
 
-            {% if page.shows %}
+            {% if site.shows %}
 
-
-                {% for show in page.shows %}
-                <div class="tour-block">
-                    <h1 class="center">{{ show.section }}</h1>
-                    {% for show in show.dates %}
-                        <div class="tour-event">
-                            <p>{{ show.date }}</p>
-                            <p>{{ show.city }}</p>
-                            <p>{{ show.venue }}</p>
-                        </div>
+                {% if page.range == "current" %}
+                    {% for show in site.shows %}
+                        {% if show.range > site.time %}
+                            <div class="tour-block">
+                                <h1 class="center">{{ show.section }} {{ showrange }}</h1>
+                                {% for show in show.dates %}
+                                    <div class="tour-event">
+                                        <p>{{ show.date }}
+                                        <p>{{ show.city }}
+                                        <p>{{ show.venue }}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
                     {% endfor %}
-                </div>
-                {% endfor %}
+
+                {% else if page.range == "past" %}
+                    {% for show in site.shows %}
+                        {% if show.range < site.time %}
+                        <div class="tour-block">
+                            <h1 class="center">{{ show.section }} {{ showrange }}</h1>
+                            {% for show in show.dates %}
+                                <div class="tour-event">
+                                    <p>{{ show.date }}
+                                    <p>{{ show.city }}
+                                    <p>{{ show.venue }}
+                                </div>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
 
             </div>
             {% else %}
