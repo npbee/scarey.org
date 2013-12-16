@@ -8,62 +8,65 @@ exclude: [
 
 
 shows:
-    -   section: May 2013
-        range: 2013-05-01 00:00:00 -0800
-        dates:
-            -   date: May 1, 2013
-                city: Spring Green, WI
-                href: http://shittybarnsessions.com
-                venue: Shitty Barn Sessions
-            -   date: May 2, 2013
-                city: Evanston, IL
-                href: http://evanstonspace.com
-                venue: Space
-            -   date: May 4, 2013
-                city: Iowa City, IA
-                href: http://icmill.com
-                venue: The Mill
-            -   date: May 5, 2013
-                city: Milwaukee, WI
-                href: http://pabsttheater.org/events
-                venue: Turner Hall
-    -   section: August 2012
-        range: 2012-08-01 00:00:00 -0800
-        dates:
-            -   date: 08.24.2012
-                city: Minneapolis, MN
-                venue: Lake Harriet Bandshell
-    -   section: January 2012
-        range: 2012-01-01 00:00:00 -0800
-        dates:
-        -   date: 01.15.2012
-            city: Madison, WI
-            venue: High Noon Saloon
-    -   section : December 2011
-        range: 2011-12-01 00:00:00 -0800
-        dates:
-            -   date: 12.03.2011
-                marker: 2011
-                city: Ames, IA
-                venue: Maintenance Shop
-            -   date: 12.02.2011
-                city: Chicago, IL
-                venue: Schubas
-            -   date: 12.01.2011
-                city: Holland, MI
-                venue: Knickerbocker Theatre
-            -   date: 07.01.2011
-                city: Baton Rouge, LA
-                venue: Spanish Mooon
-            -   date: 06.30.2011
-                city: New Orleans, LA
-                venue: One Eye Jacks
-            -   date: 06.29.2011
-                city: Birmingham, AL
-                venue: The Bottletree
-            -   date: 06.28.2011
-                city: Atlanta, GA
-                venue: The Earl
-            -   date: 06.27.2011
-                city: Orlando, FL
-                venue: The Social
+  -
+    tourname: May 2013
+    stamp: 2013-05-01 00:00:00 -0800
+    dates:
+       -
+         date: May 1, 2013
+         city: Spring Green, WI
+         href: http://shittybarnsessions.com
+         venue: Shitty Barn Sessions
+       -
+         date: May 1, 2013
+         city: Spring Green, WI
+         href: http://shittybarnsessions.com
+         venue: Shitty Barn Sessions
+# -   date: May 4, 2013
+#     city: Iowa City, IA
+#     href: http://icmill.com
+#     venue: The Mill
+# -   date: May 5, 2013
+#     city: Milwaukee, WI
+#     href: http://pabsttheater.org/events
+#     venue: Turner Hall
+# -   section: August 2012
+#     range: 2012-08-01 00:00:00 -0800
+#     dates:
+#         -   date: 08.24.2012
+#             city: Minneapolis, MN
+#             venue: Lake Harriet Bandshell
+# -   section: January 2012
+#     range: 2012-01-01 00:00:00 -0800
+#     dates:
+#     -   date: 01.15.2012
+#         city: Madison, WI
+#         venue: High Noon Saloon
+# -   section : December 2011
+#     range: 2011-12-01 00:00:00 -0800
+#     dates:
+#         -   date: 12.03.2011
+#             marker: 2011
+#             city: Ames, IA
+#             venue: Maintenance Shop
+#         -   date: 12.02.2011
+#             city: Chicago, IL
+#             venue: Schubas
+#         -   date: 12.01.2011
+#             city: Holland, MI
+#             venue: Knickerbocker Theatre
+#         -   date: 07.01.2011
+#             city: Baton Rouge, LA
+#             venue: Spanish Mooon
+#         -   date: 06.30.2011
+#             city: New Orleans, LA
+#             venue: One Eye Jacks
+#         -   date: 06.29.2011
+#             city: Birmingham, AL
+#             venue: The Bottletree
+#         -   date: 06.28.2011
+#             city: Atlanta, GA
+#             venue: The Earl
+#         -   date: 06.27.2011
+#             city: Orlando, FL
+#             venue: The Social

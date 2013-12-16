@@ -23,9 +23,9 @@
 
                 {% if page.range == "current" %}
                     {% for show in site.shows %}
-                        {% if show.range > site.time %}
+                        {% if show.stamp > site.time %}
                             <div class="tour-block">
-                                <h1 class="center">{{ show.section }} {{ showrange }}</h1>
+                                <h1 class="center">{{ show.tourname }} {{ showrange }}</h1>
                                 {% for show in show.dates %}
                                     <div class="tour-event">
                                         <p>{{ show.date }}
