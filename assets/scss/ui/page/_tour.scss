@@ -126,7 +126,7 @@
     text-align: center;
     clear: both;
     margin-bottom: $base-spacing-unit;
-    line-height: 1;
+    line-height: 1.1;
 }
 
 .tour-event {
@@ -141,4 +141,10 @@
     p:first-child {
         @extend .bold;
     }
+}
+
+.tour-support {
+    @extend .italic;
+    margin: 0 0 $base-spacing-unit/2 0;
+    font-size: $milli-size;
 }

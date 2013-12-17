@@ -22,34 +22,39 @@
             {% if site.shows %}
 
                 {% if page.range == "current" %}
-                    {% for show in site.shows %}
-                        {% if show.stamp > site.time %}
+                    {% for tour in site.shows %}
+                        {% if tour.stamp > site.time %}
                             <div class="tour-block">
-                                <h1 class="center">{{ show.tourname }} {{ showrange }}</h1>
-                                {% for show in show.dates %}
+                                <h1 class="center">{{ tour.tourname }}</h1>
+                                {% for show in tour.dates %}
                                     <div class="tour-event">
-                                        <p>{{ show.date }}
+                                        <p>{% if show.support %}*{% endif %}{{ show.date | date: '%B %-d, %Y' }}
                                         <p>{{ show.city }}
                                         <p>{{ show.venue }}
+                                        {% if show.support %}<p class="tour-support">* w/ {{ show.support }}{% endif %}
                                     </div>
                                 {% endfor %}
                             </div>
+                        {% else %}
+                            {% if forloop.first %}<p class="italic center">No shows currently scheduled.</p>{% endif %}
                         {% endif %}
                     {% endfor %}
 
                 {% else if page.range == "past" %}
-                    {% for show in site.shows %}
-                        {% if show.range < site.time %}
-                        <div class="tour-block">
-                            <h1 class="center">{{ show.section }} {{ showrange }}</h1>
-                            {% for show in show.dates %}
-                                <div class="tour-event">
-                                    <p>{{ show.date }}
-                                    <p>{{ show.city }}
-                                    <p>{{ show.venue }}
-                                </div>
-                            {% endfor %}
-                        </div>
+                    {% for tour in site.shows %}
+                        {% if tour.stamp < site.time %}
+                            <div class="tour-block">
+                                <h1 class="center">{{ tour.tourname }}</h1>
+                                {% if tour.support %}<p class="tour-support">* w/ {{ tour.support }}</p>{% endif %}
+                                {% for show in tour.dates %}
+                                    <div class="tour-event">
+                                        <p>{% if tour.support %}*{% endif %}{{ show.date | date: '%B %-d, %Y' }}
+                                        <p>{{ show.city }}
+                                        <p>{{ show.venue }}
+                                        {% if show.support %}<p class="tour-support">* w/ {{ show.support }}{% endif %}
+                                    </div>
+                                {% endfor %}
+                            </div>
                         {% endif %}
                     {% endfor %}
                 {% endif %}

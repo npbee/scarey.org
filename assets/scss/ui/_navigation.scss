@@ -17,14 +17,14 @@ header {
     &[data-icon]:before {
         @include at-breakpoint($medium) {
             content:"";
-            font-size:1em;
+            @extend .alpha;
         }
     }
 }
 
 .main-nav {
     @include clearfix;
-    padding: $padding 0;
+    padding: $base-spacing-unit 0;
     text-transform: uppercase;
     @include at-breakpoint($medium) {
         text-align:center;
@@ -32,28 +32,25 @@ header {
     }
     a {
         &:hover {
-            color: $blue;
+            color: $brand-alt;
         }
         @include at-breakpoint($medium) {
-            padding:0 $padding/4;
+            padding:0 $base-spacing-unit/2;
             position:relative;
             top:-10px;
             //color:$grey;
         }
         @include at-breakpoint($large) {
-            padding:0 $padding/2;
+            padding:0 $base-spacing-unit/2;
             top:-20px;
         }
     }
     .logo-nav {
         @extend .gamma;
         float:left;
-        color: $orange;
+        color: $brand-main;
         margin-left:5px;
         top: 0;
-        &:hover {
-            color:$orange;
-        }
         @include at-breakpoint($medium) {
             margin-left:0;
             font-weight:100;
@@ -72,33 +69,6 @@ header {
 }
 
 
-
-/****
-* Sticky Nav
-****/
-.sticky {
-    @include at-breakpoint($large) {
-        position:fixed;
-        width:100%;
-        z-index: 1;
-        background:$background;
-        .logo-nav {
-            font-size: $h2-size;
-            font-weight: 300;
-        }
-        a {
-            top:-1px;
-        }
-        padding:$base-spacing-unit/2 0 0;
-        &:after {
-            content: url('../img/scarey_line_spacer_smaller.png');
-            display:block;
-            line-height:0;
-            position:relative;
-            top:-5px;
-        }
-    }
-}
 
 /* Hide irrelevant icons on small view */
 .blog .tour-nav, .blog .albums-nav, .blog .media-nav, .blog .store-nav, .blog .contact-nav,
@@ -120,6 +90,8 @@ header {
 }
 
 
+
+
 /****
 * Active menus
 ****/
@@ -133,14 +105,14 @@ header {
         color: lighten($lightblack, 10%);
         margin:0 0 0 $padding/4;
         @include at-breakpoint($medium) {
-            color:$blue;
-            font-size:1em;
+            color:$brand-alt;
+            font-size:$base-font-size;
             margin-left:0;
         }
 }
 
 a.active {
-    color:$blue;
+    color:$brand-alt;
 }
 
 
@@ -158,13 +130,16 @@ a.active {
     @include transform(translate3d(-100%,0,0));
     @include transition(all 200ms ease-in-out);
     a {
+        @extend .bold;
+        @extend .header-font;
         display:block;
         float:left;
         font-size: $h4-size;
-        width:50%;
+        width:100%;
         padding:$base-spacing-unit 0;
         text-align:center;
-        background:$grey;
+        background:$lightblack;
+        color: $white;
         outline:1px solid $darkgrey;
         &:nth-child(even) {
             border-right:none;
@@ -218,7 +193,7 @@ a.active {
 /* ====================PAGE NAV */
 .page-nav {
     text-align:center;
-    margin-bottom:1em;
+    margin-bottom:$base-spacing-unit;
     overflow:auto;
     //font-size:1.3em;
     position:relative;
@@ -227,7 +202,7 @@ a.active {
         color: $background;
         display:inline-block;
         font-weight: 300;
-        padding:$padding*2 0;
+        padding:$base-spacing-unit 0;
         outline:1px solid #999;
         border-bottom:1px solid transparent;
         line-height:.1em;
@@ -246,7 +221,7 @@ a.active {
             color:$offblack;
             border-right:none;
             outline:none;
-            padding:$padding*2 0 $padding;
+            padding:$base-spacing-unit 0 $base-spacing-unit/2;
         }
     }
 }

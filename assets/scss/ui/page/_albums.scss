@@ -94,7 +94,7 @@
 }
 
 .album-tracklist h2, .album-purchase h2 {
-    border-bottom:1px solid darken($darkgrey, 25%);
+    border-bottom:1px solid $lightblack;
     border-radius:3px 3px 0 0;
     margin-bottom:$base-spacing-unit/2;
     text-align:left;
@@ -118,7 +118,7 @@
         float:right;
     }
     @include at-breakpoint($medium) {
-        margin-bottom: $padding*2;
+        margin-bottom: $base-spacing-unit/2;
     }
     @include at-breakpoint($large) {
         clear:both;
@@ -185,7 +185,7 @@
 * FIlter slider
 ****/
 .filter__slider {
-    background: $grey;
+    background: $white;
     overflow: hidden;
     position: absolute;
     width: 100%;
@@ -217,7 +217,8 @@
 * FIlter controls
 ****/
 .filter__toggle {
-    background: $grey;
+    background: rgba($lightblack, 0.5);
+    color: $white;
     cursor: pointer;
     display: block;
     //float: left;
@@ -226,6 +227,7 @@
     @include transition(background 300ms);
     @include at-breakpoint($medium) {
         background: none;
+        color: $lightblack;
     }
 }
 
@@ -307,7 +309,7 @@
 ****/
 .showing {
     .filter__toggle {
-        background: $darkgrey;
+        background: lighten($lightblack, 20%);
         @include at-breakpoint($medium) {
             background: none;
         }
