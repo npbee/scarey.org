@@ -2,8 +2,8 @@ window.scarey = window.scarey || {};
 
 
 //Breakpoints
-scarey.medium = "screen and (min-width: 45em)";
-scarey.large = "screen and (min-width: 90em)";
+scarey.medium = "screen and (min-width: 40em)";
+scarey.large = "screen and (min-width: 85em)";
 
 
 
