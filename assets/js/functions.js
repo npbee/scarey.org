@@ -56,11 +56,12 @@ scarey.nav = function() {
           flyOut = $("#mobile-flyout");
 
     $(".more-nav").click(function() {
-        if ( flyOut.hasClass("slide-in")) {
-            flyOut.removeClass("slide-in").addClass("slide-out");
-        } else {
-            flyOut.addClass('slide-in')
-        }
+        // if ( flyOut.hasClass("slide-in")) {
+        //     flyOut.removeClass("slide-in").addClass("slide-out");
+        // } else {
+        //     flyOut.addClass('slide-in')
+        // }
+        flyOut.toggleClass('nav--active');
         $(".main-content").toggleClass("dark");
         event.preventDefault();
     });
