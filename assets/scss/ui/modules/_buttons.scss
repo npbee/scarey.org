@@ -2,27 +2,25 @@
     $BUTTONS
 \*------------------------------------*/
 .button {
-    background: $lightblack;
-    color: $background;
-    //@include background-image(linear-gradient($orange, darken($orange, 4%)));
-    border:1px solid transparent;
-    border-radius:3px;
+    @include transition(color .2s);
     padding:$padding $padding/2;
     text-align:center;
-    font-size:$regularfont;
+    color: $background;
     cursor:pointer;
-    font-style:normal;
-    @include transition(color .2s);
+    border:1px solid transparent;
+    border-radius:3px;
+    background: $black;
     &:hover {
-        color:$orange;
+        color:$brand-main;
     }
 }
 
+
 .dark-button {
-    background: $offblack;
-    text-align:center;
     @include transition(background .2s);
+    background: $black;
+    text-align:center;
     &:hover {
-        background: darken($offblack, 5%);
+        background: darken($black, 5%);
     }
 }

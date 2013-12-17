@@ -8,7 +8,10 @@
                 {% include nav.html %}
 
                 {% if page.nav %}
-                    <div class="page-nav">
+                    {% for items in page.nav %}
+                        {% capture itemlength %}{{ forloop.length }}{% endcapture %}
+                    {% endfor %}
+                    <div class="page-nav page-nav--{{ itemlength }}">
                         {% for nav in page.nav %}
                         <a class="{% if nav.active %}page-active{% endif %}" href="{{ nav.href }}">{{ nav.title }}</a>
                         {% endfor %}
@@ -28,7 +31,7 @@
                                 <h1 class="center">{{ tour.tourname }}</h1>
                                 {% for show in tour.dates %}
                                     <div class="tour-event">
-                                        <p>{% if show.support %}*{% endif %}{{ show.date | date: '%B %-d, %Y' }}
+                                        <p>{{ show.date | date: '%B %-d, %Y' }}{% if show.support %}*{% endif %}
                                         <p>{{ show.city }}
                                         <p>{{ show.venue }}
                                         {% if show.support %}<p class="tour-support">* w/ {{ show.support }}{% endif %}
@@ -48,7 +51,7 @@
                                 {% if tour.support %}<p class="tour-support">* w/ {{ tour.support }}</p>{% endif %}
                                 {% for show in tour.dates %}
                                     <div class="tour-event">
-                                        <p>{% if tour.support %}*{% endif %}{{ show.date | date: '%B %-d, %Y' }}
+                                        <p>{{ show.date | date: '%B %-d, %Y' }}{% if tour.support %}*{% endif %}
                                         <p>{{ show.city }}
                                         <p>{{ show.venue }}
                                         {% if show.support %}<p class="tour-support">* w/ {{ show.support }}{% endif %}

@@ -6,22 +6,9 @@ header {
 }
 
 
-.more-nav {
-    @extend .gamma;
-    border-left: 1px solid $darkgrey;
-    float: right;
-    padding: 0 $base-spacing-unit;
-    @include at-breakpoint($medium) {
-        display: none;
-    }
-    &[data-icon]:before {
-        @include at-breakpoint($medium) {
-            content:"";
-            @extend .alpha;
-        }
-    }
-}
-
+/****
+* Main Navigation
+****/
 .main-nav {
     @include clearfix;
     padding: $base-spacing-unit 0;
@@ -35,32 +22,28 @@ header {
             color: $brand-alt;
         }
         @include at-breakpoint($medium) {
-            padding:0 $base-spacing-unit/2;
             position:relative;
             top:-10px;
-            //color:$grey;
+            padding:0 $base-spacing-unit/2;
         }
         @include at-breakpoint($large) {
-            padding:0 $base-spacing-unit/2;
             top:-20px;
+            padding:0 $base-spacing-unit/2;
         }
     }
     .logo-nav {
         @extend .gamma;
-        float:left;
-        color: $brand-main;
-        margin-left:5px;
         top: 0;
+        float:left;
+        margin-left:5px;
+        color: $brand-main;
         @include at-breakpoint($medium) {
+            display:inline;
             margin-left:0;
+            float:none;
             font-weight:100;
             font-size: $kilo-size;
-            float:none;
             line-height:1;
-            display:inline;
-            &:after {
-                content:"";
-            }
         }
         @include at-breakpoint($large) {
             font-size: $mega-size;
@@ -102,13 +85,12 @@ header {
 .store a.store-nav,
 .contact a.contact-nav {
     @extend .gamma;
-        color: lighten($lightblack, 10%);
-        margin:0 0 0 $padding/4;
-        @include at-breakpoint($medium) {
-            color:$brand-alt;
-            font-size:$base-font-size;
-            margin-left:0;
-        }
+    margin:0 0 0 $padding/4;
+    @include at-breakpoint($medium) {
+        margin-left:0;
+        color:$brand-alt;
+        font-size:$base-font-size;
+    }
 }
 
 a.active {
@@ -118,50 +100,63 @@ a.active {
 
 
 
+/****
+* Nav toggle
+****/
+.more-nav {
+    @extend .gamma;
+    float: right;
+    padding: 0 $base-spacing-unit;
+    border-left: 1px solid $darkgrey;
+    @include at-breakpoint($medium) {
+        display: none;
+    }
+    &[data-icon]:before {
+        @include at-breakpoint($medium) {
+            content:"";
+            @extend .alpha;
+        }
+    }
+}
+
 
 /****
 * Mobile Flyout
 ****/
 .mobile-flyout {
-    @include at-breakpoint($medium) {display:none;}
-    width:100%;
-    position:absolute;
-    z-index:10;
     @include transform(translate3d(-100%,0,0));
-    @include transition(all 200ms ease-in-out);
+    @include transition-property(transform);
+    @include transition-duration(200ms);
+    @include transition-timing-function(ease-in-out);
+    position:absolute;
+    width:100%;
+    z-index:10;
+    @include at-breakpoint($medium) {
+        display:none;
+    }
     a {
-        @extend .bold;
         @extend .header-font;
         display:block;
-        float:left;
-        font-size: $h4-size;
-        width:100%;
         padding:$base-spacing-unit 0;
+        width:100%;
+        font-size: $h4-size;
+        color: $white;
         text-align:center;
         background:$lightblack;
-        color: $white;
-        outline:1px solid $darkgrey;
-        &:nth-child(even) {
-            border-right:none;
-        }
-        &:nth-child(5), &:nth-child(6) {
-        }
-    }
-    span {
-        text-transform:uppercase;
+        border-bottom: 1px solid lighten($black, 20%);
     }
     [data-icon]:before {
-        font-size:$h1-size;
         display:block;
-        color: $offblack;
         margin-bottom: $base-spacing-unit/2;
+        font-size:$h1-size;
+        color: $offblack;
     }
 }
 
-.dark {
-    opacity:.2 !important;
-}
 
+/****
+* For no JS navigation
+****/
 .main-nav-check {
     display:none;
 }
@@ -184,31 +179,37 @@ a.active {
         }
     }
     #main-nav-check:checked + #mobile-flyout {
-
             left:0;
             z-index:1;
     }
 }
 
-/* ====================PAGE NAV */
+
+
+/****
+* Flyout active
+****/
+.nav--active {
+    @include transform(translate3d(0,0,0));
+}
+
+
+
+/****
+* Page Navigation
+****/
 .page-nav {
-    text-align:center;
+    position:relative;
     margin-bottom:$base-spacing-unit;
     overflow:auto;
-    //font-size:1.3em;
-    position:relative;
+    text-align:center;
     a {
-        background:$lightblack;
-        color: $background;
         display:inline-block;
-        font-weight: 300;
-        padding:$base-spacing-unit 0;
-        outline:1px solid #999;
+        padding:$base-spacing-unit/2 0;
+        color: $background;
+        background:$lightblack;
         border-bottom:1px solid transparent;
-        line-height:.1em;
-        &:first-child {
-            border-left: none;
-        }
+        border-right: 1px solid lighten($black, 20%);
         &:last-child {
             border-right:none;
         }
@@ -217,29 +218,17 @@ a.active {
             @include transition(border .1s);
         }
         @include at-breakpoint($medium) {
-            background:none;
-            color:$offblack;
-            border-right:none;
-            outline:none;
             padding:$base-spacing-unit 0 $base-spacing-unit/2;
+            color:$offblack;
+            background:none;
+            border-right:none;
         }
     }
 }
 
-// .tour .page-nav {
-//     a {
-//         width:25%;
-//         float:left;
-//         @include at-breakpoint($medium) {
-//             @include container;
-//                 float:none;
-//                 width:auto;
-//                 display:inline-block;
-//             }
-//         }
-// }
 
-.albums .page-nav {
+
+.page-nav--3 {
     a {
         width:33.33%;
         float:left;
@@ -247,32 +236,34 @@ a.active {
             width:33.34%;
         }
         @include at-breakpoint($medium) {
-                @include container;
-                float:none;
-                width:auto;
-                display:inline-block;
-                &:last-child {
-                    width: auto;
-                }
+            @include container;
+            float:none;
+            width:auto;
+            display:inline-block;
+            &:last-child {
+                width: auto;
             }
+        }
     }
 }
 
-.media .page-nav, .tour .page-nav {
+
+.page-nav--2 {
     a {
         width:50%;
         float:left;
         @include at-breakpoint($medium) {
             @include container;
-                float:none;
-                width:auto;
-                display:inline-block;
-            }
+            float:none;
+            width:auto;
+            display:inline-block;
+        }
     }
 }
 
+
 a.page-active {
-    border-bottom:1px solid $orange !important;
+    border-bottom:1px solid $brand-main;
     color: $orange;
     @include at-breakpoint($medium) {
         color: $offblack;

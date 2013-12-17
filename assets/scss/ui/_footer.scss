@@ -3,40 +3,37 @@
 \*------------------------------------*/
 footer {
     @include clearfix;
-    clear: both;
     position:relative;
-    //height:6em;
-    //margin-top:-6em;
+    clear: both;
     text-align:center;
     background:$lightblack;
     a {
-        display: block;
         display: inline-block;
         padding: $base-spacing-unit;
-        width: 50%;
+        width: 100%;
         color:darken($darkgrey,20%);
-        //@include span-columns(2, 12);
+        border-bottom: 1px solid lighten($black, 20%);
         &:last-child {
-            @include at-breakpoint($medium) {
-
-            }
+            border-bottom: none;
         }
         &:hover {
-            color: $orange;
+            color: $brand-main;
         }
         @include at-breakpoint($medium) {
             padding:$base-spacing-unit $base-spacing-unit;
             width: auto;
+            border-bottom: none;
         }
     }
 }
+
+
 
 .logo-footer {
     display: none;
     @include at-breakpoint($medium) {
         display: inline-block;
         padding: $base-spacing-unit $base-spacing-unit;
-        position: static;
         width: auto;
         height: auto;
         font-size: $micro-size;

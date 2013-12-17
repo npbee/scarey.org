@@ -2,12 +2,10 @@
     $BLOG STYLES
 \*------------------------------------*/
 .blog article {
-    //@include container;
-    //@include susy-grid-background;
-    margin:$padding 0 $padding*6;
-    &:after {
-        content:"";
-        display:table;
+    @include clearfix;
+    margin:0 0 $base-spacing-unit*2;
+    h1 {
+        text-align: center;
     }
 }
 
@@ -32,12 +30,9 @@
     }
 }
 .photoset-wrap {
-   img {
-
-   }
     .photo-container {
         display:inline-block;
-        margin: $padding/4;
+        margin: $base-spacing-unit;
         border-radius:3px;
         overflow:hidden;
         @include at-breakpoint($medium) {

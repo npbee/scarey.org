@@ -8,7 +8,10 @@
                 {% include nav.html %}
 
                 {% if page.nav %}
-                    <div class="page-nav">
+                    {% for items in page.nav %}
+                        {% capture itemlength %}{{ forloop.length }}{% endcapture %}
+                    {% endfor %}
+                    <div class="page-nav page-nav--{{ itemlength }}">
                         {% for nav in page.nav %}
                         <a class="{% if nav.active %}page-active{% endif %}" href="{{ nav.href }}">{{ nav.title }}</a>
                         {% endfor %}

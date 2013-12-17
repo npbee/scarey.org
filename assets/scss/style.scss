@@ -7,20 +7,18 @@
 @import "reset";
 @import "mixins";
 @import "vars";
+@import "animations";
+
+@import "ui/page";
+@import "ui/typography";
+@import "ui/navigation";
+@import "ui/footer";
 
 @import "ui/modules/videos";
 @import "ui/modules/clearfix";
 @import "ui/modules/buttons";
 @import "ui/modules/colorbox";
-@import "ui/modules/absoluteCenter";
-@import "ui/modules/timeline";
 
-
-@import "ui/base";
-@import "ui/page";
-@import "ui/typography";
-@import "ui/navigation";
-@import "ui/footer";
 
 @import "ui/page/blog";
 @import "ui/page/tour";
@@ -29,5 +27,4 @@
 @import "ui/page/home";
 @import "ui/page/media";
 
-@import "ui/animations";
 @import "ui/helpers";
