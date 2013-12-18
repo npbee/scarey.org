@@ -28,14 +28,17 @@
                     {% for tour in site.shows %}
                         {% if tour.stamp > site.time %}
                             <div class="tour-block">
-                                <h1 class="center">{{ tour.tourname }}</h1>
+                                <h1 class="center no-margin-bottom">{{ tour.tourname }}</h1>
+                                {% if tour.support %}<p class="tour-support">* w/ {{ tour.support }}</p>{% endif %}
                                 {% for show in tour.dates %}
-                                    <div class="tour-event">
-                                        <p>{{ show.date | date: '%B %-d, %Y' }}{% if show.support %}*{% endif %}
-                                        <p>{{ show.city }}
-                                        <p>{{ show.venue }}
-                                        {% if show.support %}<p class="tour-support">* w/ {{ show.support }}{% endif %}
-                                    </div>
+                                    <a href="{{ show.href }}" class="tour-event" target="_blank">
+                                        <ul>
+                                            <li class="bold">{{ show.date | date: '%B %-d, %Y' }}{% if tour.support %}*{% endif %}
+                                            <li>{{ show.city }}
+                                            <li>{{ show.venue }}
+                                            {% if show.support %}<li class="tour-support">* w/ {{ show.support }}{% endif %}
+                                        </ul>
+                                    </a>
                                 {% endfor %}
                             </div>
                         {% else %}
@@ -47,15 +50,17 @@
                     {% for tour in site.shows %}
                         {% if tour.stamp < site.time %}
                             <div class="tour-block">
-                                <h1 class="center">{{ tour.tourname }}</h1>
+                                <h1 class="center no-margin-bottom">{{ tour.tourname }}</h1>
                                 {% if tour.support %}<p class="tour-support">* w/ {{ tour.support }}</p>{% endif %}
                                 {% for show in tour.dates %}
-                                    <div class="tour-event">
-                                        <p>{{ show.date | date: '%B %-d, %Y' }}{% if tour.support %}*{% endif %}
-                                        <p>{{ show.city }}
-                                        <p>{{ show.venue }}
-                                        {% if show.support %}<p class="tour-support">* w/ {{ show.support }}{% endif %}
-                                    </div>
+                                    <a href="{{ show.href }}" class="tour-event" target="_blank">
+                                        <ul>
+                                            <li class="bold">{{ show.date | date: '%B %-d, %Y' }}{% if tour.support %}*{% endif %}
+                                            <li>{{ show.city }}
+                                            <li>{{ show.venue }}
+                                            {% if show.support %}<li class="tour-support">* w/ {{ show.support }}{% endif %}
+                                        </ul>
+                                    </a>
                                 {% endfor %}
                             </div>
                         {% endif %}

@@ -12,19 +12,4 @@
     h1 {
         text-transform: uppercase;
     }
-    .booking-us-can {
-        @include at-breakpoint($medium) {
-            @include span-columns(6, 12);
-        }
-    }
-    .publicity-us, .tour-press {
-        @include at-breakpoint($medium) {
-            @include span-columns(4, 12);
-        }
-    }
-    .publicity-uk-eu {
-        @include at-breakpoint($medium) {
-            @include span-columns(4 omega, 12);
-        }
-    }
 }

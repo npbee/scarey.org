@@ -1,145 +1,34 @@
 /*------------------------------------*\
     $TOUR STYLES
 \*------------------------------------*/
-.tour-year-block {
-    max-width:75em;
-    margin:0 auto;
-    > h2 {
-        color: $lightblack;
-        margin: -$base-spacing-unit/2 auto 0;
-        padding: $base-spacing-unit;
-        position: relative;
-        text-align: center;
-        //width: 15%;
-        min-width: 200px;
-        &:after, &:before {
-            content: "";
-            top: 48%;
-            top: calc(50% - 0.5px);
-            width: 35%;
-            height: 1px;
-            position: absolute;
-            background: $darkgrey;
-        }
-        &:after {
-            right: 0;
-            @include at-breakpoint($medium) {
-                right: $base-spacing-unit*3;
-            }
-        }
-        &:before {
-            left: 0;
-            @include at-breakpoint($medium) {
-                left: $base-spacing-unit*3;
-            }
-        }
-    }
-}
-.tour-header {
-    clear:both;
-    h1 {
-        display:none;
-        color: $blue;
-        @include at-breakpoint($medium) {
-            display:inline-block;
-            @include span-columns(4, 12);
-            &:last-child {
-                @include span-columns(4 omega, 12);
-            }
-        }
-    }
-}
-
-.tour-entry {
-    clear:both;
-    width:100%;
-    padding:0 0 $base-spacing-unit/2 0;
-    text-align:right;
-    font-size:$h4-size;
-    @include clearfix;
-    @include at-breakpoint($medium) {
-        text-align:center;
-    }
-    div {
-        margin:$padding/4 0;
-        @include at-breakpoint($medium) {
-            display:inline-block;
-            @include span-columns(4, 12);
-            &:last-child {
-                @include span-columns(4 omega, 12);
-            }
-        }
-    }
-}
-
-.tour-date, .tour-city, .tour-venue {
-    position:relative;
-    &:before {
-        float:left;
-        color:$blue;
-        @include at-breakpoint($medium) {
-            display:none;
-        }
-    }
-}
-
-.tour-date, .tour-city {
-    @include at-breakpoint($large) {
-        &:after {
-            content:"";
-            position:absolute;
-            top:50%;
-            width:45%;
-            right: -22%;
-            border-bottom: 1px dotted $darkgrey;
-        }
-    }
-}
-
-.tour-date {
-    &:before {
-        content: "DATE";
-    }
-}
-.tour-city {
-    &:before {
-        content:"CITY";
-    }
-}
-.tour-venue {
-    &:before {
-        content:"VENUE";
-    }
-}
-
-.no-dates {
-    text-align:center;
-}
-
-
 
 
 /****
 * Tour
 ****/
 .tour-block {
-    text-align: center;
+    max-width: 65em;
+    margin: 0 auto $base-spacing-unit;
     clear: both;
-    margin-bottom: $base-spacing-unit;
-    line-height: 1.1;
+    text-align: center;
+    line-height: 1.3;
 }
 
 .tour-event {
     display: inline-block;
     width: 100%;
     //font-size: $milli-size;
-    margin: $base-spacing-unit/2 0;
+    //margin: $base-spacing-unit/2 0;
+    padding: $base-spacing-unit;
     @include at-breakpoint($medium) {
         width: 25%;
         margin-right: -$base-font-size/3; // Fighting space between inline block elements
     }
     p:first-child {
         @extend .bold;
+    }
+    ul {
+        margin: 0;
     }
 }
 

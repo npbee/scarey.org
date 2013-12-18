@@ -1,0 +1,27 @@
+/*------------------------------------*\
+    $GRID
+    * Uses susy grid
+\*------------------------------------*/
+.grid {
+    @include at-breakpoint($medium) {
+        @include container;
+    }
+}
+
+.one-half {
+    @include at-breakpoint($medium) {
+        @include span-columns(6, 12);
+        &:last-child {
+            @include span-columns(6 omega, 12);
+        }
+    }
+}
+
+.one-third {
+    @include at-breakpoint($medium) {
+        @include span-columns(4, 12);
+        &:last-child {
+            @include span-columns(4 omega, 12);
+        }
+    }
+}

@@ -49,8 +49,9 @@ body > .wrap {
     position:relative;
     margin:0 auto;
     clear:both;
-    width:95%;
-    padding-bottom:10em;
+    //width:95%;
+    padding: 0 $base-spacing-unit 10em;
+    //padding-bottom:10em;
     opacity: 1;
     @include transition(opacity 1000ms ease-in-out);
     img {
