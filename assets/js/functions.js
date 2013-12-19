@@ -108,7 +108,7 @@ scarey.albumFilter = function() {
 //Logic for determing if we use the carousel or swipe
 scarey.slider = {
     init: function() {
-        if ( matchMedia(scarey.large).matches) {
+        if ( matchMedia(scarey.medium).matches) {
             scarey.carousel();
         } else {
             scarey.swipe();
@@ -154,11 +154,32 @@ scarey.carousel = function() {
     * Initialization function
     ****/
     function init() {
+        reset();
         setItemsPerSlide();
         prepareBullets();
         prepareViewport();
+        addListeners();
     }
 
+
+    /****
+    * Reset everything
+    ****/
+    function reset() {
+
+        // Remove bullets from DOM
+        $(bullets).each(function() {
+            $(this).off('click');
+            $(this).remove();
+        });
+
+        // clear any array if it exists
+        bullets.length = 0;
+
+        // remove listeners on next, prev
+        next.off('click');
+        prev.off('click');
+    }
 
     /****
     * Setting the amount of items to show per slide
@@ -200,6 +221,8 @@ scarey.carousel = function() {
     * Prepare the viewport
     ****/
     function prepareViewport() {
+        // To do:  move the first item to left position
+
         // get the width of the viewport
         // if total items less than the amount set above,
         // then the width should just be the total items
@@ -299,33 +322,37 @@ scarey.carousel = function() {
 
 
     /****
+    * ADD LISTENERS
     * Next / Prev / Bullet click handlers
     * Next / prev always have a factor of 1
     * For bullets, get the delta between the current active bullet
     * and the one that was clicked and use that to slide
     * multiple sections
     ****/
-    next.on('click', function() {
-        slide("forward", 1, 1, setActiveBullet);
-    });
-
-    prev.on('click', function() {
-        slide("backward",-1 , 1, setActiveBullet);
-    });
-
-    $(bullets).each(function(index) {
-        $(this).on('click', function() {
-            var delta = index - active_bullet,
-                  abs_delta = Math.abs(delta);
-            if ( index === active_bullet ) {
-                return;
-            } else if ( index > active_bullet ) {
-                slide("forward", delta, abs_delta, setActiveBullet);
-            } else {
-                slide("backward", delta, abs_delta, setActiveBullet);
-            }
+    function addListeners() {
+        next.on('click', function() {
+            slide("forward", 1, 1, setActiveBullet);
         });
-    });
+
+        prev.on('click', function() {
+            slide("backward",-1 , 1, setActiveBullet);
+        });
+
+        $(bullets).each(function(index) {
+            $(this).on('click', function() {
+                console.log('clicked');
+                var delta = index - active_bullet,
+                      abs_delta = Math.abs(delta);
+                if ( index === active_bullet ) {
+                    return;
+                } else if ( index > active_bullet ) {
+                    slide("forward", delta, abs_delta, setActiveBullet);
+                } else {
+                    slide("backward", delta, abs_delta, setActiveBullet);
+                }
+            });
+        });
+    }
 
 
     /****
@@ -607,7 +634,7 @@ scarey.colorbox = {
             });
             //this.go();
         } else {
-            return
+            return;
         }
     },
     go: function() {
@@ -619,8 +646,7 @@ scarey.colorbox = {
             opacity: ".7"
         });
     }
-}
-
+};
 
 
 /****
@@ -649,7 +675,7 @@ scarey.blog = function() {
             $(this).siblings().css('text-align', 'justify');
         }
     });
-}
+};
 
 
 
