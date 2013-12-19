@@ -137,56 +137,89 @@ scarey.carousel = function() {
           pos,
           transform,
           end,
-          i;
+          i,
+          resizing = false;
 
-    //set the amount of albums to show for each slide
-    if ( matchMedia(scarey.large).matches) {
-        items_per_slide = 4;
-    } else {
-        items_per_slide = 2;
+
+    /****
+    * Global settings
+    ****/
+    var settings = {
+        itemsPerSlideBig: 4,
+        itemsPerSlideMed: 2,
+    };
+
+
+    /****
+    * Initialization function
+    ****/
+    function init() {
+        setItemsPerSlide();
+        prepareBullets();
+        prepareViewport();
     }
 
 
-    //appending one bullet for each slide
-    bullet_count = total_items / items_per_slide;
-    for ( i = 0; i < bullet_count; i++) {
-        position.append("<a class='bullet'></a>");
+    /****
+    * Setting the amount of items to show per slide
+    ****/
+    function setItemsPerSlide() {
+        if ( matchMedia(scarey.large).matches) {
+            items_per_slide = settings.itemsPerSlideBig;
+        } else {
+            items_per_slide = settings.itemsPerSlideMed;
+        }
     }
 
 
-    //push newly append bullets to an array
-    $("#position a").each(function() {
-        var bullet = $(this);
-        bullets.push(bullet);
-    });
 
-    // get the width of the viewport
-    // if total items less than the amount set above,
-    // then the width should just be the total items
-    // and we should hide the bullets and arrows
-    if ( total_items <= items_per_slide ) {
-        viewport_width = item_width * total_items;
-        $('.filter__controls').hide();
-        $(bullets).each(function() {
-            $(this).hide();
+    /****
+    * Prepare the bullets
+    ****/
+    function prepareBullets() {
+
+        // Get bullet count and append to the dom
+        bullet_count = total_items / items_per_slide;
+        for ( i = 0; i < bullet_count; i++) {
+            position.append("<a class='bullet'></a>");
+        }
+
+        // Push new bullets to array
+        $("#position a").each(function() {
+            var bullet = $(this);
+            bullets.push(bullet);
         });
-    } else {
-        viewport_width = item_width * items_per_slide;
+
+        // Set initial active bullet
+        active_bullet = 0;
+        setActiveBullet(0);
     }
 
-    //set slider viewport width
-    slider.css("width", viewport_width);
 
-    //set slider wrap width
-    sliderWrap.css("width", (item_width * total_items));
+    /****
+    * Prepare the viewport
+    ****/
+    function prepareViewport() {
+        // get the width of the viewport
+        // if total items less than the amount set above,
+        // then the width should just be the total items
+        // and we should hide the bullets and arrows
+        if ( total_items <= items_per_slide ) {
+            viewport_width = item_width * total_items;
+            $('.filter__controls').hide();
+            $(bullets).each(function() {
+                $(this).hide();
+            });
+        } else {
+            viewport_width = item_width * items_per_slide;
+        }
 
+        //set slider viewport width
+        slider.css("width", viewport_width);
 
-    // set active bullet initally to the first bullet
-    active_bullet = 0;
-
-    // call set active bullet function
-    setActiveBullet(0);
-
+        //set slider wrap width
+        sliderWrap.css("width", (item_width * total_items));
+    }
 
 
     /****
@@ -203,12 +236,10 @@ scarey.carousel = function() {
         $(bullets[active_bullet]).addClass('on');
     }
 
-
-
     // Helper for getting transform value
     function matrixToArray(matrix) {
         return matrix.substr(7, matrix.length - 8).split(', ');
-    };
+    }
 
 
     /****
@@ -292,9 +323,31 @@ scarey.carousel = function() {
                 slide("forward", delta, abs_delta, setActiveBullet);
             } else {
                 slide("backward", delta, abs_delta, setActiveBullet);
-            };
+            }
         });
     });
+
+
+    /****
+    * Listen for resize events
+    ****/
+    $(window).on('resize', function() {
+
+        if ( !resizing ) {
+            resizing = false;
+            setTimeout(init, 300);
+        }
+
+        resizing = true;
+
+    });
+
+    /****
+    * Run it!
+    ****/
+    init();
+
+
 };
 
 
