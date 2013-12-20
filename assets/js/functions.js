@@ -2,8 +2,8 @@ window.scarey = window.scarey || {};
 
 
 //Breakpoints
-scarey.medium = "screen and (min-width: 40em)";
-scarey.large = "screen and (min-width: 85em)";
+scarey.medium = "screen and (min-width: 50em)";
+scarey.large = "screen and (min-width: 80em)";
 
 
 
@@ -73,73 +73,69 @@ scarey.nav = function() {
 ALBUM FILTER
 ------------------------------------------------ */
 
-//this is specifically for showing and hiding the filter
-scarey.albumFilter = function() {
+//Logic for determing if we use the carousel or swipe
+scarey.filter = {
+    init: function() {
+        // For showing and hiding the filter
+        // We need this for both carousel and swipe
+        scarey.filter.toggle();
 
-    var filter = $('.filter'),
+        if ( matchMedia(scarey.medium).matches) {
+            scarey.carousel();
+        } else {
+            scarey.swipe();
+        }
+    },
+
+    toggle: function() {
+        var filter = $('.filter'),
           filterToggle = $('.filter__toggle'),
           filterClose = $('.filter__close'),
           filterItems = $('.filter__slider-wrap a'),
           hash = location.hash,
           target;
 
-    filterToggle.on('click', function() {
-        filter.toggleClass('showing');
-    });
+        filterToggle.on('click', function() {
+            filter.toggleClass('showing');
+        });
 
-    filterClose.on('click', function() {
-        filter.removeClass('showing');
-    });
+        filterClose.on('click', function() {
+            filter.removeClass('showing');
+        });
 
-    filterItems.on('click', function(e) {
-        target = $(this).attr('href');
-        e.preventDefault();
-        filter.removeClass('showing');
-        setTimeout(function() {
-            scarey.scroll(target);
-        },300);
+        filterItems.on('click', function(e) {
+            target = $(this).attr('href');
+            e.preventDefault();
+            filter.removeClass('showing');
+            setTimeout(function() {
+                scarey.scroll(target);
+            },300);
 
-    });
-
-
-};
-
-
-//Logic for determing if we use the carousel or swipe
-scarey.slider = {
-    init: function() {
-        if ( matchMedia(scarey.medium).matches) {
-            scarey.carousel();
-        } else {
-            scarey.swipe();
-        }
+        });
     }
 };
-
 
 /****
 * Carousel
 ****/
 scarey.carousel = function() {
-    var slider = $(".filter__slider"),
-          sliderWrap = $(".filter__slider-wrap"),
+    var slider_outer = $(".filter__slider"),
+          slider_inner = $(".filter__slider-wrap"),
           items = $(".filter__slider-wrap li"),
           item_width = items.innerWidth(),
           total_items = items.length,
           prev = $(".prev"),
           next = $(".next"),
           bullets = [],
-          bullet_count,
           active_bullet,
           position = $('#position'),
           items_per_slide,
-          pos_string,
-          pos,
+          viewport_width,
           transform,
+          timer,
+          pos,
           end,
-          i,
-          resizing = false;
-
+          i;
 
     /****
     * Global settings
@@ -147,6 +143,7 @@ scarey.carousel = function() {
     var settings = {
         itemsPerSlideBig: 4,
         itemsPerSlideMed: 2,
+        itemsPerSlideSmall: 1
     };
 
 
@@ -154,7 +151,6 @@ scarey.carousel = function() {
     * Initialization function
     ****/
     function init() {
-        reset();
         setItemsPerSlide();
         prepareBullets();
         prepareViewport();
@@ -179,6 +175,23 @@ scarey.carousel = function() {
         // remove listeners on next, prev
         next.off('click');
         prev.off('click');
+
+        // Remove any width on the slider
+        slider_outer.css('width', '');
+
+        // Remove event listener for the carousel
+        $(window).off('resize');
+
+        // remove any transforms
+        slide("reset");
+
+        // Check the screen size to choose the
+        // right implementation
+        if ( matchMedia(scarey.medium).matches ) {
+            init();
+        } else {
+            scarey.swipe();
+        }
     }
 
     /****
@@ -187,8 +200,10 @@ scarey.carousel = function() {
     function setItemsPerSlide() {
         if ( matchMedia(scarey.large).matches) {
             items_per_slide = settings.itemsPerSlideBig;
-        } else {
+        } else if ( matchMedia(scarey.medium).matches ) {
             items_per_slide = settings.itemsPerSlideMed;
+        } else {
+            items_per_slide = settings.itemsPerSlideSmall;
         }
     }
 
@@ -198,6 +213,8 @@ scarey.carousel = function() {
     * Prepare the bullets
     ****/
     function prepareBullets() {
+
+        var bullet_count;
 
         // Get bullet count and append to the dom
         bullet_count = total_items / items_per_slide;
@@ -238,10 +255,10 @@ scarey.carousel = function() {
         }
 
         //set slider viewport width
-        slider.css("width", viewport_width);
+        slider_outer.css("width", viewport_width);
 
         //set slider wrap width
-        sliderWrap.css("width", (item_width * total_items));
+        slider_inner.css("width", (item_width * total_items));
     }
 
 
@@ -272,11 +289,7 @@ scarey.carousel = function() {
     function slide(direction, increment, delta, callback) {
 
         // Use helper function to get what the current transform value is
-        // Returns a string
-        pos_string = matrixToArray(sliderWrap.css('transform'))[4];
-
-        //convert value abvoe to integer
-        pos = parseInt(pos_string, 10);
+        pos = parseInt(matrixToArray(slider_inner.css('transform'))[4], 10);
 
 
         // Setting the new transform value
@@ -298,8 +311,16 @@ scarey.carousel = function() {
         //if we're either end don't do anything
         if ( end ) {
             return;
+        } if ( direction === "reset") {
+            slider_inner.css({
+                "-webkit-transform": "translate3d(0, 0, 0)",
+                "-moz-transform": "translate3d(0,0,0)",
+                "-o-transform": "translate3d(0,0,0)",
+                "-ms-transform": "translate3d(0,0,0)",
+                "transform": "translate3d(0,0,0)",
+            });
         } else if ( Modernizr.csstransforms3d ) {
-            sliderWrap.css({
+            slider_inner.css({
                 "-webkit-transform": "translate3d(" + transform + "px, 0, 0)",
                 "-moz-transform": "translate3d(" + transform + "px,0,0)",
                 "-o-transform": "translate3d(" + transform + "px,0,0)",
@@ -308,12 +329,12 @@ scarey.carousel = function() {
             });
             callback(increment);
         } else {
-            sliderWrap.css({
-                "-webkit-transform": "translateX(" + transform + "px)",
-                "-moz-transform": "translateX(" + transform + "px)",
-                "-o-transform": "translateX(" + transform + "px)",
-                "-ms-transform": "translateX(" + transform + "px)",
-                "transform": "translateX(" + transform + "px)",
+            slider_inner.css({
+                "-webkit-transform": "left:" + transform + "px)",
+                "-moz-transform": "left:" + transform + "px)",
+                "-o-transform": "left:" + transform + "px)",
+                "-ms-transform": "left:" + transform + "px)",
+                "transform": "left:" + transform + "px)",
             });
             callback(increment);
         }
@@ -340,7 +361,6 @@ scarey.carousel = function() {
 
         $(bullets).each(function(index) {
             $(this).on('click', function() {
-                console.log('clicked');
                 var delta = index - active_bullet,
                       abs_delta = Math.abs(delta);
                 if ( index === active_bullet ) {
@@ -352,22 +372,18 @@ scarey.carousel = function() {
                 }
             });
         });
+
+        /****
+        * Listen for resize events
+        ****/
+        $(window).on('resize', function() {
+            if ( timer ) {
+                clearTimeout(timer);
+            }
+            timer = setTimeout(reset, 500);
+        });
+
     }
-
-
-    /****
-    * Listen for resize events
-    ****/
-    $(window).on('resize', function() {
-
-        if ( !resizing ) {
-            resizing = false;
-            setTimeout(init, 300);
-        }
-
-        resizing = true;
-
-    });
 
     /****
     * Run it!
@@ -382,6 +398,7 @@ scarey.carousel = function() {
 * Swipe
 ****/
 scarey.swipe =  function() {
+    console.log('here');
     var slides = $("#slider li"),
           slideLength = slides.length,
           bullet,
@@ -576,8 +593,7 @@ scarey.history = (function(window,undefined){
 
                     //reinitialize
                     scarey.nav();
-                    scarey.albumFilter();
-                    scarey.slider.init();
+                    scarey.filter.init();
                     scarey.flipper();
 
 
@@ -686,8 +702,7 @@ $(document).ready(function() {
     //Inits
     scarey.nav();
     //scarey.stickyNav();
-    scarey.albumFilter();
-    scarey.slider.init();
+    scarey.filter.init();
     scarey.colorbox.init();
     scarey.blog();
     scarey.fastclick.init();

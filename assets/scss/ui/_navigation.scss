@@ -209,13 +209,13 @@ a.active {
         padding:$base-spacing-unit/2 0;
         color: $background;
         background:$lightblack;
-        border-bottom:1px solid transparent;
+        border-bottom:2px solid transparent;
         border-right: 1px solid lighten($black, 20%);
         &:last-child {
             border-right:none;
         }
         &:hover {
-            border-bottom:1px solid $orange;
+            border-bottom:2px solid $brand-main;
             @include transition(border .1s);
         }
         @include at-breakpoint($medium) {
@@ -264,7 +264,7 @@ a.active {
 
 
 a.page-active {
-    border-bottom:1px solid $brand-main;
+    border-bottom:2px solid $brand-main;
     color: $orange;
     @include at-breakpoint($medium) {
         color: $offblack;
