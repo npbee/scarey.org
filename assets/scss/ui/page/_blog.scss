@@ -22,10 +22,12 @@
         max-width:100%;
     }
     p {
-        @extend .gamma;
-        margin:0 auto;
+        @extend .beta;
+        //margin:0 auto;
         @include at-breakpoint($large) {
-            max-width: 60%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
     }
 }
@@ -54,3 +56,38 @@
         }
     }
 }
+
+
+
+/****
+* Responsive Photoset
+****/
+.scarey-photoset {
+    padding: 10px;
+    img {
+        vertical-align: bottom;
+        opacity: 0;
+    }
+}
+
+
+/****
+* Photo set transition
+****/
+img.photoset-transition {
+    @include animation(slideUp ease-in-out forwards);
+    opacity: 1;
+}
+
+@include keyframes(slideUp) {
+    0% {
+        @include transform(translateY(-300px));
+        opacity: 1;
+    }
+    100% {
+        @include transform(translateY(0));
+        opacity: 1;
+    }
+}
+
+
