@@ -11,7 +11,7 @@
 .one-half {
     @include at-breakpoint($medium) {
         @include span-columns(6, 12);
-        &:last-child {
+        &:nth-child(even) {
             @include span-columns(6 omega, 12);
         }
     }

@@ -38,6 +38,11 @@
   }
 
 
+
+/****
+* Headers
+****/
+
 h1, h2, h3, h4, h5, h6 {
     font-family: "trajan-sans-pro",sans-serif;
     font-weight: 200;
@@ -56,6 +61,10 @@ h6, .zeta         { @include font-size($h6-size); }
 
 .header-font {
     font-family: "trajan-sans-pro",sans-serif;
+}
+
+.bordered-header {
+    border-bottom:2px solid lighten($black, 10%);
 }
 
 
@@ -116,4 +125,20 @@ pre,
 ****/
 .no-margin-bottom {
     margin-bottom: 0;
+}
+
+
+
+/****
+* Horizontal Rule
+****/
+.rule {
+    border: none;
+    height: 1px;
+    background: rgba($black, 0.5);
+    max-width: 70%
+}
+
+.rule--margin {
+    margin: $base-spacing-unit*2 auto;
 }

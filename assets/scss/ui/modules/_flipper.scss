@@ -1,0 +1,66 @@
+/*------------------------------------*\
+    $FLIPPER
+    * For 3d flip transition
+    * See Hoyas EP
+    * Markup:
+
+    <div class="flipper-wrap">
+        <div class="flipper">
+            <img class="front" src="{{ album.cover-front }}" alt="{{ album.title }} cover" width="1425" height="1425">
+            <img class="back" src="{{ album.cover-back }}" alt="{{ album.title }} back cover">
+        </div>
+        <span class="flip-icon" data-icon="">Click to rotate</span>
+    </div>
+
+
+\*------------------------------------*/
+.flipper-wrap {
+    @include perspective(1000);
+    cursor: pointer;
+    img {
+        @include backface-visibility(hidden);
+        max-width:100%;
+        height:auto;
+        width: 100%;
+    }
+    .front {
+        z-index: 2;
+    }
+    .back {
+        @include transform(rotateY(180deg));
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    @include at-breakpoint($large) {
+        margin-bottom:$base-spacing-unit*2;
+    }
+}
+
+
+.flipper {
+    position: relative;
+    @include transition(all 300ms linear);
+    @include transform-style(preserve-3d);
+}
+
+.flipper-wrap--flipped {
+    .flipper {
+        @include transform(rotateY(180deg));
+    }
+}
+
+.flip-icon {
+    color: $lightblack;
+    display: block;
+    font-size: $milli-size;
+    text-align: center;
+    @include at-breakpoint($medium) {
+        font-size: $base-font-size;
+    }
+    &[data-icon]:before {
+        padding-right: 5px;
+        position: relative;
+        top: 1px;
+    }
+}

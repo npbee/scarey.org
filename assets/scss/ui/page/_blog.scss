@@ -2,7 +2,7 @@
     $BLOG STYLES
 \*------------------------------------*/
 .post {
-    margin: $base-spacing-unit auto;
+    margin: $base-spacing-unit auto $base-spacing-unit*3;
     max-width: 700px;
     h1 {
         text-align: center;

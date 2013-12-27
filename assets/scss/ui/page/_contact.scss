@@ -2,7 +2,8 @@
     $CONTACT STYLES
 \*------------------------------------*/
 .contact-block {
-    @extend %sass-margin-bottom;
+    //@extend %sass-margin-bottom;
+    margin-bottom: $base-spacing-unit*2;
     text-align:center;
     word-wrap: break-word;
     clear:both;

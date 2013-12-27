@@ -26,48 +26,51 @@
 
         <div id="main-content" class="main-content">
 
-                    {% for album in page.albums %}
-                    <div class="album-block" id="{{ album.hash }}">
+                {% for album in page.albums %}
+                <section class="album-block" id="{{ album.hash }}">
 
-                        <h1 class="center no-margin-bottom">{{ album.title }}</h1>
-                        <div class="album-release">{{ album.release }}</div>
+                    <h1>{{ album.title }}</h1>
+                    <h2 class="album-release">{{ album.release }}</h2>
 
-                        <div class="album-cover">
-                            {% if album.cover-back %}
-                            <div class="flipper">
-                                <img class="front" src="{{ album.cover-front }}" alt="{{ album.title }} cover" width="1425" height="1425">
-                                <img class="back" src="{{ album.cover-back }}" alt="{{ album.title }} back cover">
-                            </div>
-                            <span class="flip-icon" data-icon="">Click to rotate</span>
-                            {% else %}
-                            <img src="{{ album.cover-front }}" alt="{{ album.title }} cover" width="1425" height="1425">
-                            {% endif %}
+                    <div class="album-cover flipper-wrap one-half">
+                        {% if album.cover-back %}
+                        <div class="flipper">
+                            <img class="front" src="{{ album.cover-front }}" alt="{{ album.title }} cover" width="1425" height="1425">
+                            <img class="back" src="{{ album.cover-back }}" alt="{{ album.title }} back cover">
                         </div>
+                        <span class="flip-icon" data-icon="">Click to rotate</span>
+                        {% else %}
+                        <img src="{{ album.cover-front }}" alt="{{ album.title }} cover" width="1425" height="1425">
+                        {% endif %}
+                    </div>
 
-                        <div class="album-blurb">
-                            <p>{{ album.blurb }}</p>
-                        </div>
+                    <div class="album-blurb one-half">
+                        <p>{{ album.blurb }}</p>
+                    </div>
 
-                        <div class="album-tracklist">
-                        <h2>Tracklist:</h2>
-                        {% for track in album.tracks %}
-                        <div class="album-track">
-                            <span class="album-track-name">{{ forloop.index }}.  {{ track.title }}</span>
-                            <span class="album-track-duration">{{ track.duration }}</span>
-                        </div>
-                        {% endfor %}
-                        </div>
-
-                        <div class="album-purchase">
-                            <h2>Links:</h2>
-                            {% for link in album.links %}
-                            <a class="button" href="{{ link.href }}">{{ link.text }}</a>
-                            {% endfor %}
-                        </div>
+                    <div class="album-tracklist one-half">
+                    <h2 class="bordered-header">Tracklist:</h2>
+                    {% for track in album.tracks %}
+                    <div class="album-track">
+                        <span class="album-track-name">{{ forloop.index }}.  {{ track.title }}</span>
+                        <span class="album-track-duration">{{ track.duration }}</span>
                     </div>
                     {% endfor %}
+                    </div>
 
-                    {{ content }}
+                    <div class="album-links one-half">
+                        <h2 class="bordered-header">Links:</h2>
+                        {% for link in album.links %}
+                        <a class="button" href="{{ link.href }}">{{ link.text }}</a>
+                        {% endfor %}
+                    </div>
+
+                </section>
+
+                <hr class="rule rule--margin">
+                {% endfor %}
+
+                {{ content }}
 
         </div><!-- End main content -->
 
