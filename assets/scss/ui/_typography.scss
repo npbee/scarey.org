@@ -64,7 +64,7 @@ h6, .zeta         { @include font-size($h6-size); }
 }
 
 .bordered-header {
-    border-bottom:2px solid lighten($black, 10%);
+    border-bottom:1px solid lighten($black, 10%);
 }
 
 
