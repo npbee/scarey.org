@@ -1,14 +1,13 @@
 /*------------------------------------*\
     $BLOG STYLES
 \*------------------------------------*/
-.blog article {
-    @include clearfix;
-    margin:0 0 $base-spacing-unit*2;
+.post {
+    margin: $base-spacing-unit auto;
+    max-width: 700px;
     h1 {
         text-align: center;
     }
 }
-
 
 .post-title {
     float:right;
@@ -22,26 +21,23 @@
         max-width:100%;
     }
     p {
-        @extend .beta;
-        //margin:0 auto;
-        @include at-breakpoint($large) {
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+        @extend .gamma;
+        text-align: left;
+        padding: 5px;
+        margin-bottom: 0;
+        &:first-of-type {
+            &:before {
+                content: "";
+                display: block;
+                margin: $base-spacing-unit 0;
+                width: 40px;
+                height: 1px;
+                background: lighten($black, 30%);
+            }
         }
     }
 }
-.photoset-wrap {
-    .photo-container {
-        display:inline-block;
-        margin: $base-spacing-unit;
-        border-radius:3px;
-        overflow:hidden;
-        @include at-breakpoint($medium) {
-            width:250px;
-        }
-    }
-}
+
 
 .audio-player {
     embed {
@@ -59,11 +55,12 @@
 
 
 
+
 /****
 * Responsive Photoset
 ****/
 .scarey-photoset {
-    padding: 10px;
+    padding: 5px;
     img {
         vertical-align: bottom;
         opacity: 0;
@@ -74,19 +71,20 @@
 /****
 * Photo set transition
 ****/
-img.photoset-transition {
-    @include animation(slideUp ease-in-out forwards);
-    opacity: 1;
+.photoset-transition {
+    @include animation(slide-fade-from-bottom 200ms forwards);
 }
 
-@include keyframes(slideUp) {
-    0% {
-        @include transform(translateY(-300px));
-        opacity: 1;
-    }
-    100% {
-        @include transform(translateY(0));
-        opacity: 1;
+
+
+/****
+* Load More button
+****/
+.load-more {
+    margin: $base-spacing-unit*2 auto;
+    width: 100%;
+    @include at-breakpoint($medium) {
+        max-width: 700px;
     }
 }
 

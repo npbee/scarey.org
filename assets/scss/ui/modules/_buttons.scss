@@ -3,7 +3,8 @@
 \*------------------------------------*/
 .button {
     @include transition(color .2s);
-    padding:$padding $padding/2;
+    display: block;
+    padding: $base-spacing-unit $base-spacing-unit/2;
     text-align:center;
     color: $background;
     cursor:pointer;
@@ -12,6 +13,23 @@
     background: $black;
     &:hover {
         color:$brand-main;
+    }
+    &.loading {
+        padding-right: $base-spacing-unit;
+        &:after {
+            content: "";
+            position: relative;
+            left: $base-spacing-unit/2;
+            display: inline-block;
+            vertical-align: middle;
+            width: $base-spacing-unit/2;
+            height: $base-spacing-unit/2;
+            background: url('../img/loader.gif') no-repeat;
+            background-size: cover;
+        }
+    }
+    @include at-breakpoint($medium) {
+        padding: $base-spacing-unit/2;
     }
 }
 

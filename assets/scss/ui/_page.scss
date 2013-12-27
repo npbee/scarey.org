@@ -55,8 +55,8 @@ body > .wrap {
     opacity: 1;
     @include transition(opacity 1000ms ease-in-out);
     img {
-        outline: 1px solid $grey;
-        border-radius:3px;
+        //outline: 1px solid $grey;
+        //border-radius:3px;
     }
     @include at-breakpoint($medium) {
         @include container;

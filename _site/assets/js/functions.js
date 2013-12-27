@@ -637,9 +637,12 @@ scarey.history = (function(window,undefined){
 })(window); // end closure
 
 
-/* -----------------------------------------------
-COLORBOX
------------------------------------------------- */
+
+
+
+/*------------------------------------*\
+    $COLORBOX
+\*------------------------------------*/
 scarey.colorbox = {
     init: function() {
 
@@ -665,10 +668,9 @@ scarey.colorbox = {
 };
 
 
-/****
-* Album flipper
-* Check for animations and hide "click to flip" if not supported
-****/
+/*------------------------------------*\
+    $Album Flipper
+\*------------------------------------*/
 scarey.flipper = function() {
     var album_container = $(".album-cover");
 
@@ -680,27 +682,14 @@ scarey.flipper = function() {
 
 
 
-/* -----------------------------------------------
-BLOG
------------------------------------------------- */
-scarey.blog = function() {
-    // $('.post-content p').each(function() {
-    //     var plength = $(this).text().split(' ').length;
-    //     if (plength >= 10) {
-    //         $(this).css('text-align', 'justify');
-    //         $(this).siblings().css('text-align', 'justify');
-    //     }
-    // });
-};
-
-
 /*------------------------------------*\
     $Photo set
 \*------------------------------------*/
 scarey.photoset = function() {
-    console.log('photoset');
     $('.scarey-photoset').collagePlus({
-        'fadeSpeed' : 200
+        'fadeSpeed' : 200,
+        'effect' : 'photoset-transition',
+        'direction' : 'vertical'
     });
 };
 
@@ -709,7 +698,6 @@ scarey.resize = function() {
     $(window).resize(function() {
         if ( timer ) {
             clearTimeout(timer);
-            console.log('clearing');
         }
         timer = setTimeout(scarey.photoset, 200);
     });
@@ -717,6 +705,31 @@ scarey.resize = function() {
 };
 
 
+
+/*------------------------------------*\
+   $Load More Posts
+\*------------------------------------*/
+scarey.loadMore = function() {
+    var button = $("#load-more");
+    var page = 1;
+    var loaded;
+
+    button.on('click', function() {
+        $(this).addClass('loading');
+        page++;
+        $.ajax({
+            url: '/page/' + page,
+            dataType: 'html',
+            success: function(response) {
+                button.removeClass('loading');
+                var target = $(response).find('.post');
+                target.addClass('slide-fade-from-bottom');
+                $(target).insertBefore(button);
+                setTimeout(scarey.photoset, 300);
+            }
+        });
+    });
+};
 
 
 
@@ -726,16 +739,14 @@ PAGE INITS
 $(document).ready(function() {
     //Inits
     scarey.nav();
-    //scarey.stickyNav();
     if ( $('body').hasClass('albums') ) {
         scarey.filter.init();
     }
-
     scarey.colorbox.init();
-    scarey.blog();
     scarey.fastclick.init();
     scarey.flipper();
     scarey.resize();
+    scarey.loadMore();
 });
 
 
