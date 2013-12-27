@@ -672,10 +672,10 @@ scarey.colorbox = {
     $Album Flipper
 \*------------------------------------*/
 scarey.flipper = function() {
-    var album_container = $(".album-cover");
+    var container = $(".flipper-wrap");
 
-    album_container.on('click', function() {
-        $(this).toggleClass('album-cover--flipped');
+    container.on('click', function() {
+        $(this).toggleClass('flipper-wrap--flipped');
     });
 };
 
