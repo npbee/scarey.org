@@ -176,3 +176,14 @@
         @include transform(translateY(0));
     }
 }
+
+
+.no-cssanimations {
+    .slide-fade-from-left,
+    .slide-fade-from-right,
+    .slide-fade-to-right,
+    .slide-fade-from-bottom {
+        opacity: 1;
+    }
+
+}

@@ -63,7 +63,9 @@
     padding: 5px;
     img {
         vertical-align: bottom;
-        opacity: 0;
+        //opacity: 0;
+        background: url('../img/loader.gif') center center no-repeat;
+        //background-size: cover;
     }
 }
 
@@ -73,6 +75,7 @@
 ****/
 .photoset-transition {
     @include animation(slide-fade-from-bottom 200ms forwards);
+    background: none;
 }
 
 

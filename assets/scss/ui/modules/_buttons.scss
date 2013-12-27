@@ -31,6 +31,9 @@
     @include at-breakpoint($medium) {
         padding: $base-spacing-unit/2;
     }
+    &:disabled {
+        background: rgba($black, 0.5);
+    }
 }
 
 

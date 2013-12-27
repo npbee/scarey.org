@@ -64,3 +64,13 @@
         top: 1px;
     }
 }
+
+
+.no-csstransforms3d {
+    .back {
+        display: none;
+    }
+    .flip-icon {
+        display: none;
+    }
+}
