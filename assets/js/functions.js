@@ -555,8 +555,6 @@ scarey.history = (function(window,undefined){
                 animating;
 
             // Set Loading
-            //$(".main-content").removeClass('slide-fade-from-left');
-
             $(".main-content").addClass('slide-fade-to-right');
 
             setTimeout(fetchPage, 300);
@@ -568,19 +566,17 @@ scarey.history = (function(window,undefined){
                     success: function (data) {
                         // Prepare
                         var $data = $(documentHtml(data)),
-                            $dataBody = $data.find('.document-body:first'),
-                            $dataContent = $dataBody.find(contentSelector).filter(':first'),
-                            contentHtml, $scripts;
+                              $dataBody = $data.find('.document-body:first'),
+                              $dataContent = $dataBody.find(contentSelector).filter(':first'),
+                              contentHtml, $scripts;
 
                         // Fetch the scripts
-
                         $scripts = $dataContent.find('.document-script');
                         if ($scripts.length) {
                             $scripts.detach();
                         }
 
                         // Fetch the content
-
                         contentHtml = $dataContent.html() || $data.html();
                         if (!contentHtml) {
                             document.location.href = url;
@@ -595,7 +591,6 @@ scarey.history = (function(window,undefined){
                         scarey.filter.init();
                         scarey.flipper();
 
-
                         // Update the title
                         document.title = $data.find('.document-title:first').text();
                         try {
@@ -604,15 +599,15 @@ scarey.history = (function(window,undefined){
 
                         //Add the scripts
                         $scripts.each(function(){
-                        var $script = $(this), scriptText = $script.text(), scriptSrc = $script.attr('src'), scriptNode = document.createElement('script');
-                        if(scriptSrc) {
-                        scriptNode.src = scriptSrc;
-                        contentNode.appendChild(scriptNode);
-                        }
-                        else{
-                        scriptNode.appendChild(document.createTextNode(scriptText));
-                        contentNode.appendChild(scriptNode);
-                        }
+                            var $script = $(this), scriptText = $script.text(), scriptSrc = $script.attr('src'), scriptNode = document.createElement('script');
+                            if(scriptSrc) {
+                                scriptNode.src = scriptSrc;
+                                contentNode.appendChild(scriptNode);
+                            }
+                            else{
+                                scriptNode.appendChild(document.createTextNode(scriptText));
+                                contentNode.appendChild(scriptNode);
+                            }
                         });
 
                         //$(".main-content").removeClass('slide-fade-to-right');
@@ -739,6 +734,45 @@ scarey.loadMore = function() {
 
 
 
+/*------------------------------------*\
+    $Local Storage
+    * If you're a new visitor, show the home page animation
+    * If not, skip it
+\*------------------------------------*/
+scarey.visitorCheck = function() {
+
+    var $body = $('body');
+    var slidefromleft1 = $('#slide-from-left-1');
+    var slidefromleft2 = $('#slide-from-left-2');
+    var slidefromright = $("#slide-from-right");
+    var slidefrombottom = $("#slide-from-bottom");
+    var slidefrombottom2 = $("#slide-from-bottom-2");
+
+    if ( 'localStorage' in window && window.localStorage !== null ) {
+
+        if ( !localStorage.getItem('returning_visitor') === true ) {
+
+            slidefromleft1.addClass("slide-fade-from-left");
+            slidefromleft2.addClass("slide-fade-from-left");
+            slidefromright.addClass("slide-fade-from-right");
+            slidefrombottom.addClass("slide-fade-from-bottom");
+            slidefrombottom2.addClass("slide-fade-from-bottom");
+
+            localStorage.setItem("returning_visitor", true);
+
+        } else {
+            slidefromleft1.css("opacity", 1);
+            slidefromleft2.css("opacity", 1);
+            slidefromright.css("opacity", 1);
+            slidefrombottom.css("opacity", 1);
+            slidefrombottom2.css("opacity", 1);
+        }
+        //localStorage.clear();
+    }
+
+};
+
+
 /* -----------------------------------------------
 PAGE INITS
 ------------------------------------------------ */
@@ -753,6 +787,7 @@ $(document).ready(function() {
     scarey.flipper();
     scarey.resize();
     scarey.loadMore();
+    scarey.visitorCheck();
 });
 
 
