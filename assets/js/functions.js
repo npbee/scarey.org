@@ -556,74 +556,80 @@ scarey.history = (function(window,undefined){
 
             // Set Loading
             //$(".main-content").removeClass('slide-fade-from-left');
-            //$(".main-content").addClass('slide-fade-to-right');
+
+            $(".main-content").addClass('slide-fade-to-right');
+
+            setTimeout(fetchPage, 300);
 
             // Ajax Request the Traditional Page
-            $.ajax({
-                url: url,
-                success: function (data) {
-                    // Prepare
-                    var $data = $(documentHtml(data)),
-                        $dataBody = $data.find('.document-body:first'),
-                        $dataContent = $dataBody.find(contentSelector).filter(':first'),
-                        contentHtml, $scripts;
+            function fetchPage() {
+                    $.ajax({
+                    url: url,
+                    success: function (data) {
+                        // Prepare
+                        var $data = $(documentHtml(data)),
+                            $dataBody = $data.find('.document-body:first'),
+                            $dataContent = $dataBody.find(contentSelector).filter(':first'),
+                            contentHtml, $scripts;
 
-                    // Fetch the scripts
+                        // Fetch the scripts
 
-                    $scripts = $dataContent.find('.document-script');
-                    if ($scripts.length) {
-                        $scripts.detach();
-                    }
+                        $scripts = $dataContent.find('.document-script');
+                        if ($scripts.length) {
+                            $scripts.detach();
+                        }
 
-                    // Fetch the content
+                        // Fetch the content
 
-                    contentHtml = $dataContent.html() || $data.html();
-                    if (!contentHtml) {
+                        contentHtml = $dataContent.html() || $data.html();
+                        if (!contentHtml) {
+                            document.location.href = url;
+                            return false;
+                        }
+
+                        // Update the content
+                        $content.html(contentHtml).ajaxify();
+
+                        //reinitialize
+                        scarey.nav();
+                        scarey.filter.init();
+                        scarey.flipper();
+
+
+                        // Update the title
+                        document.title = $data.find('.document-title:first').text();
+                        try {
+                            document.getElementsByTagName('title')[0].innerHTML = document.title.replace('<', '&lt;').replace('>', '&gt;').replace(' & ', ' &amp; ');
+                        } catch (Exception) {}
+
+                        //Add the scripts
+                        $scripts.each(function(){
+                        var $script = $(this), scriptText = $script.text(), scriptSrc = $script.attr('src'), scriptNode = document.createElement('script');
+                        if(scriptSrc) {
+                        scriptNode.src = scriptSrc;
+                        contentNode.appendChild(scriptNode);
+                        }
+                        else{
+                        scriptNode.appendChild(document.createTextNode(scriptText));
+                        contentNode.appendChild(scriptNode);
+                        }
+                        });
+
+                        //$(".main-content").removeClass('slide-fade-to-right');
+                        $(".main-content").addClass('slide-fade-from-left');
+
+                        // Inform Google Analytics of the change
+                        if ( typeof window._gaq !== 'undefined' ) {
+                            window._gaq.push(['_trackPageview', relativeUrl]);
+                        }
+                    },
+                    error: function (errorThrown) {
                         document.location.href = url;
                         return false;
                     }
+                }); // end Ajax
 
-                    // Update the content
-                    $content.html(contentHtml).ajaxify();
-
-                    //reinitialize
-                    scarey.nav();
-                    scarey.filter.init();
-                    scarey.flipper();
-
-
-                    // Update the title
-                    document.title = $data.find('.document-title:first').text();
-                    try {
-                        document.getElementsByTagName('title')[0].innerHTML = document.title.replace('<', '&lt;').replace('>', '&gt;').replace(' & ', ' &amp; ');
-                    } catch (Exception) {}
-
-                    //Add the scripts
-                    $scripts.each(function(){
-                    var $script = $(this), scriptText = $script.text(), scriptSrc = $script.attr('src'), scriptNode = document.createElement('script');
-                    if(scriptSrc) {
-                    scriptNode.src = scriptSrc;
-                    contentNode.appendChild(scriptNode);
-                    }
-                    else{
-                    scriptNode.appendChild(document.createTextNode(scriptText));
-                    contentNode.appendChild(scriptNode);
-                    }
-                    });
-
-                    //$(".main-content").removeClass('slide-fade-to-right');
-                    //$(".main-content").addClass('slide-fade-from-left');
-
-                    // Inform Google Analytics of the change
-                    if ( typeof window._gaq !== 'undefined' ) {
-                        window._gaq.push(['_trackPageview', relativeUrl]);
-                    }
-                },
-                error: function (errorThrown) {
-                    document.location.href = url;
-                    return false;
-                }
-            }); // end Ajax
+            }
 
         }); // end onStateChange
 
