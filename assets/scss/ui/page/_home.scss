@@ -6,6 +6,15 @@
     .logo-nav {
         visibility: hidden;
     }
+    // Hiding for animation
+    #slide-from-left-1,
+    #slide-from-left-2,
+    #slide-from-right,
+    #slide-from-bottom,
+    #slide-from-bottom-2 {
+        @include transition(opacity 100ms);
+        opacity: 0;
+    }
     .headline-container {
         margin: 0 auto;
         text-align: center;
@@ -78,4 +87,8 @@
             padding: 0;
         }
     }
+}
+
+.no-js .headline {
+    opacity: 1;
 }

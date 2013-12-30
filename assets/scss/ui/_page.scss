@@ -24,6 +24,7 @@ body {
     -webkit-font-smoothing: antialiased !important;
     color:$lightblack;
     background: url("../img/bg.jpg") fixed top center no-repeat;
+    background-size: cover;
     @include at-breakpoint($medium) {
         overflow:auto;
     }
