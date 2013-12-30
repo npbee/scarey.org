@@ -653,7 +653,7 @@ scarey.colorbox = {
         }
     },
     go: function() {
-        $(".photo-container a").colorbox({
+        $(".colorbox-container a").colorbox({
             rel : "group",
             scalePhotos: true,
             maxHeight: "900px",
