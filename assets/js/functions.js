@@ -793,7 +793,8 @@ scarey.photoGrid = function() {
           $loadMore = $("#load-more--instagram"),
           count = 0,
           max_id = '',
-          images = [];
+          images = [],
+          isMobile = false;
 
 
     // Initialize
@@ -811,7 +812,8 @@ scarey.photoGrid = function() {
         } else if ( matchMedia(scarey.medium).matches ) {
             count = 12;
         } else {
-            count = 6;
+            count = 2;
+            isMobile = true;
         }
 
     }
@@ -875,7 +877,8 @@ scarey.photoGrid = function() {
     }
 
     function appendImage(thumbnail, standard, caption) {
-        $grid.append('<a title="' + caption + '" href="' + standard + '"><img src="' + thumbnail + '"></a>');
+        var thumb = isMobile ? standard : thumbnail;
+        $grid.append('<a title="' + caption + '" href="' + standard + '"><img src="' + thumb + '"></a>');
     }
 
 
