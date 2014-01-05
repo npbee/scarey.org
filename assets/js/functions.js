@@ -3,7 +3,23 @@ window.scarey = window.scarey || {};
 
 //Breakpoints
 scarey.medium = "screen and (min-width: 50em)";
-scarey.large = "screen and (min-width: 80em)";
+scarey.large = "screen and (min-width: 75em)";
+
+
+/*------------------------------------*\
+    Debouncer
+\*------------------------------------*/
+scarey.debounce = function(event, callback, timeout) {
+    var timer;
+    var duration = timeout || 500;
+    $(window).on(event, function() {
+        if ( timer ) {
+            clearTimeout(timer);
+        }
+        timer = setTimeout(callback, duration);
+    });
+};
+
 
 
 
@@ -127,7 +143,6 @@ scarey.carousel = function() {
           items_per_slide,
           viewport_width,
           transform,
-          timer,
           pos,
           end,
           i;
@@ -371,12 +386,8 @@ scarey.carousel = function() {
         /****
         * Listen for resize events
         ****/
-        $(window).on('resize', function() {
-            if ( timer ) {
-                clearTimeout(timer);
-            }
-            timer = setTimeout(reset, 500);
-        });
+        scarey.debounce('resize', reset, 500);
+
 
     }
 
@@ -393,7 +404,6 @@ scarey.carousel = function() {
 * Swipe
 ****/
 scarey.swipe =  function() {
-    console.log('here');
     var slides = $("#slider li"),
           slideLength = slides.length,
           bullet,
@@ -590,6 +600,7 @@ scarey.history = (function(window,undefined){
                         scarey.nav();
                         scarey.filter.init();
                         scarey.flipper();
+                        scarey.photoGrid();
 
                         // Update the title
                         document.title = $data.find('.document-title:first').text();
@@ -682,22 +693,16 @@ scarey.flipper = function() {
     $Photo set
 \*------------------------------------*/
 scarey.photoset = function() {
+    if ( !$('.scarey-photoset') ) {
+        return;
+    }
     $('.scarey-photoset').collagePlus({
         'fadeSpeed' : 200,
         'effect' : 'photoset-transition',
         'direction' : 'vertical'
     });
-};
 
-scarey.resize = function() {
-    var timer = null;
-    $(window).resize(function() {
-        if ( timer ) {
-            clearTimeout(timer);
-        }
-        timer = setTimeout(scarey.photoset, 200);
-    });
-
+    scarey.debounce('resize', scarey.photoset, 500);
 };
 
 
@@ -773,21 +778,135 @@ scarey.visitorCheck = function() {
 };
 
 
+/*------------------------------------*\
+    $Photo Grid
+    * Uses Instagram API to display photo grid
+\*------------------------------------*/
+scarey.photoGrid = function() {
+
+    // If we're not on the photo page, return
+    if ( !$('#photo-grid') ) {
+        return;
+    }
+
+    var $grid = $("#photo-grid"),
+          $loadMore = $("#load-more--instagram"),
+          count = 0,
+          max_id = '',
+          images = [];
+
+
+    // Initialize
+    function init() {
+        checkCount();
+        fetchImages();
+    }
+
+    // Set the amount of images to get based on breakpoints
+    // Also set the max_id for Instagram API, used to request the next images
+    // Based on what we've already downloaded
+    function checkCount() {
+        if ( matchMedia(scarey.large).matches ) {
+            count = 18;
+        } else if ( matchMedia(scarey.medium).matches ) {
+            count = 12;
+        } else {
+            count = 6;
+        }
+
+    }
+
+
+    function fetchImages() {
+
+        // Add the loading class while requesting from Instagram
+        $grid.removeClass('grid--loaded');
+        $grid.addClass('grid--loading');
+
+        var request = $.ajax({
+            url: '/assets/php/instagram.php',
+            type: 'POST',
+            data: ({
+                count: count,
+                max_id: max_id
+            }),
+            dataType: 'json'
+        });
+
+        request.always( function() {
+            $grid.removeClass('grid--loading');
+        });
+
+        request.done(function( response ) {
+
+            // Remove loading class,
+            // Add loaded class
+            // Enable and show load more button
+            $grid.removeClass('grid--loading');
+            $grid.addClass('grid--loaded');
+            $loadMore.prop('disabled', false);
+            $loadMore.css('opacity', 1);
+
+            var resp = JSON.parse(response);
+            var thumbs = [];
+            var i;
+
+            for ( i = 0; i < count; i++ ) {
+                var imageReq = resp.data[i].images;
+
+                // Check for captions
+                var caption = resp.data[i].caption ? resp.data[i].caption.text : '';
+                images.push(imageReq.thumbnail.url);
+
+                // Store the max_id for later
+                max_id = resp.pagination.next_max_id;
+
+                appendImage(imageReq.thumbnail.url, imageReq.standard_resolution.url, caption);
+            }
+
+            scarey.colorbox.init();
+
+        });
+
+        request.fail(function( jqXHR, textStatus ) {
+            console.log('request failed :' + textStatus);
+            $grid.append("<p>There was an error requesting the images from Instagram</p>");
+        });
+    }
+
+    function appendImage(thumbnail, standard, caption) {
+        $grid.append('<a title="' + caption + '" href="' + standard + '"><img src="' + thumbnail + '"></a>');
+    }
+
+
+    // Listener for load more
+    $loadMore.on('click', function() {
+        fetchImages();
+    });
+
+    // Run it
+    init();
+
+
+};
+
 /* -----------------------------------------------
 PAGE INITS
 ------------------------------------------------ */
 $(document).ready(function() {
     //Inits
     scarey.nav();
+
     if ( $('body').hasClass('albums') ) {
         scarey.filter.init();
     }
     scarey.colorbox.init();
     scarey.fastclick.init();
     scarey.flipper();
-    scarey.resize();
     scarey.loadMore();
     scarey.visitorCheck();
+    scarey.photoGrid();
+
 });
 
 
