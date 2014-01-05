@@ -42,10 +42,13 @@
 /****
 * Headers
 ****/
+.header-font {
+    font-family: "p22-underground-pc",sans-serif;
+    font-weight: 100;
+}
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: "trajan-sans-pro",sans-serif;
-    font-weight: 200;
+    @extend .header-font;
 }
 
 h1, .alpha      { @include font-size($h1-size); }
@@ -59,9 +62,7 @@ h6, .zeta         { @include font-size($h6-size); }
 .mega { @include font-size($mega-size); }
 .kilo { @include font-size($kilo-size); }
 
-.header-font {
-    font-family: "trajan-sans-pro",sans-serif;
-}
+
 
 .bordered-header {
     border-bottom:1px solid lighten($black, 10%);

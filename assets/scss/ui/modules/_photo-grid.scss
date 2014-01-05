@@ -21,8 +21,7 @@
     //@include transition(opacity 50ms);
     display: inline-block;
     line-height: 0;
-    width: 50%;
-
+    width: 100%;
     &:hover {
         opacity: 1;
     }
@@ -34,6 +33,11 @@
         width: 100%;
     }
 }
+
+
+/****
+* Loading animations
+****/
 
 .grid--loading:after {
     content: "";

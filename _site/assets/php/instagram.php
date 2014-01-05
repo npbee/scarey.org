@@ -1,8 +1,12 @@
 <?php
     // Supply a user id and an access token
     $userid = "34726828";
-    //$accessToken = "34726828.5cb0360.0836775247da4a259e9ac66e3b814b0d";
-    $accessToken = "34726828.7ab4d3b.7879635e77454d78868f80686a5a691e";
+
+    // scarey.org token = 34726828.5cb0360.0836775247da4a259e9ac66e3b814b0d
+    // local token = 34726828.7ab4d3b.7879635e77454d78868f80686a5a691e
+
+    $isLocal = strpos($_SERVER['HTTP_HOST'], 'localhost') !== true;
+    $accessToken = $isLocal ? "34726828.7ab4d3b.7879635e77454d78868f80686a5a691e" : "34726828.5cb0360.0836775247da4a259e9ac66e3b814b0d";
     $count = $_POST['count'];
     $max_id = $_POST['max_id'];
 
