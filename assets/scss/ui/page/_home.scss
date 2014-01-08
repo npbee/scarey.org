@@ -26,6 +26,7 @@
     .headline--left,
     .headline--right {
         @include at-breakpoint($medium) {
+            @extend .header-font;
             display: inline-block;
             vertical-align: top;
             width: 50%;

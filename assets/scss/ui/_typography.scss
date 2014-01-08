@@ -43,13 +43,15 @@
 * Headers
 ****/
 .header-font {
-    font-family: "p22-underground-pc",sans-serif;
-    font-weight: 100;
+    //font-family: "p22-underground-pc",sans-serif;
+    font-weight: 300;
 }
 
 h1, h2, h3, h4, h5, h6 {
     @extend .header-font;
 }
+
+
 
 h1, .alpha      { @include font-size($h1-size); }
 h2, .beta        { @include font-size($h2-size); }
