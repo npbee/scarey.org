@@ -16,14 +16,15 @@ html {
 }
 
 body {
+    @include transform(translate3d(0,0,0)); // used to fix scroll lag from fixed background image
     margin: 0;
     overflow-x:hidden;
     font-family: "brandon-grotesque", "Helvetica Neue", "Helvetica Neue", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-weight:300;
     font-size: #{($base-font-size/16px)*1em}/#{$line-height-ratio};
     -webkit-font-smoothing: antialiased !important;
-    color:$lightblack;
-    background: url("../img/bg--grayscale.jpg") fixed top center no-repeat;
+    color:$black;
+    background: url("../img/bg--image.jpg") fixed top center no-repeat;
     background-size: cover;
     @include at-breakpoint($medium) {
         overflow:auto;

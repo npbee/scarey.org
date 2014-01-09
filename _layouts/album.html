@@ -32,7 +32,7 @@
                     <h1>{{ album.title }}</h1>
                     <h2 class="album-release">{{ album.release }}</h2>
 
-                    <div class="album-cover flipper-wrap one-half">
+                    <div class="album-cover flipper-wrap one-third">
                         {% if album.cover-back %}
                         <div class="flipper">
                             <img class="front" src="{{ album.cover-front }}" alt="{{ album.title }} cover" width="1425" height="1425">
@@ -44,26 +44,30 @@
                         {% endif %}
                     </div>
 
-                    <div class="album-blurb one-half">
+                    <div class="two-thirds">
                         <p>{{ album.blurb }}</p>
+                        <div id="tracks" class="album-tracklist">
+                            <h3 class="bordered-header">Tracks</h3>
+                            {% for track in album.tracks %}
+                            <div class="album-track">
+                                <div class="xalbum-track-name collapse">
+                                    <p class="collapse__trigger">{{ forloop.index }}.  {{ track.title }}</p>
+                                    <p class="collapse__content">Lyrics</p>
+                                </div>
+                                <span class="album-track-duration">{{ strack.duration }}</span>
+                            </div>
+                            {% endfor %}
+                        </div>
+
+                        <div id="buy" class="album-links">
+                            <h3 class="bordered-header">Buy</h3>
+                            {% for link in album.links %}
+                            <a class="button" href="{{ link.href }}">{{ link.text }}</a>
+                            {% endfor %}
+                        </div>
                     </div>
 
-                    <div class="album-tracklist one-half">
-                    <h2 class="bordered-header">Tracklist:</h2>
-                    {% for track in album.tracks %}
-                    <div class="album-track">
-                        <span class="album-track-name">{{ forloop.index }}.  {{ track.title }}</span>
-                        <span class="album-track-duration">{{ track.duration }}</span>
-                    </div>
-                    {% endfor %}
-                    </div>
 
-                    <div class="album-links one-half">
-                        <h2 class="bordered-header">Links:</h2>
-                        {% for link in album.links %}
-                        <a class="button" href="{{ link.href }}">{{ link.text }}</a>
-                        {% endfor %}
-                    </div>
 
                 </section>
 

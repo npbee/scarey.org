@@ -15,15 +15,14 @@ header {
     text-transform: uppercase;
     @include at-breakpoint($medium) {
         text-align:center;
-        padding:0;
+        padding:$base-spacing-unit/2 0;
     }
     a {
         @extend .header-font;
         display: inline-block;
         padding: $base-spacing-unit/2;
-        font-weight: 300;
         &:hover {
-            color: $brand-alt;
+            color: $brand-main;
         }
         @include at-breakpoint($medium) {
             position:relative;
@@ -40,7 +39,7 @@ header {
         top: 0;
         float:left;
         //margin-left:5px;
-        color: $brand-main;
+        //color: $brand-main;
         @include at-breakpoint($medium) {
             display:inline;
             margin-left:0;
@@ -94,14 +93,15 @@ header {
     margin-left: (-$base-spacing-unit/4);
     @include at-breakpoint($medium) {
         margin-left:0;
-        color:$brand-alt;
+        color:$brand-main;
         font-size:$base-font-size;
+        font-weight: 500;
         padding: 0 $base-spacing-unit/2;
     }
 }
 
 a.active {
-    color:$brand-alt;
+    color:$brand-main;
 }
 
 
@@ -113,7 +113,7 @@ a.active {
 .more-nav {
     @extend .beta;
     position: relative;
-    top: -$base-spacing-unit/8;
+    top: -$base-spacing-unit/4;
     float: right;
     padding: 0 $base-spacing-unit/2;
     //border-left: 1px solid lighten($black, 20%);
@@ -224,7 +224,7 @@ a.active {
         display:inline-block;
         padding:$base-spacing-unit/2 0;
         color: $background;
-        background:$lightblack;
+        background:$black;
         border-bottom:2px solid transparent;
         border-right: 1px solid lighten($black, 20%);
         &:last-child {
@@ -281,9 +281,11 @@ a.active {
 
 a.page-active {
     border-bottom:2px solid $brand-main;
-    color: $orange;
+    color: $white;
+    background: $brand-main;
     @include at-breakpoint($medium) {
-        color: $offblack;
+        color: $black;
+        background: none;
     }
 }
 

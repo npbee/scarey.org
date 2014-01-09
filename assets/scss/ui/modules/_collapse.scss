@@ -1,0 +1,14 @@
+/*------------------------------------*\
+    $COLLAPSE
+\*------------------------------------*/
+.collapse {
+    .collapse__trigger {
+
+    }
+    .collapse__content {
+        display: none;
+    }
+    .collapse__content--showing {
+        display: block;
+    }
+}

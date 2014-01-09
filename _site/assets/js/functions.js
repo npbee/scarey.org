@@ -893,6 +893,20 @@ scarey.photoGrid = function() {
 
 };
 
+
+/*------------------------------------*\
+    $Tabs
+\*------------------------------------*/
+scarey.collapse = function() {
+    var $trigger = $(".collapse__trigger");
+
+    $trigger.on('click', function() {
+        $(this).next().toggleClass('collapse__content--showing');
+    });
+};
+
+
+
 /* -----------------------------------------------
 PAGE INITS
 ------------------------------------------------ */
@@ -909,7 +923,7 @@ $(document).ready(function() {
     scarey.loadMore();
     scarey.visitorCheck();
     scarey.photoGrid();
-
+    scarey.collapse();
 });
 
 
