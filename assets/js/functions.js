@@ -898,11 +898,69 @@ scarey.photoGrid = function() {
     $Tabs
 \*------------------------------------*/
 scarey.collapse = function() {
+    if ( !$('.collapse__trigger') ) {
+        return;
+    }
     var $trigger = $(".collapse__trigger");
 
     $trigger.on('click', function() {
+        $(this).toggleClass('bold');
+        $(this).parent().toggleClass('collapse--collapsed');
         $(this).next().toggleClass('collapse__content--showing');
     });
+};
+
+
+
+/****
+* Bands in Town API
+****/
+scarey.tour = function() {
+    var isTourPage = window.location.pathname.indexOf('tour') !== -1 ? true : false;
+    if ( !isTourPage ) {
+        return;
+    }
+
+    var APPID = 'scarey.org';
+    var $content = $('.tour .main-content');
+
+    var request = $.ajax({
+        type: 'GET',
+        dataType: 'jsonp',
+        url: 'http://api.bandsintown.com/artists/Skrillex/events.json?api_version=2.0&app_id=' + APPID,
+        success: function(data) {
+            console.log(data);
+            displayData(data);
+        }
+    });
+
+    function displayData(data) {
+        var i;
+        var dates = {};
+        var matchMonth = /january|february|april|may|june|july|august|september|october|november|december/gi;
+        var month;
+        var fullDate;
+
+        for ( i = 0; i < data.length; i++ ) {
+            fullDate = data[i].formatted_datetime;
+            month = doMatchMonth(fullDate);
+            console.log(month);
+            // if ( !dates[month] ) {
+            //     dates[month] = [];
+            // }
+            // dates[month].push(data[i]);
+            //console.log(dates);
+        }
+
+        function doMatchMonth(string) {
+            var matchedMonth = matchMonth.exec(string) ? matchMonth.exec(string)[0] : false;
+            if ( matchedMonth.length ) {
+                return matchedMonth;
+            }
+        }
+
+        $content.append('<h1>hello</h1>');
+    }
 };
 
 
@@ -924,6 +982,7 @@ $(document).ready(function() {
     scarey.visitorCheck();
     scarey.photoGrid();
     scarey.collapse();
+    scarey.tour();
 });
 
 
