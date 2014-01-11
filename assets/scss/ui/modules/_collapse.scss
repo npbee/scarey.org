@@ -3,12 +3,37 @@
 \*------------------------------------*/
 .collapse {
     .collapse__trigger {
-
+        cursor: pointer;
+        display: block;
+        width: 100%;
+        padding: 5px 0;
+        @include at-breakpoint($medium) {
+            padding: 0;
+        }
+        &:before {
+            display: inline-block;
+            position: relative;
+            top: 1px;
+            font-family: 'icomoon';
+            content: "\e60a";
+            font-size: $base-font-size*0.8;
+            color: $grey;
+        }
     }
     .collapse__content {
+        @include transition(height 200ms);
         display: none;
+        overflow: hidden;
     }
     .collapse__content--showing {
         display: block;
+        padding: $base-spacing-unit/2;
+    }
+}
+
+
+.collapse--collapsed {
+    .collapse__trigger:before {
+        content: "\e60b";
     }
 }

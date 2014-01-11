@@ -39,3 +39,20 @@
 .bold {
     font-weight: 500;
 }
+
+
+/****
+* No Margin bottom
+****/
+.no-margin-bottom,
+.no-margin-bottom p {
+    margin-bottom: 0;
+}
+
+
+/****
+* No text transform
+****/
+.no-text-transform {
+    text-transform: none;
+}

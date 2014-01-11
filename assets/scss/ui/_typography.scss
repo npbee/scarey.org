@@ -72,6 +72,12 @@ h6, .zeta         { @include font-size($h6-size); }
 }
 
 
+.small-header {
+    @extend .bold;
+    text-transform: none;
+    margin-bottom: 5px;
+}
+
 
 /****
 * Links

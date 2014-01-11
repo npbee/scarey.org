@@ -76,14 +76,7 @@
 .album-track {
     clear:both;
     overflow:auto;
-    margin-bottom: $base-spacing-unit/2;
     position: relative;
-}
-.album-track-name {
-    float:left;
-}
-.album-track-duration {
-    float:right;
 }
 
 
@@ -91,8 +84,18 @@
 * Album Links
 ****/
 .album-links {
+    font-size: 0;
     a {
+        font-size: $base-font-size;
         margin-bottom: $base-spacing-unit/2;
         width:100%;
+        @include at-breakpoint($medium) {
+            display: inline-block;
+            width: 32%;
+            margin-right: 2%;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
     }
 }

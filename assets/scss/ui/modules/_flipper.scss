@@ -32,9 +32,6 @@
         top: 0;
         left: 0;
     }
-    @include at-breakpoint($large) {
-        margin-bottom:$base-spacing-unit*2;
-    }
 }
 
 

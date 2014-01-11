@@ -32,39 +32,45 @@
                     <h1>{{ album.title }}</h1>
                     <h2 class="album-release">{{ album.release }}</h2>
 
-                    <div class="album-cover flipper-wrap one-third">
-                        {% if album.cover-back %}
-                        <div class="flipper">
-                            <img class="front" src="{{ album.cover-front }}" alt="{{ album.title }} cover" width="1425" height="1425">
-                            <img class="back" src="{{ album.cover-back }}" alt="{{ album.title }} back cover">
+                    <div class="one-third">
+                        <div class="flipper-wrap album-cover">
+                            {% if album.cover-back %}
+                            <div class="flipper">
+                                <img class="front" src="{{ album.cover-front }}" alt="{{ album.title }} cover" width="1425" height="1425">
+                                <img class="back" src="{{ album.cover-back }}" alt="{{ album.title }} back cover">
+                            </div>
+                            <span class="flip-icon" data-icon="">Click to rotate</span>
+                            {% else %}
+                            <img src="{{ album.cover-front }}" alt="{{ album.title }} cover" width="1425" height="1425">
+                            {% endif %}
                         </div>
-                        <span class="flip-icon" data-icon="">Click to rotate</span>
-                        {% else %}
-                        <img src="{{ album.cover-front }}" alt="{{ album.title }} cover" width="1425" height="1425">
-                        {% endif %}
+
+                        <div id="buy" class="album-links">
+                            <!-- <h3 class="small-header">Buy</h3> -->
+                            {% for link in album.links %}
+                            <a class="button" href="{{ link.href }}">{{ link.text }}</a>
+                            {% endfor %}
+                        </div>
+
                     </div>
 
                     <div class="two-thirds">
                         <p>{{ album.blurb }}</p>
                         <div id="tracks" class="album-tracklist">
-                            <h3 class="bordered-header">Tracks</h3>
+                            <h3 class="small-header">Tracks</h3>
                             {% for track in album.tracks %}
-                            <div class="album-track">
-                                <div class="xalbum-track-name collapse">
-                                    <p class="collapse__trigger">{{ forloop.index }}.  {{ track.title }}</p>
-                                    <p class="collapse__content">Lyrics</p>
-                                </div>
-                                <span class="album-track-duration">{{ strack.duration }}</span>
+                            <div class="album-track {% if track.lyrics %}collapse{% endif %}">
+                                <span class="collapse__trigger">{{ track.title }}</span>
+                                <span class="collapse__content italic no-margin-bottom">
+                                    {% for lyric in track.lyrics %}
+                                    <p>{{ lyric }}</p>
+                                    {% endfor %}
+                                </span>
                             </div>
                             {% endfor %}
                         </div>
 
-                        <div id="buy" class="album-links">
-                            <h3 class="bordered-header">Buy</h3>
-                            {% for link in album.links %}
-                            <a class="button" href="{{ link.href }}">{{ link.text }}</a>
-                            {% endfor %}
-                        </div>
+
                     </div>
 
 
