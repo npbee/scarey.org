@@ -6,9 +6,9 @@ scarey.medium = "screen and (min-width: 50em)";
 scarey.large = "screen and (min-width: 75em)";
 
 
-/*------------------------------------*\
-    Debouncer
-\*------------------------------------*/
+/****
+* $DEBOUNCER
+****/
 scarey.debounce = function(event, callback, timeout) {
     var timer;
     var duration = timeout || 500;
@@ -23,9 +23,9 @@ scarey.debounce = function(event, callback, timeout) {
 
 
 
-/* -----------------------------------------------
-FASTCLICK
------------------------------------------------- */
+/****
+* $FASTCLICK
+****/
 //Enable fastclick only if not on desktop device
 scarey.fastclick =  {
     init: function() {
@@ -44,9 +44,10 @@ scarey.fastclick =  {
 
 
 
-/* -----------------------------------------------
-SMOOTH SCROLLING
------------------------------------------------- */
+
+/****
+* $SMOOTH SCROLL
+****/
 scarey.scroll = function(target) {
     $.scrollTo(
         $(target),
@@ -64,9 +65,10 @@ scarey.scroll = function(target) {
 
 
 
-/* -----------------------------------------------
-MOBILE FLYOUT
------------------------------------------------- */
+
+/****
+* $MOBILE FLYOUT
+****/
 scarey.nav = function() {
     var topNav = $("#nav"),
           flyOut = $("#mobile-flyout");
@@ -80,9 +82,10 @@ scarey.nav = function() {
 
 
 
-/* -----------------------------------------------
-ALBUM FILTER
------------------------------------------------- */
+
+/****
+* $ALBUM FILTER
+****/
 
 //Logic for determing if we use the carousel or swipe
 scarey.filter = {
@@ -126,8 +129,11 @@ scarey.filter = {
     }
 };
 
+
+
+
 /****
-* Carousel
+* $CAROUSEL
 ****/
 scarey.carousel = function() {
     var slider_outer = $(".filter__slider"),
@@ -147,9 +153,7 @@ scarey.carousel = function() {
           end,
           i;
 
-    /****
-    * Global settings
-    ****/
+    // Global settings
     var settings = {
         itemsPerSlideBig: 4,
         itemsPerSlideMed: 2,
@@ -157,9 +161,7 @@ scarey.carousel = function() {
     };
 
 
-    /****
-    * Initialization function
-    ****/
+    // Initialization
     function init() {
         setItemsPerSlide();
         prepareBullets();
@@ -168,9 +170,7 @@ scarey.carousel = function() {
     }
 
 
-    /****
-    * Reset everything
-    ****/
+    // Reset everything
     function reset() {
 
         // Remove bullets from DOM
@@ -204,9 +204,7 @@ scarey.carousel = function() {
         }
     }
 
-    /****
-    * Setting the amount of items to show per slide
-    ****/
+   // Set the amount of items to show per slide
     function setItemsPerSlide() {
         if ( matchMedia(scarey.large).matches) {
             items_per_slide = settings.itemsPerSlideBig;
@@ -219,9 +217,7 @@ scarey.carousel = function() {
 
 
 
-    /****
-    * Prepare the bullets
-    ****/
+    // Prepare the bullets
     function prepareBullets() {
 
         var bullet_count;
@@ -244,9 +240,7 @@ scarey.carousel = function() {
     }
 
 
-    /****
-    * Prepare the viewport
-    ****/
+    // Prepare viewport
     function prepareViewport() {
         // To do:  move the first item to left position
 
@@ -272,12 +266,11 @@ scarey.carousel = function() {
     }
 
 
-    /****
-    * Set the active bullet
-    * The active bullet starts out a 0,
-    * and we add or subtract an amount
-    * depending on the increment given.
-    ****/
+
+    // Set the active bullet
+    // The active bullet starts out a 0,
+    // and we add or subtract an amount
+    // depending on the increment given.
     function setActiveBullet(increment) {
         active_bullet +=  increment;
         $(bullets).each(function() {
@@ -292,10 +285,9 @@ scarey.carousel = function() {
     }
 
 
-    /****
-    * Generic slide function
-    * Takes a direction, increment, factor and provides a callback
-    ****/
+
+    // Generic slide function
+    // Takes a direction, increment, factor and provides a callback
     function slide(direction, increment, delta, callback) {
 
         // Use helper function to get what the current transform value is
@@ -352,14 +344,13 @@ scarey.carousel = function() {
     }
 
 
-    /****
-    * ADD LISTENERS
-    * Next / Prev / Bullet click handlers
-    * Next / prev always have a factor of 1
-    * For bullets, get the delta between the current active bullet
-    * and the one that was clicked and use that to slide
-    * multiple sections
-    ****/
+
+    // ADD LISTENERS
+    // Next / Prev / Bullet click handlers
+    // Next / prev always have a factor of 1
+    // For bullets, get the delta between the current active bullet
+    // and the one that was clicked and use that to slide
+    // multiple sections
     function addListeners() {
         next.on('click', function() {
             slide("forward", 1, 1, setActiveBullet);
@@ -383,25 +374,23 @@ scarey.carousel = function() {
             });
         });
 
-        /****
-        * Listen for resize events
-        ****/
+        //Listen for resize
         scarey.debounce('resize', reset, 500);
 
 
     }
 
-    /****
-    * Run it!
-    ****/
+    // Run it!
     init();
 
 
 };
 
 
+
+
 /****
-* Swipe
+* $SWIPE
 ****/
 scarey.swipe =  function() {
     var slides = $("#slider li"),
@@ -442,33 +431,10 @@ scarey.swipe =  function() {
 
 
 
-/* -----------------------------------------------
-STICKY NAV
------------------------------------------------- */
-scarey.stickyNav = function() {
-    $(document).on('scroll', function() {
-        var docScroll = $(document).scrollTop();
-        if (docScroll >= 500) {
-            if (!$('#nav').hasClass('sticky')) {
-                $('#nav').addClass('sticky').css({
-                    top: '-300px'
-                }).stop().animate({
-                    top: 0
-                }, 500);
-            }
-        } else {
-            $('#nav').removeClass('sticky').removeAttr('style');
-        }
 
-    });
-};
-
-
-
-
-/* -----------------------------------------------
-HISTORY
------------------------------------------------- */
+/****
+* $HISTORY
+****/
 scarey.history = (function(window,undefined){
     // Prepare our Variables
     var
@@ -597,10 +563,7 @@ scarey.history = (function(window,undefined){
                         $content.html(contentHtml).ajaxify();
 
                         //reinitialize
-                        scarey.nav();
-                        scarey.filter.init();
-                        scarey.flipper();
-                        scarey.photoGrid();
+                        scarey.reload();
 
                         // Update the title
                         document.title = $data.find('.document-title:first').text();
@@ -646,10 +609,9 @@ scarey.history = (function(window,undefined){
 
 
 
-
-/*------------------------------------*\
-    $COLORBOX
-\*------------------------------------*/
+/****
+* $COLORBOX
+****/
 scarey.colorbox = {
     init: function() {
 
@@ -675,9 +637,11 @@ scarey.colorbox = {
 };
 
 
-/*------------------------------------*\
-    $Album Flipper
-\*------------------------------------*/
+
+
+/****
+* $FLIPPER
+****/
 scarey.flipper = function() {
     var container = $(".flipper-wrap");
 
@@ -689,9 +653,9 @@ scarey.flipper = function() {
 
 
 
-/*------------------------------------*\
-    $Photo set
-\*------------------------------------*/
+/****
+* $PHOTOSET
+****/
 scarey.photoset = function() {
     if ( !$('.scarey-photoset') ) {
         return;
@@ -707,9 +671,10 @@ scarey.photoset = function() {
 
 
 
-/*------------------------------------*\
-   $Load More Posts
-\*------------------------------------*/
+
+/****
+* $LOAD MORE
+****/
 scarey.loadMore = function() {
     var button = $("#load-more");
     var page = 1;
@@ -739,11 +704,11 @@ scarey.loadMore = function() {
 
 
 
-/*------------------------------------*\
-    $Local Storage
-    * If you're a new visitor, show the home page animation
-    * If not, skip it
-\*------------------------------------*/
+/****
+* $VISITOR CHECK
+* If you're a new visitor, show the home page animation
+* If not, skip it
+****/
 scarey.visitorCheck = function() {
 
     var $body = $('body');
@@ -778,10 +743,11 @@ scarey.visitorCheck = function() {
 };
 
 
-/*------------------------------------*\
-    $Photo Grid
-    * Uses Instagram API to display photo grid
-\*------------------------------------*/
+
+/****
+* $PHOTO GRID
+* Uses Instagram API to display photo grid
+****/
 scarey.photoGrid = function() {
 
     // If we're not on the photo page, return
@@ -894,9 +860,11 @@ scarey.photoGrid = function() {
 };
 
 
-/*------------------------------------*\
-    $Tabs
-\*------------------------------------*/
+
+
+/****
+* $COLLAPSE
+****/
 scarey.collapse = function() {
     if ( !$('.collapse__trigger') ) {
         return;
@@ -912,7 +880,9 @@ scarey.collapse = function() {
 
 
 
+
 /****
+* $TOUR
 * Bands in Town API
 ****/
 scarey.tour = function() {
@@ -924,50 +894,97 @@ scarey.tour = function() {
     var APPID = 'scarey.org';
     var $content = $('.tour .main-content');
 
+    $content.addClass('loading');
+
     var request = $.ajax({
         type: 'GET',
         dataType: 'jsonp',
-        url: 'http://api.bandsintown.com/artists/Skrillex/events.json?api_version=2.0&app_id=' + APPID,
-        success: function(data) {
-            console.log(data);
-            displayData(data);
-        }
+        url: 'http://api.bandsintown.com/artists/S Carey/events.json?api_version=2.0&app_id=' + APPID
     });
 
-    function displayData(data) {
+    request.done(function(data) {
+        data.length ? parseData(data) : $content.append('<p class="center italic">No currently scheduled shows.</p>');
+    });
+
+    request.fail(function( jqXHR, textStatus) {
+        $content.append('<p class="center">There was an error requesting the data from Bands In Town.  Please try again or visit this link: </p><p class="center"><a target="_blank" href="http://www.bandsintown.com/S.Carey">http://www.bandsintown.com/S.Carey</a></p>');
+    });
+
+    request.always(function() {
+        $content.removeClass('loading');
+    });
+
+    function parseData(data) {
         var i;
         var dates = {};
-        var matchMonth = /january|february|april|may|june|july|august|september|october|november|december/gi;
+        var matchMonth = /january|february|march|april|may|june|july|august|september|october|november|december/i;
         var month;
         var fullDate;
 
         for ( i = 0; i < data.length; i++ ) {
             fullDate = data[i].formatted_datetime;
             month = doMatchMonth(fullDate);
-            console.log(month);
-            // if ( !dates[month] ) {
-            //     dates[month] = [];
-            // }
-            // dates[month].push(data[i]);
-            //console.log(dates);
+            if ( !dates[month] ) {
+                dates[month] = [];
+            }
+            dates[month].push(data[i]);
         }
 
+        displayData(dates);
+
         function doMatchMonth(string) {
-            var matchedMonth = matchMonth.exec(string) ? matchMonth.exec(string)[0] : false;
-            if ( matchedMonth.length ) {
-                return matchedMonth;
+            var matchedMonth = matchMonth.exec(string)[0];
+            return matchedMonth;
+        }
+
+        function displayData(dates) {
+            console.log(dates);
+            for ( var d in dates ) {
+                var $block = $('<div>').attr('class', 'tour-block');
+                $content.append($block);
+                $block.append('<h1 class="center no-margin-bottom">' + d + '</h1>');
+                for ( var k = 0; k < dates[d].length; k++ ) {
+                    var strippedDate = dates[d][k].formatted_datetime.split(/,\s(\d+){4}/)[0];
+                    var url = dates[d][k].ticket_url ? true : false;
+                    var preparedUrl = url ? '<a href="' + dates[d][k].ticket_url + '" class="tour-event" target="_blank">' : '<a class="tour-event">';
+                    console.log(strippedDate);
+                    $block.append('' +
+                        preparedUrl +
+                        '<ul>' +
+                        '<li class="bold">' + strippedDate +
+                        '<li>' + dates[d][k].formatted_location +
+                        '<li>' + dates[d][k].venue.name +
+                        '</ul>' +
+                        '</a>'
+                    );
+                }
+
             }
         }
 
-        $content.append('<h1>hello</h1>');
     }
 };
 
 
 
-/* -----------------------------------------------
-PAGE INITS
------------------------------------------------- */
+/****
+* $RELOAD
+* Reload all inits
+* for use with history
+****/
+scarey.reload = function() {
+    scarey.nav();
+    scarey.filter.init();
+    scarey.flipper();
+    scarey.photoGrid();
+    scarey.tour();
+};
+
+
+
+/*------------------------------------*\
+    $DOCREADY
+\*------------------------------------*/
 $(document).ready(function() {
     //Inits
     scarey.nav();
@@ -986,6 +1003,9 @@ $(document).ready(function() {
 });
 
 
+/****
+* $WINDOW LOAD
+****/
 $(window).load(function() {
     scarey.photoset();
 });

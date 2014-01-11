@@ -40,13 +40,7 @@
 ****/
 
 .grid--loading:after {
-    content: "";
-    display: block;
-    width: 50px;
-    height: 50px;
-    margin: $base-spacing-unit auto;
-    background: url('../img/loader.gif') center center no-repeat;
-    background-size: 100%;
+    @extend .loading;
 }
 
 .grid--loaded {

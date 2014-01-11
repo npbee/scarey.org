@@ -55,9 +55,10 @@
                     </div>
 
                     <div class="two-thirds">
-                        <p>{{ album.blurb }}</p>
+                        <h3 class="small-header delta">Description</h3>
+                        <p class="text-block">{{ album.blurb }}</p>
                         <div id="tracks" class="album-tracklist">
-                            <h3 class="small-header">Tracks</h3>
+                            <h3 class="small-header delta">Tracks</h3>
                             {% for track in album.tracks %}
                             <div class="album-track {% if track.lyrics %}collapse{% endif %}">
                                 <span class="collapse__trigger">{{ track.title }}</span>

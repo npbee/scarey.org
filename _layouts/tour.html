@@ -24,30 +24,7 @@
 
             {% if site.shows %}
 
-                {% if page.range == "current" %}
-                    {% for tour in site.shows %}
-                        {% if tour.stamp > site.time %}
-                            <div class="tour-block">
-                                <h1 class="center no-margin-bottom">{{ tour.tourname }}</h1>
-                                {% if tour.support %}<p class="tour-support">* w/ {{ tour.support }}</p>{% endif %}
-                                {% for show in tour.dates %}
-                                    <a href="{{ show.href }}" class="tour-event" target="_blank">
-                                        <ul>
-                                            <li class="bold">{{ show.date | date: '%B %-d, %Y' }}{% if tour.support %}*{% endif %}
-                                            <li>{{ show.city }}
-                                            <li>{{ show.venue }}
-                                            {% if show.support %}<li class="tour-support">* w/ {{ show.support }}{% endif %}
-                                        </ul>
-                                        <span class="italic milli">More info.</span>
-                                    </a>
-                                {% endfor %}
-                            </div>
-                        {% else %}
-                            {% if forloop.first %}<p class="italic center">No shows currently scheduled.</p>{% endif %}
-                        {% endif %}
-                    {% endfor %}
-
-                {% else if page.range == "past" %}
+                {% if page.range == "past" %}
                     {% for tour in site.shows %}
                         {% if tour.stamp < site.time %}
                             <div class="tour-block">
