@@ -10,7 +10,7 @@
         @include at-breakpoint($medium) {
             padding: 0;
         }
-        &:before {
+        &:after {
             display: inline-block;
             position: relative;
             top: 1px;
@@ -33,7 +33,7 @@
 
 
 .collapse--collapsed {
-    .collapse__trigger:before {
+    .collapse__trigger:after {
         content: "\e60b";
     }
 }

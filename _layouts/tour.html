@@ -31,7 +31,7 @@
                                 <h1 class="center no-margin-bottom">{{ tour.tourname }}</h1>
                                 {% if tour.support %}<p class="tour-support">* w/ {{ tour.support }}</p>{% endif %}
                                 {% for show in tour.dates %}
-                                    <a href="{{ show.href }}" class="tour-event" target="_blank">
+                                    <a {% if show.href %}href="{{ show.href }}"{% endif %} class="tour-event" target="_blank">
                                         <ul>
                                             <li class="bold">{{ show.date | date: '%B %-d, %Y' }}{% if tour.support %}*{% endif %}
                                             <li>{{ show.city }}

@@ -2,9 +2,7 @@
     $PAGE
 \*------------------------------------*/
 html,
-body,
-.wrap,
-#wrap {
+body {
     padding:0;
     margin:0;
     height:100%;
@@ -18,13 +16,15 @@ html {
 body {
     @include transform(translate3d(0,0,0)); // used to fix scroll lag from fixed background image
     margin: 0;
+    height: 100%;
     overflow-x:hidden;
     font-family: "brandon-grotesque", "Helvetica Neue", "Helvetica Neue", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-weight:300;
     font-size: #{($base-font-size/16px)*1em}/#{$line-height-ratio};
     -webkit-font-smoothing: antialiased !important;
     color:$black;
-    background: url("../img/bg--image.jpg") fixed top center no-repeat;
+    background: #f8f8f8 url("../img/bg--image2.jpg") fixed left bottom no-repeat;
+    //background-size: 100%;
     background-size: cover;
     @include at-breakpoint($medium) {
         overflow:auto;
@@ -36,10 +36,15 @@ body {
 }
 
 
-body > .wrap,
-body> #wrap {
+body > .wrap {
     height:auto;
     min-height:100%;
+    margin-bottom: -4em;
+    &:after {
+        content: '';
+        display: block;
+        height: 4em;
+    }
     @include at-breakpoint($medium) {
         overflow-x: hidden;
     }
@@ -55,7 +60,7 @@ body> #wrap {
     margin:0 auto;
     clear:both;
     //width:95%;
-    padding: 0 $base-spacing-unit/2 10em;
+    padding: 0 $base-spacing-unit/2 0;
     //padding-bottom:10em;
     opacity: 1;
     @include transition(opacity 1000ms ease-in-out);

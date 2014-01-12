@@ -631,7 +631,12 @@ scarey.colorbox = {
             scalePhotos: true,
             maxHeight: "900px",
             speed: 200,
-            opacity: ".7"
+            opacity: ".7",
+            onComplete: function() {
+                $('.wrap').on('click', function() {
+                    $.colorbox.close();
+                });
+            }
         });
     }
 };
@@ -899,7 +904,7 @@ scarey.tour = function() {
     var request = $.ajax({
         type: 'GET',
         dataType: 'jsonp',
-        url: 'http://api.bandsintown.com/artists/S Carey/events.json?api_version=2.0&app_id=' + APPID
+        url: 'http://api.bandsintown.com/artists/Polica/events.json?api_version=2.0&app_id=' + APPID
     });
 
     request.done(function(data) {
@@ -974,9 +979,16 @@ scarey.tour = function() {
 ****/
 scarey.reload = function() {
     scarey.nav();
-    scarey.filter.init();
+    if ( $('body').hasClass('albums') ) {
+        scarey.filter.init();
+    }
+    scarey.colorbox.init();
+    scarey.fastclick.init();
     scarey.flipper();
+    scarey.loadMore();
+    scarey.visitorCheck();
     scarey.photoGrid();
+    scarey.collapse();
     scarey.tour();
 };
 

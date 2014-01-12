@@ -22,9 +22,13 @@
     Change the following styles to modify the appearance of ColorBox.  They are
     ordered & tabbed in a way that represents the nesting of the generated HTML.
 */
-#cboxOverlay{background: rgba($offblack, 1)}
+//#cboxOverlay{background: rgba($offblack, 1)}
+#colorbox {
+    box-shadow: 0 0 400px 100px $black;
+}
+
 #cboxContent{
-    background:$offblack;
+    background: #111;
     &:hover {
         #cboxPrevious, #cboxNext, #cboxClose {
             opacity:.3;

@@ -48,7 +48,7 @@
                         <div id="buy" class="album-links">
                             <!-- <h3 class="small-header">Buy</h3> -->
                             {% for link in album.links %}
-                            <a class="button" href="{{ link.href }}">{{ link.text }}</a>
+                            {% if link.href %}<a class="button" href="{{ link.href }}" target="_blank">{{ link.text }}</a>{% endif %}
                             {% endfor %}
                         </div>
 
