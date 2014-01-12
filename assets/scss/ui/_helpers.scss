@@ -61,7 +61,30 @@
 /****
 * Loading
 ****/
+// .loading:after {
+//     content: "";
+//     display: block;
+//     width: 50px;
+//     height: 50px;
+//     margin: $base-spacing-unit auto;
+//     background: url('../img/loader.gif') center center no-repeat;
+//     background-size: 100%;
+// }
 .loading:after {
+    @include animation(spin 500ms infinite linear);
+    content: '';
+    display: block;
+    margin: $base-spacing-unit auto;
+    border-bottom: 3px solid $white;
+    border-left: 3px solid $white;
+    border-right: 3px solid $brand-main;
+    border-top: 3px solid $brand-main;
+    border-radius: 100%;
+    height: 50px;
+    width: 50px;
+}
+
+.no-cssanimations .loading:after {
     content: "";
     display: block;
     width: 50px;

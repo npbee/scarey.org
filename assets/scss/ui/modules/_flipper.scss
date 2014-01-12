@@ -23,10 +23,12 @@
         height:auto;
         width: 100%;
     }
-    .front {
+
+    // including extra nested layer for picturefill markup
+    .front img {
         z-index: 2;
     }
-    .back {
+    .back img {
         @include transform(rotateY(180deg));
         position: absolute;
         top: 0;
