@@ -136,6 +136,9 @@ scarey.filter = {
 * $CAROUSEL
 ****/
 scarey.carousel = function() {
+    if ( !$(".filter").length ) {
+       return;
+    }
     var slider_outer = $(".filter__slider"),
           slider_inner = $(".filter__slider-wrap"),
           items = $(".filter__slider-wrap li"),
@@ -815,7 +818,6 @@ scarey.photoGrid = function() {
             // Remove loading class,
             // Add loaded class
             // Enable and show load more button
-            $grid.removeClass('grid--loading');
             $grid.addClass('grid--loaded');
             $loadMore.prop('disabled', false);
             $loadMore.css('opacity', 1);
@@ -891,8 +893,7 @@ scarey.collapse = function() {
 * Bands in Town API
 ****/
 scarey.tour = function() {
-    var isTourPage = window.location.pathname.indexOf('tour') !== -1 ? true : false;
-    if ( !isTourPage ) {
+    if ( !$('#tour').length ) {
         return;
     }
 
@@ -943,7 +944,6 @@ scarey.tour = function() {
         }
 
         function displayData(dates) {
-            console.log(dates);
             for ( var d in dates ) {
                 var $block = $('<div>').attr('class', 'tour-block');
                 $content.append($block);
@@ -952,7 +952,6 @@ scarey.tour = function() {
                     var strippedDate = dates[d][k].formatted_datetime.split(/,\s(\d+){4}/)[0];
                     var url = dates[d][k].ticket_url ? true : false;
                     var preparedUrl = url ? '<a href="' + dates[d][k].ticket_url + '" class="tour-event" target="_blank">' : '<a class="tour-event">';
-                    console.log(strippedDate);
                     $block.append('' +
                         preparedUrl +
                         '<ul>' +
@@ -990,6 +989,7 @@ scarey.reload = function() {
     scarey.photoGrid();
     scarey.collapse();
     scarey.tour();
+    window.picturefill();
 };
 
 
