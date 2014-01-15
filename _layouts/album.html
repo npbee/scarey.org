@@ -74,7 +74,9 @@
 
                     <div class="two-thirds">
                         <h3 class="small-header delta">Description</h3>
-                        <p class="text-block">{{ album.blurb }}</p>
+                        {% for block in album.blurb %}
+                        <p class="text-block">{{ block }}</p>
+                        {% endfor %}
                         <div id="tracks" class="album-tracklist">
                             <h3 class="small-header delta">Tracks</h3>
                             {% for track in album.tracks %}
