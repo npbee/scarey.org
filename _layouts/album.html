@@ -70,6 +70,8 @@
                             {% endfor %}
                         </div>
 
+                        {% if album.audio %}{{ album.audio }}{% endif %}
+
                     </div>
 
                     <div class="two-thirds">
@@ -77,6 +79,7 @@
                         {% for block in album.blurb %}
                         <p class="text-block">{{ block }}</p>
                         {% endfor %}
+
                         <div id="tracks" class="album-tracklist">
                             <h3 class="small-header delta">Tracks</h3>
                             {% for track in album.tracks %}
@@ -92,6 +95,7 @@
                         </div>
 
 
+
                     </div>
 
 
@@ -100,6 +104,8 @@
 
                 <hr class="rule rule--margin">
                 {% endfor %}
+
+                {% if page.photo-credit %}<p class="center italic">Album photos by <a target="_blank" class="brand-color" href="http://cameron-photo.com/">Cameron Wittig</a></p>{% endif %}
 
                 {{ content }}
 
