@@ -39,11 +39,11 @@ body {
 body > .wrap {
     height:auto;
     min-height:100%;
-    margin-bottom: -4em;
+    margin-bottom: -5em;
     &:after {
         content: '';
         display: block;
-        height: 4em;
+        height: 5em;
     }
     @include at-breakpoint($medium) {
         overflow-x: hidden;

@@ -7,6 +7,13 @@
     h1 {
         text-align: center;
     }
+    p,
+    blockquote {
+        @extend .delta;
+    }
+    img {
+        max-width: 100%;
+    }
 }
 
 .post-title {
@@ -15,7 +22,6 @@
 
 .post-content {
     margin: $padding auto;
-    text-align:center;
     clear:both;
     img {
         max-width:100%;
@@ -25,16 +31,6 @@
         text-align: left;
         padding: 5px;
         margin-bottom: 0;
-        &:first-of-type {
-            &:before {
-                content: "";
-                display: block;
-                margin: $base-spacing-unit 0;
-                width: 40px;
-                height: 1px;
-                background: lighten($black, 30%);
-            }
-        }
     }
 }
 

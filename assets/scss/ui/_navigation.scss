@@ -113,7 +113,7 @@ a.active {
 .more-nav {
     @extend .beta;
     position: relative;
-    top: 0;
+    top: 2px;
     float: right;
     padding: 0 $base-spacing-unit/2;
     //border-left: 1px solid lighten($black, 20%);
