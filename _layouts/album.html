@@ -37,17 +37,17 @@
                             {% if album.cover-back-small %}
                             <div class="flipper">
                                 <span data-picture data-alt="{{ album.title }} cover">
-                                    <span class="front" data-src="{{ album.cover-front-large }}"></span>
-                                    <span class="front" data-src="{{ album.cover-front-small }}" data-media="(min-width: 50em)"></span>
+                                    <span class="front {% if album.class %}{{ album.class }}{% endif %}" data-src="{{ album.cover-front-large }}"></span>
+                                    <span class="front {% if album.class %}{{ album.class }}{% endif %}" data-src="{{ album.cover-front-small }}" data-media="(min-width: 50em)"></span>
                                     <noscript>
                                         <img src="{{ album.cover-front-small }}" alt="{{ album.title }} cover">
                                     </noscript>
                                 </span>
                                 <span data-picture data-alt="{{ album.title }} back cover">
-                                    <span class="back" data-src="{{ album.cover-back-large }}"></span>
+                                    <span class="back {% if album.class %}{{ album.class }}{% endif %}" data-src="{{ album.cover-back-large }}"></span>
                                     <span class="back" data-src="{{ album.cover-back-small }}" data-media="(min-width: 50em)"></span>
                                     <noscript>
-                                        <img class="back" src="{{ album.cover-back-small }}" alt="{{ album.title }} back cover">
+                                        <img class="back {% if album.class %}{{ album.class }}{% endif %}" src="{{ album.cover-back-small }}" alt="{{ album.title }} back cover">
                                     </noscript>
                                 </span>
                             </div>

@@ -23,11 +23,11 @@ body {
     font-size: #{($base-font-size/16px)*1em}/#{$line-height-ratio};
     -webkit-font-smoothing: antialiased !important;
     color:$black;
-    background: #f8f8f8 url("../img/bg--image2.jpg") fixed left bottom no-repeat;
-    //background-size: 100%;
-    background-size: cover;
+    background: #f8f8f8 url("../img/bg--mobile.jpg") top left no-repeat;
+    //background-size: cover;
     @include at-breakpoint($medium) {
         overflow:auto;
+        background: #f8f8f8 url("../img/bg.jpg") fixed left bottom no-repeat;
     }
 }
 

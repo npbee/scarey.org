@@ -101,3 +101,12 @@
 .brand-color {
     color: $brand-main !important;
 }
+
+
+
+/****
+* Bordered Image
+****/
+.img--bordered img {
+    border: 1px solid #d9d9d9;
+}

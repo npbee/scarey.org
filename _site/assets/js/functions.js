@@ -90,6 +90,9 @@ scarey.nav = function() {
 //Logic for determing if we use the carousel or swipe
 scarey.filter = {
     init: function() {
+        if ( !$('body').hasClass('albums') ) {
+            return;
+        }
         // For showing and hiding the filter
         // We need this for both carousel and swipe
         scarey.filter.toggle();
@@ -893,7 +896,7 @@ scarey.collapse = function() {
 * Bands in Town API
 ****/
 scarey.tour = function() {
-    if ( !$('#tour').length ) {
+    if ( !$('.tour--upcoming').length ) {
         return;
     }
 
@@ -905,7 +908,7 @@ scarey.tour = function() {
     var request = $.ajax({
         type: 'GET',
         dataType: 'jsonp',
-        url: 'http://api.bandsintown.com/artists/Polica/events.json?api_version=2.0&app_id=' + APPID
+        url: 'http://api.bandsintown.com/artists/S Carey/events.json?api_version=2.0&app_id=' + APPID
     });
 
     request.done(function(data) {
@@ -978,9 +981,7 @@ scarey.tour = function() {
 ****/
 scarey.reload = function() {
     scarey.nav();
-    if ( $('body').hasClass('albums') ) {
-        scarey.filter.init();
-    }
+    scarey.filter.init();
     scarey.colorbox.init();
     scarey.fastclick.init();
     scarey.flipper();
@@ -1000,10 +1001,7 @@ scarey.reload = function() {
 $(document).ready(function() {
     //Inits
     scarey.nav();
-
-    if ( $('body').hasClass('albums') ) {
-        scarey.filter.init();
-    }
+    scarey.filter.init();
     scarey.colorbox.init();
     scarey.fastclick.init();
     scarey.flipper();
