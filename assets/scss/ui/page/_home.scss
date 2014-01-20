@@ -45,12 +45,17 @@
         }
     }
     .tagline {
-        @extend .delta;
+        //@extend .delta;
+        //@extend .italic;
         clear: both;
         position: relative;
         color: $lightblack;
         &.tagline--desk {
             display: none;
+            a {
+                display: block;
+                text-transform: none;
+            }
             @include at-breakpoint($medium) {
                 display: block;
             }
@@ -58,6 +63,11 @@
         &.tagline--mobile {
             display: block;
             margin-bottom: $base-spacing-unit;
+            a {
+                display: inline-block;
+                padding: $base-spacing-unit/2;
+                width: 48%;
+            }
             &:after {
                 content: "";
                 display: block;
