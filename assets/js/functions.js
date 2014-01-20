@@ -896,12 +896,14 @@ scarey.collapse = function() {
 * Bands in Town API
 ****/
 scarey.tour = function() {
+
     if ( !$('.tour--upcoming').length ) {
         return;
     }
 
     var APPID = 'scarey.org';
     var $content = $('.tour .main-content');
+    var $block = $('.tour-block');
 
     $content.addClass('loading');
 
@@ -912,7 +914,7 @@ scarey.tour = function() {
     });
 
     request.done(function(data) {
-        data.length ? parseData(data) : $content.append('<p class="center italic">No currently scheduled shows.</p>');
+        data.length ? displayData(data) : noShows();
     });
 
     request.fail(function( jqXHR, textStatus) {
@@ -923,50 +925,27 @@ scarey.tour = function() {
         $content.removeClass('loading');
     });
 
-    function parseData(data) {
+    function noShows() {
+        $block.hide();
+        $content.append('<p class="center italic">No currently scheduled shows.</p>')
+    }
+
+
+    function displayData(data) {
+        console.log(data);
         var i;
-        var dates = {};
-        var matchMonth = /january|february|march|april|may|june|july|august|september|october|november|december/i;
-        var month;
-        var fullDate;
 
-        for ( i = 0; i < data.length; i++ ) {
-            fullDate = data[i].formatted_datetime;
-            month = doMatchMonth(fullDate);
-            if ( !dates[month] ) {
-                dates[month] = [];
-            }
-            dates[month].push(data[i]);
-        }
 
-        displayData(dates);
+        for ( i = 0; i < data.length; i++  ) {
+            var dateMatch = /(january|february|march|april|may|june|july|august|september|october|november|december)\s(\d+),\s(\d){4}/i;
+            var strippedDate = data[i].formatted_datetime.match(dateMatch)[0];
+            var $tourevent = $('<div>').attr('class', 'tour-event');
+            $tourevent.append('' +
+                '<p class="tour-date">' + strippedDate + '</p>' +
+                '<p class="tour-city">' + data[i].formatted_location + '</p>' +
+                '<p class="tour-venue"><a target="_blank" href="' + data[i].ticket_url + '">' + data[i].venue.name + '</a></p>');
+            $block.append($tourevent);
 
-        function doMatchMonth(string) {
-            var matchedMonth = matchMonth.exec(string)[0];
-            return matchedMonth;
-        }
-
-        function displayData(dates) {
-            for ( var d in dates ) {
-                var $block = $('<div>').attr('class', 'tour-block');
-                $content.append($block);
-                $block.append('<h1 class="center no-margin-bottom">' + d + '</h1>');
-                for ( var k = 0; k < dates[d].length; k++ ) {
-                    var strippedDate = dates[d][k].formatted_datetime.split(/,\s(\d+){4}/)[0];
-                    var url = dates[d][k].ticket_url ? true : false;
-                    var preparedUrl = url ? '<a href="' + dates[d][k].ticket_url + '" class="tour-event" target="_blank">' : '<a class="tour-event">';
-                    $block.append('' +
-                        preparedUrl +
-                        '<ul>' +
-                        '<li class="bold">' + strippedDate +
-                        '<li>' + dates[d][k].formatted_location +
-                        '<li>' + dates[d][k].venue.name +
-                        '</ul>' +
-                        '</a>'
-                    );
-                }
-
-            }
         }
 
     }
