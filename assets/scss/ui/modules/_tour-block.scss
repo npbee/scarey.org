@@ -17,33 +17,94 @@
     </div>
 \*------------------------------------*/
 .tour-block {
-    max-width: 65em;
-    margin: 0 auto $base-spacing-unit;
-    clear: both;
+    display: block;
     text-align: center;
-    line-height: 1.3;
+    @include at-breakpoint($medium) {
+        max-width: 60em;
+        margin: 0 auto $base-spacing-unit*2;
+
+    }
 }
+
+.tour-block__header {
+    display: none;
+    @include at-breakpoint($medium) {
+        display: block;
+        p {
+            display: inline-block;
+            width: 33.33%;
+        }
+    }
+}
+
 
 .tour-event {
-    display: inline-block;
-    width: 100%;
-    //font-size: $milli-size;
-    //margin: $base-spacing-unit/2 0;
-    padding: $base-spacing-unit;
+    font-size: 0;
+    padding: $base-spacing-unit 0;
+    border-bottom: 1px solid $brand-main;
     @include at-breakpoint($medium) {
-        width: 25%;
-        margin-right: -$base-font-size/3; // Fighting space between inline block elements
+        padding: 0;
+        border: none;
     }
-    p:first-child {
-        @extend .bold;
+    p {
+        margin-bottom: $base-spacing-unit;
+        &:last-child {
+            margin-bottom: 0;
+        }
+        font-size: $base-font-size;
+        @include at-breakpoint($medium) {
+            display: inline-block;
+            width: 33.33%;
+            margin-bottom: 5px;
+        }
     }
-    ul {
-        margin: 0;
+
+}
+
+
+
+.tour-date,
+.tour-city,
+.tour-venue {
+    &:before {
+        @extend .small-header;
+        display: block;
+        @include at-breakpoint($medium) {
+            display: none;
+        }
     }
 }
 
-.tour-support {
-    @extend .italic;
-    margin: 0 0 $base-spacing-unit/2 0;
-    font-size: $milli-size;
+.tour-date {
+    &:before {
+        content: "Date";
+    }
+}
+
+.tour-city {
+    &:before {
+        content: 'City';
+    }
+}
+
+.tour-venue {
+    &:before {
+        content: "Venue";
+    }
+}
+
+
+.tour-support--desk {
+    display: none;
+    @include at-breakpoint($medium) {
+        display: block;
+    }
+}
+
+
+.tour-support--mobile {
+    display: block;
+    @include at-breakpoint($medium) {
+        display: none !important;
+    }
 }

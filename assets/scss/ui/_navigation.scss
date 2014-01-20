@@ -91,6 +91,7 @@ header {
     //margin:0 0 0 $padding/4;
     padding-left: 0;
     margin-left: (-$base-spacing-unit/4);
+    color: $brand-main;
     @include at-breakpoint($medium) {
         margin-left:0;
         color:$brand-main;
