@@ -534,6 +534,7 @@ scarey.history = (function(window,undefined){
             var
                 State = History.getState(),
                 url = State.url,
+                relativeUrl = url.replace(rootUrl,''),
                 animating;
 
             // Set Loading
