@@ -933,9 +933,7 @@ scarey.tour = function() {
 
 
     function displayData(data) {
-        console.log(data);
         var i;
-
 
         for ( i = 0; i < data.length; i++  ) {
             var dateMatch = /(january|february|march|april|may|june|july|august|september|october|november|december)\s(\d+),\s(\d){4}/i;
@@ -944,7 +942,7 @@ scarey.tour = function() {
             $tourevent.append('' +
                 '<p class="tour-date">' + strippedDate + '</p>' +
                 '<p class="tour-city">' + data[i].formatted_location + '</p>' +
-                '<p class="tour-venue"><a target="_blank" href="' + data[i].ticket_url + '">' + data[i].venue.name + '</a></p>');
+                '<p class="tour-venue"><a class="underlined-link" target="_blank" href="' + data[i].ticket_url + '">' + data[i].venue.name + '</a></p>');
             $block.append($tourevent);
 
         }

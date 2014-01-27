@@ -43,7 +43,7 @@
     padding: $base-spacing-unit 0;
     border-bottom: 1px solid $brand-main;
     @include at-breakpoint($medium) {
-        padding: 0;
+        padding: $base-spacing-unit/2 0;
         border: none;
     }
     p {
