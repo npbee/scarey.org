@@ -3,9 +3,6 @@
 \*------------------------------------*/
 
 .home {
-    .logo-nav {
-        visibility: hidden;
-    }
     // Hiding for animation
     #slide-from-left-1,
     #slide-from-left-2,
@@ -83,6 +80,10 @@
     }
 }
 
+
+.home .main-content {
+    max-width: 65em;
+}
 
 /****
 * Nav
