@@ -92,6 +92,7 @@
 ****/
 .preorder {
     @extend .epsilon;
+    margin-bottom: $base-spacing-unit;
     //@extend .bold;
     p {
         @extend .bold;
@@ -103,6 +104,7 @@
         margin-bottom: $base-spacing-unit;
     }
     @include at-breakpoint($medium) {
+        margin-bottom: $base-spacing-unit*2;
         a {
             display: inline-block;
             &:after {
