@@ -148,7 +148,7 @@ a.active {
     @include transition-timing-function(ease-in-out);
     position:absolute;
     width:100%;
-    z-index:10;
+    z-index:1000;
     @include at-breakpoint($medium) {
         display:none;
     }
@@ -211,6 +211,17 @@ a.active {
     @include transform(translateX(0));
 }
 
+
+/****
+* Ugly VEVO hack to enable clicking on home page
+****/
+.main-content #vevo-hack {
+    display: block;
+}
+
+.dark #vevo-hack {
+    display: none;
+}
 
 
 /****
