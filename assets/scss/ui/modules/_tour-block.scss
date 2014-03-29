@@ -94,17 +94,11 @@
 }
 
 
-.tour-support--desk {
-    display: none;
-    @include at-breakpoint($medium) {
-        display: block;
-    }
-}
-
-
-.tour-support--mobile {
-    display: block;
-    @include at-breakpoint($medium) {
-        display: none !important;
+.tour-support {
+    text-align: center;
+    margin-bottom: $base-spacing-unit;
+    font-style: italic;
+    p {
+        margin-bottom: $base-spacing-unit/4;
     }
 }

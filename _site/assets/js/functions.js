@@ -915,6 +915,7 @@ scarey.tour = function() {
     });
 
     request.done(function(data) {
+
         data.length ? displayData(data) : noShows();
     });
 
@@ -934,17 +935,64 @@ scarey.tour = function() {
 
     function displayData(data) {
         var i;
+        var support = {};
+        var supportCnt = 0;
+        var denoters = ['*', '^', '#', '**', '^^', '##'];
 
         for ( i = 0; i < data.length; i++  ) {
+            var evnt = data[i];
+            evnt.support = {};
             var dateMatch = /(january|february|march|april|may|june|july|august|september|october|november|december)\s(\d+),\s(\d){4}/i;
-            var strippedDate = data[i].formatted_datetime.match(dateMatch)[0];
+            var strippedDate = evnt.formatted_datetime.match(dateMatch)[0];
             var $tourevent = $('<div>').attr('class', 'tour-event');
+
+
+
+
+            // Check if support acts
+            if ( evnt.artists.length > 1 ) {
+                for ( var s = 1; s < evnt.artists.length; s++ ) {
+                    if ( !support[evnt.artists[s].name] ) {
+                        support[evnt.artists[s].name] = denoters[supportCnt];
+                        supportCnt++;
+                    }
+                    evnt.support.name = evnt.artists[s].name;
+                    evnt.support.denoter = support[evnt.support.name];
+
+                }
+            } else {
+                evnt.support.denoter = '';
+            }
+
+            appendDates(evnt);
+
+        }
+
+        appendSupport();
+
+        function appendDates(evnt) {
             $tourevent.append('' +
                 '<p class="tour-date">' + strippedDate + '</p>' +
-                '<p class="tour-city">' + data[i].formatted_location + '</p>' +
-                '<p class="tour-venue"><a class="underlined-link" target="_blank" href="' + data[i].ticket_url + '">' + data[i].venue.name + '</a></p>');
+                '<p class="tour-city">' + evnt.formatted_location + '</p>' +
+                '<p class="tour-venue"><a class="underlined-link" target="_blank" href="' +
+                    evnt.ticket_url + '">' + evnt.venue.name + '</a>' +
+                    '<span class="bold">' + ' ' + evnt.support.denoter + '</span></p>'
+            );
             $block.append($tourevent);
+        }
 
+        function appendSupport() {
+            var $toursupport = $('<div>').attr('class', 'tour-support');
+            for (var act in support ) {
+                $toursupport.append('' +
+                    '<p><span class="bold">' +
+                    support[act] + ' ' +
+                    '</span>w/' + ' ' +
+                    act + '</p>'
+                );
+            }
+
+            $toursupport.insertBefore($block);
         }
 
     }
