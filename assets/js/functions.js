@@ -947,8 +947,6 @@ scarey.tour = function() {
             var $tourevent = $('<div>').attr('class', 'tour-event');
 
 
-
-
             // Check if support acts
             if ( evnt.artists.length > 1 ) {
                 for ( var s = 1; s < evnt.artists.length; s++ ) {
@@ -957,7 +955,7 @@ scarey.tour = function() {
                         supportCnt++;
                     }
                     evnt.support.name = evnt.artists[s].name;
-                    evnt.support.denoter = support[evnt.support.name];
+                    evnt.support.denoter = support[evnt.support.name] || "*";
 
                 }
             } else {
@@ -971,11 +969,19 @@ scarey.tour = function() {
         appendSupport();
 
         function appendDates(evnt) {
+            var ticket_url;
+
+            if (evnt.ticket_url) {
+                ticket_url = '<a class="underlined-link" target="_blank" href="' +
+                    evnt.ticket_url + '">' + evnt.venue.name + '</a>';
+            } else {
+                ticket_url = evnt.venue.name;
+            }
+
             $tourevent.append('' +
                 '<p class="tour-date">' + strippedDate + '</p>' +
                 '<p class="tour-city">' + evnt.formatted_location + '</p>' +
-                '<p class="tour-venue"><a class="underlined-link" target="_blank" href="' +
-                    evnt.ticket_url + '">' + evnt.venue.name + '</a>' +
+                '<p class="tour-venue">' + ticket_url +
                     '<span class="bold">' + ' ' + evnt.support.denoter + '</span></p>'
             );
             $block.append($tourevent);
