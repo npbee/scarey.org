@@ -911,11 +911,11 @@ scarey.tour = function() {
     var request = $.ajax({
         type: 'GET',
         dataType: 'jsonp',
-        url: 'http://api.bandsintown.com/artists/S Carey/events.json?api_version=2.0&app_id=' + APPID
+        url: 'http://api.bandsintown.com/artists/S Carey/events.json?api_version=2.0&app_id=' + APPID,
+        timeout: 8000
     });
 
     request.done(function(data) {
-
         data.length ? displayData(data) : noShows();
     });
 
