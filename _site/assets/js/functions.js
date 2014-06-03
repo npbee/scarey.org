@@ -937,7 +937,7 @@ scarey.tour = function() {
         var i;
         var support = {};
         var supportCnt = 0;
-        var denoters = ['*', '^', '#', '**', '^^', '##'];
+        var denoters = ['*', '^', '#', '**', '^^', '##', '***', '^^^', '###'];
 
         for ( i = 0; i < data.length; i++  ) {
             var evnt = data[i];
