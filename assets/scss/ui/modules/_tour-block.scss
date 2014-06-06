@@ -100,5 +100,9 @@
     font-style: italic;
     p {
         margin-bottom: $base-spacing-unit/4;
+        @include at-breakpoint($medium) {
+            display: inline-block;
+            padding: 0 $base-spacing-unit;
+        }
     }
 }
