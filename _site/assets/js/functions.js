@@ -910,12 +910,17 @@ scarey.tour = function() {
 
     var request = $.ajax({
         type: 'GET',
+        // Local testing
+        //dataType: 'json',
+        //url: 'http://localhost/mocks/bandsintown.json',
+        // Production
         dataType: 'jsonp',
         url: 'http://api.bandsintown.com/artists/S Carey/events.json?api_version=2.0&app_id=' + APPID,
         timeout: 8000
     });
 
     request.done(function(data) {
+
         data.length ? displayData(data) : noShows();
     });
 
@@ -923,13 +928,13 @@ scarey.tour = function() {
         $content.append('<p class="center">There was an error requesting the data from Bands In Town.  Please try again or visit this link: </p><p class="center"><a target="_blank" href="http://www.bandsintown.com/S.Carey">http://www.bandsintown.com/S.Carey</a></p>');
     });
 
-    request.always(function() {
+    request.always(function(data) {
         $content.removeClass('loading');
     });
 
     function noShows() {
         $block.hide();
-        $content.append('<p class="center italic">No currently scheduled shows.</p>')
+        $content.append('<p class="center italic">No currently scheduled shows.</p>');
     }
 
 
@@ -937,7 +942,10 @@ scarey.tour = function() {
         var i;
         var support = {};
         var supportCnt = 0;
-        var denoters = ['*', '^', '#', '**', '^^', '##', '***', '^^^', '###'];
+        //var denoters = ['*', '^', '#', '**', '^^', '##', '***', '^^^', '###'];
+        var denoters = ['*', '^', '#'];
+        var extraDenoter;
+        var currentDenoter = 0;
 
         for ( i = 0; i < data.length; i++  ) {
             var evnt = data[i];
@@ -951,12 +959,18 @@ scarey.tour = function() {
             if ( evnt.artists.length > 1 ) {
                 for ( var s = 1; s < evnt.artists.length; s++ ) {
                     if ( !support[evnt.artists[s].name] ) {
+                        if (!denoters[supportCnt]) {
+                            extraDenoter = denoters[currentDenoter];
+                            extraDenoter += extraDenoter.split('')[0];
+                            currentDenoter++;
+                            denoters.push(extraDenoter);
+                        }
                         support[evnt.artists[s].name] = denoters[supportCnt];
                         supportCnt++;
                     }
                     evnt.support.name = evnt.artists[s].name;
                     evnt.support.denoter = support[evnt.support.name] || "*";
-
+                    //console.log(denoters);
                 }
             } else {
                 evnt.support.denoter = '';
