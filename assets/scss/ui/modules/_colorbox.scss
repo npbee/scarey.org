@@ -42,8 +42,19 @@
     bottom:4px;
     color: $white;
 }
-    #cboxTitle{left:5px; }
-    #cboxCurrent{right:5px}
+    #cboxTitle{
+      background: $offblack;
+      width: 100%;
+      padding: $smallpadding;
+      left:0; 
+    }
+    #cboxCurrent{
+      top: 0;
+      bottom: auto;
+      background: $offblack;
+      padding: 5px;
+      display: none !important;
+    }
 #cboxSlideshow{left:45%;text-align:center;}
 #cboxPrevious, #cboxNext, #cboxClose {
     position:absolute;
