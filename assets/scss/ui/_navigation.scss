@@ -235,7 +235,7 @@ a.active {
     a {
         display:inline-block;
         padding:$base-spacing-unit/2 0;
-        color: $background;
+        color: $link-color;
         background:$black;
         border-bottom:2px solid transparent;
         border-right: 1px solid lighten($black, 20%);
@@ -248,7 +248,7 @@ a.active {
         }
         @include at-breakpoint($medium) {
             padding:$base-spacing-unit 0 $base-spacing-unit/2;
-            color:$offblack;
+            color:$link-color;
             background:none;
             border-right:none;
         }
@@ -293,10 +293,10 @@ a.active {
 
 a.page-active {
     border-bottom:2px solid $brand-main;
-    color: $white;
+    color: $link-color;
     background: $brand-main;
     @include at-breakpoint($medium) {
-        color: $black;
+        color: $link-color;
         background: none;
     }
 }

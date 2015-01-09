@@ -1,3 +1,30 @@
+/****
+* THEMING
+****/
+$theme: 'dark';
+
+$bg-desk: if(
+    $theme == 'dark', 
+    #f8f8f8 url('../img/bg--dark.jpg') fixed top left no-repeat,
+    #f8f8f8 url('../img/bg.jpg') fixed left bottom no-repeat);
+
+$bg-mob: if(
+    $theme == 'dark', 
+    #f8f8f8 url('../img/bg--dark.jpg') fixed top left no-repeat,
+    #f8f8f8 url('../img/bg--mobile.jpg') top left no-repeat);
+
+$link-color: if(
+    $theme == 'dark',
+    #f8f8f8,
+    #444);
+
+$text-color: if(
+    $theme == 'dark',
+    #f8f8f8,
+    #444);
+
+
+
 /*------------------------------------*\
     $VARIABLES
 \*------------------------------------*/
@@ -69,3 +96,6 @@ $album_filter_width: 800px;
 @function album_thumb_width($album_filter_width, $number_of_albums) {
   @return ($album_filter_width / $number_of_albums);
 }
+
+
+
