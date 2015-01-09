@@ -1,0 +1,23 @@
+{
+  "name": "scarey.org",
+  "version": "1.0.0",
+  "description": "Offical scarey.org ",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/npbee/scarey.org.git"
+  },
+  "author": "Nick Ball",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/npbee/scarey.org/issues"
+  },
+  "homepage": "https://github.com/npbee/scarey.org",
+  "devDependencies": {
+    "gulp": "^3.8.10",
+    "gulp-ruby-sass": "^1.0.0-alpha"
+  }
+}
