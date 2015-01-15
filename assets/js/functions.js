@@ -762,10 +762,6 @@ scarey.visitorCheck = function() {
 ****/
 scarey.photoGrid = function() {
 
-    // If we're not on the photo page, return
-    if ( !$('#photo-grid') ) {
-        return;
-    }
 
     var $grid = $("#photo-grid"),
           $loadMore = $("#load-more--instagram"),
@@ -865,7 +861,10 @@ scarey.photoGrid = function() {
     });
 
     // Run it
-    init();
+    // If we're not on the photo page, return
+    if ( $('#photo-grid').length ) {
+        init();
+    }
 
 
 };
@@ -897,14 +896,33 @@ scarey.collapse = function() {
 * Bands in Town API
 ****/
 scarey.tour = function() {
-
-    if ( !$('.tour--upcoming').length ) {
+    
+    if ( !$('.tour--upcoming').length && !$('.tour--past').length ) {
         return;
     }
 
     var APPID = 'scarey.org';
     var $content = $('.tour .main-content');
     var $block = $('.tour-block');
+    var dateRange;
+
+    if ( $('.tour--upcoming').length ) {
+        dateRange = 'upcoming';
+    } else if ( $('.tour--past').length ) {
+        dateRange = '2011-01-01,';
+
+        var today = new Date();
+        var year = today.getFullYear();
+        var month = getTwoDigit(today.getMonth() + 1);
+        var date =  getTwoDigit(today.getDate() - 1);
+
+        dateRange += year + '-' + month + '-' + date;
+        console.log(dateRange);
+    }
+
+    function getTwoDigit(number) {
+        return number < 10 ? '0' + number : number;
+    }
 
     $content.addClass('loading');
 
@@ -915,7 +933,7 @@ scarey.tour = function() {
         //url: 'http://localhost/mocks/bandsintown.json',
         // Production
         dataType: 'jsonp',
-        url: 'http://api.bandsintown.com/artists/S Carey/events.json?api_version=2.0&app_id=' + APPID,
+        url: 'http://api.bandsintown.com/artists/S Carey/events.json?api_version=2.0&date=' + dateRange + '&app_id=' + APPID,
         timeout: 8000
     });
 
