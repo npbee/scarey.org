@@ -16,6 +16,6 @@ gulp.task('sass', function() {
 gulp.task('js', function() {
     gulp.src('assets/js/functions.js')
         .pipe(uglify())
-        .pipe(rename('functions-ck2.js'))
+        .pipe(rename('functions-ck.js'))
         .pipe(gulp.dest('assets/js'));
 });

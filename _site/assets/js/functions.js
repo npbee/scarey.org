@@ -910,14 +910,11 @@ scarey.tour = function() {
         dateRange = 'upcoming';
     } else if ( $('.tour--past').length ) {
         dateRange = '2011-01-01,';
-
         var today = new Date();
         var year = today.getFullYear();
         var month = getTwoDigit(today.getMonth() + 1);
         var date =  getTwoDigit(today.getDate() - 1);
-
         dateRange += year + '-' + month + '-' + date;
-        console.log(dateRange);
     }
 
     function getTwoDigit(number) {
@@ -938,7 +935,6 @@ scarey.tour = function() {
     });
 
     request.done(function(data) {
-
         data.length ? displayData(data) : noShows();
     });
 

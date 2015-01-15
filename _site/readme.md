@@ -27,7 +27,8 @@ Make sure node and NPM are installed
 `gulp sass`
 
 ## Deployment Flow
-
+* Commit to master
+* Deploy with `git stpp _site deploy master`
 
 
 Site files.
