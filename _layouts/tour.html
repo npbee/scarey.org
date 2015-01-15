@@ -25,26 +25,13 @@
 
 
                     {% if page.range == "past" %}
-                        {% for tour in site.shows %}
-                            <div class="tour-block">
-                                <div class="tour-block__header">
-                                    <p class="beta no-margin-bottom">Date</p><!--
-                                    --><p class="beta no-margin-bottom">City</p><!--
-                                    --><p class="beta no-margin-bottom">Venue</p>
-                                </div>
-                                {% for show in tour.dates %}
-                                <div {% if show.href %}href="{{ show.href }}"{% endif %} class="tour-event" target="_blank">
-                                    <p class="tour-date">{{ show.date | date: '%B %-d, %Y' }}{% if tour.support %}*{% endif %}</p>
-                                    <p class="tour-city">{{ show.city }}</p>
-                                    <p class="tour-venue">{{ show.venue }}{% if show.support %}*{%endif %}</p>
-                                    {% if show.support %}<p class="tour-support">* w/ {{ show.support }}</p>{% endif %}
-                                    {% if tour.support %}<p class="tour-support tour-support--mobile">* w/ {{ tour.support }}</p>{% endif %}
-                                </div>
-                                {% endfor %}
-                                {% if tour.support %}<p class="tour-support tour-support--desk">* w/ {{ tour.support }}</p>{% endif %}
+                        <div class="tour-block tour--past">
+                            <div class="tour-block__header">
+                                <p class="beta no-margin-bottom">Date</p><!--
+                                --><p class="beta no-margin-bottom">City</p><!--
+                                --><p class="beta no-margin-bottom">Venue</p>
                             </div>
-                        {% endfor %}
-
+                        </div>
                         {% else %}
                         <div class="tour-block tour--upcoming">
                             <div class="tour-block__header">
