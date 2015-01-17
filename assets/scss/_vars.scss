@@ -5,12 +5,12 @@ $theme: 'dark';
 
 $bg-desk: if(
     $theme == 'dark', 
-    #f8f8f8 url('../img/bg--dark.jpg') fixed top left no-repeat,
+    #f8f8f8 url('../img/bg--dark-edit1.jpeg') fixed top left no-repeat,
     #f8f8f8 url('../img/bg.jpg') fixed left bottom no-repeat);
 
 $bg-mob: if(
     $theme == 'dark', 
-    #f8f8f8 url('../img/bg--dark.jpg') fixed top left no-repeat,
+    #f8f8f8 url('../img/bg--dark-edit1.jpeg') fixed top left no-repeat,
     #f8f8f8 url('../img/bg--mobile.jpg') top left no-repeat);
 
 $link-color: if(

@@ -510,12 +510,12 @@ body {
   -webkit-font-smoothing: antialiased !important;
   color: #f8f8f8;
   /*background: #f8f8f8 url("../img/bg--mobile.jpg") top left no-repeat;*/
-  background: #f8f8f8 url("../img/bg--dark.jpg") fixed top left no-repeat; }
+  background: #f8f8f8 url("../img/bg--dark-edit1.jpeg") fixed top left no-repeat; }
   @media (min-width: 50em) {
     body {
       overflow: auto;
       /*background: #f8f8f8 url("../img/bg.jpg") fixed left bottom no-repeat;*/
-      background: #f8f8f8 url("../img/bg--dark.jpg") fixed top left no-repeat;
+      background: #f8f8f8 url("../img/bg--dark-edit1.jpeg") fixed top left no-repeat;
       background-size: cover; } }
 
 .no-js body {
