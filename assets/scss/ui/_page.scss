@@ -25,7 +25,7 @@ body {
     color: $text-color;
     /*background: #f8f8f8 url("../img/bg--mobile.jpg") top left no-repeat;*/
     background: $bg-mob;
-    //background-size: cover;
+    background-size: cover;
     @include at-breakpoint($medium) {
         overflow:auto;
         /*background: #f8f8f8 url("../img/bg.jpg") fixed left bottom no-repeat;*/

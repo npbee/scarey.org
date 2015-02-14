@@ -10,7 +10,7 @@ $bg-desk: if(
 
 $bg-mob: if(
     $theme == 'dark', 
-    #f8f8f8 url('../img/bg--dark-edit1.jpeg') fixed top left no-repeat,
+    #171719,
     #f8f8f8 url('../img/bg--mobile.jpg') top left no-repeat);
 
 $link-color: if(

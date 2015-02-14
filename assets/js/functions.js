@@ -141,7 +141,7 @@ scarey.filter = {
 scarey.carousel = function() {
     if ( !$(".filter").length ) {
        return;
-    }
+   }
     var slider_outer = $(".filter__slider"),
           slider_inner = $(".filter__slider-wrap"),
           items = $(".filter__slider-wrap li"),
