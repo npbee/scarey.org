@@ -510,7 +510,8 @@ body {
   -webkit-font-smoothing: antialiased !important;
   color: #f8f8f8;
   /*background: #f8f8f8 url("../img/bg--mobile.jpg") top left no-repeat;*/
-  background: #f8f8f8 url("../img/bg--dark-edit1.jpeg") fixed top left no-repeat; }
+  background: #171719;
+  background-size: cover; }
   @media (min-width: 50em) {
     body {
       overflow: auto;
