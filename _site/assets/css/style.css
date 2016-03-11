@@ -616,7 +616,7 @@ h3, .gamma, .main-nav .logo-nav, .blog a.blog-nav,
 .albums a.albums-nav,
 .media a.media-nav,
 .store a.store-nav,
-.contact a.contact-nav, .post-content p {
+.contact a.contact-nav, .post-content p, #mc_embed_signup h2 {
   font-size: 26px;
   font-size: 1.625rem;
   line-height: 1.84615; }
@@ -2078,6 +2078,29 @@ footer {
 
 .no-js .headline {
   opacity: 1; }
+
+#mc_embed_signup {
+  margin-bottom: 24px; }
+  #mc_embed_signup h2 {
+    text-align: center; }
+  #mc_embed_signup button {
+    background: #5f7481; }
+  #mc_embed_signup .mc-field-group,
+  #mc_embed_signup .indicates-required,
+  #mc_embed_signup .mce-responses,
+  #mc_embed_signup .clear {
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto; }
+  #mc_embed_signup .mc-field-group {
+    margin-bottom: 12px; }
+    #mc_embed_signup .mc-field-group label {
+      display: block; }
+    #mc_embed_signup .mc-field-group input {
+      border: none;
+      outline: none;
+      width: 100%;
+      padding: 5px; }
 
 /*------------------------------------*\
     $HELPERS
