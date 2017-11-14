@@ -119,3 +119,18 @@
     display: inline-block;
     vertical-align: middle;
 }
+
+
+.w-100 {
+    width: 100%;
+}
+
+.ttu {
+    text-transform: uppercase;
+}
+
+@include at-breakpoint($medium) {
+    .w-50-ns {
+        width: 50%;
+    }
+}

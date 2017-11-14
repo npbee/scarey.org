@@ -46,3 +46,14 @@
         background: darken($black, 5%);
     }
 }
+
+.transparent-button {
+    background: none;
+    border: 1px solid $white;
+    border-radius: 3px;
+    color: $white;
+    cursor:pointer;
+    padding: $base-spacing-unit/2 $base-spacing-unit/2;
+    text-align:center;
+    text-transform: uppercase;
+}

@@ -4,12 +4,12 @@
 $theme: 'dark';
 
 $bg-desk: if(
-    $theme == 'dark', 
-    #f8f8f8 url('../img/bg--dark-edit1.jpeg') fixed top left no-repeat,
+    $theme == 'dark',
+    #f8f8f8 url('../img/bg2.png') fixed center no-repeat,
     #f8f8f8 url('../img/bg.jpg') fixed left bottom no-repeat);
 
 $bg-mob: if(
-    $theme == 'dark', 
+    $theme == 'dark',
     #171719,
     #f8f8f8 url('../img/bg--mobile.jpg') top left no-repeat);
 
@@ -41,8 +41,8 @@ $line-height-ratio: $base-line-height / $base-font-size;
 /****
 * Colors
 ****/
-$brand-main: #5f7481;
-$brand-alt: #C08A59;
+$brand-alt: #5f7481;
+$brand-main: #C08A59;
 $black: #444;
 $white: #f9f9f9;
 $grey: #666;
