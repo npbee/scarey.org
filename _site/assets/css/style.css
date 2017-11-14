@@ -80,14 +80,14 @@ iframe {
 * Font size
 ****/
 /****
+* Colors
+****/
+/****
 * THEMING
 ****/
 /*------------------------------------*\
     $VARIABLES
 \*------------------------------------*/
-/****
-* Colors
-****/
 /****
 * Font sizes
 ****/
@@ -510,12 +510,16 @@ body {
   -webkit-font-smoothing: antialiased !important;
   color: #f8f8f8;
   /*background: #f8f8f8 url("../img/bg--mobile.jpg") top left no-repeat;*/
-  background: #171719;
-  background-size: cover; }
+  background: #444; }
   @media (min-width: 50em) {
     body {
-      overflow: auto;
-      /*background: #f8f8f8 url("../img/bg.jpg") fixed left bottom no-repeat;*/
+      overflow: auto; } }
+
+.home {
+  background: #444;
+  background-size: cover; }
+  @media (min-width: 50em) {
+    .home {
       background: #f8f8f8 url("../img/bg2.png") fixed center no-repeat;
       background-size: cover; } }
 
@@ -783,8 +787,8 @@ header {
     top: 0;
     float: left; }
     .main-nav .logo-nav > img {
-      width: 250px;
-      vertical-align: middle; }
+      vertical-align: middle;
+      width: 150px; }
     @media (min-width: 50em) {
       .main-nav .logo-nav {
         display: inline;
@@ -792,25 +796,27 @@ header {
         float: none;
         font-weight: 100;
         font-size: 48px;
-        line-height: 1; } }
+        line-height: 1; }
+        .main-nav .logo-nav > img {
+          width: 250px; } }
 
 /* Hide irrelevant icons on small view */
 .blog .tour-nav, .blog .albums-nav, .blog .media-nav, .blog .store-nav, .blog .contact-nav,
-.tour .blog-nav, .tour .albums-nav, .tour .media-nav, .tour .store-nav, .tour .contact-nav,
+.tour .blog-nav, .tour .albums-nav, .tour .media-nav, .tour .store-nav, .tour .contact-nav, .tour .videos-nav, .tour .pics-nav, .tour .songs-nav,
 .albums .blog-nav, .albums .tour-nav, .albums .media-nav, .albums .store-nav, .albums .contact-nav,
 .media .blog-nav, .media .tour-nav, .media .albums-nav, .media .store-nav, .media .contact-nav,
 .store .blog-nav, .store .tour-nav, .store .albums-nav, .store .media-nav, .store .contact-nav,
 .contact .blog-nav, .contact .tour-nav, .contact .albums-nav, .contact .media-nav, .contact .store-nav,
-.home .blog-nav, .home .tour-nav, .home .albums-nav, .home .media-nav, .home .store-nav, .home .contact-nav {
+.home .tour-nav, .home .albums-nav, .home .store-nav, .home .contact-nav, .home .videos-nav, .home .pics-nav, .home .songs-nav {
   display: none; }
   @media (min-width: 50em) {
     .blog .tour-nav, .blog .albums-nav, .blog .media-nav, .blog .store-nav, .blog .contact-nav,
-    .tour .blog-nav, .tour .albums-nav, .tour .media-nav, .tour .store-nav, .tour .contact-nav,
+    .tour .blog-nav, .tour .albums-nav, .tour .media-nav, .tour .store-nav, .tour .contact-nav, .tour .videos-nav, .tour .pics-nav, .tour .songs-nav,
     .albums .blog-nav, .albums .tour-nav, .albums .media-nav, .albums .store-nav, .albums .contact-nav,
     .media .blog-nav, .media .tour-nav, .media .albums-nav, .media .store-nav, .media .contact-nav,
     .store .blog-nav, .store .tour-nav, .store .albums-nav, .store .media-nav, .store .contact-nav,
     .contact .blog-nav, .contact .tour-nav, .contact .albums-nav, .contact .media-nav, .contact .store-nav,
-    .home .blog-nav, .home .tour-nav, .home .albums-nav, .home .media-nav, .home .store-nav, .home .contact-nav {
+    .home .tour-nav, .home .albums-nav, .home .store-nav, .home .contact-nav, .home .videos-nav, .home .pics-nav, .home .songs-nav {
       display: inline-block; } }
 
 .close-nav {

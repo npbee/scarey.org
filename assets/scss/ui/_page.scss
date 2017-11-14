@@ -24,11 +24,16 @@ body {
     -webkit-font-smoothing: antialiased !important;
     color: $text-color;
     /*background: #f8f8f8 url("../img/bg--mobile.jpg") top left no-repeat;*/
+    background: $black;
+    @include at-breakpoint($medium) {
+        overflow:auto;
+    }
+}
+
+.home {
     background: $bg-mob;
     background-size: cover;
     @include at-breakpoint($medium) {
-        overflow:auto;
-        /*background: #f8f8f8 url("../img/bg.jpg") fixed left bottom no-repeat;*/
         background: $bg-desk;
         background-size: cover;
     }
