@@ -5,8 +5,9 @@ var rename = require('gulp-rename');
 
 gulp.task('sass', function() {
     return sass('assets/scss/style.scss', {
-        compass: true 
-    }) 
+        bundleExec: true,
+        compass: true
+    })
     .on('error', function (err) {
         console.error('Error!', err.message);
     })
@@ -18,4 +19,11 @@ gulp.task('js', function() {
         .pipe(uglify())
         .pipe(rename('functions-ck.js'))
         .pipe(gulp.dest('assets/js'));
+});
+
+gulp.task('watch', function() {
+    const watcher = gulp.watch('assets/scss/**/*.scss', ['sass']);
+    // watcher.on('change', function(event) {
+    //     console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
+    // });
 });
