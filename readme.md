@@ -3,10 +3,17 @@
 
 ## DEPENDENCIES
 ### Ruby dependecies
-* Jekyll 
+* rbenv
+* Jekyll
 * Sass
 * Compass
 * Susyone
+
+- Install `rbenv`
+- Install `nvm`
+
+`nvm use`
+
 Make sure bundler is installed
 `gem install bundler`
 
@@ -22,7 +29,7 @@ Make sure node and NPM are installed
 
 ## Development flow
 * Start Jekyll
-`jekyll serve --watch`
+`bundle exec jekyll serve --watch`
 * Edit Sass
 `gulp sass`
 
