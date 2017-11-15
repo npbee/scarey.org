@@ -504,19 +504,24 @@ body {
   margin: 0;
   height: 100%;
   overflow-x: hidden;
-  font-family: Avenir, sans-serif;
-  font-weight: 300;
+  font-family: avenir next, avenir, sans-serif;
+  font-weight: 600;
   font-size: 1em/1.5;
   -webkit-font-smoothing: antialiased !important;
   color: #f8f8f8;
   /*background: #f8f8f8 url("../img/bg--mobile.jpg") top left no-repeat;*/
-  background: #444; }
+  background: #f8f8f8 url("../img/bg2.png") fixed center no-repeat;
+  background-size: cover; }
   @media (min-width: 50em) {
     body {
       overflow: auto; } }
+  @media (min-width: 50em) {
+    body {
+      background: #f8f8f8 url("../img/bg2.png") fixed center no-repeat;
+      background-size: cover; } }
 
 .home {
-  background: #444;
+  background: #f8f8f8 url("../img/bg2.png") fixed center no-repeat;
   background-size: cover; }
   @media (min-width: 50em) {
     .home {
@@ -527,6 +532,7 @@ body {
   font-weight: 100; }
 
 body > .wrap {
+  background: rgba(120, 120, 120, 0.4);
   height: auto;
   min-height: 100%;
   margin-bottom: -5em; }
@@ -602,7 +608,7 @@ body > .wrap {
 * Headers
 ****/
 .header-font, h1, h2, h3, h4, h5, h6, .main-nav a, .mobile-flyout a, .home-nav {
-  font-weight: 300;
+  font-weight: 600;
   text-transform: uppercase; }
 
 h1, .alpha {
@@ -770,7 +776,7 @@ header {
       text-align: center;
       padding: 12px 0; } }
   .main-nav a {
-    font-weight: bold;
+    letter-spacing: 0.05em;
     display: inline-block;
     padding: 12px; }
     .main-nav a:hover {
@@ -844,7 +850,6 @@ header {
       margin-left: 0;
       color: #C08A59;
       font-size: 16px;
-      font-weight: 500;
       padding: 0 12px; } }
 
 a.active {
@@ -1889,6 +1894,32 @@ footer {
 .collapse--collapsed .collapse__trigger:after {
   content: "\e60b"; }
 
+.dropdown {
+  position: relative; }
+  .dropdown ul {
+    margin-top: 8px;
+    position: absolute;
+    display: none;
+    left: 0;
+    list-style: none;
+    text-align: left;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 5px;
+    border-radius: 3px; }
+    .dropdown ul:before {
+      content: "";
+      border-left: 10px solid transparent;
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid rgba(0, 0, 0, 0.8);
+      border-right: 10px solid transparent;
+      position: absolute;
+      left: 5px;
+      top: -20px; }
+    .dropdown ul li {
+      padding: 5px; }
+  .dropdown:hover ul {
+    display: block; }
+
 /*------------------------------------*\
     $BLOG STYLES
 \*------------------------------------*/
@@ -2151,7 +2182,7 @@ footer {
 ****/
 .bold, .small-header, .tour-date:before,
 .tour-city:before,
-.tour-venue:before, .preorder p {
+.tour-venue:before {
   font-weight: 600; }
 
 /****
@@ -2221,6 +2252,16 @@ footer {
 
 .ttu {
   text-transform: uppercase; }
+
+.text-bg {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 3px; }
+
+.pa-small {
+  padding: 5px; }
+
+.pa {
+  padding: 1em; }
 
 @media (min-width: 50em) {
   .w-50-ns {
