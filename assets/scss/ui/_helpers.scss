@@ -129,6 +129,19 @@
     text-transform: uppercase;
 }
 
+.text-bg {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: $border-radius;
+}
+
+.pa-small {
+    padding: $smallpadding;
+}
+
+.pa {
+    padding: $padding;
+}
+
 @include at-breakpoint($medium) {
     .w-50-ns {
         width: 50%;

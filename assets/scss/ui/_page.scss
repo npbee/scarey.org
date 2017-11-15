@@ -18,15 +18,20 @@ body {
     margin: 0;
     height: 100%;
     overflow-x:hidden;
-    font-family: Avenir, sans-serif;
-    font-weight:300;
+    font-family: avenir next, avenir, sans-serif;
+    font-weight: 600;
     font-size: #{($base-font-size/16px)*1em}/#{$line-height-ratio};
     -webkit-font-smoothing: antialiased !important;
     color: $text-color;
     /*background: #f8f8f8 url("../img/bg--mobile.jpg") top left no-repeat;*/
-    background: $black;
+    background: $bg-mob;
+    background-size: cover;
     @include at-breakpoint($medium) {
         overflow:auto;
+    }
+    @include at-breakpoint($medium) {
+        background: $bg-desk;
+        background-size: cover;
     }
 }
 
@@ -45,6 +50,7 @@ body {
 
 
 body > .wrap {
+    background: rgba(120, 120, 120, 0.4);
     height:auto;
     min-height:100%;
     margin-bottom: -5em;
