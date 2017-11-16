@@ -33,6 +33,9 @@ body {
         background: $bg-desk;
         background-size: cover;
     }
+
+    &:after {
+    }
 }
 
 .home {

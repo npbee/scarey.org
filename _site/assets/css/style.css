@@ -621,7 +621,7 @@ h2, .beta, .more-nav {
   font-size: 2rem;
   line-height: 1.5; }
 
-h3, .gamma, .main-nav .logo-nav, .blog a.blog-nav,
+h3, .gamma, .main-nav .logo-nav, .songs a.songs-nav,
 .tour a.tour-nav,
 .albums a.albums-nav,
 .media a.media-nav,
@@ -807,7 +807,7 @@ header {
           width: 250px; } }
 
 /* Hide irrelevant icons on small view */
-.blog .tour-nav, .blog .albums-nav, .blog .media-nav, .blog .store-nav, .blog .contact-nav,
+.songs .tour-nav, .songs .videos-nav, .songs .pics-nav, .songs .store-nav, .songs .contact-nav,
 .tour .blog-nav, .tour .albums-nav, .tour .media-nav, .tour .store-nav, .tour .contact-nav, .tour .videos-nav, .tour .pics-nav, .tour .songs-nav,
 .albums .blog-nav, .albums .tour-nav, .albums .media-nav, .albums .store-nav, .albums .contact-nav,
 .media .blog-nav, .media .tour-nav, .media .albums-nav, .media .store-nav, .media .contact-nav,
@@ -816,7 +816,7 @@ header {
 .home .tour-nav, .home .albums-nav, .home .store-nav, .home .contact-nav, .home .videos-nav, .home .pics-nav, .home .songs-nav {
   display: none; }
   @media (min-width: 50em) {
-    .blog .tour-nav, .blog .albums-nav, .blog .media-nav, .blog .store-nav, .blog .contact-nav,
+    .songs .tour-nav, .songs .videos-nav, .songs .pics-nav, .songs .store-nav, .songs .contact-nav,
     .tour .blog-nav, .tour .albums-nav, .tour .media-nav, .tour .store-nav, .tour .contact-nav, .tour .videos-nav, .tour .pics-nav, .tour .songs-nav,
     .albums .blog-nav, .albums .tour-nav, .albums .media-nav, .albums .store-nav, .albums .contact-nav,
     .media .blog-nav, .media .tour-nav, .media .albums-nav, .media .store-nav, .media .contact-nav,
@@ -831,7 +831,7 @@ header {
 /****
 * Active menus
 ****/
-.blog a.blog-nav,
+.songs a.songs-nav,
 .tour a.tour-nav,
 .albums a.albums-nav,
 .media a.media-nav,
@@ -841,7 +841,7 @@ header {
   margin-left: -6px;
   color: #C08A59; }
   @media (min-width: 50em) {
-    .blog a.blog-nav,
+    .songs a.songs-nav,
     .tour a.tour-nav,
     .albums a.albums-nav,
     .media a.media-nav,
@@ -1062,8 +1062,7 @@ footer {
   footer a {
     display: inline-block;
     vertical-align: middle;
-    padding: 24px;
-    width: 100%;
+    padding: 0 24px;
     border-bottom: 1px solid #777777;
     line-height: 2em; }
     footer a:last-child {
@@ -2129,6 +2128,22 @@ footer {
 
 .no-js .headline {
   opacity: 1; }
+
+.songs-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; }
+  @media (min-width: 50em) {
+    .songs-content {
+      flex-direction: row;
+      max-width: 70%;
+      margin: 0 auto; } }
+
+.songs__item {
+  padding: 1em; }
+  .songs__item img {
+    max-width: 100%; }
 
 #mc_embed_signup {
   margin-bottom: 24px; }

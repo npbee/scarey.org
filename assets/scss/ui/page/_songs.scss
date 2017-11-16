@@ -1,0 +1,19 @@
+.songs-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    @include at-breakpoint($medium) {
+        flex-direction: row;
+        max-width: 70%;
+        margin: 0 auto;
+    }
+}
+
+.songs__item {
+    padding: $padding;
+    img {
+        max-width: 100%;
+    }
+}

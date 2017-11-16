@@ -65,7 +65,7 @@ header {
 
 
 /* Hide irrelevant icons on small view */
-.blog .tour-nav, .blog .albums-nav, .blog .media-nav, .blog .store-nav, .blog .contact-nav,
+.songs .tour-nav, .songs .videos-nav, .songs .pics-nav, .songs .store-nav, .songs .contact-nav,
 .tour .blog-nav, .tour .albums-nav, .tour .media-nav, .tour .store-nav, .tour .contact-nav, .tour .videos-nav, .tour .pics-nav, .tour .songs-nav,
 .albums .blog-nav, .albums .tour-nav, .albums .media-nav, .albums .store-nav, .albums .contact-nav,
 .media .blog-nav, .media .tour-nav, .media .albums-nav, .media .store-nav, .media .contact-nav,
@@ -89,7 +89,7 @@ header {
 /****
 * Active menus
 ****/
-.blog a.blog-nav,
+.songs a.songs-nav,
 .tour a.tour-nav,
 .albums a.albums-nav,
 .media a.media-nav,
