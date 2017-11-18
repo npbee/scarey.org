@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var sass = require('gulp-ruby-sass');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
+var cleanCss = require('gulp-clean-css');
 
 gulp.task('sass', function() {
     return sass('assets/scss/style.scss', {
@@ -11,6 +12,7 @@ gulp.task('sass', function() {
     .on('error', function (err) {
         console.error('Error!', err.message);
     })
+    // .pipe(cleanCss({ level: 2 }))
     .pipe(gulp.dest('assets/css'));
 });
 

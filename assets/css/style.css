@@ -509,37 +509,24 @@ body {
   font-size: 1em/1.5;
   -webkit-font-smoothing: antialiased !important;
   color: #f8f8f8;
-  /*background: #f8f8f8 url("../img/bg--mobile.jpg") top left no-repeat;*/
-  background: #f8f8f8 url("../img/bg2.png") fixed center no-repeat;
+  background-image: linear-gradient(rgba(120, 120, 120, 0.3), rgba(120, 120, 120, 0.3)), url("../img/bg2.png");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: cover; }
   @media (min-width: 50em) {
     body {
       overflow: auto; } }
-  @media (min-width: 50em) {
-    body {
-      background: #f8f8f8 url("../img/bg2.png") fixed center no-repeat;
-      background-size: cover; } }
-
-.home {
-  background: #f8f8f8 url("../img/bg2.png") fixed center no-repeat;
-  background-size: cover; }
-  @media (min-width: 50em) {
-    .home {
-      background: #f8f8f8 url("../img/bg2.png") fixed center no-repeat;
-      background-size: cover; } }
 
 .no-js body {
   font-weight: 100; }
 
 body > .wrap {
-  background: rgba(120, 120, 120, 0.4);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   height: auto;
-  min-height: 100%;
-  margin-bottom: -5em; }
-  body > .wrap:after {
-    content: '';
-    display: block;
-    height: 5em; }
+  min-height: 100%; }
   @media (min-width: 50em) {
     body > .wrap {
       overflow-x: hidden; } }
@@ -549,11 +536,13 @@ body > .wrap {
   ****/
 .main-content,
 #main {
+  flex: 1 0 auto;
   position: relative;
   margin: 0 auto;
   clear: both;
   padding: 0 12px 0;
   opacity: 1;
+  width: 100%;
   -moz-transition: opacity 1000ms ease-in-out;
   -o-transition: opacity 1000ms ease-in-out;
   -webkit-transition: opacity 1000ms ease-in-out;
@@ -573,6 +562,10 @@ body > .wrap {
         content: "";
         display: table;
         clear: both; } }
+
+header,
+footer {
+  flex: none; }
 
 /*------------------------------------*\
     $TYPOGRAPHY
@@ -621,22 +614,17 @@ h2, .beta, .more-nav {
   font-size: 2rem;
   line-height: 1.5; }
 
-h3, .gamma, .main-nav .logo-nav, .songs a.songs-nav,
-.tour a.tour-nav,
-.albums a.albums-nav,
-.media a.media-nav,
-.store a.store-nav,
-.contact a.contact-nav, .post-content p, #mc_embed_signup h2 {
+h3, .gamma, .main-nav .logo-nav, .songs a.songs-nav, .tour a.tour-nav, .pics a.pics-nav, .albums a.albums-nav, .videos a.videos-nav, .store a.store-nav, .contact a.contact-nav {
   font-size: 26px;
   font-size: 1.625rem;
   line-height: 1.84615; }
 
-h4, .delta, .text-block, .album-blurb p, .post blockquote, .home-nav {
+h4, .delta, .text-block, .album-blurb p, .home-nav {
   font-size: 22px;
   font-size: 1.375rem;
   line-height: 1.09091; }
 
-h5, .epsilon, .album-block .album-release, .preorder {
+h5, .epsilon, .album-block .album-release {
   font-size: 20px;
   font-size: 1.25rem;
   line-height: 1.2; }
@@ -807,22 +795,179 @@ header {
           width: 250px; } }
 
 /* Hide irrelevant icons on small view */
-.songs .tour-nav, .songs .videos-nav, .songs .pics-nav, .songs .store-nav, .songs .contact-nav,
-.tour .blog-nav, .tour .albums-nav, .tour .media-nav, .tour .store-nav, .tour .contact-nav, .tour .videos-nav, .tour .pics-nav, .tour .songs-nav,
-.albums .blog-nav, .albums .tour-nav, .albums .media-nav, .albums .store-nav, .albums .contact-nav,
-.media .blog-nav, .media .tour-nav, .media .albums-nav, .media .store-nav, .media .contact-nav,
-.store .blog-nav, .store .tour-nav, .store .albums-nav, .store .media-nav, .store .contact-nav,
-.contact .blog-nav, .contact .tour-nav, .contact .albums-nav, .contact .media-nav, .contact .store-nav,
-.home .tour-nav, .home .albums-nav, .home .store-nav, .home .contact-nav, .home .videos-nav, .home .pics-nav, .home .songs-nav {
+.songs .tour-nav,
+.songs .songs-nav,
+.songs .pics-nav,
+.songs .store-nav,
+.songs .videos-nav,
+.songs .contact-nav {
   display: none; }
   @media (min-width: 50em) {
-    .songs .tour-nav, .songs .videos-nav, .songs .pics-nav, .songs .store-nav, .songs .contact-nav,
-    .tour .blog-nav, .tour .albums-nav, .tour .media-nav, .tour .store-nav, .tour .contact-nav, .tour .videos-nav, .tour .pics-nav, .tour .songs-nav,
-    .albums .blog-nav, .albums .tour-nav, .albums .media-nav, .albums .store-nav, .albums .contact-nav,
-    .media .blog-nav, .media .tour-nav, .media .albums-nav, .media .store-nav, .media .contact-nav,
-    .store .blog-nav, .store .tour-nav, .store .albums-nav, .store .media-nav, .store .contact-nav,
-    .contact .blog-nav, .contact .tour-nav, .contact .albums-nav, .contact .media-nav, .contact .store-nav,
-    .home .tour-nav, .home .albums-nav, .home .store-nav, .home .contact-nav, .home .videos-nav, .home .pics-nav, .home .songs-nav {
+    .songs .tour-nav,
+    .songs .songs-nav,
+    .songs .pics-nav,
+    .songs .store-nav,
+    .songs .videos-nav,
+    .songs .contact-nav {
+      display: inline-block; } }
+
+.songs .songs-nav {
+  display: inline-block; }
+
+.tour .tour-nav,
+.tour .songs-nav,
+.tour .pics-nav,
+.tour .store-nav,
+.tour .videos-nav,
+.tour .contact-nav {
+  display: none; }
+  @media (min-width: 50em) {
+    .tour .tour-nav,
+    .tour .songs-nav,
+    .tour .pics-nav,
+    .tour .store-nav,
+    .tour .videos-nav,
+    .tour .contact-nav {
+      display: inline-block; } }
+
+.tour .tour-nav {
+  display: inline-block; }
+
+.pics .tour-nav,
+.pics .songs-nav,
+.pics .pics-nav,
+.pics .store-nav,
+.pics .videos-nav,
+.pics .contact-nav {
+  display: none; }
+  @media (min-width: 50em) {
+    .pics .tour-nav,
+    .pics .songs-nav,
+    .pics .pics-nav,
+    .pics .store-nav,
+    .pics .videos-nav,
+    .pics .contact-nav {
+      display: inline-block; } }
+
+.pics .pics-nav {
+  display: inline-block; }
+
+.albums .tour-nav,
+.albums .songs-nav,
+.albums .pics-nav,
+.albums .store-nav,
+.albums .videos-nav,
+.albums .contact-nav {
+  display: none; }
+  @media (min-width: 50em) {
+    .albums .tour-nav,
+    .albums .songs-nav,
+    .albums .pics-nav,
+    .albums .store-nav,
+    .albums .videos-nav,
+    .albums .contact-nav {
+      display: inline-block; } }
+
+.albums .albums-nav {
+  display: inline-block; }
+
+.videos .tour-nav,
+.videos .songs-nav,
+.videos .pics-nav,
+.videos .store-nav,
+.videos .videos-nav,
+.videos .contact-nav {
+  display: none; }
+  @media (min-width: 50em) {
+    .videos .tour-nav,
+    .videos .songs-nav,
+    .videos .pics-nav,
+    .videos .store-nav,
+    .videos .videos-nav,
+    .videos .contact-nav {
+      display: inline-block; } }
+
+.videos .videos-nav {
+  display: inline-block; }
+
+.store .tour-nav,
+.store .songs-nav,
+.store .pics-nav,
+.store .store-nav,
+.store .videos-nav,
+.store .contact-nav {
+  display: none; }
+  @media (min-width: 50em) {
+    .store .tour-nav,
+    .store .songs-nav,
+    .store .pics-nav,
+    .store .store-nav,
+    .store .videos-nav,
+    .store .contact-nav {
+      display: inline-block; } }
+
+.store .store-nav {
+  display: inline-block; }
+
+.contact .tour-nav,
+.contact .songs-nav,
+.contact .pics-nav,
+.contact .store-nav,
+.contact .videos-nav,
+.contact .contact-nav {
+  display: none; }
+  @media (min-width: 50em) {
+    .contact .tour-nav,
+    .contact .songs-nav,
+    .contact .pics-nav,
+    .contact .store-nav,
+    .contact .videos-nav,
+    .contact .contact-nav {
+      display: inline-block; } }
+
+.contact .contact-nav {
+  display: inline-block; }
+
+.home .songs-nav {
+  display: none; }
+  @media (min-width: 50em) {
+    .home .songs-nav {
+      display: inline-block; } }
+
+.home .tour-nav {
+  display: none; }
+  @media (min-width: 50em) {
+    .home .tour-nav {
+      display: inline-block; } }
+
+.home .pics-nav {
+  display: none; }
+  @media (min-width: 50em) {
+    .home .pics-nav {
+      display: inline-block; } }
+
+.home .albums-nav {
+  display: none; }
+  @media (min-width: 50em) {
+    .home .albums-nav {
+      display: inline-block; } }
+
+.home .videos-nav {
+  display: none; }
+  @media (min-width: 50em) {
+    .home .videos-nav {
+      display: inline-block; } }
+
+.home .store-nav {
+  display: none; }
+  @media (min-width: 50em) {
+    .home .store-nav {
+      display: inline-block; } }
+
+.home .contact-nav {
+  display: none; }
+  @media (min-width: 50em) {
+    .home .contact-nav {
       display: inline-block; } }
 
 .close-nav {
@@ -831,21 +976,77 @@ header {
 /****
 * Active menus
 ****/
-.songs a.songs-nav,
-.tour a.tour-nav,
-.albums a.albums-nav,
-.media a.media-nav,
-.store a.store-nav,
+.songs a.songs-nav {
+  padding-left: 0;
+  margin-left: -6px;
+  color: #C08A59; }
+  @media (min-width: 50em) {
+    .songs a.songs-nav {
+      margin-left: 0;
+      color: #C08A59;
+      font-size: 16px;
+      padding: 0 12px; } }
+
+.tour a.tour-nav {
+  padding-left: 0;
+  margin-left: -6px;
+  color: #C08A59; }
+  @media (min-width: 50em) {
+    .tour a.tour-nav {
+      margin-left: 0;
+      color: #C08A59;
+      font-size: 16px;
+      padding: 0 12px; } }
+
+.pics a.pics-nav {
+  padding-left: 0;
+  margin-left: -6px;
+  color: #C08A59; }
+  @media (min-width: 50em) {
+    .pics a.pics-nav {
+      margin-left: 0;
+      color: #C08A59;
+      font-size: 16px;
+      padding: 0 12px; } }
+
+.albums a.albums-nav {
+  padding-left: 0;
+  margin-left: -6px;
+  color: #C08A59; }
+  @media (min-width: 50em) {
+    .albums a.albums-nav {
+      margin-left: 0;
+      color: #C08A59;
+      font-size: 16px;
+      padding: 0 12px; } }
+
+.videos a.videos-nav {
+  padding-left: 0;
+  margin-left: -6px;
+  color: #C08A59; }
+  @media (min-width: 50em) {
+    .videos a.videos-nav {
+      margin-left: 0;
+      color: #C08A59;
+      font-size: 16px;
+      padding: 0 12px; } }
+
+.store a.store-nav {
+  padding-left: 0;
+  margin-left: -6px;
+  color: #C08A59; }
+  @media (min-width: 50em) {
+    .store a.store-nav {
+      margin-left: 0;
+      color: #C08A59;
+      font-size: 16px;
+      padding: 0 12px; } }
+
 .contact a.contact-nav {
   padding-left: 0;
   margin-left: -6px;
   color: #C08A59; }
   @media (min-width: 50em) {
-    .songs a.songs-nav,
-    .tour a.tour-nav,
-    .albums a.albums-nav,
-    .media a.media-nav,
-    .store a.store-nav,
     .contact a.contact-nav {
       margin-left: 0;
       color: #C08A59;
@@ -1046,48 +1247,36 @@ a.page-active {
     $FOOTER
 \*------------------------------------*/
 footer {
-  zoom: 1;
-  height: 2em;
-  position: relative;
-  clear: both;
-  text-align: center;
-  font-size: 32px; }
-  footer:before, footer:after {
-    content: "\0020";
-    display: block;
-    height: 0;
-    overflow: hidden; }
-  footer:after {
-    clear: both; }
-  footer a {
-    display: inline-block;
-    vertical-align: middle;
-    padding: 0 24px;
-    border-bottom: 1px solid #777777;
-    line-height: 2em; }
-    footer a:last-child {
-      border-bottom: none; }
-    footer a:first-child {
-      border-top: 1px solid #777777; }
-    footer a:hover {
-      color: #C08A59; }
+  display: flex;
+  flex-direction: column;
+  text-align: center; }
+  footer svg {
+    fill: #f9f9f9;
+    width: 25px; }
+  footer .footer__top {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 12px; }
     @media (min-width: 50em) {
-      footer a {
-        padding: 0 24px;
-        width: auto;
-        border-bottom: none;
-        line-height: 2em; }
-        footer a:first-child {
-          border-top: none; } }
+      footer .footer__top {
+        justify-content: center; } }
+    footer .footer__top a {
+      text-decoration: none;
+      padding: 0 24px; }
+      footer .footer__top a:hover {
+        color: #C08A59; }
+      @media (min-width: 50em) {
+        footer .footer__top a {
+          padding: 12px 24px;
+          width: auto;
+          border-bottom: none; }
+          footer .footer__top a:first-child {
+            border-top: none; } }
 
 .logo-footer {
-  display: none; }
-  @media (min-width: 50em) {
-    .logo-footer {
-      display: inline-block;
-      width: auto;
-      height: auto;
-      font-size: 12px; } }
+  margin-bottom: 1em;
+  display: block;
+  font-size: 12px; }
 
 /*------------------------------------*\
     $VIDEOS
@@ -1181,152 +1370,9 @@ footer {
   border-radius: 3px;
   color: #f9f9f9;
   cursor: pointer;
-  padding: 12px 12px;
+  padding: 6px 12px;
   text-align: center;
   text-transform: uppercase; }
-
-/*------------------------------------*\
-    $COLORBOX
-\*------------------------------------*/
-/*
-    ColorBox Core Style:
-    The following CSS is consistent between example themes and should not be altered.
-*/
-#colorbox, #cboxOverlay, #cboxWrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 9999;
-  overflow: hidden; }
-
-#cboxOverlay {
-  position: fixed;
-  width: 100%;
-  height: 100%; }
-
-#cboxMiddleLeft, #cboxBottomLeft {
-  clear: left; }
-
-#cboxContent {
-  position: relative; }
-
-#cboxLoadedContent {
-  overflow: auto;
-  -webkit-overflow-scrolling: touch; }
-
-#cboxTitle {
-  margin: 0; }
-
-#cboxLoadingOverlay, #cboxLoadingGraphic {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%; }
-
-#cboxPrevious, #cboxNext, #cboxClose, #cboxSlideshow {
-  cursor: pointer; }
-
-.cboxPhoto {
-  float: left;
-  margin: auto;
-  border: 0;
-  display: block;
-  max-width: none; }
-
-.cboxIframe {
-  width: 100%;
-  height: 100%;
-  display: block;
-  border: 0; }
-
-#colorbox, #cboxContent, #cboxLoadedContent {
-  box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box; }
-
-/*
-    User Style:
-    Change the following styles to modify the appearance of ColorBox.  They are
-    ordered & tabbed in a way that represents the nesting of the generated HTML.
-*/
-#colorbox {
-  box-shadow: 0 0 400px 100px #444; }
-
-#cboxContent {
-  background: #111; }
-  #cboxContent:hover #cboxPrevious, #cboxContent:hover #cboxNext, #cboxContent:hover #cboxClose {
-    opacity: .3; }
-
-#cboxError {
-  padding: 50px; }
-
-#cboxLoadedContent {
-  margin-bottom: 28px; }
-
-#cboxTitle, #cboxCurrent, #cboxSlideshow {
-  position: absolute;
-  bottom: 4px;
-  color: #f9f9f9; }
-
-#cboxTitle {
-  background: #111;
-  width: 100%;
-  padding: 5px;
-  left: 0; }
-
-#cboxCurrent {
-  top: 0;
-  bottom: auto;
-  background: #111;
-  padding: 5px;
-  display: none !important; }
-
-#cboxSlideshow {
-  left: 45%;
-  text-align: center; }
-
-#cboxPrevious, #cboxNext, #cboxClose {
-  position: absolute;
-  top: 40%;
-  width: 100px;
-  height: 100px;
-  opacity: .1;
-  text-indent: -9999px;
-  -moz-transition: opacity 200ms;
-  -o-transition: opacity 200ms;
-  -webkit-transition: opacity 200ms;
-  transition: opacity 200ms; }
-  #cboxPrevious:hover, #cboxNext:hover, #cboxClose:hover {
-    opacity: 1 !important; }
-
-#cboxPrevious {
-  left: 0;
-  background: url(../img/controls_sprite.png) no-repeat 0 0; }
-
-#cboxNext {
-  right: 0;
-  background: url(../img/controls_sprite.png) no-repeat -300px 0; }
-
-#cboxClose {
-  top: 0;
-  right: 0;
-  background: url(../img/controls_sprite.png) no-repeat -400px 0; }
-
-/*
-  The following fixes a problem where IE7 and IE8 replace a PNG's alpha transparency with a black fill
-  when an alpha filter (opacity change) is set on the element or ancestor element.  This style is not applied to or needed in IE9.
-  See: http://jacklmoore.com/notes/ie-transparency-problems/
-*/
-.cboxIE #cboxTopLeft,
-.cboxIE #cboxTopCenter,
-.cboxIE #cboxTopRight,
-.cboxIE #cboxBottomLeft,
-.cboxIE #cboxBottomCenter,
-.cboxIE #cboxBottomRight,
-.cboxIE #cboxMiddleLeft,
-.cboxIE #cboxMiddleRight {
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF); }
 
 /*------------------------------------*\
     $GRID
@@ -1920,110 +1966,6 @@ footer {
     display: block; }
 
 /*------------------------------------*\
-    $BLOG STYLES
-\*------------------------------------*/
-.post {
-  margin: 24px auto 72px;
-  max-width: 700px; }
-  .post h1 {
-    text-align: center; }
-  .post img {
-    max-width: 100%; }
-
-.post-title {
-  float: right; }
-
-.post-content {
-  margin: 1em auto;
-  clear: both; }
-  .post-content img {
-    max-width: 100%; }
-  .post-content p {
-    text-align: left;
-    padding: 5px;
-    margin-bottom: 0; }
-
-.caption {
-  margin: 24px 0; }
-
-/****
-* AUDIO
-****/
-.audio-post {
-  text-align: center; }
-
-.audio-player embed {
-  border: 1px solid #d9d9d9;
-  width: 100%;
-  height: 100px; }
-  @media (min-width: 50em) {
-    .audio-player embed {
-      width: 75%; } }
-  @media (min-width: 50em) {
-    .audio-player embed {
-      width: 50%; } }
-
-/****
-* LINK
-****/
-.caption a,
-.link-post__link {
-  display: inline-block;
-  line-height: 1;
-  border-bottom: 1px solid #C08A59; }
-
-/****
-* PHOTO
-****/
-.photo-post > a {
-  display: block;
-  text-align: center; }
-
-/****
-* Responsive Photoset
-****/
-.scarey-photoset {
-  font-size: 0;
-  padding: 5px; }
-  .scarey-photoset a {
-    font-size: 16px; }
-  .scarey-photoset img {
-    vertical-align: bottom;
-    background: url("../img/loader.gif") center center no-repeat; }
-
-/****
-* Permalink
-****/
-.permalink:before {
-  content: '';
-  display: block;
-  margin: 12px 0;
-  width: 50px;
-  height: 1px;
-  background: #444; }
-
-/****
-* Photo set transition
-****/
-.photoset-transition {
-  -webkit-animation: slide-fade-from-bottom 200ms forwards;
-  -moz-animation: slide-fade-from-bottom 200ms forwards;
-  -ms-animation: slide-fade-from-bottom 200ms forwards;
-  -o-animation: slide-fade-from-bottom 200ms forwards;
-  animation: slide-fade-from-bottom 200ms forwards;
-  background: none; }
-
-/****
-* Load More button
-****/
-.load-more {
-  margin: 48px auto;
-  width: 100%; }
-  @media (min-width: 50em) {
-    .load-more {
-      max-width: 700px; } }
-
-/*------------------------------------*\
     $HOME
 \*------------------------------------*/
 .home #slide-from-left-1,
@@ -2146,27 +2088,58 @@ footer {
     max-width: 100%; }
 
 #mc_embed_signup {
-  margin-bottom: 24px; }
+  margin-bottom: 24px;
+  padding: 12px;
+  background: rgba(230, 230, 230, 0.8);
+  color: #333;
+  border-radius: 3px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left; }
+  @media (min-width: 50em) {
+    #mc_embed_signup {
+      max-width: 400px; } }
   #mc_embed_signup h2 {
-    text-align: center; }
+    font-size: 1rem;
+    margin-bottom: 0; }
+  #mc_embed_signup .indicates-required {
+    display: none; }
   #mc_embed_signup button {
     background: #C08A59; }
   #mc_embed_signup .mc-field-group,
   #mc_embed_signup .indicates-required,
   #mc_embed_signup .mce-responses,
   #mc_embed_signup .clear {
-    max-width: 400px;
     margin-left: auto;
     margin-right: auto; }
+  #mc_embed_signup input[type="submit"] {
+    border: none;
+    background: #5f7481;
+    padding: 1em;
+    color: #f8f8f8;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.8rem;
+    width: 100%; }
   #mc_embed_signup .mc-field-group {
-    margin-bottom: 12px; }
+    padding: 12px 0; }
     #mc_embed_signup .mc-field-group label {
-      display: block; }
-    #mc_embed_signup .mc-field-group input {
+      display: block;
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      padding: 0 5px; }
+    #mc_embed_signup .mc-field-group input[type="email"] {
       border: none;
       outline: none;
       width: 100%;
-      padding: 5px; }
+      padding: 5px;
+      background: none;
+      border-bottom: 1px solid #999;
+      font-size: 1rem;
+      transition: border-color 300ms; }
+      #mc_embed_signup .mc-field-group input[type="email"]:focus {
+        border-color: #C08A59; }
 
 /*------------------------------------*\
     $HELPERS

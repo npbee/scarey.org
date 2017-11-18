@@ -1,3 +1,5 @@
+$nav_items: "songs", "tour", "pics", "albums", "videos", "store", "contact";
+
 /*------------------------------------*\
     $NAVIGATION
 \*------------------------------------*/
@@ -65,16 +67,43 @@ header {
 
 
 /* Hide irrelevant icons on small view */
-.songs .tour-nav, .songs .videos-nav, .songs .pics-nav, .songs .store-nav, .songs .contact-nav,
-.tour .blog-nav, .tour .albums-nav, .tour .media-nav, .tour .store-nav, .tour .contact-nav, .tour .videos-nav, .tour .pics-nav, .tour .songs-nav,
-.albums .blog-nav, .albums .tour-nav, .albums .media-nav, .albums .store-nav, .albums .contact-nav,
-.media .blog-nav, .media .tour-nav, .media .albums-nav, .media .store-nav, .media .contact-nav,
-.store .blog-nav, .store .tour-nav, .store .albums-nav, .store .media-nav, .store .contact-nav,
-.contact .blog-nav, .contact .tour-nav, .contact .albums-nav, .contact .media-nav, .contact .store-nav,
-.home .tour-nav, .home .albums-nav, .home .store-nav, .home .contact-nav, .home .videos-nav, .home .pics-nav, .home .songs-nav {
-    display:none;
-    @include at-breakpoint($medium) {
-        display:inline-block;
+// .songs .tour-nav, .songs .videos-nav, .songs .pics-nav, .songs .store-nav, .songs .contact-nav,
+// .tour .blog-nav, .tour .albums-nav, .tour .media-nav, .tour .store-nav, .tour .contact-nav, .tour .videos-nav, .tour .pics-nav, .tour .songs-nav,
+// .albums .blog-nav, .albums .tour-nav, .albums .media-nav, .albums .store-nav, .albums .contact-nav,
+// .videos .tour-nav, .videos .albums-nav, .videos .store-nav, .videos .contact-nav,
+// .store .blog-nav, .store .tour-nav, .store .albums-nav, .store .media-nav, .store .contact-nav,
+// .contact .blog-nav, .contact .tour-nav, .contact .albums-nav, .contact .media-nav, .contact .store-nav,
+// .home .tour-nav, .home .albums-nav, .home .store-nav, .home .contact-nav, .home .videos-nav, .home .pics-nav, .home .songs-nav {
+//     display:none;
+//     @include at-breakpoint($medium) {
+//         display:inline-block;
+//     }
+// }
+
+@each $nav_item in $nav_items {
+    .#{$nav_item} .tour-nav,
+    .#{$nav_item} .songs-nav,
+    .#{$nav_item} .pics-nav,
+    .#{$nav_item} .store-nav,
+    .#{$nav_item} .videos-nav,
+    .#{$nav_item} .contact-nav {
+        display:none;
+        @include at-breakpoint($medium) {
+            display:inline-block;
+        }
+    }
+
+    .#{$nav_item} .#{$nav_item}-nav {
+        display: inline-block;
+    }
+}
+
+@each $nav_item in $nav_items {
+    .home .#{$nav_item}-nav {
+        display: none;
+        @include at-breakpoint($medium) {
+            display:inline-block;
+        }
     }
 }
 
@@ -89,22 +118,19 @@ header {
 /****
 * Active menus
 ****/
-.songs a.songs-nav,
-.tour a.tour-nav,
-.albums a.albums-nav,
-.media a.media-nav,
-.store a.store-nav,
-.contact a.contact-nav {
-    @extend .gamma;
-    //margin:0 0 0 $padding/4;
-    padding-left: 0;
-    margin-left: (-$base-spacing-unit/4);
-    color: $brand-main;
-    @include at-breakpoint($medium) {
-        margin-left:0;
-        color:$brand-main;
-        font-size:$base-font-size;
-        padding: 0 $base-spacing-unit/2;
+@each $nav_item in $nav_items {
+    .#{$nav_item} a.#{$nav_item}-nav {
+        @extend .gamma;
+        //margin:0 0 0 $padding/4;
+        padding-left: 0;
+        margin-left: (-$base-spacing-unit/4);
+        color: $brand-main;
+        @include at-breakpoint($medium) {
+            margin-left:0;
+            color:$brand-main;
+            font-size:$base-font-size;
+            padding: 0 $base-spacing-unit/2;
+        }
     }
 }
 

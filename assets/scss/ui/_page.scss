@@ -23,27 +23,23 @@ body {
     font-size: #{($base-font-size/16px)*1em}/#{$line-height-ratio};
     -webkit-font-smoothing: antialiased !important;
     color: $text-color;
-    /*background: #f8f8f8 url("../img/bg--mobile.jpg") top left no-repeat;*/
-    background: $bg-mob;
+    background-image:
+        linear-gradient(
+            rgba(120, 120, 120, 0.3),
+            rgba(120, 120, 120, 0.3)
+        ),
+        url('../img/bg2.png');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
     @include at-breakpoint($medium) {
         overflow:auto;
     }
     @include at-breakpoint($medium) {
-        background: $bg-desk;
-        background-size: cover;
     }
 
     &:after {
-    }
-}
-
-.home {
-    background: $bg-mob;
-    background-size: cover;
-    @include at-breakpoint($medium) {
-        background: $bg-desk;
-        background-size: cover;
     }
 }
 
@@ -51,17 +47,12 @@ body {
     font-weight:100;
 }
 
-
 body > .wrap {
-    background: rgba(120, 120, 120, 0.4);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     height:auto;
     min-height:100%;
-    margin-bottom: -5em;
-    &:after {
-        content: '';
-        display: block;
-        height: 5em;
-    }
     @include at-breakpoint($medium) {
         overflow-x: hidden;
     }
@@ -73,6 +64,7 @@ body > .wrap {
   ****/
   .main-content,
   #main {
+    flex: 1 0 auto;
     position:relative;
     margin:0 auto;
     clear:both;
@@ -80,6 +72,7 @@ body > .wrap {
     padding: 0 $base-spacing-unit/2 0;
     //padding-bottom:10em;
     opacity: 1;
+    width: 100%;
     @include transition(opacity 1000ms ease-in-out);
     img {
         //outline: 1px solid $grey;
@@ -88,5 +81,10 @@ body > .wrap {
     @include at-breakpoint($medium) {
         @include container;
     }
+}
+
+header,
+footer {
+    flex: none;
 }
 

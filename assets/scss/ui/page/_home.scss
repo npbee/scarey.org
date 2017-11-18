@@ -92,7 +92,6 @@
 * Preorder links
 ****/
 .preorder {
-    @extend .epsilon;
     margin-bottom: $base-spacing-unit;
     //@extend .bold;
     p {
