@@ -518,9 +518,6 @@ body {
     body {
       overflow: auto; } }
 
-.no-js body {
-  font-weight: 100; }
-
 body > .wrap {
   display: flex;
   flex-direction: column;
@@ -530,6 +527,12 @@ body > .wrap {
   @media (min-width: 50em) {
     body > .wrap {
       overflow-x: hidden; } }
+
+hr {
+  margin: 3rem 0;
+  background: #f9f9f9;
+  height: 1px;
+  border: none; }
 
 /****
   * Main content
@@ -614,17 +617,17 @@ h2, .beta, .more-nav {
   font-size: 2rem;
   line-height: 1.5; }
 
-h3, .gamma, .main-nav .logo-nav, .songs a.songs-nav, .tour a.tour-nav, .pics a.pics-nav, .albums a.albums-nav, .videos a.videos-nav, .store a.store-nav, .contact a.contact-nav {
+h3, .gamma, .main-nav .logo-nav, .music a.music-nav, .tour a.tour-nav, .pics a.pics-nav, .albums a.albums-nav, .videos a.videos-nav, .store a.store-nav, .contact a.contact-nav {
   font-size: 26px;
   font-size: 1.625rem;
   line-height: 1.84615; }
 
-h4, .delta, .text-block, .album-blurb p, .home-nav {
+h4, .delta, .text-block, .home-nav {
   font-size: 22px;
   font-size: 1.375rem;
   line-height: 1.09091; }
 
-h5, .epsilon, .album-block .album-release {
+h5, .epsilon {
   font-size: 20px;
   font-size: 1.25rem;
   line-height: 1.2; }
@@ -694,10 +697,6 @@ blockquote, p, address,
 table,
 fieldset, figure,
 pre,
-.album-cover,
-.album-blurb,
-.album-tracklist,
-.album-links,
 .media,
 .island,
 .islet {
@@ -709,10 +708,6 @@ pre,
   table, .islet
   fieldset, .islet figure, .islet
   pre, .islet
-  .album-cover,
-  .islet .album-blurb,
-  .islet .album-tracklist,
-  .islet .album-links, .islet
   .media, .islet
   .island, .islet
   .islet {
@@ -722,7 +717,7 @@ pre,
 /****
 * If no margin needed
 ****/
-.no-margin-bottom, .album-block h1 {
+.no-margin-bottom {
   margin-bottom: 0; }
 
 /****
@@ -795,23 +790,23 @@ header {
           width: 250px; } }
 
 /* Hide irrelevant icons on small view */
-.songs .tour-nav,
-.songs .songs-nav,
-.songs .pics-nav,
-.songs .store-nav,
-.songs .videos-nav,
-.songs .contact-nav {
+.music .tour-nav,
+.music .songs-nav,
+.music .pics-nav,
+.music .store-nav,
+.music .videos-nav,
+.music .contact-nav {
   display: none; }
   @media (min-width: 50em) {
-    .songs .tour-nav,
-    .songs .songs-nav,
-    .songs .pics-nav,
-    .songs .store-nav,
-    .songs .videos-nav,
-    .songs .contact-nav {
+    .music .tour-nav,
+    .music .songs-nav,
+    .music .pics-nav,
+    .music .store-nav,
+    .music .videos-nav,
+    .music .contact-nav {
       display: inline-block; } }
 
-.songs .songs-nav {
+.music .music-nav {
   display: inline-block; }
 
 .tour .tour-nav,
@@ -928,10 +923,10 @@ header {
 .contact .contact-nav {
   display: inline-block; }
 
-.home .songs-nav {
+.home .music-nav {
   display: none; }
   @media (min-width: 50em) {
-    .home .songs-nav {
+    .home .music-nav {
       display: inline-block; } }
 
 .home .tour-nav {
@@ -976,12 +971,12 @@ header {
 /****
 * Active menus
 ****/
-.songs a.songs-nav {
+.music a.music-nav {
   padding-left: 0;
   margin-left: -6px;
   color: #C08A59; }
   @media (min-width: 50em) {
-    .songs a.songs-nav {
+    .music a.music-nav {
       margin-left: 0;
       color: #C08A59;
       font-size: 16px;
@@ -1674,91 +1669,6 @@ footer {
   display: none; }
 
 /*------------------------------------*\
-    $ALBUM BLOCK
-    * For marking up an album entry
-    * Markup:
-    <section class="album-block">
-        <h1>Album Title</h1>
-        <h2 class="album-release">Album Release</h2>
-
-        <div class="album-cover flipper-wrap one-half">
-            <div class="flipper">
-                <img class="front" src="{{ album.cover-front }}" alt="{{ album.title }} cover" width="1425" height="1425">
-                <img class="back" src="{{ album.cover-back }}" alt="{{ album.title }} back cover">
-            </div>
-            <span class="flip-icon" data-icon="">Click to rotate</span>
-        </div>
-
-        <div class="album-blurb one-half">
-            <p>{{ album.blurb }}</p>
-        </div>
-
-        <div class="album-tracklist one-half">
-        <h2 class="bordered-header">Tracklist:</h2>
-        {% for track in album.tracks %}
-        <div class="album-track">
-            <span class="album-track-name">{{ forloop.index }}.  {{ track.title }}</span>
-            <span class="album-track-duration">{{ track.duration }}</span>
-        </div>
-        {% endfor %}
-        </div>
-
-        <div class="album-purchase one-half">
-            <h2 class="bordered-header">Links:</h2>
-            {% for link in album.links %}
-            <a class="button" href="{{ link.href }}">{{ link.text }}</a>
-            {% endfor %}
-        </div>
-
-    </section>
-
-\*------------------------------------*/
-.album-block {
-  zoom: 1;
-  clear: both; }
-  .album-block:before, .album-block:after {
-    content: "\0020";
-    display: block;
-    height: 0;
-    overflow: hidden; }
-  .album-block:after {
-    clear: both; }
-
-.album-blurb p {
-  text-align: justify; }
-
-/****
-* Album Tracklist
-****/
-.album-track {
-  clear: both;
-  overflow: auto;
-  position: relative; }
-
-/****
-* Album Links
-****/
-.album-links {
-  font-size: 0; }
-  .album-links a {
-    font-size: 16px;
-    margin-bottom: 12px;
-    width: 100%; }
-    @media (min-width: 50em) {
-      .album-links a {
-        display: inline-block; }
-        .album-links a.album-links--4 {
-          width: 49%;
-          margin-right: 1%; }
-          .album-links a.album-links--4:nth-child(even) {
-            margin-right: 0; }
-        .album-links a.album-links--3 {
-          width: 32%;
-          margin-right: 2%; }
-          .album-links a.album-links--3:last-child {
-            margin-right: 0; } }
-
-/*------------------------------------*\
     $CONTACT BLOCK
     <div class="contact-block" id="Management">
         <h1>Management</h1>
@@ -1923,8 +1833,7 @@ footer {
     top: 1px;
     font-family: 'icomoon';
     content: "\e60a";
-    font-size: 12.8px;
-    color: #666; }
+    font-size: 12.8px; }
 .collapse .collapse__content {
   -moz-transition: height 200ms;
   -o-transition: height 200ms;
@@ -2071,21 +1980,99 @@ footer {
 .no-js .headline {
   opacity: 1; }
 
-.songs-content {
+.music .music-social {
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-direction: column; }
+  justify-content: space-between;
+  padding: 24px 0;
+  flex-wrap: wrap; }
+  .music .music-social a {
+    padding: 1em;
+    flex-basis: 50%;
+    text-align: center; }
+    @media (min-width: 50em) {
+      .music .music-social a {
+        flex-basis: auto; } }
+.music .music-social__soundcloud img {
+  width: 200px; }
+.music .music-social__spotify img {
+  width: 160px; }
+.music .music-social__amazon img {
+  width: 110px; }
+.music .music-content {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto; }
+.music .album {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px; }
   @media (min-width: 50em) {
-    .songs-content {
-      flex-direction: row;
-      max-width: 70%;
-      margin: 0 auto; } }
-
-.songs__item {
+    .music .album {
+      flex-direction: row; } }
+.music .album-title {
+  font-weight: 400;
+  letter-spacing: 0.1em; }
+.music .album__left {
+  margin-right: 10px;
+  order: 2; }
+  @media (min-width: 50em) {
+    .music .album__left {
+      order: 1; } }
+  .music .album__left img {
+    width: 100%; }
+    @media (min-width: 50em) {
+      .music .album__left img {
+        width: auto;
+        max-width: 250px; } }
+.music .album__right {
+  order: 1; }
+  @media (min-width: 50em) {
+    .music .album__right {
+      order: 2; } }
+.music .album__info {
+  background: rgba(64, 57, 57, 0.6);
+  border-radius: 3px;
   padding: 1em; }
-  .songs__item img {
-    max-width: 100%; }
+.music .album-title {
+  margin-bottom: 0; }
+.music .album-release {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.7rem; }
+.music .album-links {
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid #f9f9f9;
+  margin-bottom: 12px;
+  border-radius: 3px; }
+.music .album-link {
+  display: block;
+  padding: 1em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  flex: 1;
+  flex-basis: 50%;
+  text-align: center;
+  border-right: 1px solid #f9f9f9;
+  border-bottom: 1px solid #f9f9f9;
+  font-weight: bold; }
+  .music .album-link:nth-child(even) {
+    border-right: none; }
+  .music .album-link:last-child, .music .album-link:nth-last-child(2) {
+    border-bottom: none; }
+.music .album-tracks-header {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0;
+  font-weight: 400; }
+.music .album-track-name {
+  font-size: 1rem;
+  letter-spacing: 0.05em; }
+.music .album-track__lyrics {
+  font-size: 0.9rem; }
 
 #mc_embed_signup {
   margin-bottom: 24px;
@@ -2163,8 +2150,7 @@ footer {
 /****
 * Center
 ****/
-.center, .album-block h1,
-.album-block .album-release {
+.center {
   text-align: center; }
 
 /****
@@ -2178,9 +2164,8 @@ footer {
 /****
 * No Margin bottom
 ****/
-.no-margin-bottom, .album-block h1,
-.no-margin-bottom p,
-.album-block h1 p {
+.no-margin-bottom,
+.no-margin-bottom p {
   margin-bottom: 0; }
 
 /****

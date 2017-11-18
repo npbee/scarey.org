@@ -36,15 +36,6 @@ body {
     @include at-breakpoint($medium) {
         overflow:auto;
     }
-    @include at-breakpoint($medium) {
-    }
-
-    &:after {
-    }
-}
-
-.no-js body {
-    font-weight:100;
 }
 
 body > .wrap {
@@ -56,6 +47,13 @@ body > .wrap {
     @include at-breakpoint($medium) {
         overflow-x: hidden;
     }
+}
+
+hr {
+    margin: 3rem 0;
+    background: $white;
+    height: 1px;
+    border: none;
 }
 
 

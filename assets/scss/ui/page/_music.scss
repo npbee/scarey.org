@@ -1,0 +1,144 @@
+.music {
+
+    .music-social {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: $base-spacing-unit 0;
+        flex-wrap: wrap;
+
+        a {
+            padding: $padding;
+            flex-basis: 50%;
+            text-align: center;
+
+            @include at-breakpoint($medium) {
+                flex-basis: auto;
+            }
+
+        }
+    }
+
+    .music-social__soundcloud img {
+        width: 200px;
+    }
+
+    .music-social__spotify img {
+        width: 160px;
+    }
+
+    .music-social__amazon img {
+        width: 110px;
+    }
+
+    .music-content {
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .album {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: $base-spacing-unit;
+
+        @include at-breakpoint($medium) {
+            flex-direction: row;
+        }
+    }
+
+    .album-title {
+        font-weight: 400;
+        letter-spacing: 0.1em;
+    }
+
+    .album__left {
+        margin-right: 10px;
+        order: 2;
+
+        @include at-breakpoint($medium) {
+            order: 1;
+        }
+
+        img {
+            width: 100%;
+            @include at-breakpoint($medium) {
+                width: auto;
+                max-width: 250px;
+            }
+        }
+    }
+
+    .album__right {
+        order: 1;
+        @include at-breakpoint($medium) {
+            order: 2;
+        }
+    }
+
+    .album__info {
+        background: rgba(64, 57, 57, 0.6);
+        border-radius: 3px;
+        padding: $padding;
+    }
+
+
+    .album-title {
+        margin-bottom: 0;
+    }
+
+    .album-release {
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-size: 0.7rem;
+    }
+
+    .album-links {
+        display: flex;
+        flex-wrap: wrap;
+        border: 1px solid $white;
+        margin-bottom: $base-spacing-unit/2;
+        border-radius: 3px;
+    }
+
+    .album-link {
+        display: block;
+        padding: $padding;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        letter-spacing: 0.05em;
+        font-weight: 500;
+        flex: 1;
+        flex-basis: 50%;
+        text-align: center;
+        border-right: 1px solid $white;
+        border-bottom: 1px solid $white;
+        font-weight: bold;
+
+        &:nth-child(even) {
+            border-right: none;
+        }
+
+        &:last-child,
+        &:nth-last-child(2) {
+            border-bottom: none;
+        }
+    }
+
+    .album-tracks-header {
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 0;
+        font-weight: 400;
+    }
+
+    .album-track-name {
+        font-size: 1rem;
+        letter-spacing: 0.05em;
+    }
+
+    .album-track__lyrics {
+        font-size: 0.9rem;
+    }
+}
+
