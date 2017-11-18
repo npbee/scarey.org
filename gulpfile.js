@@ -12,7 +12,18 @@ gulp.task('sass', function() {
     .on('error', function (err) {
         console.error('Error!', err.message);
     })
-    // .pipe(cleanCss({ level: 2 }))
+    .pipe(gulp.dest('assets/css'));
+});
+
+gulp.task('sass:build', function() {
+    return sass('assets/scss/style.scss', {
+        bundleExec: true,
+        compass: true
+    })
+    .on('error', function (err) {
+        console.error('Error!', err.message);
+    })
+    .pipe(cleanCss({ level: 2 }))
     .pipe(gulp.dest('assets/css'));
 });
 
@@ -25,7 +36,6 @@ gulp.task('js', function() {
 
 gulp.task('watch', function() {
     const watcher = gulp.watch('assets/scss/**/*.scss', ['sass']);
-    // watcher.on('change', function(event) {
-    //     console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
-    // });
 });
+
+gulp.task('build', ['sass:build', 'js']);
