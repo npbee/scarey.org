@@ -1,4 +1,4 @@
-$nav_items: "music", "tour", "pics", "albums", "videos", "store", "contact";
+$nav_items: "music", "videos", "pics", "tour", "store", "contact";
 
 /*------------------------------------*\
     $NAVIGATION
@@ -82,7 +82,7 @@ header {
 
 @each $nav_item in $nav_items {
     .#{$nav_item} .tour-nav,
-    .#{$nav_item} .songs-nav,
+    .#{$nav_item} .music-nav,
     .#{$nav_item} .pics-nav,
     .#{$nav_item} .store-nav,
     .#{$nav_item} .videos-nav,
