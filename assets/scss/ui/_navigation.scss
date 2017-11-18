@@ -107,11 +107,6 @@ header {
     }
 }
 
-//Only for no-js
-.close-nav {
-    display:none;
-}
-
 
 
 
@@ -208,33 +203,6 @@ a.active {
 /****
 * For no JS navigation
 ****/
-.main-nav-check {
-    display:none;
-}
-
-.nojs-mobile-nav {
-    display:none;
-}
-
-.no-js {
-    .more-nav {
-        display:none;
-    }
-    .nojs-mobile-nav {
-        display:block;
-        float:right;
-        padding-right:$padding;
-        cursor: pointer;
-        @include at-breakpoint($medium) {
-            display:none;
-        }
-    }
-    #main-nav-check:checked + #mobile-flyout {
-            left:0;
-            z-index:1;
-    }
-}
-
 
 
 /****

@@ -509,7 +509,7 @@ body {
   font-size: 1em/1.5;
   -webkit-font-smoothing: antialiased !important;
   color: #f8f8f8;
-  background-image: linear-gradient(rgba(120, 120, 120, 0.3), rgba(120, 120, 120, 0.3)), url("../img/bg2.png");
+  background-image: linear-gradient(rgba(120, 120, 120, 0.3), rgba(120, 120, 120, 0.3)), url("../img/bg3.png");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -940,9 +940,6 @@ header {
     .home .contact-nav {
       display: inline-block; } }
 
-.close-nav {
-  display: none; }
-
 /****
 * Active menus
 ****/
@@ -1082,26 +1079,6 @@ a.active {
 /****
 * For no JS navigation
 ****/
-.main-nav-check {
-  display: none; }
-
-.nojs-mobile-nav {
-  display: none; }
-
-.no-js .more-nav {
-  display: none; }
-.no-js .nojs-mobile-nav {
-  display: block;
-  float: right;
-  padding-right: 1em;
-  cursor: pointer; }
-  @media (min-width: 50em) {
-    .no-js .nojs-mobile-nav {
-      display: none; } }
-.no-js #main-nav-check:checked + #mobile-flyout {
-  left: 0;
-  z-index: 1; }
-
 /****
 * Flyout active
 ****/
@@ -1394,9 +1371,6 @@ footer {
     $FILTER
     As seen on albums page
 \*------------------------------------*/
-.no-js .album-filter {
-  display: none; }
-
 /****
 * General Filter styles
 ****/
@@ -1940,9 +1914,6 @@ footer {
   @media (min-width: 50em) {
     .home-nav a {
       padding: 0; } }
-
-.no-js .headline {
-  opacity: 1; }
 
 .music .music-social {
   display: flex;
