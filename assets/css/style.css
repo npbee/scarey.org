@@ -2039,7 +2039,7 @@ footer {
 * Preorder links
 ****/
 .preorder {
-  margin-bottom: 24px;
+  margin-bottom: 48px;
   text-align: center; }
   .preorder p {
     margin-bottom: 10px; }
@@ -2090,8 +2090,7 @@ footer {
 #mc_embed_signup {
   margin-bottom: 24px;
   padding: 12px;
-  background: rgba(230, 230, 230, 0.8);
-  color: #333;
+  color: #f9f9f9;
   border-radius: 3px;
   margin-left: auto;
   margin-right: auto;
@@ -2120,24 +2119,27 @@ footer {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     width: 100%; }
+    @media (min-width: 50em) {
+      #mc_embed_signup input[type="submit"] {
+        width: auto; } }
   #mc_embed_signup .mc-field-group {
-    padding: 12px 0; }
+    margin-bottom: 12px; }
     #mc_embed_signup .mc-field-group label {
       display: block;
       text-transform: uppercase;
-      font-size: 0.7rem;
-      padding: 0 5px; }
+      font-size: 0.8rem;
+      padding: 5px 0; }
     #mc_embed_signup .mc-field-group input[type="email"] {
       border: none;
-      outline: none;
       width: 100%;
-      padding: 5px;
-      background: none;
+      padding: 8px;
+      background: #f9f9f9;
       border-bottom: 1px solid #999;
-      font-size: 1rem;
-      transition: border-color 300ms; }
+      font-size: 0.8rem;
+      transition: border-color 300ms;
+      border-radius: 3px; }
       #mc_embed_signup .mc-field-group input[type="email"]:focus {
         border-color: #C08A59; }
 
@@ -2244,6 +2246,9 @@ footer {
 .text-bg {
   background-color: rgba(0, 0, 0, 0.3);
   border-radius: 3px; }
+
+.mb-0 {
+  margin-bottom: 0; }
 
 .pa-small {
   padding: 5px; }
