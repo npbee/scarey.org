@@ -115,6 +115,7 @@
         border-bottom: 1px solid $white;
         font-weight: bold;
 
+        &:only-child,
         &:nth-child(even) {
             border-right: none;
         }
@@ -123,6 +124,12 @@
         &:nth-last-child(2) {
             border-bottom: none;
         }
+
+    }
+
+    .album-image {
+        border: 1px solid $grey;
+        border-radius: 3px;
     }
 
     .album-tracks-header {

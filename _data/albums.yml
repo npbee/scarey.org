@@ -1,11 +1,34 @@
+- title: Hundred Acres
+  hash: hundred-acres
+  release: 2018-02-23
+  cover-front-small: ../assets/img/covers/hundred-acres-front--small.jpg
+  audio: <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/350336230&amp;color=5f7481&amp;auto_play=false&amp;show_artwork=false"></iframe>
+  blurb:
+    - At its heart, <em>Hundred Acres</em> - the third full-length from Wisconsin singer/songwriter S. Carey - finds him grounded and confident, writing the strongest songs of his career. More direct than ever, there is a wellspring of confidence in this new batch of songs that allow for ideas to remain uncomplicated while laying bare the intricacies of life.
+    - Written in between touring schedules and the growth of his family, Carey produced <em>Hundred Acres</em> at April Base in Fall Creek, WI with support from his regular crew and contributions from the likes of Rob Moose (yMusic), Casey Foubert (Sufjan Stevens) and Sophie Payten (Gordi). He employed a smaller, more focused scale of instrumentation than on his previous albums while writing mostly on guitar instead of his go-to piano. Using more traditional song structures instead of the Steve Reich-ian repetitions of his past work, a new balance is struck that creates something unique. The result is a collection of poetic yet clear-eyed songs that both stand brightly on their own and tightly weave together to create a powerful album.
+  links:
+    - text: Pre-order
+      href: http://smarturl.it/hundredacres
+  tracks:
+    - title: Rose Petals
+    - title: Hideout
+    - title: Yellowstone
+    - title: True North
+    - title: Emery
+    - title: Hundred Acres
+    - title: More I See
+    - title: Fool's Gold
+    - title: Have You Stopped To Notice
+    - title: Meadow Song
+
 - title: Range of Light
   hash: range-of-light
-  release: April 1, 2014
+  release: 2014-04-01
   cover-front-small: ../assets/img/covers/range-of-light-front--small.jpg
   audio: <iframe width="100%" height="350" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/38407504&amp;color=5f7481&amp;auto_play=false&amp;show_artwork=false"></iframe>
   blurb:
-    - Range of Light incorporates elements of his previous work, but also amplifies Carey’s percussive proclivities, and is altogether more developed than its predecessors, with more input on the performance and even composition side from the band of musicians and best friends he assembled originally to bring All We Grow to life in the live setting. “There were times during recording sessions when there were three percussionists, all with different styles and fortes, playing at once, adding different textures."
-    - From the flurry of violins over a circular rhythm in ‘Crown The Pines’ and the beautiful cries of ‘Alpenglow’, to the pensive depths of songs like ‘Fire-scene’ and ‘The Dome’, Range of Light is a still life of an artist in this particular stage of his life; a stage that has been met with the highest of peaks and the lowest of depths all within the range each of us treads through.
+    - <em>Range of Light</em> incorporates elements of his previous work, but also amplifies Carey’s percussive proclivities, and is altogether more developed than its predecessors, with more input on the performance and even composition side from the band of musicians and best friends he assembled originally to bring <em>All We Grow</em> to life in the live setting. “There were times during recording sessions when there were three percussionists, all with different styles and fortes, playing at once, adding different textures."
+    - From the flurry of violins over a circular rhythm in ‘Crown The Pines’ and the beautiful cries of ‘Alpenglow’, to the pensive depths of songs like ‘Fire-scene’ and ‘The Dome’, <em>Range of Light</em> is a still life of an artist in this particular stage of his life; a stage that has been met with the highest of peaks and the lowest of depths all within the range each of us treads through.
   links:
     - text: iTunes
       href: http://smarturl.it/scarey_itunes
@@ -227,10 +250,10 @@
 
 - title: All We Grow
   hash: all-we-grow
-  release: August 24, 2010
+  release: 2010-08-24
   cover-front-small: ../assets/img/covers/all-we-grow--small.jpg
   audio: "<iframe width='100%' height='350' scrolling='no' frameborder='no' src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/38419763&amp;color=5f7481&amp;auto_play=false&amp;show_artwork=false'></iframe>"
-  blurb: The debut album from S. Carey, All We Grow, is the result of a young lifetime immersed in music.  As a band member of Bon Iver, Sean Carey witnessed a flip of his formal training to step firmly into a worldwide-touring rock band. His performance degree in classical percussion and his love for jazz drumming prepared him for a central role in the inspiring force of the Bon Iver live show.
+  blurb: The debut album from S. Carey, <em>All We Grow</em>, is the result of a young lifetime immersed in music.  As a band member of Bon Iver, Sean Carey witnessed a flip of his formal training to step firmly into a worldwide-touring rock band. His performance degree in classical percussion and his love for jazz drumming prepared him for a central role in the inspiring force of the Bon Iver live show.
   tracks:
     - title: Move
       lyrics:
@@ -376,7 +399,7 @@
 - title: Supermoon EP
   hash: supermoon
   class: img--bordered
-  release: February 15, 2017
+  release: 2017-02-15
   cover-front-small: ../assets/img/covers/supermoon-front--small.jpeg
   audio: "<iframe width='100%' height='200' scrolling='no'frameborder='no' src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/187220533&amp;color=5f7481&amp;auto_play=false&amp;show_artwork=false'></iframe>"
   blurb: Recorded primarily during the perigee-syzygy (also known as the super moon) of August 2014, the <span class='italic'>Supermoon EP</span> from S. Carey is a study in scale, space, and proximity. These songs are a new and closer look into existing works from both S. Carey's renowned full-lengths, 2010's <span class='italic'>All We Grow</span> and 2014's <span class='italic'>Range of Light</span>. With <span class='italic'>Supermoon</span>, Carey has broken these songs down to their essential, acoustic parts with his forever humming vocals laid over top, lilting yet percussive piano, and a subtle swath of harmonic strings. You can hear Carey's breath between words and the pat of his fingers on the keys; you can hear the living room in which his family's baby grand piano sits. These songs are beautiful, intimate and so potently personal. This collection is a stark presentation of S. Carey laid bare, an open invitation for the listener to climb into his world.
@@ -479,7 +502,7 @@
 
 - title: Hoyas EP
   hash: hoyas
-  release: May 08, 2012
+  release: 2012-05-08
   cover-front-small: ../assets/img/covers/hoyas-front--small.jpg
   audio: "<iframe width='100%' height='350' scrolling='no' frameborder='no' src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/38407743&amp;color=5f7481&amp;auto_play=false&amp;show_artwork=false'></iframe>"
   blurb: <span class="italic">Hoyas</span> by S. Carey is a hospitable statement about love, longing and the celebration of knowing it well. You will find the familiar S. Carey modern classical repetition pushed into the vernacular of electronic music and beat making. This is the warmest electronic music you'll ever meet. The beats swing, stutter and pulse while each instrument retains a heightened awareness of its form and function within the larger family of voices.

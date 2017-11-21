@@ -5,16 +5,17 @@ body_class: music
 
 <div class="music-content">
 
-    {% for album in site.data.albums %}
+    {% assign albums = site.data.albums | sort: 'release' | reverse %}
+    {% for album in albums %}
     <section id="{{ album.hash }}" class="album">
         <div class="album__left">
             <div>
-                <img src="{{ album.cover-front-small }}" />
+                <img class="album-image" src="{{ album.cover-front-small }}" />
             </div>
             {% if album.links %}
             <div class="album-links">
                 {% for link in album.links %}
-                <a class="album-link" href="{{ link.href }}">{{ link.text }}</a>
+                <a class="album-link" href="{{ link.href }}" target="_blank" rel="noopener">{{ link.text }}</a>
                 {% endfor %}
             </div>
             {% endif %}
@@ -24,7 +25,7 @@ body_class: music
             <div class="album__info">
                 <div class="album__info__header">
                     <h2 class="album-title">{{ album.title }}</h2>
-                    <p class="album-release">{{ album.release }}</p>
+                    <p class="album-release">{{ album.release | date: '%B %e, %Y' }}</p>
                 </div>
 
                 {% for paragraph in album.blurb %}
