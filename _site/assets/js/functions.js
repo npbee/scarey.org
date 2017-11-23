@@ -26,10 +26,12 @@ scarey.debounce = function(event, callback, timeout) {
 ****/
 scarey.nav = function() {
     var topNav = $("#nav"),
-          flyOut = $("#mobile-flyout");
+          flyOut = $("#mobile-flyout"),
+        $body = $("body");
 
     $(".more-nav").click(function() {
         flyOut.toggleClass('nav--active');
+        $body.toggleClass('nav--active');
         $(".main-content").toggleClass("dark");
         event.preventDefault();
     });

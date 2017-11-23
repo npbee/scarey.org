@@ -622,7 +622,7 @@ h2, .beta, .more-nav {
   font-size: 2rem;
   line-height: 1.5; }
 
-h3, .gamma, .main-nav .logo-nav, .music a.music-nav, .videos a.videos-nav, .pics a.pics-nav, .tour a.tour-nav, .store a.store-nav, .contact a.contact-nav {
+h3, .gamma, .main-nav .logo-nav {
   font-size: 26px;
   font-size: 1.625rem;
   line-height: 1.84615; }
@@ -951,67 +951,79 @@ header {
 .music a.music-nav {
   padding-left: 0;
   margin-left: -6px;
-  color: #C08A59; }
+  color: #C08A59;
+  line-height: 50px;
+  font-weight: bold;
+  font-size: 1.2rem; }
   @media (min-width: 50em) {
     .music a.music-nav {
       margin-left: 0;
       color: #C08A59;
-      font-size: 16px;
       padding: 0 12px; } }
 
 .videos a.videos-nav {
   padding-left: 0;
   margin-left: -6px;
-  color: #C08A59; }
+  color: #C08A59;
+  line-height: 50px;
+  font-weight: bold;
+  font-size: 1.2rem; }
   @media (min-width: 50em) {
     .videos a.videos-nav {
       margin-left: 0;
       color: #C08A59;
-      font-size: 16px;
       padding: 0 12px; } }
 
 .pics a.pics-nav {
   padding-left: 0;
   margin-left: -6px;
-  color: #C08A59; }
+  color: #C08A59;
+  line-height: 50px;
+  font-weight: bold;
+  font-size: 1.2rem; }
   @media (min-width: 50em) {
     .pics a.pics-nav {
       margin-left: 0;
       color: #C08A59;
-      font-size: 16px;
       padding: 0 12px; } }
 
 .tour a.tour-nav {
   padding-left: 0;
   margin-left: -6px;
-  color: #C08A59; }
+  color: #C08A59;
+  line-height: 50px;
+  font-weight: bold;
+  font-size: 1.2rem; }
   @media (min-width: 50em) {
     .tour a.tour-nav {
       margin-left: 0;
       color: #C08A59;
-      font-size: 16px;
       padding: 0 12px; } }
 
 .store a.store-nav {
   padding-left: 0;
   margin-left: -6px;
-  color: #C08A59; }
+  color: #C08A59;
+  line-height: 50px;
+  font-weight: bold;
+  font-size: 1.2rem; }
   @media (min-width: 50em) {
     .store a.store-nav {
       margin-left: 0;
       color: #C08A59;
-      font-size: 16px;
       padding: 0 12px; } }
 
 .contact a.contact-nav {
   padding-left: 0;
   margin-left: -6px;
-  color: #C08A59; }
+  color: #C08A59;
+  line-height: 50px;
+  font-weight: bold;
+  font-size: 1.2rem; }
   @media (min-width: 50em) {
     .contact a.contact-nav {
       margin-left: 0;
       color: #C08A59;
-      font-size: 16px;
       padding: 0 12px; } }
 
 a.active {
@@ -1049,32 +1061,64 @@ a.active {
   -ms-transform: translateX(-100%);
   -webkit-transform: translateX(-100%);
   transform: translateX(-100%);
-  -moz-transition-property: -moz-transform;
-  -o-transition-property: -o-transform;
-  -webkit-transition-property: -webkit-transform;
-  transition-property: transform;
-  -moz-transition-duration: 200ms;
-  -o-transition-duration: 200ms;
-  -webkit-transition-duration: 200ms;
-  transition-duration: 200ms;
-  -moz-transition-timing-function: ease-in-out;
-  -o-transition-timing-function: ease-in-out;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
+  height: 100%;
   position: absolute;
   width: 100%;
-  z-index: 1000; }
+  z-index: 1000;
+  background: rgba(51, 51, 51, 0.9); }
   @media (min-width: 50em) {
     .mobile-flyout {
       display: none; } }
   .mobile-flyout a {
+    -moz-transition-property: -moz-transform, opacity;
+    -o-transition-property: -o-transform, opacity;
+    -webkit-transition-property: -webkit-transform, opacity;
+    transition-property: transform, opacity;
+    -moz-transition-duration: 200ms;
+    -o-transition-duration: 200ms;
+    -webkit-transition-duration: 200ms;
+    transition-duration: 200ms;
+    -moz-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+    opacity: 0;
     display: block;
-    padding: 12px;
+    padding: 12px 24px;
     width: 100%;
     font-size: 22px;
     color: #f9f9f9;
-    background: #333;
     border-bottom: 1px solid #777777; }
+    .mobile-flyout a:nth-child(1) {
+      -moz-transition-delay: 30ms;
+      -o-transition-delay: 30ms;
+      -webkit-transition-delay: 30ms;
+      transition-delay: 30ms; }
+    .mobile-flyout a:nth-child(2) {
+      -moz-transition-delay: 60ms;
+      -o-transition-delay: 60ms;
+      -webkit-transition-delay: 60ms;
+      transition-delay: 60ms; }
+    .mobile-flyout a:nth-child(3) {
+      -moz-transition-delay: 90ms;
+      -o-transition-delay: 90ms;
+      -webkit-transition-delay: 90ms;
+      transition-delay: 90ms; }
+    .mobile-flyout a:nth-child(4) {
+      -moz-transition-delay: 120ms;
+      -o-transition-delay: 120ms;
+      -webkit-transition-delay: 120ms;
+      transition-delay: 120ms; }
+    .mobile-flyout a:nth-child(5) {
+      -moz-transition-delay: 150ms;
+      -o-transition-delay: 150ms;
+      -webkit-transition-delay: 150ms;
+      transition-delay: 150ms; }
+    .mobile-flyout a:nth-child(6) {
+      -moz-transition-delay: 180ms;
+      -o-transition-delay: 180ms;
+      -webkit-transition-delay: 180ms;
+      transition-delay: 180ms; }
   .mobile-flyout [data-icon]:before {
     display: block;
     margin-bottom: 12px;
@@ -1087,11 +1131,19 @@ a.active {
 /****
 * Flyout active
 ****/
-.nav--active {
+.nav--active .main-nav {
+  background: rgba(51, 51, 51, 0.9); }
+.nav--active .mobile-flyout {
   -moz-transform: translateX(0);
   -ms-transform: translateX(0);
   -webkit-transform: translateX(0);
   transform: translateX(0); }
+  .nav--active .mobile-flyout a {
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1; }
 
 /****
 * Ugly VEVO hack to enable clicking on home page
