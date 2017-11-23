@@ -5,6 +5,7 @@ footer {
     display: flex;
     flex-direction: column;
     text-align:center;
+    padding: $base-spacing-unit 0;
     svg {
         fill: $white;
         width: 25px;

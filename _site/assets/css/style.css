@@ -494,7 +494,15 @@ html {
   -webkit-text-size-adjust: 100%;
   /* 2 */
   -ms-text-size-adjust: 100%;
-  /* 2 */ }
+  /* 2 */
+  background-image: linear-gradient(rgba(120, 120, 120, 0.3), rgba(120, 120, 120, 0.3)), url("../img/bg3.png");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  overflow: hidden;
+  height: 100%; }
 
 body {
   -moz-transform: translate3d(0, 0, 0);
@@ -504,16 +512,13 @@ body {
   margin: 0;
   height: 100%;
   overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
   font-family: avenir next, avenir, sans-serif;
   font-weight: 600;
   font-size: 1em/1.5;
   -webkit-font-smoothing: antialiased !important;
-  color: #f8f8f8;
-  background-image: linear-gradient(rgba(120, 120, 120, 0.3), rgba(120, 120, 120, 0.3)), url("../img/bg3.png");
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; }
+  color: #f8f8f8; }
   @media (min-width: 50em) {
     body {
       overflow: auto; } }
@@ -1185,7 +1190,8 @@ a.page-active {
 footer {
   display: flex;
   flex-direction: column;
-  text-align: center; }
+  text-align: center;
+  padding: 24px 0; }
   footer svg {
     fill: #f9f9f9;
     width: 25px; }
@@ -1918,9 +1924,16 @@ footer {
 .music .music-social {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 24px 0;
-  flex-wrap: wrap; }
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 12px; }
+  .music .music-social svg {
+    fill: #f9f9f9;
+    width: 60px; }
+  @media (min-width: 50em) {
+    .music .music-social {
+      margin-bottom: auto;
+      justify-content: space-between; } }
   .music .music-social a {
     padding: 1em;
     flex-basis: 50%;
@@ -2046,7 +2059,8 @@ footer {
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-size: 0.7rem;
-    width: 100%; }
+    width: 100%;
+    -webkit-appearance: none; }
     @media (min-width: 50em) {
       #mc_embed_signup input[type="submit"] {
         width: auto; } }

@@ -3,9 +3,19 @@
     .music-social {
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        padding: $base-spacing-unit 0;
+        justify-content: center;
         flex-wrap: wrap;
+        margin-bottom: $base-spacing-unit/2;
+
+        svg {
+            fill: $white;
+            width: 60px;
+        }
+
+        @include at-breakpoint($medium) {
+            margin-bottom: auto;
+            justify-content: space-between;
+        }
 
         a {
             padding: $padding;

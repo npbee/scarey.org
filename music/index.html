@@ -51,19 +51,19 @@ body_class: music
     {% endfor %}
 
     <div class="music-social">
-        <a class="music-social__soundcloud" href="https://soundcloud.com/scareymusic" target="_blank" rel="noopener">
-            <img src="/assets/img/logos/souncloud.png" />
+        <a class="music-social__soundcloud" href="https://soundcloud.com/scareymusic" target="_blank" rel="noopener" title="Soundcloud">
+            {% include_relative soundcloud.svg %}
         </a>
-        <a class="music-social__spotify" href="https://open.spotify.com/artist/2LSJrlndCuTpdEluvYHc2E" target="_blank" rel="noopener">
-            <img src="/assets/img/logos/spotify.png" />
-        </a>
-
-        <a class="music-social__apple" href="https://geo.itunes.apple.com/us/artist/s-carey/444298537?mt=1&app=music" target="_blank" rel="noopener">
-            <img src="/assets/img/logos/apple-music.svg" />
+        <a class="music-social__spotify" href="https://open.spotify.com/artist/2LSJrlndCuTpdEluvYHc2E" target="_blank" rel="noopener" title="Spotify">
+            {% include_relative spotify.svg %}
         </a>
 
-        <a class="music-social__amazon" href="https://www.amazon.com/S.-Carey/e/B0072J5Q56" target="_blank" rel="noopener">
-            <img src="/assets/img/logos/amazon.png" />
+        <a class="music-social__apple" href="https://geo.itunes.apple.com/us/artist/s-carey/444298537?mt=1&app=music" target="_blank" rel="noopener" title="Apple Music">
+            {% include_relative apple.svg %}
+        </a>
+
+        <a class="music-social__amazon" href="https://www.amazon.com/S.-Carey/e/B0072J5Q56" target="_blank" rel="noopener" title="Amazon">
+            {% include_relative amazon.svg %}
         </a>
     </div>
 

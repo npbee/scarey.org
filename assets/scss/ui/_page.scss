@@ -11,18 +11,6 @@ body {
 html {
     -webkit-text-size-adjust: 100%; /* 2 */
     -ms-text-size-adjust: 100%; /* 2 */
-}
-
-body {
-    @include transform(translate3d(0,0,0)); // used to fix scroll lag from fixed background image
-    margin: 0;
-    height: 100%;
-    overflow-x:hidden;
-    font-family: avenir next, avenir, sans-serif;
-    font-weight: 600;
-    font-size: #{($base-font-size/16px)*1em}/#{$line-height-ratio};
-    -webkit-font-smoothing: antialiased !important;
-    color: $text-color;
     background-image:
         linear-gradient(
             rgba(120, 120, 120, 0.3),
@@ -33,6 +21,23 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    -webkit-background-size: cover;
+    overflow: hidden;
+    height: 100%;
+}
+
+body {
+    @include transform(translate3d(0,0,0)); // used to fix scroll lag from fixed background image
+    margin: 0;
+    height: 100%;
+    overflow-x:hidden;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    font-family: avenir next, avenir, sans-serif;
+    font-weight: 600;
+    font-size: #{($base-font-size/16px)*1em}/#{$line-height-ratio};
+    -webkit-font-smoothing: antialiased !important;
+    color: $text-color;
     @include at-breakpoint($medium) {
         overflow:auto;
     }

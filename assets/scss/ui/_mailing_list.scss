@@ -43,6 +43,7 @@
         letter-spacing: 0.05em;
         font-size: 0.7rem;
         width: 100%;
+        -webkit-appearance: none;
 
         @include at-breakpoint($medium) {
             width: auto;
