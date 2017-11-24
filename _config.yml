@@ -4,6 +4,14 @@ url: 'http://scarey.org'
 exclude: [
   'node_modules',
   'config.rb',
+  'Gemfile',
+  'Gemfile.lock',
+  'gulpfile.js',
+  'npm-debug.log',
+  'package.json',
+  'package-lock.json',
+  'readme.md',
+  'tags'
 ]
 
 
