@@ -3,6 +3,7 @@ var sass = require('gulp-ruby-sass');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var cleanCss = require('gulp-clean-css');
+var autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('sass', function() {
     return sass('assets/scss/style.scss', {
@@ -23,6 +24,9 @@ gulp.task('sass:build', function() {
     .on('error', function (err) {
         console.error('Error!', err.message);
     })
+    .pipe(autoprefixer({
+        browsers: ['last 1 version']
+    }))
     .pipe(cleanCss({ level: 2 }))
     .pipe(gulp.dest('assets/css'));
 });

@@ -18,6 +18,7 @@
   "homepage": "https://github.com/npbee/scarey.org",
   "devDependencies": {
     "gulp": "^3.8.10",
+    "gulp-autoprefixer": "^4.0.0",
     "gulp-clean-css": "^3.9.0",
     "gulp-rename": "^1.2.0",
     "gulp-ruby-sass": "^1.0.0-alpha",
