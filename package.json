@@ -4,6 +4,7 @@
   "description": "Offical scarey.org ",
   "main": "gulpfile.js",
   "scripts": {
+    "start": "bundle exec jekyll serve --watch",
     "build": "gulp build"
   },
   "repository": {
