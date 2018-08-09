@@ -1,5 +1,6 @@
 name: 'S. Carey'
 url: 'http://scarey.org'
+source: './src'
 
 exclude: [
   'node_modules',
