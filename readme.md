@@ -1,16 +1,17 @@
 # Scarey.org
 
-
 ## DEPENDENCIES
-### Ruby dependecies
-* rbenv
-* Jekyll
-* Sass
-* Compass
-* Susyone
 
-- Install `rbenv`
-- Install `nvm`
+### Ruby dependecies
+
+- rbenv
+- Jekyll
+- Sass
+- Compass
+- Susyone
+
+* Install `rbenv`
+* Install `nvm`
 
 `nvm use`
 
@@ -21,38 +22,43 @@ Then install the dependencies:
 `bundle install`
 
 ### Javascript dependencies
+
 Make sure node and NPM are installed
 `npm install`
 
-* jQuery 1.10.2
-* Gulp
+- jQuery 1.10.2
+- Gulp
 
 ## Development flow
-* Start Jekyll
-`bundle exec jekyll serve --watch`
-* Edit Sass
-`gulp sass`
+
+- Start Jekyll
+  `bundle exec jekyll serve --watch`
+- Edit Sass
+  `gulp sass`
 
 ## Deployment Flow
-* Commit to master
-* Deploy with `git stpp _site deploy master`
 
+- Create branch
+- Push to github
+- Check Netlify preview
+- Merge to master
 
 Site files.
-****
 
-**Local Alias:**  scarey
+---
 
-__Enivronment__:
+**Local Alias:** scarey
 
-* SASS
-* jQuery 1.10.2
-* MAMP
-* Jekyll
+**Enivronment**:
 
-__Build:__
+- SASS
+- jQuery 1.10.2
+- MAMP
+- Jekyll
 
-* Commit to master
-* scareydeploy
-* cd public_html
-* git pull origin master
+**Build:**
+
+- Commit to master
+- scareydeploy
+- cd public_html
+- git pull origin master
