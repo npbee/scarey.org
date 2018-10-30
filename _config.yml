@@ -13,7 +13,6 @@ exclude: [
   'package-lock.json',
   'readme.md',
   'tags',
-  'assets/js/functions.js'
 ]
 
 
