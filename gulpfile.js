@@ -31,15 +31,8 @@ gulp.task('sass:build', function() {
     .pipe(gulp.dest('assets/css'));
 });
 
-gulp.task('js', function() {
-    gulp.src('assets/js/functions.js')
-        .pipe(uglify())
-        .pipe(rename('functions-ck.js'))
-        .pipe(gulp.dest('assets/js'));
-});
-
 gulp.task('watch', function() {
     const watcher = gulp.watch('assets/scss/**/*.scss', ['sass']);
 });
 
-gulp.task('build', ['sass:build', 'js']);
+gulp.task('build', ['sass:build']);
