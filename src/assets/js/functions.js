@@ -348,7 +348,7 @@ scarey.tour = function() {
       'December'
     ]
     const monthString = month[date.getMonth()];
-    return monthString + ' ' + (date.getDay() + 1) + ', ' + date.getFullYear()
+    return monthString + ' ' + date.getDate() + ', ' + date.getFullYear()
   }
 
   function displayData(data) {
