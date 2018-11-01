@@ -274,7 +274,7 @@ scarey.tour = function() {
     return;
   }
 
-  var APPID = "scarey.org";
+  var APPID = process.env.BANDS_IN_TOWN;
   var $content = $(".tour .main-content");
   var $block = $(".tour-block");
   var dateRange;
@@ -298,21 +298,21 @@ scarey.tour = function() {
 
   var request = $.ajax({
     type: "GET",
-    // Local testing
-    //dataType: 'json',
-    //url: 'http://localhost/mocks/bandsintown.json',
-    // Production
-    dataType: "jsonp",
+    dataType: "json",
     url:
-      "https://api.bandsintown.com/artists/S Carey/events.json?api_version=2.0&date=" +
+      "https://rest.bandsintown.com/artists/S Carey/events?date=" +
       dateRange +
       "&app_id=" +
       APPID,
     timeout: 8000,
   });
 
-  request.done(function(data) {
-    data.length ? displayData(data) : noShows();
+  request.then(function(data) {
+    function sort(a, b) {
+      return new Date(b.datetime) - new Date(a.datetime)
+    }
+
+    data.length ? displayData(data.sort(sort)) : noShows();
   });
 
   request.fail(function(jqXHR, textStatus) {
@@ -332,11 +332,29 @@ scarey.tour = function() {
     );
   }
 
+  function formatDate(date) {
+    const month = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December'
+    ]
+    const monthString = month[date.getMonth()];
+    return monthString + ' ' + (date.getDay() + 1) + ', ' + date.getFullYear()
+  }
+
   function displayData(data) {
     var i;
     var support = {};
     var supportCnt = 0;
-    //var denoters = ['*', '^', '#', '**', '^^', '##', '***', '^^^', '###'];
     var denoters = ["*", "^", "#"];
     var extraDenoter;
     var currentDenoter = 0;
@@ -344,26 +362,26 @@ scarey.tour = function() {
     for (i = 0; i < data.length; i++) {
       var evnt = data[i];
       evnt.support = {};
-      var dateMatch = /(january|february|march|april|may|june|july|august|september|october|november|december)\s(\d+),\s(\d){4}/i;
-      var strippedDate = evnt.formatted_datetime.match(dateMatch)[0];
+      var date = new Date(evnt.datetime);
       var $tourevent = $("<div>").attr("class", "tour-event");
+      var formattedDate = formatDate(date)
 
       // Check if support acts
-      if (evnt.artists.length > 1) {
-        for (var s = 1; s < evnt.artists.length; s++) {
-          if (!support[evnt.artists[s].name]) {
+      // Assume lineups greater than 3 are festivals
+      if (evnt.lineup.length > 1 && evnt.lineup.length <= 3 && supportCnt <= 10) {
+        for (var s = 1; s < evnt.lineup.length; s++) {
+          if (!support[evnt.lineup[s]]) {
             if (!denoters[supportCnt]) {
               extraDenoter = denoters[currentDenoter];
               extraDenoter += extraDenoter.split("")[0];
               currentDenoter++;
               denoters.push(extraDenoter);
             }
-            support[evnt.artists[s].name] = denoters[supportCnt];
+            support[evnt.lineup[s]] = denoters[supportCnt];
             supportCnt++;
           }
-          evnt.support.name = evnt.artists[s].name;
+          evnt.support.name = evnt.lineup[s];
           evnt.support.denoter = support[evnt.support.name] || "*";
-          //console.log(denoters);
         }
       } else {
         evnt.support.denoter = "";
@@ -377,10 +395,10 @@ scarey.tour = function() {
     function appendDates(evnt) {
       var ticket_url;
 
-      if (evnt.ticket_url) {
+      if (evnt.offers && evnt.offers.length >= 1) {
         ticket_url =
           '<a class="underlined-link" target="_blank" href="' +
-          evnt.ticket_url +
+          evnt.offers[0].url +
           '">' +
           evnt.venue.name +
           "</a>";
@@ -391,10 +409,10 @@ scarey.tour = function() {
       $tourevent.append(
         "" +
           '<p class="tour-date">' +
-          strippedDate +
+          formattedDate +
           "</p>" +
           '<p class="tour-city">' +
-          evnt.formatted_location +
+          evnt.venue.city + ', ' + evnt.venue.region +
           "</p>" +
           '<p class="tour-venue">' +
           ticket_url +
