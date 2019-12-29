@@ -275,6 +275,7 @@ scarey.tour = function() {
   }
 
   var APPID = process.env.BANDS_IN_TOWN;
+  console.log(APPID);
   var $content = $(".tour .main-content");
   var $block = $(".tour-block");
   var dateRange;
@@ -309,7 +310,7 @@ scarey.tour = function() {
 
   request.then(function(data) {
     function sort(a, b) {
-      return new Date(b.datetime) - new Date(a.datetime)
+      return new Date(b.datetime) - new Date(a.datetime);
     }
 
     data.length ? displayData(data.sort(sort)) : noShows();
@@ -334,21 +335,21 @@ scarey.tour = function() {
 
   function formatDate(date) {
     const month = [
-      'January',
-      'February',
-      'March',
-      'April',
-      'May',
-      'June',
-      'July',
-      'August',
-      'September',
-      'October',
-      'November',
-      'December'
-    ]
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
     const monthString = month[date.getMonth()];
-    return monthString + ' ' + date.getDate() + ', ' + date.getFullYear()
+    return monthString + " " + date.getDate() + ", " + date.getFullYear();
   }
 
   function displayData(data) {
@@ -364,11 +365,15 @@ scarey.tour = function() {
       evnt.support = {};
       var date = new Date(evnt.datetime);
       var $tourevent = $("<div>").attr("class", "tour-event");
-      var formattedDate = formatDate(date)
+      var formattedDate = formatDate(date);
 
       // Check if support acts
       // Assume lineups greater than 3 are festivals
-      if (evnt.lineup.length > 1 && evnt.lineup.length <= 3 && supportCnt <= 10) {
+      if (
+        evnt.lineup.length > 1 &&
+        evnt.lineup.length <= 3 &&
+        supportCnt <= 10
+      ) {
         for (var s = 1; s < evnt.lineup.length; s++) {
           if (!support[evnt.lineup[s]]) {
             if (!denoters[supportCnt]) {
@@ -412,7 +417,9 @@ scarey.tour = function() {
           formattedDate +
           "</p>" +
           '<p class="tour-city">' +
-          evnt.venue.city + ', ' + evnt.venue.region +
+          evnt.venue.city +
+          ", " +
+          evnt.venue.region +
           "</p>" +
           '<p class="tour-venue">' +
           ticket_url +
