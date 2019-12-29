@@ -275,7 +275,6 @@ scarey.tour = function() {
   }
 
   var APPID = process.env.BANDS_IN_TOWN;
-  console.log(APPID);
   var $content = $(".tour .main-content");
   var $block = $(".tour-block");
   var dateRange;
