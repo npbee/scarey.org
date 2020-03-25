@@ -1,0 +1,36 @@
+{% set linkClass = [
+  "hover:text-orange-300"
+] | join(" ") %}
+
+{% set headerCls = [
+  "container",
+  "mx-auto",
+  "mb-8",
+  "px-2"
+] | join(" ") %}
+
+{% macro link(text, href, cls, blank) %}
+<a {%if blank %} target="_blank" rel="noreferrer nofollow noopener" {% endif %} class="{{cls}} {{linkClass}} {% if page.url == href %}text-orange-400{% endif %}" href="{{ href }}">{{ text }}</a>
+{% endmacro %}
+
+<header class="{{headerCls}} md:hidden text-xs">
+  <nav class="flex flex-col uppercase tracking-widest">
+    <a href="/" class="w-64 mx-auto"><img src="/img/logo.png" alt="S. Carey home"/></a>
+    <div class="flex justify-between flex-wrap">
+      {{ link("Discography", "/discography/", "px-2 text-center")}}
+      {{ link("Shows", "/shows/", "px-2 text-center")}}
+      {{ link("Store", "https://merch.ambientinks.com/collections/scarey", "px-2 text-center", true)}}
+      {{ link("Contact", "/contact/", "px-2 text-center")}}
+    </div>
+  </nav>
+</header>
+
+<header class="{{headerCls}} hidden md:block text-xs">
+  <nav class="flex flex-row items-center justify-center uppercase tracking-widest">
+    {{ link("Discography", "/discography/", "p-4")}}
+    {{ link("Shows", "/shows/", "p-4")}}
+    <a class="w-64" href="/"><img src="/img/logo.png" alt="S. Carey home"/></a>
+    {{ link("Store", "https://merch.ambientinks.com/collections/scarey", "p-4", true)}}
+    {{ link("Contact", "/contact/", "p-4")}}
+  </nav>
+</header>

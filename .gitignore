@@ -4,3 +4,4 @@ _site
 .env.local
 .cache
 .env
+dist

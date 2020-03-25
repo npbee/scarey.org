@@ -1,64 +1,34 @@
-# Scarey.org
+![S. Carey Logo](./docs/scarey-logo.png)
 
-## DEPENDENCIES
+Built with:
 
-### Ruby dependecies
+- [Sanity](https://www.sanity.io/)
+- [Eleventy](https://www.11ty.dev/)
+- [Tailwind](https://tailwindcss.com/)
+- [Netlify](https://www.netlify.com/)
 
-- rbenv
-- Jekyll
-- Sass
-- Compass
-- Susyone
+## Development
 
-* Install `rbenv`
-* Install `nvm`
+Ensure global dependecies are installed:
 
-`nvm use`
+- [Yarn](https://yarnpkg.com/)
+- NodeJS
 
-Make sure bundler is installed
-`gem install bundler`
+### Install local dependecies:
 
-Then install the dependencies:
-`bundle install`
+```sh
+yarn
+```
 
-### Javascript dependencies
+### Run the dev servers
 
-Make sure node and NPM are installed
-`npm install`
+```sh
+yarn dev
+```
 
-- jQuery 1.10.2
-- Gulp
+## Deployment
 
-## Development flow
+Netlify will deploy the site when:
 
-- Start Jekyll
-  `bundle exec jekyll serve --watch`
-- Edit Sass
-  `gulp sass`
-
-## Deployment Flow
-
-- Create branch
-- Push to github
-- Check Netlify preview
-- Merge to master
-
-Site files.
-
----
-
-**Local Alias:** scarey
-
-**Enivronment**:
-
-- SASS
-- jQuery 1.10.2
-- MAMP
-- Jekyll
-
-**Build:**
-
-- Commit to master
-- scareydeploy
-- cd public_html
-- git pull origin master
+- A commit is pushed to `master`
+- A data change is made in Sanity

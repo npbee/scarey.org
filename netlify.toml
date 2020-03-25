@@ -1,4 +1,27 @@
+[build]
+  publish = "web/_site"
+  command = "yarn workspace web run build"
+
 [[redirects]]
   from = "/tour"
-  to = "/tour/upcoming"
-  force = true
+  to = "/shows"
+
+[[redirects]]
+  from = "/tour/upcoming"
+  to = "/shows"
+
+[[redirects]]
+  from = "/tour/past"
+  to = "/shows"
+
+[[redirects]]
+  from = "/music"
+  to = "/discography"
+
+[[redirects]]
+  from = "/store"
+  to = "https://merch.ambientinks.com/collections/scarey"
+
+[[redirects]]
+  from = "/videos"
+  to = "https://www.youtube.com/channel/UCgdOK7aUpVskDXxVAQCG8UA"

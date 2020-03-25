@@ -1,0 +1,7 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+
+:root {
+  --brand-primary: #f6ad55;
+  --font-family-base: "Open Sans";
+  --font-size-base: 0.9rem;
+}
