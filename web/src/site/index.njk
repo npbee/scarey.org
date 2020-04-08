@@ -1,0 +1,45 @@
+---
+layout: default
+description: Musician based in Eau Claire, WI.
+---
+
+{% import "./_includes/icons.njk" as Icons %}
+
+<!-- prettier-ignore -->
+{% set btn = [ "flex", "items-center", "py-3", "px-4", "transition",
+"transition-colors", "duration-150", "tracking-widest", "leading-6",
+"shadow-xl", "xborder", "border-orange-100", "border", "rounded-full",
+"text-orange-100", "uppercase", "text-xl", "hover:bg-orange-100",
+"hover:text-orange-500" ] | join(" ") %}
+
+<div class="video-embed mb-12">
+  <iframe
+    class=""
+    src="{{settings.featuredVideo}}"
+    frameborder="0"
+    allowfullscreen
+  ></iframe>
+</div>
+
+<div class="container mx-auto">
+  <div class="flex flex-col justify-between mb-12 max-w-lg mx-auto">
+    <div class="max-w-2xl mb-2">
+      <img class="max-w-full h-auto" src="/img/hundred-acres-text.png" />
+    </div>
+    <div class="flex flex-col w-full items-center">
+      <div class="block text-lg flex justify-between items-start">
+        <a
+          href="https://smarturl.it/hundredacres"
+          class="{{btn}}"
+          target="_blank"
+          rel="noreferrer nofollow noopener"
+        >
+          <span class="mr-2">Listen</span>
+          <span class="flex w-4" style="transform: rotate(-45deg)">
+            {{ Icons.ArrowRight() }}
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

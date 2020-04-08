@@ -1,0 +1,105 @@
+---
+layout: default
+title: Discography
+description: Albums, EP's, and other releases by S. Carey
+---
+
+{% macro artwork(src, cls) %}
+<img class="shadow-2xl rounded-sm w-full lazyload {{cls}}" data-src="{{src}}" />
+{% endmacro %}
+
+{% macro albumTitle(title) %}
+<h3 class="text-3xl font-normal tracking-widest uppercase leading-none mb-1">{{title}}</h3>
+{% endmacro %}
+
+{% macro releaseDate(date, format) %}
+<p class="uppercase tracking-wider md:text-xs">{{date | formattedDate(format) }}</p>
+{% endmacro %}
+
+{% macro Links(links, cls, liCls) %}
+<ul class="text-gray-300 text-sm md:text-xs {{cls}}">
+{% for link in links %}
+  <li class="flex justify-center {{liCls}}">
+  {% Link link.url %}
+    {{ link | linkLabel }}
+  {% endLink %}
+  </li>
+{% endfor %}
+</ul>
+{% endmacro %}
+
+{% Subheader "Discography", "Albums" %}
+
+{% for album in works.albums %}
+<div class="flex flex-col md:flex-row mb-24">
+  <div class="mb-2 md:w-64 md:mr-8">
+    {{ artwork(album.artwork, "mb-4") }}
+    {{ Links(album.purchaseLinks, "hidden md:grid grid-cols-2", "mr-8 md:mr-0 mb-6 md:mb-4") }}
+  </div>
+  <div class="flex-1 rounded-sm -mx-2 p-4 readable">
+    <div class="mb-6">
+      <div class="mb-6">
+        {{ albumTitle(album.title) }}
+        {{ releaseDate(album.releaseDate, "LLLL d, y") }}
+      </div>
+
+      {{ Links(album.purchaseLinks, "md:hidden grid grid-cols-2", "mb-4") }}
+
+    </div>
+    <div class="mb-8 album-description">
+    {{album.description | safe }}
+    </div>
+
+    <h4 class="text-2xl font-normal leading-relaxed mb-2">Tracks</h4>
+    <ul class="text-sm">
+    {% for track in album.tracks %}
+      <li class="mb-1">
+        <div class="expander">
+          <h5>
+            {% if track.lyrics %}
+            <button aria-expanded="false">
+              {{track.title}}
+               <svg aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+                <rect class="vert" height="8" width="2" y="1" x="4"/>
+                <rect height="2" width="8" y="4" x="1"/>
+              </svg>
+            </buton>
+            {% else %}
+              {{track.title}}
+            {% endif %}
+          </h5>
+          <div class="content" hidden>{{track.lyrics | safe}}</div>
+        </div>
+      </li>
+    {% endfor %}
+    </ul>
+
+  </div>
+</div>
+{% endfor %}
+
+{% Subheader "Discography", "Production & Performance" %}
+
+<div class="grid grid-cols-1 gap-4 md:grid-cols-4 md:gap-6 mb-12">
+{% for credit in works.credits %}
+  <figure aria-describedby="{{credit._id}}" class="relative credit" tabindex="0">
+    <div>
+      {{artwork(credit.artwork)}}
+    </div>
+    <figcaption id="{{credit._id}}" class="absolute top-0 w-full h-full bg-gray-900 p-4 rounded-sm flex flex-col">
+      <div class="flex-1">
+        <h3 class="text-2xl md:text-base font-semibold text-orange-100 italic">{{credit.title}}</h3>
+        <h4 class="text-2xl md:text-base tracking-wide text-gray-100 font-semibold leading-tight mb-1">{{credit.artist}}</h4>
+
+        <div class="mb-4 text-gray-500">
+        {{ releaseDate(credit.releaseDate, "y") }}
+        </div>
+
+        <p class="md:text-sm mb-8 italic">{{ credit.credits | join(', ') }}</p>
+      </div>
+      {{ Links(credit.purchaseLinks, "flex flex-wrap", "mr-8 mb-4 md:mr-2 md:mb-2") }}
+
+    </figcaption>
+  </figure>
+{% endfor %}
+</div>

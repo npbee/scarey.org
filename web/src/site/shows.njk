@@ -1,0 +1,51 @@
+---
+layout: default
+title: Shows
+description: Upcoming live shows for S. Carey
+js: shows.js
+---
+
+{% import "./_includes/icons.njk" as Icons %}
+
+<section class="mb-24" id="s-carey-root">
+  {% Subheader "Shows", "S. Carey" %}
+
+  <div
+    id="loading"
+    class="loading hidden w-full flex items-center justify-center"
+  >
+    {{ Icons.Loading() }}
+  </div>
+
+  <div class="target"></div>
+
+  <div id="error" class="error hidden">
+    <div class="readable">
+      <p class="text-base p-4">
+        There was an error loading the shows. Please try checking directly from
+        Bandsintown: {% Link "https://www.bandsintown.com/en/a/1022936-s.-carey"
+        %}Link{% endLink %}
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="bon-iver-root">
+  {% Subheader "Shows", "Bon Iver" %}
+
+  <div class="loading hidden w-full flex items-center justify-center">
+    {{ Icons.Loading() }}
+  </div>
+
+  <div class="target"></div>
+
+  <div class="error hidden">
+    <div class="readable">
+      <p class="text-base p-4">
+        There was an error loading the shows. Please try checking directly from
+        Bandsintown: {% Link "https://www.bandsintown.com/a/144274-bon-iver?"
+        %}Link{% endLink %}
+      </p>
+    </div>
+  </div>
+</section>

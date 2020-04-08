@@ -2,31 +2,21 @@
   "name": "scarey.org",
   "version": "1.0.0",
   "description": "Offical scarey.org ",
-  "main": "gulpfile.js",
+  "main": "index.js",
+  "repository": "git@github.com:npbee/scarey.org.git",
+  "author": "Nick Ball <nicholaspball@gmail.com>",
+  "license": "MIT",
+  "private": true,
   "scripts": {
-    "start": "bundle exec jekyll serve --watch & npm run start:js",
-    "start:js": "parcel watch ./src/assets/js/functions.js --out-dir _site/assets/js",
-    "build:js": "parcel build ./src/assets/js/functions.js --out-dir _site/assets/js",
-    "build": "gulp build && npm run build:js"
+    "dev:web": "yarn workspace web run dev",
+    "dev:studio": "yarn workspace studio run dev",
+    "dev": "run-p dev:*"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/npbee/scarey.org.git"
-  },
-  "author": "Nick Ball",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/npbee/scarey.org/issues"
-  },
-  "homepage": "https://github.com/npbee/scarey.org",
+  "workspaces": [
+    "web",
+    "studio"
+  ],
   "devDependencies": {
-    "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^7.0.1",
-    "gulp-clean-css": "^4.2.0",
-    "gulp-rename": "^2.0.0",
-    "gulp-ruby-sass": "^4.0.0",
-    "gulp-uglify": "^3.0.2",
-    "parcel-bundler": "^1.10.3",
-    "sass": "^1.14.3"
+    "npm-run-all": "^4.1.5"
   }
 }
