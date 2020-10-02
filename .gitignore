@@ -3,5 +3,5 @@
 _site
 .env.local
 .cache
-.env
+.env*
 dist
