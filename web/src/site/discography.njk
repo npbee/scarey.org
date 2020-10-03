@@ -13,13 +13,13 @@ description: Albums, EP's, and other releases by S. Carey
 {% endmacro %}
 
 {% macro releaseDate(date, format) %}
-<p class="uppercase tracking-wider md:text-xs">{{date | formattedDate(format) }}</p>
+<p class="text-gray-600 tracking-wider md:text-xs">{{date | formattedDate(format) }}</p>
 {% endmacro %}
 
 {% macro Links(links, cls, liCls) %}
-<ul class="text-gray-300 text-sm md:text-xs {{cls}}">
+<ul class="text-gray-800 text-sm md:text-xs {{cls}}">
 {% for link in links %}
-  <li class="flex justify-center {{liCls}}">
+  <li class="flex items-center md:justify-center {{liCls}}">
   {% Link link.url %}
     {{ link | linkLabel }}
   {% endLink %}
@@ -34,7 +34,7 @@ description: Albums, EP's, and other releases by S. Carey
 <div class="flex flex-col md:flex-row mb-24">
   <div class="mb-2 md:w-64 md:mr-8">
     {{ artwork(album.artwork, "mb-4") }}
-    {{ Links(album.purchaseLinks, "hidden md:grid grid-cols-2", "mr-8 md:mr-0 mb-6 md:mb-4") }}
+    {{ Links(album.purchaseLinks, "hidden md:grid grid-cols-2 gap-4", "mr-8 md:mr-0") }}
   </div>
   <div class="flex-1 rounded-sm -mx-2 p-4 readable">
     <div class="mb-6">
@@ -43,7 +43,7 @@ description: Albums, EP's, and other releases by S. Carey
         {{ releaseDate(album.releaseDate, "LLLL d, y") }}
       </div>
 
-      {{ Links(album.purchaseLinks, "md:hidden grid grid-cols-2", "mb-4") }}
+      {{ Links(album.purchaseLinks, "md:hidden grid grid-cols-2 gap-4") }}
 
     </div>
     <div class="mb-8 album-description">
@@ -88,16 +88,16 @@ description: Albums, EP's, and other releases by S. Carey
     </div>
     <figcaption id="{{credit._id}}" class="absolute top-0 w-full h-full bg-gray-900 p-4 rounded-sm flex flex-col">
       <div class="flex-1">
-        <h3 class="text-2xl md:text-base font-semibold text-orange-100 italic">{{credit.title}}</h3>
+        <h3 class="text-2xl md:text-base font-semibold text-red-100 italic">{{credit.title}}</h3>
         <h4 class="text-2xl md:text-base tracking-wide text-gray-100 font-semibold leading-tight mb-1">{{credit.artist}}</h4>
 
-        <div class="mb-4 text-gray-500">
+        <div class="mb-4 text-gray-400">
         {{ releaseDate(credit.releaseDate, "y") }}
         </div>
 
         <p class="md:text-sm mb-8 italic">{{ credit.credits | join(', ') }}</p>
       </div>
-      {{ Links(credit.purchaseLinks, "flex flex-wrap", "mr-8 mb-4 md:mr-2 md:mb-2") }}
+      {{ Links(credit.purchaseLinks, "flex flex-wrap", "mr-8 mb-4 md:mr-2 md:mb-2 text-gray-400") }}
 
     </figcaption>
   </figure>

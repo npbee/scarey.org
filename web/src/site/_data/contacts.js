@@ -13,6 +13,6 @@ module.exports = async function getContacts() {
     booking: contacts.filter(contact => contact.role === "booking"),
     publicity: contacts.filter(contact => contact.role === "publicity"),
     management: contacts.find(contact => contact.role === "management"),
-    licensing: contacts.find(contact => contact.role === "licensing"),
+    licensing: contacts.find(contact => contact.role === "licensing")
   };
 };

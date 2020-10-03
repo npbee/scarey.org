@@ -1,5 +1,5 @@
 {% set linkClass = [
-  "hover:text-orange-300"
+  "hover:text-red-700"
 ] | join(" ") %}
 
 {% set headerCls = [
@@ -10,12 +10,12 @@
 ] | join(" ") %}
 
 {% macro link(text, href, cls, blank) %}
-<a {%if blank %} target="_blank" rel="noreferrer nofollow noopener" {% endif %} class="{{cls}} {{linkClass}} {% if page.url == href %}text-orange-400{% endif %}" href="{{ href }}">{{ text }}</a>
+<a {%if blank %} target="_blank" rel="noreferrer nofollow noopener" {% endif %} class="{{cls}} {{linkClass}} {% if page.url == href %}text-red-700{% endif %}" href="{{ href }}">{{ text }}</a>
 {% endmacro %}
 
 <header class="{{headerCls}} md:hidden text-xs">
   <nav class="flex flex-col uppercase tracking-widest">
-    <a href="/" class="w-64 mx-auto"><img src="/img/logo.png" alt="S. Carey home"/></a>
+    <a href="/" class="w-40 py-4 mx-auto"><img src="/img/logo-dark.png" alt="S. Carey home"/></a>
     <div class="flex justify-between flex-wrap">
       {{ link("Discography", "/discography/", "px-2 text-center")}}
       {{ link("Shows", "/shows/", "px-2 text-center")}}
@@ -26,11 +26,13 @@
 </header>
 
 <header class="{{headerCls}} hidden md:block text-xs">
-  <nav class="flex flex-row items-center justify-center uppercase tracking-widest">
-    {{ link("Discography", "/discography/", "p-4")}}
-    {{ link("Shows", "/shows/", "p-4")}}
-    <a class="w-64" href="/"><img src="/img/logo.png" alt="S. Carey home"/></a>
-    {{ link("Store", "https://merch.ambientinks.com/collections/scarey", "p-4", true)}}
-    {{ link("Contact", "/contact/", "p-4")}}
+  <nav class="flex flex-row items-center justify-between uppercase tracking-widest">
+    <a class="w-32" style="position: relative; top: 12px;" href="/"><img src="/img/logo-dark-unpadded.png" alt="S. Carey home"/></a>
+    <ul class="flex items-center -mr-4">
+      <li>{{ link("Discography", "/discography/", "p-4")}}</li>
+      <li>{{ link("Shows", "/shows/", "p-4")}}</li>
+      <li>{{ link("Store", "https://merch.ambientinks.com/collections/scarey", "p-4", true)}}</li>
+      <li>{{ link("Contact", "/contact/", "p-4")}}</li>
+    </ul>
   </nav>
 </header>
