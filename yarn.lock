@@ -8509,9 +8509,10 @@ recursive-copy@^2.0.10:
     promise "^7.0.1"
     slash "^1.0.0"
 
-redom@^3.26.0:
-  version "3.26.0"
-  resolved "https://registry.yarnpkg.com/redom/-/redom-3.26.0.tgz#c947192222e0622710400d2126806569ca242c30"
+redom@^3.27.1:
+  version "3.27.1"
+  resolved "https://registry.yarnpkg.com/redom/-/redom-3.27.1.tgz#4243cfd4f4e851463fd9736de44af27323830f06"
+  integrity sha512-hq3/nnY3GyanNvEx5xLopg+HMIZHEQrFuNiUwTQqsOv53tVPYX6Rei8o5hCALGZtUlMWYRiJ/gd4pZCvgGyGig==
 
 reduce-css-calc@^1.2.7:
   version "1.3.0"
