@@ -1,4 +1,7 @@
 {% set linkClass = [
+"block",
+  "py-6",
+  "px-4",
   "hover:text-red-700"
 ] | join(" ") %}
 
@@ -29,10 +32,10 @@
   <nav class="flex flex-row items-center justify-between uppercase tracking-widest">
     <a class="w-32" style="position: relative; top: 12px;" href="/"><img src="/img/logo-dark-unpadded.png" alt="S. Carey home"/></a>
     <ul class="flex items-center -mr-4">
-      <li>{{ link("Discography", "/discography/", "p-4")}}</li>
-      <li>{{ link("Shows", "/shows/", "p-4")}}</li>
-      <li>{{ link("Store", "https://merch.ambientinks.com/collections/scarey", "p-4", true)}}</li>
-      <li>{{ link("Contact", "/contact/", "p-4")}}</li>
+      <li>{{ link("Discography", "/discography/", "")}}</li>
+      <li>{{ link("Shows", "/shows/", "")}}</li>
+      <li>{{ link("Store", "https://merch.ambientinks.com/collections/scarey", "", true)}}</li>
+      <li>{{ link("Contact", "/contact/", "")}}</li>
     </ul>
   </nav>
 </header>
