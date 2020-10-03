@@ -8,28 +8,28 @@ description: Musician based in Eau Claire, WI.
 <!-- prettier-ignore -->
 {% set btn = [ "flex", "items-center", "py-3", "px-4", "transition",
 "transition-colors", "duration-150", "tracking-widest", "leading-6",
-"shadow-xl", "xborder", "border-orange-100", "border", "rounded-full",
-"text-orange-100", "uppercase", "text-xl", "hover:bg-orange-100",
-"hover:text-orange-500" ] | join(" ") %}
+"xborder", "border-blue-900", "border", "rounded-lg", "bg-blue-900",
+"text-red-100", "uppercase", "text-xl", "hover:bg-blue-800",
+"hover:text-red-100" ] | join(" ") %}
 
-<div class="video-embed mb-12">
-  <iframe
-    class=""
-    src="{{settings.featuredVideo}}"
-    frameborder="0"
-    allowfullscreen
-  ></iframe>
+<div class="md:max-w-screen-md mx-auto mb-8">
+  <div class="video-embed">
+    <iframe
+      height="100%"
+      class=""
+      src="{{settings.featuredVideo}}"
+      frameborder="0"
+      allowfullscreen
+    ></iframe>
+  </div>
 </div>
 
 <div class="container mx-auto">
   <div class="flex flex-col justify-between mb-12 max-w-lg mx-auto">
-    <div class="max-w-2xl mb-2">
-      <img class="max-w-full h-auto" src="/img/hundred-acres-text.png" />
-    </div>
     <div class="flex flex-col w-full items-center">
       <div class="block text-lg flex justify-between items-start">
         <a
-          href="https://smarturl.it/hundredacres"
+          href="https://s-carey.ffm.to/all-we-grow"
           class="{{btn}}"
           target="_blank"
           rel="noreferrer nofollow noopener"
