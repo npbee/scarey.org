@@ -14,12 +14,12 @@ const sanityClient = client({
   projectId: process.env.SANITY_PROJECT_ID,
   dataset: "production",
   useCdn: !token,
-  token,
+  token
 });
 
 module.exports = {
   fetch,
-  urlFor,
+  urlFor
 };
 
 async function fetch(queryString, cachePath) {
@@ -59,7 +59,7 @@ function log(level, ...args) {
       log: chalk.green,
       error: chalk.red,
       warn: chalk.yellow,
-      default: chalk.grey,
+      default: chalk.grey
     }[level] || levelColor.default;
   const date = chalk.white(`[${new Date().toISOString()}]`);
   const levelString = `[${levelColor(level)}]`;

@@ -88,7 +88,7 @@ module.exports = function(eleventyConfig) {
 
   // Components
   eleventyConfig.addPairedShortcode("Link", function(content, href) {
-    return `<a class="hover:text-orange-400 transition-colors border-b-2 border-white-400 hover:border-orange-400 duration-100" href="${href}">${content}</a>`;
+    return `<a class="hover:text-red-700 transition-colors border-b-2 border-gray-700 hover:border-red-700 duration-100" href="${href}">${content}</a>`;
   });
 
   eleventyConfig.addPairedShortcode("BtnLink", function(
@@ -129,8 +129,8 @@ module.exports = function(eleventyConfig) {
   });
 
   eleventyConfig.addShortcode("Subheader", function(mainHeader, subHeader) {
-    return `<div class="flex-wrap z-10 p-4 flex items-center font-normal mb-12 uppercase text-base">
-  <h1 class="font-medium tracking-wider">${mainHeader}&thinsp;/&thinsp;</h1><h2 class="whitespace-no-wrap text-orange-400 tracking-wider font-medium">${subHeader}</h2>
+    return `<div class="flex-wrap z-10 py-4 flex items-center font-normal mb-4 uppercase text-base">
+  <h1 class="font-medium tracking-wider">${mainHeader}&thinsp;/&thinsp;</h1><h2 class="whitespace-no-wrap text-red-700 tracking-wider font-medium">${subHeader}</h2>
 </div>`;
   });
 

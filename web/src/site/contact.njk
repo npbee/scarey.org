@@ -5,12 +5,12 @@ description: Find out how to contact S. Carey for booking, publicity, or licensi
 ---
 
 {% macro H2(text) %}
-<h2 class="text-3xl font-normal text-orange-100 mb-2">{{text}}</h2>
+<h2 class="text-3xl font-normal mb-2">{{text}}</h2>
 {% endmacro %} {% macro Person(person) %}
 <div>
-  <h3 class="text-lg mb-1 text-gray-400">{{person.region}}</h3>
+  <h3 class="text-lg mb-1 text-gray-600">{{person.region}}</h3>
   <p class="flex text-xl font-normal flex-col tracking-wide">{{person.name}}</p>
-  <p class="text-gray-400 mb-2">{{ person.company}}</p>
+  <p class="text-gray-600 mb-2">{{ person.company}}</p>
   <a class="block" href="mailto:{{person.email}}">{{person.email}}</a>
   <a class="block" href="tel:{{person.phone}}">{{person.phone}}</a>
 </div>
