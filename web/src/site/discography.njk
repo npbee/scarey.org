@@ -95,7 +95,7 @@ description: Albums, EP's, and other releases by S. Carey
         {{ releaseDate(credit.releaseDate, "y") }}
         </div>
 
-        <p class="md:text-sm mb-8 italic">{{ credit.credits | join(', ') }}</p>
+        <p class="md:text-sm mb-8 italic text-gray-100">{{ credit.credits | join(', ') }}</p>
       </div>
       {{ Links(credit.purchaseLinks, "flex flex-wrap", "mr-8 mb-4 md:mr-2 md:mb-2 text-gray-400") }}
 
