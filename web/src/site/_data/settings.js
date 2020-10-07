@@ -3,7 +3,7 @@ const { fetch, urlFor } = require("../../utils/sanity");
 const path = require("path");
 
 async function getSiteSettings() {
-  const query = groq`*[_type=="siteSettings"][0]`;
+  const query = groq`*[_type=="siteSettings" && !(_id in path('drafts.**'))][0]`;
   const results = await fetch(
     query,
     path.join(__dirname, "settings.cache.json")

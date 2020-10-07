@@ -3,7 +3,7 @@ const { fetch } = require("../../utils/sanity");
 const path = require("path");
 
 module.exports = async function getContacts() {
-  const query = groq`*[_type=="contact"]`;
+  const query = groq`*[_type=="contact" && !(_id in path('drafts.**'))]`;
   const contacts = await fetch(
     query,
     path.join(__dirname, "contacts.cache.json")

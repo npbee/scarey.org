@@ -4,7 +4,7 @@ const { fetch, urlFor } = require("../../utils/sanity");
 const path = require("path");
 
 async function getAlbums() {
-  const query = groq`*[_type=="album"] | order(releaseDate desc)`;
+  const query = groq`*[_type=="album" && !(_id in path('drafts.**'))] | order(releaseDate desc)`;
   const albums = await fetch(query, path.join(__dirname, "albums.cache.json"));
   const preparedAlbums = albums.map(album => ({
     ...album,
@@ -20,7 +20,7 @@ async function getAlbums() {
 }
 
 async function getCredits() {
-  const query = groq`*[_type=="credit"] | order(releaseDate desc)`;
+  const query = groq`*[_type=="credit" && !(_id in path('drafts.**'))] | order(releaseDate desc)`;
   const credits = await fetch(
     query,
     path.join(__dirname, "credits.cache.json")
