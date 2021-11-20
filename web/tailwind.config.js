@@ -12,8 +12,4 @@ module.exports = {
       lg: "1024px"
     }
   },
-  future: {
-    removeDeprecatedGapUtilities: true,
-    purgeLayersByDefault: true
-  }
 };

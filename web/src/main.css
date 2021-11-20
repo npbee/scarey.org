@@ -139,7 +139,7 @@ input::placeholder {
 }
 
 .table tbody tr:nth-child(even) {
-  @apply .readable;
+  @apply readable;
 }
 
 .table a {
@@ -170,7 +170,7 @@ input::placeholder {
     display: none;
   }
   .table thead {
-    @apply .not-visuallyhidden;
+    @apply not-visuallyhidden;
   }
 }
 
