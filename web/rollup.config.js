@@ -16,6 +16,7 @@ export default [
     plugins: [
       resolve(),
       replace({
+        preventAssignment: true,
         __BANDS_IN_TOWN_ID__: JSON.stringify(process.env.BANDS_IN_TOWN),
         __DEV__: JSON.stringify(process.env.NODE_ENV === "development")
       }),
