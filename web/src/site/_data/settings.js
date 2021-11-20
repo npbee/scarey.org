@@ -11,7 +11,7 @@ async function getSiteSettings() {
 
   return {
     ...results,
-    socialImage: urlFor(results.socialImage).url()
+    socialImage: urlFor(results.socialImage).url(),
   };
 }
 

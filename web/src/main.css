@@ -1,246 +1,268 @@
-/* purgecss start ignore */
 @tailwind base;
-/* purgecss end ignore */
-
-html,
-body {
-  height: 100%;
-}
-
-body {
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100%;
-  font-family: avenir next, avenir, sans-serif;
-  font-weight: 600;
-  -webkit-font-smoothing: antialiased !important;
-  @apply text-gray-900;
-}
-
-.bg {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  opacity: 0.7;
-}
-
-.bg img {
-  @apply object-cover;
-  width: 100%;
-  height: 100%;
-}
-
-input::placeholder {
-  @apply text-gray-700;
-}
-
-/* purgecss start ignore */
 @tailwind components;
-/* purgecss end ignore */
-
 @tailwind utilities;
 
-@responsive {
-  .breakout {
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
-    width: 100vw;
+@layer base {
+  /* roboto-condensed-300 - latin */
+  @font-face {
+    font-family: "Roboto Condensed";
+    font-style: normal;
+    font-weight: 300;
+    src: local(""),
+      url("/fonts/roboto-condensed-v19-latin-300.woff2") format("woff2"),
+      /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url("/fonts/roboto-condensed-v19-latin-300.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
   }
-  .breakout-none {
-    margin-left: unset;
-    margin-right: unset;
-    width: auto;
+
+  /* roboto-condensed-300italic - latin */
+  @font-face {
+    font-family: "Roboto Condensed";
+    font-style: italic;
+    font-weight: 300;
+    src: local(""),
+      url("/fonts/roboto-condensed-v19-latin-300italic.woff2") format("woff2"),
+      /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url("/fonts/roboto-condensed-v19-latin-300italic.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
   }
-}
 
-.video-embed {
-  position: relative;
-  padding-bottom: 56.25%;
-}
+  /* roboto-condensed-regular - latin */
+  @font-face {
+    font-family: "Roboto Condensed";
+    font-style: normal;
+    font-weight: 400;
+    src: local(""),
+      url("/fonts/roboto-condensed-v19-latin-regular.woff2") format("woff2"),
+      /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url("/fonts/roboto-condensed-v19-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
 
-.video-embed > iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
+  /* roboto-condensed-italic - latin */
+  @font-face {
+    font-family: "Roboto Condensed";
+    font-style: italic;
+    font-weight: 400;
+    src: local(""),
+      url("/fonts/roboto-condensed-v19-latin-italic.woff2") format("woff2"),
+      /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url("/fonts/roboto-condensed-v19-latin-italic.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
 
-.readable {
-  /* background: rgba(62, 73, 91, 0.1); */
-  /* backdrop-filter: blur(2px); */
-}
+  html,
+  body {
+    height: 100%;
+  }
 
-.visuallyhidden {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-}
+  body {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    font-family: avenir next, avenir, sans-serif;
+    font-weight: 500;
+    -webkit-font-smoothing: antialiased !important;
+    @apply text-gray-200;
+  }
 
-.not-visuallyhidden {
-  clip: none;
-  height: unset;
-  margin: unset;
-  overflow: visible;
-  position: unset;
-  width: unset;
-}
+  .bg {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    filter: brightness(0.4);
+  }
 
-.table tr,
-.table td {
-  display: block;
-}
+  .bg img {
+    @apply object-cover;
+    width: 100%;
+    height: 100%;
+  }
 
-.table tr {
-  @apply mb-8;
-}
+  input::placeholder {
+    @apply text-gray-700;
+  }
 
-.table thead {
-  @apply visuallyhidden;
-}
+  .video-embed {
+    position: relative;
+    padding-bottom: 56.25%;
+  }
 
-.table td {
-  @apply flex;
-}
+  .video-embed > iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 
-.table td:before {
-  content: attr(data-label);
-  @apply mr-4 flex-1;
-}
+  .readable {
+    /* background: rgba(62, 73, 91, 0.1); */
+    /* backdrop-filter: blur(2px); */
+  }
 
-.table {
-  table-layout: fixed;
-  width: 100%;
-}
+  .visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
 
-.table thead {
-  @apply text-2xl text-left;
-}
+  .not-visuallyhidden {
+    clip: none;
+    height: unset;
+    margin: unset;
+    overflow: visible;
+    position: unset;
+    width: unset;
+  }
 
-.table th {
-  @apply font-normal;
-}
+  .table tr,
+  .table td {
+    display: block;
+  }
 
-.table td {
-  @apply py-2;
-}
-
-.table tbody {
-  @apply text-sm tracking-wide font-medium;
-}
-
-.table tbody tr:nth-child(even) {
-  @apply readable;
-}
-
-.table a {
-  @apply underline transition-colors transition duration-100;
-  text-underline-position: under;
-}
-
-.table a:hover {
-  @apply text-red-700;
-}
-
-@screen md {
   .table tr {
-    display: table-row;
-    @apply grid grid-cols-3 gap-4 mb-0;
+    @apply mb-8;
+  }
+
+  .table thead {
+    @apply visuallyhidden;
   }
 
   .table td {
-    display: table-cell;
-    @apply py-3;
-  }
-
-  .table th {
-    @apply border-b border-gray-600;
+    @apply flex;
   }
 
   .table td:before {
-    display: none;
+    content: attr(data-label);
+    @apply mr-4 flex-1;
   }
+
+  .table {
+    table-layout: fixed;
+    width: 100%;
+  }
+
   .table thead {
-    @apply not-visuallyhidden;
+    @apply text-3xl text-left;
   }
-}
 
-.album-description p {
-  @apply mb-4;
-}
+  .table th {
+    @apply font-light brand-font;
+  }
 
-.credit > figcaption {
-  @apply transition duration-150 transition-opacity;
-  opacity: 0;
-}
+  .table td {
+    @apply py-2;
+  }
 
-.credit:focus-within,
-.credit--focused > figcaption,
-.credit:focus > figcaption,
-.credit:hover > figcaption {
-  opacity: 0.8;
-}
+  .table tbody {
+    @apply text-sm tracking-wide font-medium;
+  }
 
-/**
+  .table tbody tr:nth-child(even) {
+    @apply readable;
+  }
+
+  .table a {
+    @apply underline transition-colors transition duration-100;
+    text-underline-position: under;
+  }
+
+  .table a:hover {
+    @apply text-primary-700;
+  }
+
+  .album-description p {
+    @apply mb-4;
+  }
+
+  .credit > figcaption {
+    @apply transition duration-150 transition-opacity;
+    opacity: 0;
+  }
+
+  .credit:focus-within,
+  .credit--focused > figcaption,
+  .credit:focus > figcaption,
+  .credit:hover > figcaption {
+    opacity: 0.8;
+  }
+
+  /**
  * Bio
  */
-body.bio {
-  background-image: none;
-  @apply bg-gray-800;
-  @apply text-red-100;
-}
-
-.bio p {
-  @apply mb-6 font-medium;
-}
-
-.bio b {
-  @apply font-semibold;
-}
-
-/**
- * Discography
- */
-.expander button {
-  display: flex;
-  @apply font-semibold items-center;
-}
-
-.expander button svg {
-  height: 0.8em;
-  @apply fill-current ml-1;
-}
-.expander [aria-expanded="true"] .vert {
-  display: none;
-}
-.expander [aria-expanded] rect {
-  fill: currentColor;
-}
-
-.expander .content {
-  @apply my-4 pl-4 italic text-sm;
-}
-
-/**
- * Mailing list
- */
-@screen md {
-  .mailing-list-input + button {
-    opacity: 0;
-    transition: opacity 120ms;
+  body.bio {
+    background-image: none;
+    @apply bg-gray-800;
+    @apply text-primary-100;
   }
 
-  .mailing-list-input + button:focus,
-  .mailing-list-input:focus + button {
-    opacity: 1;
+  .bio p {
+    @apply mb-6 font-medium;
+  }
+
+  .bio b {
+    @apply font-semibold;
+  }
+
+  /**
+ * Discography
+ */
+  .expander button {
+    display: flex;
+    @apply font-semibold items-center;
+  }
+
+  .expander button svg {
+    height: 0.8em;
+    @apply fill-current ml-1;
+  }
+  .expander [aria-expanded="true"] .vert {
+    display: none;
+  }
+  .expander [aria-expanded] rect {
+    fill: currentColor;
+  }
+
+  .expander .content {
+    @apply my-4 pl-4 italic text-sm;
+  }
+
+  [hidden] {
+    display: none !important;
+  }
+
+  @screen md {
+    .table tr {
+      display: table-row;
+      @apply grid grid-cols-3 gap-4 mb-0;
+    }
+
+    .table td {
+      display: table-cell;
+      @apply py-3;
+    }
+
+    .table th {
+      @apply border-b border-gray-600;
+    }
+
+    .table td:before {
+      display: none;
+    }
+    .table thead {
+      @apply not-visuallyhidden;
+    }
+  }
+}
+
+@layer utilities {
+  .brand-font {
+    font-family: "Roboto Condensed";
   }
 }

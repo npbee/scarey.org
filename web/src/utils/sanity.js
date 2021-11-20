@@ -14,12 +14,13 @@ const sanityClient = client({
   projectId: process.env.SANITY_PROJECT_ID,
   dataset: "production",
   useCdn: !token,
-  token
+  token,
+  apiVersion: "2021-11-24",
 });
 
 module.exports = {
   fetch,
-  urlFor
+  urlFor,
 };
 
 async function fetch(queryString, cachePath) {
@@ -33,7 +34,7 @@ async function fetch(queryString, cachePath) {
     } catch (err) {
       log("warn", "Couldn't read cache. Fetching from the network");
 
-      const results = await sanityClient.fetch(queryString).catch(error => {
+      const results = await sanityClient.fetch(queryString).catch((error) => {
         log("error", "Error fetching from Sanity");
         log("error", error);
       });
@@ -59,7 +60,7 @@ function log(level, ...args) {
       log: chalk.green,
       error: chalk.red,
       warn: chalk.yellow,
-      default: chalk.grey
+      default: chalk.grey,
     }[level] || levelColor.default;
   const date = chalk.white(`[${new Date().toISOString()}]`);
   const levelString = `[${levelColor(level)}]`;

@@ -3,9 +3,10 @@ const util = require("util");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.setUseGitIgnore(false);
-  eleventyConfig.addLayoutAlias("default", "layouts/base.njk");
+  eleventyConfig.addLayoutAlias("default", "layouts/base.11ty.js");
   eleventyConfig.addPassthroughCopy("src/site/img");
   eleventyConfig.addPassthroughCopy("src/site/favicons");
+  eleventyConfig.addPassthroughCopy("src/site/fonts");
 
   // a debug utility
   eleventyConfig.addFilter("dump", (obj) => {
@@ -76,8 +77,16 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget("./src/site/js/");
 
   // Components
-  eleventyConfig.addPairedShortcode("Link", function (content, href) {
-    return `<a class="hover:text-red-700 transition-colors border-b-2 border-gray-700 hover:border-red-700 duration-100" href="${href}">${content}</a>`;
+  eleventyConfig.addPairedShortcode("Link", function(content, href) {
+    let cls = [
+      "hover:text-primary-700",
+      "transition-colors",
+      "underline",
+      "underline-offset-4",
+      "decoration-2",
+      "duration-100"
+    ].join(" ");
+    return `<a class="${cls}" href="${href}">${content}</a>`;
   });
 
   eleventyConfig.addPairedShortcode(
@@ -116,9 +125,9 @@ module.exports = function (eleventyConfig) {
     }).toFormat("y");
   });
 
-  eleventyConfig.addShortcode("Subheader", function (mainHeader, subHeader) {
-    return `<div class="flex-wrap z-10 py-4 flex items-center font-normal mb-4 uppercase text-base">
-  <h1 class="font-medium tracking-wider">${mainHeader}&thinsp;/&thinsp;</h1><h2 class="whitespace-no-wrap text-red-700 tracking-wider font-medium">${subHeader}</h2>
+  eleventyConfig.addShortcode("Subheader", function(mainHeader, subHeader) {
+    return `<div class="brand-font flex-wrap z-10 py-4 flex items-center font-normal mb-4 uppercase text-lg tracking-wide">
+  <h1 class="font-medium tracking-wider">${mainHeader}&thinsp;/&thinsp;</h1><h2 class="whitespace-no-wrap text-primary-700 tracking-wider font-medium">${subHeader}</h2>
 </div>`;
   });
 
