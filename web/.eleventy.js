@@ -55,23 +55,10 @@ module.exports = function(eleventyConfig) {
       })}</pre></div>`;
   });
 
-  // Date helpers
-  eleventyConfig.addFilter("readableDate", dateObj => {
-    return DateTime.fromJSDate(new Date(dateObj), {
-      zone: "utc"
-    }).toFormat("LLLL d, y");
-  });
-
   eleventyConfig.addFilter("formattedDate", (dateStr = "LLLL d, y", format) => {
     return DateTime.fromJSDate(new Date(dateStr), {
       zone: "utc"
     }).toFormat(format);
-  });
-
-  eleventyConfig.addFilter("htmlDate", dateObj => {
-    return DateTime.fromJSDate(dateObj, {
-      zone: "utc"
-    }).toFormat("y-MM-dd");
   });
 
   // This is put here by PostCSS, we need 11ty to move to the `_site` directory
