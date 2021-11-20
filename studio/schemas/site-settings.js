@@ -1,4 +1,4 @@
-import icon from "react-icons/lib/fa/newspaper-o";
+import {FaNewspaper as icon} from "react-icons/fa";
 
 export default {
   name: "siteSettings",

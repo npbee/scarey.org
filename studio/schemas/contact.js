@@ -1,5 +1,5 @@
 import startCase from "lodash/startCase";
-import icon from "react-icons/lib/md/person";
+import { MdPerson as icon} from "react-icons/md";
 
 export default {
   name: "contact",
