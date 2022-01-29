@@ -1,4 +1,4 @@
-import { MdAttachMoney as icon } from "react-icons/md"
+import { MdAttachMoney as icon } from "react-icons/md";
 
 export default {
   name: "purchaseLink",
@@ -19,6 +19,7 @@ export default {
           { title: "Amazon", value: "amazon" },
           { title: "Soundcloud", value: "soundcloud" },
           { title: "Indies", value: "indies" },
+          { title: "Apple Music", value: "apple-music" },
         ],
       },
     },
