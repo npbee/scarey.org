@@ -1,4 +1,4 @@
-import {FaNewspaper as icon} from "react-icons/fa";
+import { FaNewspaper as icon } from "react-icons/fa";
 
 export default {
   name: "siteSettings",
@@ -10,30 +10,36 @@ export default {
       name: "featuredVideo",
       title: "Featured Video",
       description: "Shown on the home page",
-      type: "url"
+      type: "url",
+    },
+    {
+      name: "featuredVideoId",
+      title: "YouTube ID of the feature video",
+      description: "Shown on the home page",
+      type: "string",
     },
     {
       name: "description",
       title: "Site description",
       type: "text",
       description:
-        "The general description of the site. This will be shown in social media and search results"
+        "The general description of the site. This will be shown in social media and search results",
     },
     {
       name: "socialImage",
       title: "Press Image",
       type: "image",
-      description: "Shown in social media and search results"
-    }
+      description: "Shown in social media and search results",
+    },
   ],
   preview: {
     select: {
-      title: "Settings"
+      title: "Settings",
     },
     prepare() {
       return {
-        title: "Site Settings"
+        title: "Site Settings",
       };
-    }
-  }
+    },
+  },
 };

@@ -10,9 +10,9 @@ module.exports = async function getContacts() {
   );
 
   return {
-    booking: contacts.filter(contact => contact.role === "booking"),
-    publicity: contacts.filter(contact => contact.role === "publicity"),
-    management: contacts.find(contact => contact.role === "management"),
-    licensing: contacts.find(contact => contact.role === "licensing")
+    booking: contacts.filter((contact) => contact.role === "booking"),
+    publicity: contacts.filter((contact) => contact.role === "publicity"),
+    management: contacts.find((contact) => contact.role === "management"),
+    licensing: contacts.find((contact) => contact.role === "licensing"),
   };
 };

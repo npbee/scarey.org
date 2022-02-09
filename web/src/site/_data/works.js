@@ -6,14 +6,14 @@ const path = require("path");
 async function getAlbums() {
   const query = groq`*[_type=="album" && !(_id in path('drafts.**'))] | order(releaseDate desc)`;
   const albums = await fetch(query, path.join(__dirname, "albums.cache.json"));
-  const preparedAlbums = albums.map(album => ({
+  const preparedAlbums = albums.map((album) => ({
     ...album,
     artwork: urlFor(album.artwork).url(),
     description: BlocksToHtml({ blocks: album.description }),
-    tracks: album.tracks.map(track => ({
+    tracks: album.tracks.map((track) => ({
       ...track,
-      lyrics: track.lyrics ? BlocksToHtml({ blocks: track.lyrics }) : undefined
-    }))
+      lyrics: track.lyrics ? BlocksToHtml({ blocks: track.lyrics }) : undefined,
+    })),
   }));
 
   return preparedAlbums;
@@ -25,9 +25,9 @@ async function getCredits() {
     query,
     path.join(__dirname, "credits.cache.json")
   );
-  const preparedCredits = credits.map(credit => ({
+  const preparedCredits = credits.map((credit) => ({
     ...credit,
-    artwork: urlFor(credit.artwork).url()
+    artwork: urlFor(credit.artwork).url(),
   }));
 
   return preparedCredits;
