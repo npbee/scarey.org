@@ -3,7 +3,7 @@ let fs = require("fs");
 
 let Meta = require("../meta");
 let Favicon = require("../favicon");
-let Icons = require("../../js/icons");
+let Icons = require("../icons");
 
 let expanderJs = fs.readFileSync(__dirname + "/../expander.js").toString();
 let creditFocusJs = fs

@@ -1,6 +1,6 @@
 const html = String.raw;
 
-const Icons = require("./js/icons");
+const Icons = require("./_includes/icons");
 
 module.exports = class Home {
   data() {

@@ -1,5 +1,5 @@
 let html = String.raw;
-let Icons = require("./js/icons");
+let Icons = require("./_includes/icons");
 
 module.exports = class Discography {
   data() {
