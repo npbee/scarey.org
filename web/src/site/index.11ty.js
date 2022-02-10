@@ -68,7 +68,7 @@ module.exports = class Home {
           class="flex items-center justify-between flex-col md:flex-row gap-6"
         >
           <div
-            class="flex items-baseline justify-center md:justify-start w-full gap-2 text-4xl"
+            class="flex items-baseline justify-center md:justify-start w-full gap-2 text-3xl md:text-4xl"
           >
             <h2
               class="brand-font font-light italic uppercase text-gray-300"
