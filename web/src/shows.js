@@ -4,8 +4,8 @@ var APPID = __BANDS_IN_TOWN_ID__;
 
 const config = {
   scarey: {
-    root: "s-carey-root"
-  }
+    root: "s-carey-root",
+  },
 };
 
 // Elements
@@ -63,9 +63,9 @@ function getData(artist) {
 
   return fetch(url, {
     headers: {
-      Accept: "application/json, text/javascript"
-    }
-  }).then(response => {
+      Accept: "application/json, text/javascript",
+    },
+  }).then((response) => {
     if (response.ok) return response.json();
 
     throw new Error("Error fetching data from Bandsintown");
@@ -95,10 +95,14 @@ function buildRow(event) {
   let location =
     event.venue.city + (event.venue.region ? ", " + event.venue.region : "");
   let venue = event.venue.name;
+  let ticketOffer = event.offers.find(function (offer) {
+    return offer.type === "Tickets";
+  });
+  let url = ticketOffer ? ticketOffer.url : event.url;
 
   let link = el(
     "a",
-    { href: event.url, target: "_blank", rel: "noopener noopener nofollow" },
+    { href: url, target: "_blank", rel: "noopener noopener nofollow" },
     venue
   );
 
@@ -106,7 +110,7 @@ function buildRow(event) {
   return el("tr", [
     el("td", { "data-label": "Date" }, date),
     el("td", { "data-label": "Location" }, location),
-    el("td", { "data-label": "Venue" }, link)
+    el("td", { "data-label": "Venue" }, link),
   ]);
 }
 
@@ -116,6 +120,6 @@ function formatDate(datestamp) {
   return new Intl.DateTimeFormat("en-US", {
     month: "long",
     day: "numeric",
-    year: "numeric"
+    year: "numeric",
   }).format(date);
 }
