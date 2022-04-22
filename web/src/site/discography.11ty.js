@@ -21,7 +21,9 @@ module.exports = class Discography {
       ${links
         .map((link) => {
           return html`
-            <li class="flex">${this.Link(this.linkLabel(link), link.url)}</li>
+            <li class="flex whitespace-nowrap">
+              ${this.Link(this.linkLabel(link), link.url)}
+            </li>
           `;
         })
         .join(joiner)}
@@ -101,9 +103,9 @@ module.exports = class Discography {
               ${this.ReleaseDate(album.releaseDate, "LLLL d, y")}
             </div>
             <ul
-              class="md:hidden flex gap-4 justify-between text-gray-300 font-medium text-sm"
+              class="md:hidden grid grid-cols-2 flex-wrap gap-4 justify-between text-gray-300 font-medium text-sm"
             >
-              ${this.mapLinks(album.purchaseLinks || [], " • ")}
+              ${this.mapLinks(album.purchaseLinks || [])}
             </ul>
           </div>
 
