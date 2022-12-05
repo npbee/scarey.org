@@ -90,6 +90,11 @@ function buildEmpty() {
   );
 }
 
+let urlFixups = {
+  103949653:
+    "https://www.eventbrite.com/e/s-carey-mend-provisions-tickets-465944361127",
+};
+
 function buildRow(event) {
   let date = formatDate(event.datetime);
   let location =
@@ -99,6 +104,10 @@ function buildRow(event) {
     return offer.type === "Tickets";
   });
   let url = ticketOffer ? ticketOffer.url : event.url;
+
+  if (urlFixups[event.id]) {
+    url = urlFixups[event.id];
+  }
 
   let link = el(
     "a",
