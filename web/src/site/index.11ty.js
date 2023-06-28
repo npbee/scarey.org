@@ -48,37 +48,37 @@ module.exports = class Home {
 
     return html`
       <div
-        class="md:h-full flex flex-col space-y-6"
+        class="md:h-full flex flex-col md:flex-row md:items-center md:justify-between space-y-6 md:gap-8"
         style="--tw-bg-opacity: 0.5"
       >
-        <div
-          class="aspect-w-16 aspect-h-9 md:pb-0 md:h-full"
-          style="max-height: 40rem"
-        >
-          <iframe
-            height="100%"
-            width="100%"
-            class=""
-            src=${embedUrl}
-            frameborder="0"
-            allowfullscreen
-          ></iframe>
+        <div class="relative">
+          <div
+            class="absolute blur w-full h-full bg-gradient-to-r from-[#3f5e78] to-[#0c1f39] z-[-1] top-0 left-0 rounded-sm"
+          ></div>
+          <div class="md:pb-0 flex items-center md:flex-1">
+            <img
+              src="/img/shadowlands.jpeg"
+              class="md:object-contain md:w-full md:max-w-xl rounded-sm"
+            />
+          </div>
         </div>
         <div
-          class="flex items-center justify-between flex-col md:flex-row gap-6"
+          class="flex items-center md:items-start justify-between md:justify-start flex-col gap-6"
         >
           <div
             class="flex items-baseline justify-center md:justify-start w-full gap-2 text-3xl md:text-4xl"
           >
             <h2
-              class="brand-font font-light italic uppercase text-gray-300"
-              style="letter-spacing: 0.25em"
+              class="brand-font font-light text-gray-300 flex flex-col text-center md:text-left"
             >
-              Break Me Open
+              <span class="uppercase italic" style="letter-spacing: 0.25em"
+                >Shadowlands</span
+              >
+              <span class="text-xl tracking-wide">with John Raymond</span>
             </h2>
           </div>
           <a
-            href="https://s-carey.ffm.to/break-me-open"
+            href="https://ingrv.es/shadowlands-f94-3"
             class="${this.buttonClass()}"
             target="_blank"
             rel="noreferrer nofollow noopener"
