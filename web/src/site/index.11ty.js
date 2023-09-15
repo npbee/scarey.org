@@ -83,7 +83,7 @@ module.exports = class Home {
             target="_blank"
             rel="noreferrer nofollow noopener"
           >
-            Preorder now
+            Listen now
             <span class="flex w-5" style="transform: rotate(-45deg)">
               ${Icons.ArrowRight()}
             </span>
