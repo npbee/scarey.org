@@ -43,16 +43,6 @@ module.exports = class Contact {
         </div>
 
         <div class="grid md:grid-cols-3 gap-12">
-          <div class="space-y-2">
-            ${this.H2("Publicity")}
-            <div class="grid gap-8">
-              ${data.contacts.publicity
-                .map(
-                  (person) => html` <div class="">${this.Person(person)}</div> `
-                )
-                .join(" ")}
-            </div>
-          </div>
 
           <div class="space-y-2">
             ${this.H2("Management")} ${this.Person(data.contacts.management)}
