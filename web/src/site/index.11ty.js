@@ -57,7 +57,7 @@ module.exports = class Home {
           ></div>
           <div class="md:pb-0 flex items-center md:flex-1">
             <img
-              src="/img/shadowlands.jpeg"
+              src="/img/bizhiki.jpg"
               class="md:object-contain md:w-full md:max-w-xl rounded-sm"
             />
           </div>
@@ -72,18 +72,18 @@ module.exports = class Home {
               class="brand-font font-light text-gray-300 flex flex-col text-center md:text-left"
             >
               <span class="uppercase italic" style="letter-spacing: 0.25em"
-                >Shadowlands</span
+                >Unbound</span
               >
-              <span class="text-xl tracking-wide">with John Raymond</span>
+              <span class="text-xl tracking-wide">Bizhiki</span>
             </h2>
           </div>
           <a
-            href="https://ingrv.es/shadowlands-f94-3"
+            href="https://bizhiki.lnk.to/unbound"
             class="${this.buttonClass()}"
             target="_blank"
             rel="noreferrer nofollow noopener"
           >
-            Listen now
+            Preorder now
             <span class="flex w-5" style="transform: rotate(-45deg)">
               ${Icons.ArrowRight()}
             </span>
