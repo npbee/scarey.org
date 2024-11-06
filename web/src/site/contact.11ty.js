@@ -19,7 +19,7 @@ module.exports = class Contact {
         ${person.region
           ? html`<h3 class="text-lg text-gray-500 mb-1">${person.region}</h3>`
           : ""}
-        <p class="flex text-xl font-normal">${person.name}</p>
+        <p class="flex text-xl font-normal">${person.name || ""}</p>
         <p class="text-gray-400">${person.company}</p>
         <a class="block hover:text-primary-700" href="mailto:${person.email}"
           >${person.email}</a
