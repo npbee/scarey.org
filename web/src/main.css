@@ -61,7 +61,7 @@
     font-family: avenir next, avenir, sans-serif;
     font-weight: 500;
     -webkit-font-smoothing: antialiased !important;
-    @apply text-gray-200;
+    @apply text-gray-50;
   }
 
   .bg {
@@ -70,7 +70,7 @@
     width: 100%;
     height: 100%;
     z-index: -1;
-    filter: brightness(0.4);
+    filter: brightness(0.75) blur(1.5px) contrast(0.85)
   }
 
   .bg img {
@@ -249,7 +249,7 @@
     }
 
     .table th {
-      @apply border-b border-gray-600;
+      @apply border-b border-gray-400;
     }
 
     .table td:before {

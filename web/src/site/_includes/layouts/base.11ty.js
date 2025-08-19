@@ -50,13 +50,12 @@ module.exports = class Base {
         <body class="flex flex-col">
           <div class="bg">
             <picture>
-              <source srcset="/img/bmo.webp" type="image/webp" />
-              <source srcset="/img/bmo.jpg" type="image/jpeg" />
-              <img src="/img/bmo.jpg" alt="Break Me Open album cover" />
+              <source srcset="/img/water-cropped.jpg" type="image/jpeg" />
+              <img src="/img/water.jpg" alt="Break Me Open album cover" />
             </picture>
           </div>
           ${data.variant !== "frameless" ? Header(data) : ""}
-          <div class="container mx-auto px-4 flex-1 my-8">${data.content}</div>
+          <div class="container mx-auto p-4 flex-1">${data.content}</div>
 
           ${data.variant !== "frameless" ? Footer(data) : ""}
 
@@ -77,12 +76,12 @@ module.exports = class Base {
 
 function Header(data) {
   return html`
-    <header style="--tw-bg-opacity: 1" class="bg-black text-gray-200 border-b border-gray-100">
+    <header style="--tw-bg-opacity: 1" class="xbg-black/30 text-gray-100">
       <nav class="container mx-auto px-4 flex flex-wrap justify-between items-center">
-        <a href="/" class="transition-colors bg-clip-text hover:text-transparent hover:bg-gradient-to-r from-indigo-500 to-secondary-600 w-full md:w-auto block py-3 md:py-6 text-center md:text-left brand-font text-3xl font-light italic uppercase tracking-wide hover:text-primary-700">
+        <a href="/" class="transition-colors bg-clip-text hover:text-transparent bg-gradient-to-r from-secondary-50 to-secondary-500 w-full md:w-auto block py-3 md:py-6 text-center md:text-left brand-font text-4xl font-light italic uppercase tracking-wide hover:text-primary-700">
            S. Carey
          </a>
-        <ul class="w-full md:w-auto flex justify-between md:justify-start space-x-6 uppercase tracking-widest text-xs">
+        <ul class="bg-black/40 rounded-full px-6 w-full md:w-auto flex justify-between md:justify-start space-x-6 uppercase tracking-widest text-xs">
            <li>${Link(data.page, "Discography", "/discography/")}</li>
            <li>${Link(data.page, "Shows", "/shows/")}</li>
            <li>
@@ -101,13 +100,13 @@ function Header(data) {
   `;
 }
 
-let linkClass = ["block", "py-3", "md:py-6", "hover:text-primary-700"];
+let linkClass = ["block", "py-3", "md:py-3", "hover:text-primary-700"];
 
 function Link(page, text, href, extraCls, blank) {
   let cls = [
     extraCls,
     ...linkClass,
-    page.url === href ? "text-primary-700" : "",
+    page.url === href ? "text-primary-500 font-medium" : "",
   ].join(" ");
   let attrs = [`class="${cls}"`, `href=${href}`];
 
@@ -126,13 +125,13 @@ function Footer(data) {
   let isHomePage = data.page.url === "/";
 
   return html`
-    <footer class="py-4 bg-black border-t border-gray-100">
+    <footer class="py-4">
       <div
-        class="container mx-auto flex text-gray-500 space-x-16 md:space-x-4 flex-row justify-between items-center px-4 w-full"
+        class="container mx-auto flex text-gray-100 space-x-16 md:space-x-4 flex-row justify-between items-center px-4 w-full"
       >
         <a
           href="/"
-          class="bg-clip-text hover:text-transparent hover:bg-gradient-to-r from-indigo-900 to-secondary-800 brand-font text-base font-normal hover:text-primary-700 uppercase tracking-widest italic"
+          class="bg-clip-text hover:text-transparent hover:bg-gradient-to-r from-secondary-50 to-secondary-500 brand-font text-base font-normal hover:text-primary-700 uppercase tracking-widest italic"
           >S. Carey</a
         >
 
