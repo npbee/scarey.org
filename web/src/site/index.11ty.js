@@ -79,7 +79,7 @@ module.exports = class Home {
             </h2>
           </div>
           <a
-            href="https://s-carey.lnk.to/watercress-ep"
+            href="https://merch.ambientinks.com/collections/scarey/products/watercress-ep"
             class="${this.buttonClass()}"
             target="_blank"
             rel="noreferrer nofollow noopener"
