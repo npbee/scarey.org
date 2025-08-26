@@ -14,7 +14,7 @@ module.exports = class Shows {
 
   render() {
     return html`
-      <section class="mb-12" id="s-carey-root">
+      <section class="mb-12 bg-black/30 px-4 rounded" id="s-carey-root">
         ${this.Subheader("Shows", "S. Carey")}
 
         <div
@@ -40,7 +40,7 @@ module.exports = class Shows {
         </div>
       </section>
 
-      <section id="bon-iver-root">
+      <section id="bon-iver-root" class="bg-black/30 px-4 rounded">
         ${this.Subheader("Shows", "Bon Iver")}
 
         <div class="loading hidden w-full flex items-center justify-center">

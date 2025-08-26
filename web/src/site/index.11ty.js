@@ -16,18 +16,22 @@ module.exports = class Home {
       "items-center",
       "gap-3",
       "border",
-      "border-gray-700",
+      "border-gray-900",
       "font-medium",
       "rounded-full",
       "px-12 md:px-5",
       "text-lg",
       "tracking-wider",
       "shadow",
-      "bg-gradient-to-r from-indigo-900 to-secondary-800",
+      "bg-white/70",
+      "text-gray-900",
       "transform",
       "transition-all",
-      "hover:from-primary-800",
-      "active:from-primary-900",
+      "bg-gradient-to-r",
+      "from-secondary-50",
+      "from-secondary-100",
+      "hover:bg-white/90",
+      "active:bg-white/100",
       "h-12 md:h-10",
       "whitespace-nowrap",
     ].join(" ");
@@ -48,42 +52,39 @@ module.exports = class Home {
 
     return html`
       <div
-        class="md:h-full flex flex-col md:flex-row md:items-center md:justify-between space-y-6 md:gap-8"
+        class="md:h-full flex flex-col md:items-center md:justify-between gap-8 md:gap-4"
         style="--tw-bg-opacity: 0.5"
       >
-        <div class="relative">
-          <div
-            class="absolute blur w-full h-full bg-gradient-to-r from-[#3f5e78] to-[#0c1f39] z-[-1] top-0 left-0 rounded-sm"
-          ></div>
-          <div class="md:pb-0 flex items-center md:flex-1">
-            <img
-              src="/img/bizhiki.jpg"
-              class="md:object-contain md:w-full md:max-w-xl rounded-sm"
-            />
-          </div>
+        <div class="aspect-w-16 aspect-h-9 md:pb-0 h-full w-full">
+          <iframe
+            height="100%"
+            width="100%"
+            class=""
+            src=${embedUrl}
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
         </div>
         <div
-          class="flex items-center md:items-start justify-between md:justify-start flex-col gap-6"
+          class="flex md:flex-row items-center justify-between w-full flex-col gap-3"
         >
           <div
-            class="flex items-baseline justify-center md:justify-start w-full gap-2 text-3xl md:text-4xl"
+            class="flex items-baseline w-full text-center md:text-left justify-center md:justify-start gap-2 text-3xl md:text-4xl"
           >
-            <h2
-              class="brand-font font-light text-gray-300 flex flex-col text-center md:text-left"
-            >
+            <h2 class="brand-font font-normal text-gray-100 flex flex-col">
               <span class="uppercase italic" style="letter-spacing: 0.25em"
-                >Unbound</span
+                >Watercress</span
               >
-              <span class="text-xl tracking-wide">Bizhiki</span>
+              <span class="text-xl tracking-wide">October 3rd, 2025</span>
             </h2>
           </div>
           <a
-            href="https://bizhiki.lnk.to/unbound"
+            href="https://s-carey.lnk.to/watercress-ep"
             class="${this.buttonClass()}"
             target="_blank"
             rel="noreferrer nofollow noopener"
           >
-            Out now
+            Pre-order
             <span class="flex w-5" style="transform: rotate(-45deg)">
               ${Icons.ArrowRight()}
             </span>

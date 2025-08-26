@@ -127,7 +127,7 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addShortcode("Subheader", function(mainHeader, subHeader) {
     return `<div class="brand-font flex-wrap z-10 py-4 flex items-center font-normal mb-4 uppercase text-lg tracking-wide">
-  <h1 class="font-medium tracking-wider">${mainHeader}&thinsp;/&thinsp;</h1><h2 class="whitespace-no-wrap text-primary-700 tracking-wider font-medium">${subHeader}</h2>
+  <h1 class="font-medium tracking-wider">${mainHeader}&thinsp;/&thinsp;</h1><h2 class="whitespace-no-wrap text-primary-500 tracking-wider font-medium">${subHeader}</h2>
 </div>`;
   });
 

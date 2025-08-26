@@ -96,10 +96,10 @@ module.exports = class Discography {
             ${this.mapLinks(album.purchaseLinks || [])}
           </ul>
         </div>
-        <div class="flex-1 space-y-8 md:space-y-6">
+        <div class="flex-1 space-y-8 md:space-y-6 bg-black/40 p-4 rounded">
           <div class="space-y-2 md:space-y-0">
             ${this.AlbumTitle(album.title)}
-            <div class="text-gray-300 text-sm font-normal">
+            <div class="text-gray-100 text-sm font-normal">
               ${this.ReleaseDate(album.releaseDate, "LLLL d, y")}
             </div>
             <ul
