@@ -1,0 +1,13 @@
+title: Carrie & Lowell
+artist: Sufjan Stevens
+releaseDate: '2015-03-31'
+credits:
+- Vocals
+artwork: ./carrie-lowell.jpg
+links:
+- type: bandcamp
+  url: https://music.sufjan.com/album/carrie-lowell
+- type: spotify
+  url: https://open.spotify.com/album/0U8DeqqKDgIhIiWOdqiQXE?autoplay=true&v=L
+- type: apple
+  url: https://geo.music.apple.com/us/album/carrie-lowell/955572616?app=itunes

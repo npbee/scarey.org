@@ -1,22 +1,31 @@
 {
-  "name": "scarey.org",
-  "version": "1.0.0",
-  "description": "Offical scarey.org ",
-  "main": "index.js",
-  "repository": "git@github.com:npbee/scarey.org.git",
-  "author": "Nick Ball <nicholaspball@gmail.com>",
-  "license": "MIT",
-  "private": true,
+  "name": "scarey-org-astro",
+  "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "dev:web": "yarn workspace web run dev",
-    "dev:studio": "yarn workspace studio run dev",
-    "dev": "run-p dev:*"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
-  "workspaces": [
-    "web",
-    "studio"
-  ],
+  "dependencies": {
+    "@astrojs/language-server": "^2.15.4",
+    "@astrojs/solid-js": "^5.1.1",
+    "@fontsource-variable/roboto-condensed": "^5.2.6",
+    "@tailwindcss/language-server": "^0.14.26",
+    "@tailwindcss/vite": "^4.1.12",
+    "astro": "^5.14.1",
+    "clsx": "^2.1.1",
+    "global": "^4.4.0",
+    "solid-js": "^1.9.9",
+    "tailwindcss": "^4.1.12"
+  },
+  "packageManager": "pnpm@9.1.2+sha512.127dc83b9ea10c32be65d22a8efb4a65fb952e8fefbdfded39bdc3c97efc32d31b48b00420df2c1187ace28c921c902f0cb5a134a4d032b8b5295cbfa2c681e2",
   "devDependencies": {
-    "npm-run-all": "^4.1.5"
+    "prettier": "^3.6.2",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.6.14",
+    "sharp": "^0.34.3",
+    "typescript": "^5.9.2"
   }
 }

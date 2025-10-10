@@ -1,0 +1,17 @@
+title = "The Avalanche"
+artist = "Owen"
+releaseDate = "2020-06-19"
+credits = ["Production", "Performance"]
+artwork = "./the-avalanche.jpg"
+
+[[links]]
+type = "physical"
+url = "https://shop.owenmusic.com/"
+
+[[links]]
+type = "apple"
+url = "https://music.apple.com/album/the-avalanche/1507237802?ls=1&app=music&at=1l3v3cP&ct=ijui9g"
+
+[[links]]
+type = "spotify"
+url = "https://open.spotify.com/album/27C6iNWoN1gmSHIpPGVgkS?si=EkGPnFbSRPGL9SUOc0IrCw"

@@ -1,0 +1,17 @@
+title = "The Falls of Sioux"
+artist = "Owen"
+releaseDate = "2024-04-26"
+credits = ["Production", "Performance"]
+artwork = "./the-falls-of-sioux.jpg"
+
+[[links]]
+type = "physical"
+url = "https://owenmusic.bandcamp.com/album/the-falls-of-sioux"
+
+[[links]]
+type = "apple"
+url = "https://music.apple.com/us/album/the-falls-of-sioux/1726290727"
+
+[[links]]
+type = "spotify"
+url = "https://open.spotify.com/album/47E67izkbz8NcJNfWblzPE?si=XF_NoNpRSm-SwFDgbQrOtg"

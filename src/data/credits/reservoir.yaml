@@ -1,0 +1,13 @@
+title: Reservoir
+artist: Gordi
+releaseDate: '2018-08-25'
+credits:
+- Vocals
+artwork: ./reservoir.jpg
+links:
+- type: bandcamp
+  url: https://gordi.bandcamp.com/album/reservoir
+- type: apple
+  url: https://geo.music.apple.com/us/album/reservoir/1242961904?app=itunes
+- type: spotify
+  url: https://open.spotify.com/album/27CcSt3j7OxhWVcCPZBYLq?autoplay=true&v=L

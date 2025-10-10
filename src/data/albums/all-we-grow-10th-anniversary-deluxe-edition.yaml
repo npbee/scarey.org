@@ -1,0 +1,26 @@
+title: "All We Grow (10th Anniversary Deluxe Edition)"
+description: "Ten years ago, S. Carey and All We Grow crept into our world like a seedling—delicate and unassuming, but putting down roots that would deepen and grow whether we saw them or not. Ten years later, All We Grow stands as a classic album - born without expectation and met with adoration - a cathartic result of Carey's extraordinary and vibrant life experiences that resonates loss, dreams and heart in a manner so instantly relatable, you feel as though you can touch it."
+artwork: "./all-we-grow-10th-anniversary-deluxe-edition.jpg"
+releaseDate: "2020-12-04"
+
+tracks:
+  - title: "Move"
+  - title: "We Fell"
+  - title: "In The Dirt"
+  - title: "Rothko Fields"
+  - title: "Mothers"
+  - title: "Action"
+  - title: "In the Stream"
+  - title: "All We Grow"
+  - title: "Broken"
+  - title: "Take It With Me"
+
+links:
+  - type: "apple"
+    url: "https://music.apple.com/me/album/take-it-with-me/1534235614?ls=1&app=itunes"
+  - type: "spotify"
+    url: "https://open.spotify.com/album/5mPkx9e0ritq1iheTzPPDQ?si=lJSm98XxQL-RNcRTPqazpw"
+  - type: "physical"
+    url: "https://merch.ambientinks.com/collections/scarey/products/preorder-all-we-grow-10th-anniversary-black-lp"
+  - type: "amazon"
+    url: "https://www.amazon.com/gp/product/B08JD3HMTV?tag=featurefm-20"

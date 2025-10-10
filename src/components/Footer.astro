@@ -1,0 +1,59 @@
+---
+import FacebookIcon from "../components/icons/Facebook.astro";
+import TwitterIcon from "../components/icons/Twitter.astro";
+import InstagramIcon from "../components/icons/Instagram.astro";
+import EmailIcon from "../components/icons/Email.astro";
+
+let formAction =
+  "//middlewestmgmt.us3.list-manage.com/subscribe/post?u=41155eea0059f0d47081cf8c3&amp;id=12eb6035f7";
+---
+
+<footer class="py-4">
+  <div
+    class="container mx-auto flex w-full flex-row items-center justify-between space-x-16 px-4 text-gray-100 md:space-x-4"
+  >
+    <a
+      href="/"
+      class="from-secondary-50 to-secondary-500 font-brand hover:text-primary-700 bg-clip-text text-base font-normal tracking-widest uppercase italic hover:bg-gradient-to-r hover:text-transparent"
+      >S. Carey</a
+    >
+    <div
+      class="-ml-2 flex flex-1 items-center justify-between space-x-2 md:flex-none"
+    >
+      <a
+        href="http://facebook.com/scareymusic"
+        target="_blank"
+        class="flex items-center px-2 hover:text-gray-300"
+      >
+        <span class="sr-only">S. Carey Facebook</span>
+        <span class="flex h-4 w-4 items-center"><FacebookIcon /></span>
+      </a>
+      <a
+        href="http://twitter.com/scareymusic"
+        target="_blank"
+        class="flex items-center px-2 hover:text-gray-300"
+      >
+        <span class="sr-only">S. Carey Twitter</span>
+        <span class="flex h-4 w-4 items-center"><TwitterIcon /></span>
+      </a>
+
+      <a
+        href="https://www.instagram.com/scareypics/"
+        target="_blank"
+        class="flex items-center px-2 hover:text-gray-300"
+      >
+        <span class="sr-only">S. Carey Instagram</span>
+        <span class="flex h-4 w-4 items-center"><InstagramIcon /></span>
+      </a>
+      <a
+        href={formAction}
+        target="_blank"
+        rel="noreferrer noopener nofollow"
+        class="flex items-center px-2 hover:text-gray-300"
+      >
+        <span class="sr-only">S. Carey Mailing List</span>
+        <span class="flex h-5 w-5 items-center"><EmailIcon /></span>
+      </a>
+    </div>
+  </div>
+</footer>

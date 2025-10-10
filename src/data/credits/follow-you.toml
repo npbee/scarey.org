@@ -1,0 +1,17 @@
+title = "Follow You"
+artist = "Pieta Brown"
+releaseDate = "2020-11-19"
+credits = ["Production", "Performance"]
+artwork = "./follow-you.jpg"
+
+[[links]]
+type = "spotify"
+url = "https://open.spotify.com/album/3A3HonCJ2sIyh2D1QXa7oz?si=-UainmAyS8uQ30thi7f6XQ"
+
+[[links]]
+type = "apple"
+url = "https://music.apple.com/us/album/follow-you-single/1538603672"
+
+[[links]]
+type = "bandcamp"
+url = "https://pietabrown.bandcamp.com/track/follow-you"

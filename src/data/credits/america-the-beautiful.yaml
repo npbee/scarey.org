@@ -1,0 +1,14 @@
+title: America the Beautiful
+artist: Soundtrack
+releaseDate: '2022-07-14'
+credits:
+- Songwriter
+- Performance
+artwork: ./america-the-beautiful.jpg
+links:
+- type: spotify
+  url: https://open.spotify.com/album/3OuNMUn7WiZLlkxdMX8tET?si=WEt7Dw6oQ6OPBZDhSN-lJQ
+- type: amazon
+  url: https://www.amazon.com/America-Beautiful-Original-Soundtrack-Trapanese/dp/B0B4ZHMKK6
+- type: apple
+  url: https://music.apple.com/us/album/america-the-beautiful-original-soundtrack/1631053490?at=11l9m8&uo=4&app=itunes

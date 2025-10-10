@@ -1,0 +1,19 @@
+---
+interface Props {
+  href: string;
+  blank?: boolean;
+}
+
+const { pathname } = Astro.url;
+
+const { href, blank } = Astro.props;
+const isActive = pathname === href;
+---
+
+<a
+  class="hover:text-primary-700 aria-[current='page']:text-primary-500 block py-3 font-medium aria-[current='page']:font-medium md:py-3"
+  aria-current={isActive ? "page" : false}
+  target={blank ? "_blank" : null}
+  rel={blank ? "noreferrer nofollow noopener" : null}
+  href={href}><slot /></a
+>

@@ -1,0 +1,71 @@
+---
+import { Image } from "astro:assets";
+import PurchaseLink from "../components/PurchaseLink.astro";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  credit: CollectionEntry<"credits">["data"];
+}
+
+const { credit } = Astro.props;
+
+const formattedDate = new Intl.DateTimeFormat("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+  timeZone: "utc",
+}).format(new Date(credit.releaseDate));
+---
+
+<figure
+  aria-describedby="${credit._id}"
+  class="credit group relative"
+  tabindex="0"
+>
+  <div>
+    <Image
+      class="lazyload w-full rounded-sm shadow-2xl"
+      src={credit.artwork}
+      alt={`Album artwork for ${credit.title}`}
+    />
+  </div>
+  <figcaption
+    class="absolute top-0 flex h-full w-full flex-col space-y-8 rounded-sm bg-gray-900 p-3 opacity-0 transition duration-150 group-focus-within:opacity-80 group-hover:opacity-80"
+  >
+    <div class="space-y-2 md:flex-1">
+      <div>
+        <h3 class="text-2xl font-medium text-gray-100 italic md:text-base">
+          {credit.title}
+        </h3>
+        <h4
+          class="text-xl font-medium tracking-wide text-gray-100 md:text-base md:leading-tight"
+        >
+          {credit.artist}
+        </h4>
+
+        <div class="text-sm font-normal text-gray-200 md:text-xs">
+          <p class="tracking-wider">{formattedDate}</p>
+        </div>
+      </div>
+
+      <hr class="w-2 text-gray-500" />
+
+      <p class="text-gray-100 italic md:text-sm">
+        {credit.credits.join(", ")}
+      </p>
+    </div>
+    <ul
+      class="flex flex-col flex-wrap gap-4 text-gray-100 md:flex-row md:gap-3 md:text-xs"
+    >
+      {
+        credit.links.map((link) => {
+          return (
+            <li>
+              <PurchaseLink href={link.url} type={link.type} />
+            </li>
+          );
+        })
+      }
+    </ul>
+  </figcaption>
+</figure>

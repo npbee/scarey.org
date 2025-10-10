@@ -1,0 +1,49 @@
+---
+import Layout from "../layouts/Main.astro";
+import ArrowRightIcon from "../components/icons/ArrowRight.astro";
+
+let featuredVideoId = "NUoPd6KlSP8";
+let queryString = new URLSearchParams([
+  ["showinfo", "0"],
+  ["theme", "dark"],
+  ["showsearch", "0"],
+  ["modestbranding", "1"],
+  ["controls", "0"],
+]);
+let embedUrl = `https://www.youtube.com/embed/${featuredVideoId}?${queryString.toString()}`;
+---
+
+<Layout title="S. Carey">
+  <div class="flex min-h-0 flex-col gap-8 md:h-full md:items-center md:gap-4">
+    <iframe
+      class="aspect-video h-full w-full md:aspect-auto"
+      src={embedUrl}
+      allowfullscreen></iframe>
+
+    <div
+      class="flex w-full flex-col items-center justify-between gap-3 md:flex-row"
+    >
+      <div
+        class="flex w-full items-baseline justify-center gap-2 text-center text-3xl md:justify-start md:text-left md:text-4xl"
+      >
+        <h2 class="font-brand flex flex-col font-normal text-gray-100">
+          <span class="uppercase italic" style="letter-spacing: 0.25em"
+            >Watercress</span
+          >
+          <span class="text-xl tracking-wide">October 3rd, 2025</span>
+        </h2>
+      </div>
+      <a
+        href="https://merch.ambientinks.com/collections/scarey/products/watercress-ep"
+        class="from-secondary-50 from-secondary-100 inline-flex h-12 transform items-center gap-3 rounded-full border border-gray-900 bg-white/70 bg-gradient-to-r px-12 text-lg font-medium tracking-wider whitespace-nowrap text-gray-900 shadow transition-all hover:bg-white/90 active:bg-white/100 md:h-10 md:px-5"
+        target="_blank"
+        rel="noreferrer nofollow noopener"
+      >
+        Order now
+        <span class="flex w-5" style="transform: rotate(-45deg)">
+          <ArrowRightIcon />
+        </span>
+      </a>
+    </div>
+  </div>
+</Layout>

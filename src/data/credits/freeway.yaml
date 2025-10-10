@@ -1,0 +1,14 @@
+title: Freeway
+artist: Pieta Brown
+releaseDate: '2019-09-20'
+credits:
+- Production
+- Performance
+artwork: ./freeway.jpg
+links:
+- type: physical
+  url: https://www.righteousbabe.com/products/pieta-brown-freeway
+- type: apple
+  url: https://geo.music.apple.com/us/album/freeway/1473808956?app=itunes
+- type: spotify
+  url: https://open.spotify.com/album/2ocRNLc1CopJNbcDvqEkq7

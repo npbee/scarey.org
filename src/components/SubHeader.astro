@@ -1,0 +1,18 @@
+---
+interface Props {
+  mainHeader: string;
+  subHeader: string;
+}
+
+const { mainHeader, subHeader } = Astro.props;
+---
+
+<div
+  class="font-brand z-10 mb-4 flex flex-wrap items-center text-lg font-normal tracking-wide uppercase"
+>
+  <h1>{mainHeader}&thinsp;/&thinsp;</h1><h2
+    class="whitespace-no-wrap text-primary-500"
+  >
+    {subHeader}
+  </h2>
+</div>

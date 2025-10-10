@@ -1,0 +1,14 @@
+title: We Are Not Machines
+artist: Pieta Brown
+releaseDate: '2020-07-24'
+credits:
+- Production
+- Performance
+artwork: ./we-are-not-machines.jpg
+links:
+- type: spotify
+  url: https://open.spotify.com/album/5tGaKQjO0tdQxgmxKCz4nW?si=J6O7eiSuRFiBpjUCjdQMkQ
+- type: apple
+  url: https://music.apple.com/us/album/we-are-not-machines-single/1520111071
+- type: bandcamp
+  url: https://pietabrown.bandcamp.com/album/we-are-not-machines-triptych
