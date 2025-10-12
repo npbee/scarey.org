@@ -1,0 +1,26 @@
+title: "Hundred Acres"
+description: "At its heart, Hundred Acres - the third full-length from Wisconsin singer/songwriter S. Carey - finds him grounded and confident, writing the strongest songs of his career. More direct than ever, there is a wellspring of confidence in this new batch of songs that allow for ideas to remain uncomplicated while laying bare the intricacies of life. Written in between touring schedules and the growth of his family, Carey produced Hundred Acres at April Base in Fall Creek, WI with support from his regular crew and contributions from the likes of Rob Moose (yMusic), Casey Foubert (Sufjan Stevens) and Sophie Payten (Gordi). He employed a smaller, more focused scale of instrumentation than on his previous albums while writing mostly on guitar instead of his go-to piano. Using more traditional song structures instead of the Steve Reich-ian repetitions of his past work, a new balance is struck that creates something unique. The result is a collection of poetic yet clear-eyed songs that both stand brightly on their own and tightly weave together to create a powerful album."
+artwork: "../../images/albums/hundred-acres.jpg"
+releaseDate: "2018-02-23"
+
+tracks:
+  - title: "Rose Petals"
+  - title: "Hideout"
+  - title: "Yellowstone"
+  - title: "True North"
+  - title: "Emery"
+  - title: "Hundred Acres"
+  - title: "More I See"
+  - title: "Fool's Gold"
+  - title: "Have You Stopped To Notice"
+  - title: "Meadow Song"
+
+links:
+  - type: "apple"
+    url: "https://itunes.apple.com/us/album/more-i-see/1312887488?i=1312888565&app=itunes"
+  - type: "physical"
+    url: "https://merch.ambientinks.com/collections/scarey/products/preorder-hundred-acres-black-lp"
+  - type: "spotify"
+    url: "https://open.spotify.com/album/7J2oRTfH14BbakDbmqMgiM"
+  - type: "amazon"
+    url: "https://www.amazon.com/Hundred-Acres-S-Carey/dp/B0773W3FN8/ref=sr_1_1?ie=UTF8&qid=1520357994&sr=8-1&keywords=s.+carey+hundred+acres"

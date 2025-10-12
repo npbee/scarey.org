@@ -1,0 +1,37 @@
+---
+import Link from "./Link.astro";
+interface Props {
+  href: string;
+  type: string;
+}
+
+const { href, type } = Astro.props;
+
+const label = (() => {
+  switch (type) {
+    case "itunes":
+      return "iTunes";
+    case "physical":
+      return "CD / LP";
+    case "spotify":
+      return "Spotify";
+    case "amazon":
+      return "Amazon";
+    case "bandcamp":
+      return "Bandcamp";
+    case "indies":
+      return "Indies";
+    case "soundcloud":
+      return "Soundcloud";
+    case "apple":
+    case "apple-music":
+      return "Apple Music";
+    default:
+      throw new Error(`Unhandled link type ${type}`);
+  }
+})();
+---
+
+<Link href={href} target="_blank" rel="noreferrer noopener nofollow"
+  >{label}</Link
+>

@@ -1,6 +1,6 @@
 [build]
-  publish = "web/_site"
-  command = "yarn workspace web run build"
+  publish = "dist"
+  command = "pnpm build"
 
 [[redirects]]
   from = "/tour"

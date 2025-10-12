@@ -1,0 +1,13 @@
+title: Bon Iver
+artist: Bon Iver
+releaseDate: '2011-06-17'
+credits:
+- Performance
+artwork: ../../images/credits/bon-iver.jpg
+links:
+- type: apple
+  url: http://smarturl.it/BonIver_iTunes
+- type: amazon
+  url: http://smarturl.it/BonIver_Amz
+- type: physical
+  url: http://smarturl.it/22AMillion

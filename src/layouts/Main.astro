@@ -1,0 +1,87 @@
+---
+import "../styles/global.css";
+import clsx from "clsx";
+import "@fontsource-variable/roboto-condensed";
+import "@fontsource-variable/roboto-condensed/wght-italic.css";
+import robotoItalic from "@fontsource-variable/roboto-condensed/files/roboto-condensed-latin-wght-normal.woff2?url";
+
+import socialImage from "../images/social-image.jpg";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+interface Props {
+  title: string;
+  variant?: "frameless" | "default";
+  description?: string;
+}
+
+const defaultDescription =
+  "S. Carey is the moniker of multi-instrumentalist, songwriter, and producer Sean Carey, commonly recognized as the drummer, backing vocalist, and second-longest serving member of Bon Iver.";
+
+const { title, variant, description = defaultDescription } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>{title}</title>
+    <link rel="canonical" href="https://scarey.org/" />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href={robotoItalic}
+      crossorigin="anonymous"
+    />
+
+    <meta name="description" content={description} />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="S. Carey" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content="https://scarey.org" />
+    <meta property="og:image" content={socialImage.src} />
+    <meta name="twitter:title" content="S. Carey" />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImage.src} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicons/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/favicons/site.webmanifest" />
+    <link rel="shortcut icon" href="/favicons/favicon.ico" />
+  </head>
+  <body
+    class="grid min-h-screen grid-rows-[auto_1fr_auto] text-gray-50 antialiased"
+  >
+    {variant !== "frameless" && <Header />}
+    <div class="container mx-auto p-4">
+      <slot />
+    </div>
+    {variant !== "frameless" && <Footer />}
+    <div
+      class={clsx(
+        "fixed inset-0 z-[-1] h-full w-full bg-neutral-900/75",
+        "bg-[url(/bg.jpg)] bg-cover",
+        "blur-[1.5px] brightness-75 contrast-[.85]",
+      )}
+    >
+    </div>
+  </body>
+</html>

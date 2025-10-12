@@ -2,28 +2,25 @@
 
 Built with:
 
-- [Sanity](https://www.sanity.io/)
-- [Eleventy](https://www.11ty.dev/)
-- [Tailwind](https://tailwindcss.com/)
+- [Astro](https://www.astro.build/)
 - [Netlify](https://www.netlify.com/)
 
 ## Development
 
 Ensure global dependecies are installed:
 
-- [Yarn](https://yarnpkg.com/)
 - NodeJS
 
 ### Install local dependecies:
 
 ```sh
-yarn
+pnpm install
 ```
 
 ### Run the dev servers
 
 ```sh
-yarn dev
+pnpm dev
 ```
 
 ## Deployment

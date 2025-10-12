@@ -1,0 +1,22 @@
+title: "Supermoon EP"
+description: "Recorded primarily during the perigee-syzygy (also known as the super moon) of August 2014, the Supermoon EP from S. Carey is a study in scale, space, and proximity. These songs are a new and closer look into existing works from both S. Carey's renowned full-lengths, 2010's All We Grow and 2014's Range of Light. With Supermoon, Carey has broken these songs down to their essential, acoustic parts with his forever humming vocals laid over top, lilting yet percussive piano, and a subtle swath of harmonic strings. You can hear Carey's breath between words and the pat of his fingers on the keys; you can hear the living room in which his family's baby grand piano sits. These songs are beautiful, intimate and so potently personal. This collection is a stark presentation of S. Carey laid bare, an open invitation for the listener to climb into his world."
+artwork: "../../images/albums/supermoon-ep.jpg"
+releaseDate: "2015-02-17"
+
+tracks:
+  - title: "Fire-scene (alt. version)"
+  - title: "We Fell (alt. version)"
+  - title: "Supermoon"
+  - title: "In The Stream (alt. version)"
+  - title: "Neverending Fountain (alt. version)"
+  - title: "Bullet Proof..I Wish I Was"
+
+links:
+  - type: "apple"
+    url: "https://itunes.apple.com/us/album/supermoon-ep/947062340"
+  - type: "spotify"
+    url: "https://open.spotify.com/album/2qxHbPkJbXIGlC940RWehf"
+  - type: "amazon"
+    url: "https://www.amazon.com/Supermoon-S-Carey/dp/B00QW82ZIE"
+  - type: "physical"
+    url: "https://scarey.org/store"

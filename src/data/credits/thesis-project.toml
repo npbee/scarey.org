@@ -1,0 +1,9 @@
+title = "Thesis Project"
+artist = "S. Carey & Taylor Deupree"
+releaseDate = "2016-09-27"
+credits = ["Co-writer", "Production"]
+artwork = "./thesis-project.jpg"
+
+[[links]]
+type = "bandcamp"
+url = "https://thesisproject.bandcamp.com/album/thesis-01-s-carey-taylor-deupree"

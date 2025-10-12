@@ -1,0 +1,13 @@
+title = "Wild Dark Metal"
+artist = "Mason Jennings"
+releaseDate = "2016-03-18"
+credits = ["Performance"]
+artwork = "./wild-dark-metal.jpg"
+
+[[links]]
+type = "physical"
+url = "http://masonjennings.com/archive/wild-dark-metal/wild-dark-metal/"
+
+[[links]]
+type = "amazon"
+url = "https://www.amazon.com/Wild-Dark-Metal-Mason-Jennings/dp/B01BPW88O6"

@@ -1,0 +1,17 @@
+title = "Aero Flynn"
+artist = "Aero Flynn"
+releaseDate = "2015-03-10"
+credits = ["Performance"]
+artwork = "./aero-flynn.jpg"
+
+[[links]]
+type = "spotify"
+url = "https://open.spotify.com/album/4BatNRXsQzhIk4zhnPWLLm?si=UNz8Sw1NTMeW161D6r8f4Q"
+
+[[links]]
+type = "apple"
+url = "https://music.apple.com/us/album/aero-flynn/1444224446"
+
+[[links]]
+type = "bandcamp"
+url = "https://aeroflynn.bandcamp.com/album/aero-flynn"

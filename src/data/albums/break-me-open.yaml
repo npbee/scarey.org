@@ -1,0 +1,26 @@
+title: "Break Me Open"
+description: "From recording and reflecting at home in Eau Claire, WI, to tracking at a studio outpost in Gualala, CA, to experiencing an unforgettable epiphany while fly fishing in Montana, Break Me Open sees S. Carey confront pain, grief, and loss, only to emerge with an overwhelming sense of gratitude and generosity. In a vow to stay present and vulnerable, the musician continued to move forward, found where the fear festered, and channeled these feelings into the music. Across Break Me Open, Carey sheds new skin and returns even better."
+artwork: "../../images/albums/break-me-open.jpg"
+releaseDate: "2022-04-22"
+
+tracks:
+  - title: "Dark"
+  - title: "Starless"
+  - title: "Sunshower"
+  - title: "Island"
+  - title: "Waking Up"
+  - title: "Desolate"
+  - title: "Paralyzed"
+  - title: "Where I Was"
+  - title: "Break Me Open"
+  - title: "Crestfallen"
+
+links:
+  - type: "apple"
+    url: "https://music.apple.com/us/album/break-me-open/1601838096?ls=1&app=itunes"
+  - type: "spotify"
+    url: "http://open.spotify.com/album/3GnC2xEY4b6wowL2eBIwGc"
+  - type: "amazon"
+    url: "https://www.amazon.com/gp/product/B09P433BQ7"
+  - type: "physical"
+    url: "https://scarey.org/store"

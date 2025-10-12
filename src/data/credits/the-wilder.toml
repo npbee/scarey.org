@@ -1,0 +1,17 @@
+title = "The Wilder"
+artist = "Luray"
+releaseDate = "2013-08-27"
+credits = ["Production", "Performance"]
+artwork = "./the-wilder.jpg"
+
+[[links]]
+type = "bandcamp"
+url = "https://luray.bandcamp.com/album/the-wilder-2"
+
+[[links]]
+type = "apple"
+url = "https://geo.music.apple.com/us/album/the-wilder/1249490257?app=itunes"
+
+[[links]]
+type = "spotify"
+url = "https://open.spotify.com/album/6lWQYeXaOURuSrZK996jhU"
