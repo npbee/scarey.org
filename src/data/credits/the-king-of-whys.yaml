@@ -4,7 +4,7 @@ releaseDate: '2016-07-29'
 credits:
 - Production
 - Performance
-artwork: ./the-king-of-whys.jpg
+artwork: ../../images/credits/the-king-of-whys.jpg
 links:
 - type: bandcamp
   url: https://owenmusic.bandcamp.com/album/the-king-of-whys

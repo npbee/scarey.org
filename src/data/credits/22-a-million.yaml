@@ -3,7 +3,7 @@ artist: Bon Iver
 releaseDate: '2016-09-30'
 credits:
 - Performance
-artwork: ./22-a-million.jpg
+artwork: ../../images/credits/22-a-million.jpg
 links:
 - type: apple
   url: http://smarturl.it/22amillion_iTunes

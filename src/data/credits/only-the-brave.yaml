@@ -4,7 +4,7 @@ releaseDate: '2017-10-20'
 credits:
 - Songwriter
 - Performance
-artwork: ./only-the-brave.jpg
+artwork: ../../images/credits/only-the-brave.jpg
 links:
 - type: amazon
   url: https://www.amazon.com/Only-Brave-Music-Inspired-Film/dp/B076FFZSRR

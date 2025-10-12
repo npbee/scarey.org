@@ -3,7 +3,7 @@ artist: Gracie and Rachel
 releaseDate: '2020-10-22'
 credits:
 - Remixer
-artwork: ./under-underneath.jpg
+artwork: ../../images/credits/under-underneath.jpg
 links:
 - type: spotify
   url: https://open.spotify.com/album/07dMmHDLMAI6QeIpYL8c5N?si=ivoDZhMgQyuroAwyehbO2A

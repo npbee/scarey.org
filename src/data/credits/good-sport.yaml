@@ -3,7 +3,7 @@ artist: The Air on Earth
 releaseDate: '2020-01-24'
 credits:
 - Vocals
-artwork: ./good-sport.jpg
+artwork: ../../images/credits/good-sport.jpg
 links:
 - type: bandcamp
   url: https://theaironearth.bandcamp.com/album/good-sport

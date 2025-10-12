@@ -3,7 +3,7 @@ artist: Swim Good Now
 releaseDate: '2014-12-02'
 credits:
 - Vocals
-artwork: ./grand-beach-feat-daniela-andrade-s-carey.jpg
+artwork: ../../images/credits/grand-beach-feat-daniela-andrade-s-carey.jpg
 links:
 - type: spotify
   url: https://open.spotify.com/album/2KtOzoGMCEaOsP1C1VVXTu?si=sF_YBkWDQFmHk5HgtjIA7w

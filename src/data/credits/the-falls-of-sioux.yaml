@@ -4,7 +4,7 @@ releaseDate: '2024-04-26'
 credits:
 - Production
 - Performance
-artwork: ./the-falls-of-sioux.jpg
+artwork: ../../images/credits/the-falls-of-sioux.jpg
 links:
 - type: physical
   url: https://owenmusic.bandcamp.com/album/the-falls-of-sioux

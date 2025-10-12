@@ -3,7 +3,7 @@ artist: Hailaker
 releaseDate: '2021-04-02'
 credits:
 - Performance
-artwork: ./wavepool.jpg
+artwork: ../../images/credits/wavepool.jpg
 links:
 - type: spotify
   url: https://open.spotify.com/album/6tgfkgWahbKBM3q1GV4XgL?si=24B5pJNcSxiacbFBAHggTQ

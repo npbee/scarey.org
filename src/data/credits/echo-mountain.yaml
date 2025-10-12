@@ -3,7 +3,7 @@ artist: Jenny Owen Youngs
 releaseDate: '2021-03-10'
 credits:
 - Remixer
-artwork: ./echo-mountain.jpg
+artwork: ../../images/credits/echo-mountain.jpg
 links:
 - type: spotify
   url: https://open.spotify.com/album/0C7Vwl8DXKCL4YeMtJVWXi?si=yBnSJYjDQ1K_wD47u89MmA

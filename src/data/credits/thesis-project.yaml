@@ -4,7 +4,7 @@ releaseDate: '2016-09-27'
 credits:
 - Co-writer
 - Production
-artwork: ./thesis-project.jpg
+artwork: ../../images/credits/thesis-project.jpg
 links:
 - type: bandcamp
   url: https://thesisproject.bandcamp.com/album/thesis-01-s-carey-taylor-deupree

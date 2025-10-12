@@ -4,7 +4,7 @@ releaseDate: '2019-09-20'
 credits:
 - Production
 - Performance
-artwork: ./freeway.jpg
+artwork: ../../images/credits/freeway.jpg
 links:
 - type: physical
   url: https://www.righteousbabe.com/products/pieta-brown-freeway

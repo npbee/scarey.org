@@ -3,7 +3,7 @@ artist: Bon Iver
 releaseDate: '2019-08-09'
 credits:
 - Performance
-artwork: ./ii.jpg
+artwork: ../../images/credits/ii.jpg
 links:
 - type: apple
   url: https://boniver.org/audio/ii/

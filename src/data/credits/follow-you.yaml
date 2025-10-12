@@ -4,7 +4,7 @@ releaseDate: '2020-11-19'
 credits:
 - Production
 - Performance
-artwork: ./follow-you.jpg
+artwork: ../../images/credits/follow-you.jpg
 links:
 - type: spotify
   url: https://open.spotify.com/album/3A3HonCJ2sIyh2D1QXa7oz?si=-UainmAyS8uQ30thi7f6XQ

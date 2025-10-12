@@ -3,7 +3,7 @@ artist: Teen Daze
 releaseDate: '2019-02-10'
 credits:
 - Vocals
-artwork: ./themes-for-dying-earth.jpg
+artwork: ../../images/credits/themes-for-dying-earth.jpg
 links:
 - type: bandcamp
   url: https://teendaze.bandcamp.com/album/themes-for-dying-earth

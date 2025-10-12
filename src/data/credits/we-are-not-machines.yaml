@@ -4,7 +4,7 @@ releaseDate: '2020-07-24'
 credits:
 - Production
 - Performance
-artwork: ./we-are-not-machines.jpg
+artwork: ../../images/credits/we-are-not-machines.jpg
 links:
 - type: spotify
   url: https://open.spotify.com/album/5tGaKQjO0tdQxgmxKCz4nW?si=J6O7eiSuRFiBpjUCjdQMkQ

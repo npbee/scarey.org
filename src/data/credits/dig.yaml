@@ -4,7 +4,7 @@ releaseDate: '2019-07-26'
 credits:
 - Production
 - Performance
-artwork: ./dig.jpg
+artwork: ../../images/credits/dig.jpg
 links:
 - type: bandcamp
   url: https://luray.bandcamp.com/album/dig

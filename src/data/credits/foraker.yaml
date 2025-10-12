@@ -3,7 +3,7 @@ artist: Cyrus Reynolds
 releaseDate: '2018-09-11'
 credits:
 - Vocals
-artwork: ./foraker.jpg
+artwork: ../../images/credits/foraker.jpg
 links:
 - type: soundcloud
   url: https://soundcloud.com/cyrusreynolds/foraker-ft-s-carey

@@ -4,7 +4,7 @@ releaseDate: '2021-03-02'
 credits:
 - Production
 - Performance
-artwork: ./lanue.jpg
+artwork: ../../images/credits/lanue.jpg
 links:
 - type: spotify
   url: https://open.spotify.com/album/3NF96J3bNddAiwPd2HAzyH

@@ -4,7 +4,7 @@ releaseDate: '2020-06-19'
 credits:
 - Production
 - Performance
-artwork: ./the-avalanche.jpg
+artwork: ../../images/credits/the-avalanche.jpg
 links:
 - type: physical
   url: https://shop.owenmusic.com/

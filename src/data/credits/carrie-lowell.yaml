@@ -3,7 +3,7 @@ artist: Sufjan Stevens
 releaseDate: '2015-03-31'
 credits:
 - Vocals
-artwork: ./carrie-lowell.jpg
+artwork: ../../images/credits/carrie-lowell.jpg
 links:
 - type: bandcamp
   url: https://music.sufjan.com/album/carrie-lowell

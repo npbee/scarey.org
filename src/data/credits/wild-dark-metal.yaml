@@ -3,7 +3,7 @@ artist: Mason Jennings
 releaseDate: '2016-03-18'
 credits:
 - Performance
-artwork: ./wild-dark-metal.jpg
+artwork: ../../images/credits/wild-dark-metal.jpg
 links:
 - type: physical
   url: http://masonjennings.com/archive/wild-dark-metal/wild-dark-metal/

@@ -3,7 +3,7 @@ artist: Bruce Hornsby
 releaseDate: '2019-04-12'
 credits:
 - Performance
-artwork: ./absolute-zero.jpg
+artwork: ../../images/credits/absolute-zero.jpg
 links:
 - type: spotify
   url: https://open.spotify.com/album/5Zks2SZNQAw4NYlUhVEE85?si=IN-TOgQERFyP0mCOz7wk4w

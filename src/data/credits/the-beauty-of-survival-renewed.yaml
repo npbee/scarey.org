@@ -3,7 +3,7 @@ artist: Foreign Fields
 releaseDate: '2020-03-20'
 credits:
 - Performance
-artwork: ./the-beauty-of-survival-renewed.jpg
+artwork: ../../images/credits/the-beauty-of-survival-renewed.jpg
 links:
 - type: amazon
   url: https://music.amazon.com/albums/B08BLWZMJN?tag=linkfire-map-us-20&ie=UTF8&linkCode=as2&ascsubtag=abd5b84a8d53bc6ccb7a2466009d401e
