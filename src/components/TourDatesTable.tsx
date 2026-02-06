@@ -33,10 +33,52 @@ type BandsInTownEvent = {
   url: string;
 };
 
-function fetchEvents(artist: string): Promise<BandsInTownEvent[]> {
+type Event = {
+  offers: Array<{ type: string; url: string }>;
+  datetime: string;
+  venue: {
+    name: string;
+    city: string;
+    region?: string;
+  };
+  artist: {
+    name: string;
+  };
+  url: string;
+};
+
+const localEvents: Event[] = [
+  {
+    offers: [],
+    datetime: "2026-03-15T02:00:00Z",
+    url: "https://www.simpletix.com/e/s-carey-courtney-hartman-tickets-257160",
+    venue: {
+      name: "Spirit of the Wilderness Church",
+      city: "Grand Marais, Minnesota",
+    },
+    artist: {
+      name: "S. Carey",
+    },
+  },
+];
+
+function fetchEvents(artist: string): Promise<Event[]> {
   return fetch(
     `https://rest.bandsintown.com/artists/${artist}/events?app_id=${appId}&date=upcoming`,
-  ).then((res) => res.json());
+  )
+    .then((res) => res.json())
+    .then((data: BandsInTownEvent[]) => patchLocalEvents(artist, data));
+}
+
+function patchLocalEvents(artist: string, events: Event[]) {
+  const now = new Date();
+  const artistLocalEvents = localEvents.filter((e) => e.artist.name === artist);
+  const filteredEvents = events.filter(
+    (e) => !artistLocalEvents.some((le) => le.datetime === e.datetime),
+  );
+  return [...filteredEvents, ...artistLocalEvents].filter(
+    (e) => new Date(e.datetime) > now,
+  );
 }
 
 export default function TourDatesTable(props: { artist: string }) {
@@ -192,7 +234,7 @@ function Empty() {
   return <div class="text-center italic">No shows at this time.</div>;
 }
 
-function buildRow(event: BandsInTownEvent) {
+function buildRow(event: Event) {
   let date = formatDate(event.datetime);
   let location =
     event.venue.city + (event.venue.region ? ", " + event.venue.region : "");
