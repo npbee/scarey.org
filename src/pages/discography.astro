@@ -1,21 +1,11 @@
 ---
 import Layout from "../layouts/Main.astro";
 import { getCollection } from "astro:content";
-import SubHeader from "../components/SubHeader.astro";
 import Album from "../components/Album.astro";
-import Credit from "../components/Credit.astro";
 
 const albums = await getCollection("albums");
-const credits = await getCollection("credits");
 
 const sortedAlbums = albums.sort((a, b) => {
-  return (
-    new Date(b.data.releaseDate).getTime() -
-    new Date(a.data.releaseDate).getTime()
-  );
-});
-
-const sortedCredits = credits.sort((a, b) => {
   return (
     new Date(b.data.releaseDate).getTime() -
     new Date(a.data.releaseDate).getTime()
@@ -24,23 +14,12 @@ const sortedCredits = credits.sort((a, b) => {
 ---
 
 <Layout title="Discography | S. Carey">
-  <div class="space-y-24">
-    <div>
-      <SubHeader mainHeader="Discography" subHeader="Albums" />
-      <div class="space-y-24">
-        {sortedAlbums.map((album) => <Album album={album.data} />)}
-      </div>
-    </div>
-    <div>
-      <SubHeader
-        mainHeader="Discography"
-        subHeader="Production & Performance"
-      />
-      <div
-        class="mb-12 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-6 lg:grid-cols-4"
-      >
-        {sortedCredits.map((credit) => <Credit credit={credit.data} />)}
-      </div>
+  <div>
+    <h1 class="font-brand text-primary-500 z-10 mb-4 text-lg font-normal tracking-wide uppercase">
+      Discography
+    </h1>
+    <div class="space-y-24">
+      {sortedAlbums.map((album) => <Album album={album.data} />)}
     </div>
   </div>
 </Layout>

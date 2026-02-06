@@ -1,0 +1,27 @@
+---
+import Layout from "../layouts/Main.astro";
+import { getCollection } from "astro:content";
+import Credit from "../components/Credit.astro";
+
+const credits = await getCollection("credits");
+
+const sortedCredits = credits.sort((a, b) => {
+  return (
+    new Date(b.data.releaseDate).getTime() -
+    new Date(a.data.releaseDate).getTime()
+  );
+});
+---
+
+<Layout title="Production & Performance | S. Carey">
+  <div>
+    <h1 class="font-brand text-primary-500 z-10 mb-4 text-lg font-normal tracking-wide uppercase">
+      Production & Performance
+    </h1>
+    <div
+      class="mb-12 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-6 lg:grid-cols-4"
+    >
+      {sortedCredits.map((credit) => <Credit credit={credit.data} />)}
+    </div>
+  </div>
+</Layout>
